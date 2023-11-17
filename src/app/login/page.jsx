@@ -16,7 +16,6 @@ import styles from "../login/login.module.css";
 const page = () => {
   var settings = {
     dots: true,
-    color: "white",
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -75,7 +74,7 @@ const page = () => {
                 />
               </div>
               <div className='login-banner-inputs-div'>
-                <h6>Admin Login</h6>
+                <h6 className='ad-tag'>Admin Login</h6>
 
                 <div>
                   {" "}
@@ -87,9 +86,12 @@ const page = () => {
                   <label for='email'>Password</label> <br />
                   <input type='password' id='Password' name='password' />
                 </div>
-                <p>Forget Password</p>
 
-                <input type='submit' />
+                <p className='forget-text'>Forget Password</p>
+
+                <div className='submit-btn-div'>
+                  <button className='submit-btn'>Log in</button>
+                </div>
               </div>
             </div>
           </div>
@@ -105,21 +107,20 @@ const page = () => {
                 />
               </div>
               <div className='login-banner-inputs-div'>
-                <h6>Admin Login</h6>
-
                 <div>
                   {" "}
-                  <label for='email'>Email</label> <br />
-                  <input type='email' id='email' name='email' />
+                  <label for='password'>New password</label> <br />
+                  <input type='password' id='password' name='Password' />
                 </div>
-                <div>
+                <div className='mt-2'>
                   {" "}
-                  <label for='email'>Password</label> <br />
+                  <label for='email'>Repeat your new password</label> <br />
                   <input type='password' id='Password' name='password' />
                 </div>
-                <p>Forget Password</p>
 
-                <input type='submit' />
+                <div className='submit-btn-div'>
+                  <button className='submit-btn'>Confirm</button>
+                </div>
               </div>
             </div>
           </div>
@@ -134,27 +135,37 @@ const page = () => {
         </p>
       </div>
 
-      <div className='login footer'>
-        <div>
-          <div>
-            <img src={pageLogo.src} alt='' />
-            <p>
-              For inquiries or more information <br />
-              please contact: enquiries@esgledger.co
-            </p>
+      <div className='login-footer-div'>
+        <div className='login-footer-full-div row'>
+          <div className='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>
+            <div className='footer-img-div'>
+              <img className='footer-img' src={pageLogo.src} alt='' />
+              <p className='fotter-ptext'>
+                For inquiries or more information please contact:
+                enquiries@esgledger.co
+              </p>
+            </div>
           </div>
-          <div>
-            <p>Join the Community</p>
 
-            <div>
-              <img src={pageicon1.src} alt='' />
-              <img src={pageicon2.src} alt='' />
-              <img src={pageicon3.src} alt='' />
-              <img src={pageicon4.src} alt='' />
+          <div className='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>
+            <div className='footer-text-div'>
+              <p>Join the Community</p>
+
+              <div className='footer-text-icon'>
+                <img className='social-icon' src={pageicon1.src} alt='' />
+                <img className='social-icon' src={pageicon2.src} alt='' />
+                <img className='social-icon' src={pageicon3.src} alt='' />
+                <img className='social-icon' src={pageicon4.src} alt='' />
+              </div>
             </div>
           </div>
         </div>
+        <div className='ff-div'>
+          <hr className='f-hr' />
+          <p className='f-text'>© 2023 OneChain Ltd.</p>
+        </div>
       </div>
+
       {/* <div>
         <div className='hr' />
         <div className=' login-banner-img-input-div'>

@@ -37,6 +37,10 @@ body {
 
 /* Login   */
 
+.ad-tag {
+  color: #066f69;
+  font-size: 1.2rem;
+}
 .login-banner-img-input-div {
   display: flex;
   justify-content: center;
@@ -56,7 +60,7 @@ body {
   display: grid;
   place-items: center;
   border: 1px solid rgb(255, 255, 255);
-  margin: 3% 30% 0 30%;
+  margin: 2% 30% 0 30%;
 }
 .hrs {
   display: grid;
@@ -71,7 +75,7 @@ body {
   flex-direction: column;
   width: 310px;
   /* justify-content: center; */
-  align-items: start;
+  /* align-items: start; */
   padding: 30px 40px;
 }
 .pioneeringtext {
@@ -91,4 +95,138 @@ body {
   display: flex;
   justify-content: center;
   margin: 12% 30% 0 30%;
+}
+
+.login-footer-full-div {
+  background-color: #066f69;
+  margin: 3% 0;
+  /* z-index: 3; */
+}
+
+/* styles/login/login.module.css */
+
+.slick-dots {
+  position: absolute;
+  bottom: 20px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.slick-dots li {
+  margin: 0 8px;
+}
+
+.slick-dots li button {
+  width: 0px;
+  height: 0px;
+  border: 2px solid #fff; /* Set the border color to white */
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #fff; /* Set the background color to white for active dot */
+}
+
+.login-footer-full-div {
+  /* margin-top: 5% !important; */
+  /* height: 8vh; */
+  /* margin: 0 20%; */
+}
+.login-footer-div {
+  position: absolute;
+  height: 20vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* Set background color as needed */
+  /* padding: 10px; Adjust padding as needed */
+  /* text-align: center; */
+  /* height: 18vh; */
+
+  background-color: #066f69;
+}
+
+.footer-img-div {
+  /* display: grid;
+  place-items: center;
+  text-align: justify; */
+  padding: 20px 0 5px 0;
+  margin: 0 30%;
+}
+.footer-img {
+  width: 150px;
+}
+
+.footer-text-div {
+  /* float: right;
+   */
+  padding: 20px 0 5px 0;
+  margin: 0 30%;
+}
+
+.footer-text-icon {
+  display: flex;
+  gap: 10px;
+}
+
+.fotter-ptext {
+  color: white;
+  font-size: 0.8rem;
+}
+
+.ff-div {
+  background: #066f69;
+  margin-top: -30px;
+  /* height: 10vh; */
+  padding: 0 14.5%;
+}
+
+.f-hr {
+  /* padding: 20px 0 0 0; */
+  color: white;
+  /* padding: 0 30% 0 14.5%; */
+  width: 88%;
+}
+.social-icon {
+  width: 20px;
+}
+
+.f-text {
+  color: white;
+  font-size: 0.6rem;
+}
+
+.forget-text {
+  font-size: 0.7rem;
+  text-decoration: underline;
+  color: blue;
+  display: flex;
+  justify-content: end;
+  /* margin: auto; */
+}
+
+.submit-btn-div {
+  display: flex !important;
+  margin: auto;
+  justify-content: center !important;
+}
+.submit-btn {
+  border: none;
+  background-color: #066f69;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  padding: 4px 50px;
+}
+
+@media only screen and (max-width: 3000px) and (min-width: 1370px) {
+  .hr {
+    margin: 6% 30% 0 30%;
+  }
 }
