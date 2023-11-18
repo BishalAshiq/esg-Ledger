@@ -76,4 +76,25 @@
 
 .checkbox-div {
   border-bottom: 1px solid #86c6ca;
+  padding: 6px 0;
+  margin: 5px 0;
+}
+
+.d-items-div {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 40px;
+  align-items: center;
+}
+
+.ser-item-input {
+  width: 100%;
+  padding: 1px 0;
+  outline: none;
+  border: 1px solid rgb(209, 209, 209);
+}
+
+.select-yp-yong {
+  width: 70%;
+  margin: 0 0 0 40px;
 }
