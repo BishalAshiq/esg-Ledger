@@ -132,3 +132,139 @@
   display: flex;
   gap: 10px;
 }
+
+.table-nav {
+  background-color: #f4f4f4 !important;
+  border-right: 1px solid gray;
+}
+.table-navs {
+  background-color: #f4f4f4 !important;
+  /* border-right: 1px solid gray; */
+
+  /* width: 00px; */
+}
+.table-th {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: -2px;
+}
+.table-ths {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: -2px;
+  visibility: hidden;
+}
+.th-svg-div {
+  display: flex;
+  justify-content: end;
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  bottom: 0;
+}
+
+.dashboard-footer-div {
+  background-color: #fffcfc;
+  display: flex;
+  justify-content: start;
+  border-top: 1px solid #e3e2e2;
+}
+.dashboard-footer {
+  /* padding: 10px 0; */
+}
+.dashboard-footer-text {
+  font-size: 0.7rem;
+  padding: 10px 20px 5px 40px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.data-td {
+}
+.data-tr {
+  border: 1px solid rgb(235, 235, 235);
+  gap: 10px;
+
+  border-radius: 5px;
+  margin: 2% 0 !important;
+}
+
+.data-th-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+}
+
+/* Issue Details  */
+
+.issue-data-table-div {
+  border: 1px solid gray;
+}
+.issue-upload-full-div {
+  border: 1px solid gray;
+}
+
+.csv-a {
+  margin-bottom: 10px;
+  color: #00b3ff;
+  font-size: 0.8rem;
+}
+.issue-upload-div {
+  display: grid;
+  place-items: center;
+  padding: 20px 0;
+}
+
+.csv-textp {
+  font-size: 0.9rem;
+  color: #8f8f8f;
+  margin-top: 10px;
+}
+.csv-textp2 {
+  color: #8f8f8f;
+  font-size: 0.9rem;
+  margin-top: -20px;
+}
+
+.previe-issue-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.previe-issue-text {
+  display: flex;
+  gap: 20px;
+}
+.previe-issue-btn-text {
+  color: #00b3ff;
+}
+
+.previe-issue-btn {
+  background-color: #066f69;
+  color: white;
+  padding: 1px 60px;
+  height: 5vh;
+  border-radius: 2px;
+  outline: none;
+}
+
+.data-th-text-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+.issue-svg-div {
+  display: flex;
+  justify-content: center;
+}

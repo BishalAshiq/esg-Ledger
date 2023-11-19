@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import DashNav from "@/component/Navbar/dashNav";
 import ViewAllItems from "@/component/DashboardAll/ViewAllItems";
+import IssuDetails from "@/component/DashboardAll/IssuDetails";
 
 const page = () => {
   const [activeDiv, setActiveDiv] = useState(1);
@@ -40,18 +41,25 @@ const page = () => {
           {activeDiv === 1 && (
             <div>
               <div className=''>
-                <ViewAllItems />
+                <IssuDetails />
               </div>
             </div>
           )}
 
           {activeDiv === 2 && (
             <div>
-              <div className='m-4'>
-                <p>View all items - customise data field </p>
+              <div className=''>
+                <ViewAllItems />
               </div>
             </div>
           )}
+        </div>
+      </div>
+      <div className='dashboard-footer-div'>
+        <div className='dashboard-footer'>
+          <p className='dashboard-footer-text'>
+            © 2023 OneChain Ltd. All Rights Reserved.
+          </p>
         </div>
       </div>
     </div>
