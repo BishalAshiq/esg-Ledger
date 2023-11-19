@@ -98,3 +98,37 @@
   width: 70%;
   margin: 0 0 0 40px;
 }
+
+.data-search-input-div {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid rgb(216, 216, 216);
+}
+.data-search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.filter-text-select-div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.filter-select {
+  width: 150px;
+  height: 5vh;
+}
+
+.filter-text-p {
+  font-size: 0.9rem;
+}
+.tabl-icon {
+  display: flex;
+  gap: 10px;
+}
