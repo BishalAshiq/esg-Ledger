@@ -231,6 +231,166 @@ const ViewAllItemsData = () => {
       img2: "/qrcode.svg",
       part: "Upper",
     },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
+    {
+      brand: "KIBO",
+      product: "Sydney",
+      serial: "12345",
+      item: "Recycled Leather",
+      certification: "GRS",
+      img1: "/downloadicon.svg",
+      img2: "/qrcode.svg",
+      part: "Upper",
+    },
     // Add more data as needed
   ];
 
@@ -434,28 +594,60 @@ const ViewAllItemsData = () => {
               </tr>
             </tbody>
           </table> */}
-          <div>
+          <div className='mt-4'>
             <table className='table'>
               <thead>
                 <tr>
-                  <th scope='col'>Brand</th>
-                  <th scope='col'>Product</th>
-                  <th scope='col'>Serial</th>
-                  <th scope='col'>Item</th>
-                  <th scope='col'>Certification/Tests</th>
-                  <th scope='col'>Part</th>
-                  <th scope='col'>QR code</th>
-                  <th scope='col'></th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Brand</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Product</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Serial</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Item</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Certification/Tests</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Part</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> QR code</p>
+                  </th>
+                  <th className='table-navs' scope='col'>
+                    <p className='table-ths'> QR code</p>
+                  </th>
+                  {/* <th className='table-navs' scope='col'>
+                    <p className='table-ths'> QR code</p>
+                  </th> */}
                 </tr>
               </thead>
               <tbody>
                 {currentData.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.brand}</td>
-                    <td>{item.product}</td>
-                    <td>{item.serial}</td>
-                    <td>{item.item}</td>
-                    <td>{item.certification}</td>
+                  <tr key={index} className='data-tr'>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.brand}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.product}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.serial}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.item}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.certification}</p>
+                    </td>
+                    <td className='data-td'>
+                      <p className='data-th-text'>{item.part}</p>
+                    </td>
                     <td>
                       <div className='tabl-icon'>
                         {/* {item.img1} {item.img1} */}
@@ -463,22 +655,24 @@ const ViewAllItemsData = () => {
                         <Image src={item.img1} width={20} height={20} alt='' />
                       </div>
                     </td>
-                    <td>{item.part}</td>
-                    <td>
+
+                    {/* <td>
                       <div className='tabl-icon'>
-                        {/* QR code and download icon */}
+                        QR code and download icon
                       </div>
-                    </td>
+                    </td> */}
                     <td>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        width='16'
-                        height='16'
-                        fill='currentColor'
-                        className='bi bi-three-dots'
-                        viewBox='0 0 16 16'>
-                        <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                      </svg>
+                      <div className='th-svg-div'>
+                        <svg
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='24'
+                          height='24'
+                          fill='#155C79'
+                          className='bi bi-three-dots'
+                          viewBox='0 0 16 16'>
+                          <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                        </svg>
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -486,17 +680,31 @@ const ViewAllItemsData = () => {
             </table>
 
             <div className='pagination'>
-              <button
+              <svg
                 onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}>
-                Previous
-              </button>
-              <span>{`Page ${currentPage} of ${totalPages}`}</span>
-              <button
+                disabled={currentPage === 1}
+                xmlns='http://www.w3.org/2000/svg'
+                width='20'
+                height='20'
+                fill='#86C6CA'
+                class='bi bi-caret-left-fill'
+                viewBox='0 0 16 16'>
+                <path d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z' />
+              </svg>
+
+              <span>{` ${currentPage} / ${totalPages}`}</span>
+
+              <svg
                 onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}>
-                Next
-              </button>
+                disabled={currentPage === totalPages}
+                xmlns='http://www.w3.org/2000/svg'
+                width='16'
+                height='16'
+                fill='#86C6CA'
+                class='bi bi-caret-right-fill'
+                viewBox='0 0 16 16'>
+                <path d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z' />
+              </svg>
             </div>
           </div>
         </div>
