@@ -74,7 +74,7 @@ const page = () => {
                 />
               </div>
               <div className='login-banner-inputs-div'>
-                <h6 className='ad-tag'>Admin Login</h6>
+                <h6 className='ad-tag'>Brand Login</h6>
 
                 <div>
                   {" "}
