@@ -1,6 +1,6 @@
 "use client";
 import Nav from "@/component/Navbar/Nav";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 // import Slider from "react-slick";
 import LoginBanner from "../../../public/loginBanner.png";
 import pageLogo from "../../../public/pageLogomd.png";
@@ -12,8 +12,13 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "../login/login.module.css";
+import { toast } from "react-toastify";
+import axiosInstance from "../../../utils/axios";
+import { useRouter } from "next/navigation";
+
 
 const page = () => {
+  const router = useRouter();
   var settings = {
     dots: true,
     infinite: false,
@@ -49,6 +54,67 @@ const page = () => {
     ],
   };
 
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData, [e.target.name]: e.target.value
+    })
+  }
+
+  const handleLogin = async (e) => {
+
+    e.preventDefault();
+
+    axiosInstance.post('/login', formData, {
+      withCredentials: true,
+    }).then(res => {
+
+      if (res.data.status == 200) {
+        // router.push("/newsfeed");
+
+
+        // setCookiesAuthRender(res.data)
+        if (typeof window !== "undefined") {
+
+          localStorage.setItem('refreshToken', res.data.token);
+          localStorage.setItem('userInfo', JSON.stringify(res.data.user));
+          localStorage.setItem('fullname', res.data.user.name);
+
+          localStorage.setItem('userId', res.data.user.id);
+        }
+
+
+        router.push('/dashboard');
+
+
+      } else if (res.data.status == 401) {
+        toast.error("Login failed. Please check your email and password.", {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+      }
+      else {
+        toast.error("Login failed. Invalid Credentials.", {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+      }
+    })
+
+
+  };
+
   return (
     <div className={styles["background-img"]}>
       <div>
@@ -75,23 +141,25 @@ const page = () => {
               </div>
               <div className='login-banner-inputs-div'>
                 <h6 className='ad-tag'>Brand Login</h6>
+                <form className="content" onSubmit={handleLogin} method="post">
+                  <div>
+                    {" "}
+                    <label for='email'>Email</label> <br />
+                    <input type='email' id='email' name='email' onChange={handleFormChange} value={formData.email} required />
+                  </div>
+                  <div>
+                    {" "}
+                    <label for='email'>Password</label> <br />
+                    <input type='password' id='Password' name='password' value={formData.password} required
+                      onChange={handleFormChange} />
+                  </div>
 
-                <div>
-                  {" "}
-                  <label for='email'>Email</label> <br />
-                  <input type='email' id='email' name='email' />
-                </div>
-                <div>
-                  {" "}
-                  <label for='email'>Password</label> <br />
-                  <input type='password' id='Password' name='password' />
-                </div>
+                  <p className='forget-text'>Forget Password</p>
 
-                <p className='forget-text'>Forget Password</p>
-
-                <div className='submit-btn-div'>
-                  <button className='submit-btn'>Log in</button>
-                </div>
+                  <div className='submit-btn-div'>
+                    <button type="submit" className='submit-btn'>Log in</button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>

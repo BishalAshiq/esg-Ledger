@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import upFile from "../../../public/upFile.svg";
 import Image from "next/image";
+import axiosInstance from "../../../utils/axios";
+import axios from "axios";
 
 const IssuDetails = () => {
   const itemsPerPage = 15;
@@ -319,13 +321,36 @@ const IssuDetails = () => {
     setCurrentPage(newPage);
   };
 
+  const handleDownload = async () => {
+    // Make a request to the API endpoint
+    try {
+      const response = await axios.get('http://192.168.0.107:8000/api/download-csv', { responseType: 'blob' });
+
+      // Trigger the download
+      const blob = new Blob([response.data], { type: 'text/csv' });
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'brand_cutomize_fields.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Error downloading CSV:', error);
+    }
+
+
+  };
+
+
   return (
     <div className='container-fluid mt-4'>
       <div>
         <h6>Upload recipients and certificates data</h6>
         <div className='issue-upload-full-div'>
           <div className='issue-upload-div'>
-            <a className='csv-a'>Download the CSV template</a>
+            <a className='csv-a' onClick={handleDownload}>Download the CSV template</a>
             <Image src={upFile.src} width={80} height={80} alt='' />
             <p className='csv-textp'>Drag or upload an excel file here.</p>
             <p className='csv-textp2'>
