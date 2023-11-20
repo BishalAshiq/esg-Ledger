@@ -324,7 +324,7 @@ const IssuDetails = () => {
   const handleDownload = async () => {
     // Make a request to the API endpoint
     try {
-      const response = await axios.get('http://192.168.0.107:8000/api/download-csv', { responseType: 'blob' });
+      const response = await axios.get('http://10.81.11.62:8000/api/download-csv', { responseType: 'blob' });
 
       // Trigger the download
       const blob = new Blob([response.data], { type: 'text/csv' });

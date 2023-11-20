@@ -15,6 +15,7 @@ import styles from "../login/login.module.css";
 import { toast } from "react-toastify";
 import axiosInstance from "../../../utils/axios";
 import { useRouter } from "next/navigation";
+import Cookies from 'js-cookie';
 
 
 const page = () => {
@@ -79,7 +80,7 @@ const page = () => {
 
 
         // setCookiesAuthRender(res.data)
-        if (typeof window !== "undefined") {
+        if (typeof window != "undefined") {
 
           localStorage.setItem('refreshToken', res.data.token);
           localStorage.setItem('userInfo', JSON.stringify(res.data.user));
@@ -87,6 +88,7 @@ const page = () => {
 
           localStorage.setItem('userId', res.data.user.id);
         }
+        Cookies.set('refreshToken', res.data.token, { path: '/', expires: 7 });
 
 
         router.push('/dashboard');
