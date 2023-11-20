@@ -262,7 +262,16 @@ const ViewAllItems = () => {
             color: "black",
           },
         });
-
+        setFormData({
+          brand_name: "",
+          brand_name_show: "",
+          product_name: "",
+          product_name_show: "",
+          serial: "",
+          serial_show: "",
+          item: "",
+          item_show: "",
+        })
       }
       else {
         toast.error("Login failed. Invalid Credentials.", {
@@ -381,7 +390,7 @@ const ViewAllItems = () => {
                     <input
                       class='form-check-input'
                       type='checkbox'
-                      value=''
+                      value='1'
                       id='flexCheckChecked'
                       name="product_name_show" onChange={handleFormChange}
                     // checked
@@ -415,7 +424,7 @@ const ViewAllItems = () => {
                     <input
                       class='form-check-input'
                       type='checkbox'
-                      value=''
+                      value='1'
                       id='flexCheckChecked'
                       name="serial_show" onChange={handleFormChange}
                     // checked
@@ -478,7 +487,7 @@ const ViewAllItems = () => {
                     <input
                       class='form-check-input'
                       type='checkbox'
-                      value=''
+                      value='1'
                       id='flexCheckChecked'
                       name="item_show" onChange={handleFormChange}
                     />

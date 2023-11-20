@@ -4,319 +4,20 @@ import upFile from "../../../public/upFile.svg";
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const IssuDetails = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const data = [
-    // Your data here
-    // Example data for testing
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-      delete: "Delete",
-    },
-  ];
-
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const [headers, setHeaders] = useState([]);
+  const [columns, setColumns] = useState([]);
+  const totalPages = Math.ceil(columns.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentData = data.slice(startIndex, endIndex);
-
+  const currentData = columns.slice(startIndex, endIndex);
+  const [isGenerate, SetIsGenerate] = useState(0);
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
@@ -324,7 +25,7 @@ const IssuDetails = () => {
   const handleDownload = async () => {
     // Make a request to the API endpoint
     try {
-      const response = await axios.get('http://10.81.11.62:8000/api/download-csv', { responseType: 'blob' });
+      const response = await axiosInstance.get('download-csv', { responseType: 'blob' });
 
       // Trigger the download
       const blob = new Blob([response.data], { type: 'text/csv' });
@@ -344,18 +45,80 @@ const IssuDetails = () => {
   };
 
 
+  const handleFileClick = (e) => {
+
+    e.stopPropagation();
+    const fileInput = document.getElementById("fileInput");
+    if (fileInput) {
+      fileInput.click();
+    }
+
+  };
+
+  const handleFileChange = (e) => {
+    SetIsGenerate(1);
+    console.log("handlefile change")
+    const formData = new FormData();
+    formData.append("csv_file", e.target.files[0]);
+    axiosInstance
+      .post(`/upload-csv`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+
+        if (res.data.status == 200) {
+          setHeaders(res.data.header);
+          setColumns(res.data.data);
+          SetIsGenerate(2);
+        }
+        if (res.data.status == 401) {
+        }
+      });
+  };
+  const handleDelete = (deleteId) => {
+    const formData = {
+      id: deleteId
+    }
+    axiosInstance.post('/delete-item', formData).then((res) => {
+      if (res.data.status == 200) {
+        const indexToDelete = columns.findIndex(item => item.id === deleteId);
+
+        if (indexToDelete !== -1) {
+          // Create a new array without the deleted item
+          const updatedColumns = [...columns];
+          updatedColumns.splice(indexToDelete, 1);
+
+          // Update the state with the new array
+          setColumns(updatedColumns);
+
+          toast.success("Item Removed", {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+        }
+      }
+    })
+  }
   return (
     <div className='container-fluid mt-4'>
       <div>
         <h6>Upload recipients and certificates data</h6>
         <div className='issue-upload-full-div'>
-          <div className='issue-upload-div'>
-            <a className='csv-a' onClick={handleDownload}>Download the CSV template</a>
+          <div className="csv-a-div">
+            <a className='csv-a text-center' onClick={handleDownload}>Download the CSV template</a>
+          </div>
+          <div className='issue-upload-div' onClick={handleFileClick}>
             <Image src={upFile.src} width={80} height={80} alt='' />
             <p className='csv-textp'>Drag or upload an excel file here.</p>
             <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
             </p>
+            <input type="file" id="fileInput" onChange={handleFileChange} style={{ display: 'none' }} />
           </div>
         </div>
       </div>
@@ -370,79 +133,81 @@ const IssuDetails = () => {
         </div>
 
         <div>
-          <div className='mt-4 issue-data-table-div'>
-            <table className='table'>
-              <thead>
-                <tr>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Product</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Serial</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Item</p>
-                  </th>
+          <div className={`mt-4 issue-data-table-div ${isGenerate != 2 ? 'issue-box-details' : ''}`}>
+            {isGenerate == 0 && (
+              <div className="no-file-select-div">
+                <p>No File Select</p>
+              </div>
+            )}
 
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Certification/Tests</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Part</p>
-                  </th>
+            {isGenerate == 1 && (
+              <div className="no-file-select-div">
+                <p>Generating <span className="loading-dot">...</span></p>
+              </div>
+            )}
+            {isGenerate == 2 && (
+              <table className='table'>
+                <thead>
+                  <tr>
+                    {
+                      headers.length > 0 &&
+                      headers.map((item) => (
+                        <th className='table-nav' scope='col'>
+                          <p className='table-th'> {item}</p>
+                        </th>
+                      ))
+                    }
 
-                  <th className='table-navs' scope='col'>
-                    <p className='table-ths'> QR code</p>
-                  </th>
-                  {/* <th className='table-navs' scope='col'>
+
+
+                    <th className='table-navs' scope='col'>
+                      <p className='table-ths'> QR code</p>
+                    </th>
+                    {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
                   </th> */}
-                  <th className='table-navs' scope='col'>
-                    <p className='table-ths'> QR code</p>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {currentData.map((item, index) => (
-                  <tr key={index} className='data-tr'>
-                    <td className='data-td'>
-                      {/* <p className='data-th-text'>{item.brand}</p> */}
-                      <p className='data-th-text'>{item.product}</p>
-                    </td>
-
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.serial}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.item}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.certification}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.part}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text-delete'>{item.delete}</p>
-                    </td>
-
-                    <td>
-                      <div className='issue-svg-div'>
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          width='24'
-                          height='24'
-                          fill='#155C79'
-                          className='bi bi-three-dots'
-                          viewBox='0 0 16 16'>
-                          <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                        </svg>
-                      </div>
-                    </td>
+                    <th className='table-navs' scope='col'>
+                      <p className='table-ths'> QR code</p>
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {columns.map((item, index) => (
+                    <tr key={index} className='data-tr'>
+                      {headers.length > 0 &&
+                        headers.map((head) => (
+                          <td className='data-td'>
+                            {/* <p className='data-th-text'>{item.brand}</p> */}
+                            <p className='data-th-text'>{item[head]}</p>
+                          </td>
+                        ))}
+
+
+
+                      <td className='data-td'>
+                        <p className='data-th-text-delete' onClick={() => {
+                          handleDelete(item.id)
+                        }}>Delete</p>
+                      </td>
+
+                      <td>
+                        <div className='issue-svg-div'>
+                          <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            width='24'
+                            height='24'
+                            fill='#155C79'
+                            className='bi bi-three-dots'
+                            viewBox='0 0 16 16'>
+                            <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                          </svg>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
 
             {/* <div className='pagination'>
               <svg
@@ -474,7 +239,7 @@ const IssuDetails = () => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
