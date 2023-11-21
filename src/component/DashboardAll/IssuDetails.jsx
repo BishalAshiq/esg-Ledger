@@ -5,6 +5,7 @@ import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Link from "next/link";
 
 const IssuDetails = () => {
   const itemsPerPage = 15;
@@ -25,18 +26,44 @@ const IssuDetails = () => {
   const handleDownload = async () => {
     // Make a request to the API endpoint
     try {
-      const response = await axiosInstance.get('download-csv', { responseType: 'blob' });
+      let token = "";
+      if (typeof window !== "undefined") {
+        token = localStorage.getItem("refreshToken");
+      }
 
-      // Trigger the download
-      const blob = new Blob([response.data], { type: 'text/csv' });
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'brand_cutomize_fields.csv';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
+
+      const response = await axiosInstance.get('download-csv', {
+        responseType: 'blob',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      console.log(response.data );
+      if (response.status == 201) {
+
+        toast.error("Please customize fields first.", {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+      } else {
+        const blob = new Blob([response.data], { type: 'text/csv' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'brand_cutomize_fields.csv';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+
+      }
+
+
     } catch (error) {
       console.error('Error downloading CSV:', error);
     }
@@ -128,7 +155,7 @@ const IssuDetails = () => {
           <h6>Preview</h6>
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
-            <button className='previe-issue-btn'>Mint</button>
+            <Link href='/allitems' className='previe-issue-btn'>Mint</Link>
           </div>
         </div>
 

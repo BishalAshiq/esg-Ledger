@@ -1,404 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Downloadicon from "../../../public/downloadicon.svg";
 import QrCode from "../../../public/qrcode.svg";
 import Image from "next/image";
+import axiosInstance from "../../../utils/axios";
+import QRCodeComponent from "./QRCodeComponent";
 
 const ViewAllItemsData = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const data = [
-    // Your data here
-    // Example data for testing
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    {
-      brand: "KIBO",
-      product: "Sydney",
-      serial: "12345",
-      item: "Recycled Leather",
-      certification: "GRS",
-      img1: "/downloadicon.svg",
-      img2: "/qrcode.svg",
-      part: "Upper",
-    },
-    // Add more data as needed
-  ];
+  const [headers, setHeaders] = useState([]);
+  const [columns, setColumns] = useState([]);
 
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  useEffect(() => {
+    axiosInstance.get('/item-list').then((res) => {
+      if (res.data.status == 200) {
+        setHeaders(res.data.header);
+        setColumns(res.data.data);
+      }
+    })
+  }, [])
+
+  const totalPages = Math.ceil(columns.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentData = data.slice(startIndex, endIndex);
+  const currentData = columns.slice(startIndex, endIndex);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -598,29 +226,21 @@ const ViewAllItemsData = () => {
             <table className='table'>
               <thead>
                 <tr>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Brand</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Product</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Serial</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Item</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Certification/Tests</p>
-                  </th>
-                  <th className='table-nav' scope='col'>
-                    <p className='table-th'> Part</p>
-                  </th>
+                  {
+                    headers.length > 0 &&
+                    headers.map((item) => (
+                      <th className='table-nav' scope='col'>
+                        <p className='table-th'> {item}</p>
+                      </th>
+                    ))
+                  }
+
                   <th className='table-nav' scope='col'>
                     <p className='table-th'> QR code</p>
                   </th>
+
                   <th className='table-navs' scope='col'>
-                    <p className='table-ths'> QR code</p>
+                    <p className='table-ths'> QR s</p>
                   </th>
                   {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
@@ -628,31 +248,19 @@ const ViewAllItemsData = () => {
                 </tr>
               </thead>
               <tbody>
-                {currentData.map((item, index) => (
+                {columns.map((item, index) => (
                   <tr key={index} className='data-tr'>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.brand}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.product}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.serial}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.item}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.certification}</p>
-                    </td>
-                    <td className='data-td'>
-                      <p className='data-th-text'>{item.part}</p>
-                    </td>
+                    {headers.length > 0 &&
+                      headers.map((head) => (
+                        <td className='data-td'>
+                          <p className='data-th-text'>{item[head]}</p>
+                        </td>
+                      ))}
+
                     <td>
-                      <div className='tabl-icon'>
+                      <div className='tabl-icon ' style={{ height: '20px', width: '15px', marginTop: '-10px' }}>
                         {/* {item.img1} {item.img1} */}
-                        <Image src={item.img2} width={25} height={25} alt='' />
-                        <Image src={item.img1} width={20} height={20} alt='' />
+                        <QRCodeComponent value={item['brand_name']} size={50} />
                       </div>
                     </td>
 
