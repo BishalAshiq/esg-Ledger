@@ -207,7 +207,9 @@ const page = () => {
 
       <div className='login-footer-div'>
         <div className='login-footer-full-div row'>
-          <div className='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>
+          <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+
+          <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
             <div className='footer-img-div'>
               <img className='footer-img' src={pageLogo.src} alt='' />
               <p className='fotter-ptext'>
@@ -217,9 +219,9 @@ const page = () => {
             </div>
           </div>
 
-          <div className='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6'>
+          <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
             <div className='footer-text-div'>
-              <p>Join the Community</p>
+              <p className='footer-textpp'>Join the Community</p>
 
               <div className='footer-text-icon'>
                 <img className='social-icon' src={pageicon1.src} alt='' />
@@ -229,10 +231,21 @@ const page = () => {
               </div>
             </div>
           </div>
+
+          <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
         </div>
-        <div className='ff-div'>
-          <hr className='f-hr' />
-          <p className='f-text'>© 2023 OneChain Ltd.</p>
+
+        <div className='ffs-div'>
+          <div className='row'>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+            <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
+              <div className=''>
+                <hr className='f-hr' />
+                <p className='f-text'>© 2023 OneChain Ltd.</p>
+              </div>
+            </div>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+          </div>
         </div>
       </div>
 
