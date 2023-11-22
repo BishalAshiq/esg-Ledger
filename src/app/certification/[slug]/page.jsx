@@ -1,18 +1,46 @@
-import React from "react";
-import styles from "../login/login.module.css";
+"use client";
+import React, { useEffect, useState } from "react";
+import styles from "../../login/login.module.css";
 import Nav from "@/component/Navbar/Nav";
-import pageLogo from "../../../public/pageLogomd.png";
-import pageicon1 from "../../../public/social1.svg";
-import pageicon2 from "../../../public/social2.svg";
-import pageicon3 from "../../../public/social3.svg";
-import pageicon4 from "../../../public/social4.svg";
-// import pageicon4 from "../../../public/social4.svg";
-import certified from "../../../public/certified.svg";
-import copy from "../../../public/copy.svg";
-import redix from "../../../public/redix.png";
+import pageLogo from "../../../../public/pageLogomd.png";
+import pageicon1 from "../../../../public/social1.svg";
+import pageicon2 from "../../../../public/social2.svg";
+import pageicon3 from "../../../../public/social3.svg";
+import pageicon4 from "../../../../public/social4.svg";
+// import pageicon4 from "../../../../public/social4.svg";
+import certified from "../../../../public/certified.svg";
+import copy from "../../../../public/copy.svg";
+import redix from "../../../../public/redix.png";
 import Image from "next/image";
+import { useParams } from "next/navigation";
+import axiosInstance from "../../../../utils/axios";
 
 const page = () => {
+  const param = useParams();
+  const [item, setItem] = useState({});
+  const [attribute, setAttribute] = useState('');
+  useEffect(() => {
+
+    axiosInstance.get('item-details/' + param.slug).then((res) => {
+      setItem(res.data.data)
+      const parsedAttribute = JSON.parse((res.data.data.attribute));
+
+      // Set the parsed object in the state
+      setAttribute(parsedAttribute);
+    })
+  }, [])
+
+
+  const formateDate = (date) => {
+    const dateString = '2023-11-22T18:32:49.000000Z';
+    const dateObject = new Date(dateString);
+
+    // Format the date as "d M, Y"
+    const options = { day: 'numeric', month: 'short', year: 'numeric' };
+    const formatted = dateObject.toLocaleDateString('en-US', options);
+    return formatted;
+  }
+
   return (
     <div className='individual'>
       {" "}
@@ -75,9 +103,7 @@ const page = () => {
                 <div className='Blockchain-tagotwo-div'>
                   <Image src={copy.src} width={20} height={20} alt='' />
                   <h5 className='Blockchain-tagotwo'>
-                    f3e516e349300a615665fbcefaf63a53cdcdc9b0a
-                    <br />
-                    d88824d34d7eb2ec3f7255e
+                    {item.block_chain_url}
                   </h5>
                 </div>
 
@@ -88,27 +114,27 @@ const page = () => {
                 </div>
 
                 <div className='Blockchain-ptag-div'>
-                  <p>30-10-2023</p>
+                  <p>{formateDate(item.created_at)}</p>
                 </div>
                 <div className='Blockchain-ptag-divs'>
-                  <p className='block-ptext'>Model No 型號</p>
-                  <h5 className='blockchain-h5'>15692</h5>
+                  <p className='block-ptext'>Brand Name 型號</p>
+                  <h5 className='blockchain-h5'> {item.brand_name}</h5>
                 </div>
                 <div className='Blockchain-ptag-divs'>
                   <p className='block-ptext'>Item 物品</p>
-                  <h5 className='blockchain-h5'>Wooden Retro Arcade </h5>
+                  <h5 className='blockchain-h5'> {item.item}</h5>
                   <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
                 </div>
-
-                <div className='Blockchain-ptag-divs'>
-                  <p className='block-ptext'>Source 來源</p>
-                  <h5 className='blockchain-h5'>
-                    Hong Kong Civil Engineering (Slope Maintenance) and
-                    Upgrading of Typhoon Downed Trees <br /> 香港本土
-                    土木工程(斜坡維修)及颱風倒塌樹木進行升級改造{" "}
-                  </h5>
-                </div>
-                <div className='Blockchain-ptag-divs'>
+                {Object.entries(attribute).map(([key, value]) => (
+                  <div className='Blockchain-ptag-divs'>
+                    <p className='block-ptext'>{key} 來源</p>
+                    <h5 className='blockchain-h5'>
+                      {value} <br /> 香港本土
+                      土木工程(斜坡維修)及颱風倒塌樹木進行升級改造{" "}
+                    </h5>
+                  </div>
+                ))}
+                {/* <div className='Blockchain-ptag-divs'>
                   <p className='block-ptext'>Product - Front 產品正面</p>
                   <h5 className='blockchain-h5'>
                     Hong Kong Timber - Oak 香港木材 - 橡木
@@ -149,7 +175,7 @@ const page = () => {
                   <h5 className='blockchain-h5'>
                     Methodist Centre 循道衛理中心
                   </h5>
-                </div>
+                </div> */}
 
                 <div className='Information-full-div'>
                   <p>Important Information:</p>

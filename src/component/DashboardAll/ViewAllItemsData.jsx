@@ -32,6 +32,41 @@ const ViewAllItemsData = () => {
     setCurrentPage(newPage);
   };
 
+  const [copySuccess, setCopySuccess] = useState(null);
+
+  const copyToClipboard = (copy_url) => {
+    try {
+      // Get the current URL
+      const currentURL = 'localhost:3000/certification/' + copy_url;
+      console.log(currentURL);
+      // Attempt to use the Clipboard API
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(currentURL);
+        setCopySuccess('URL copied to clipboard!');
+      } else {
+        // Fallback for non-secure contexts (HTTP)
+        const textArea = document.createElement('textarea');
+        textArea.value = currentURL;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        setCopySuccess('URL copied to clipboard!');
+        toast.success("URL copied to clipboard!", {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+      }
+    } catch (error) {
+      // Handle errors
+      console.error('Error copying to clipboard:', error);
+      setCopySuccess('Copy to clipboard failed');
+    }
+  };
+
   return (
     <div className='container-fluid'>
       <div>
@@ -239,8 +274,11 @@ const ViewAllItemsData = () => {
                     <p className='table-th'> QR code</p>
                   </th>
 
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Action</p>
+                  </th>
                   <th className='table-navs' scope='col'>
-                    <p className='table-ths'> QR s</p>
+                    <p className='table-ths'> Action</p>
                   </th>
                   {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
@@ -263,7 +301,11 @@ const ViewAllItemsData = () => {
                         <QRCodeComponent value={item['brand_name']} size={50} />
                       </div>
                     </td>
-
+                    <td>
+                      <svg onClick={(e) => copyToClipboard(item['slug'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                      </svg>
+                    </td>
                     {/* <td>
                       <div className='tabl-icon'>
                         QR code and download icon
