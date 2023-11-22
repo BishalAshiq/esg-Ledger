@@ -12,7 +12,7 @@ body {
 
 .nav-logo-img-div {
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 .nav-logo-img {
   /* border: 1px solid gray; */
@@ -23,16 +23,29 @@ body {
 .nav-items-div {
   display: flex;
   gap: 20px;
-  justify-content: start;
-  align-items: center;
-  text-align: center;
+  justify-content: end;
+  margin-top: 6px;
+  /* align-items: center !important; */
+  /* text-align: center !important; */
   text-decoration: none;
 }
 .nav-items-div a {
   text-decoration: none;
   color: #066f69;
   font-weight: 500;
-  font: 1.1rem;
+  font-size: 0.9rem;
+}
+
+.contact-nav-a {
+  display: flex;
+  gap: 5px;
+}
+
+.ff-div {
+  background: #066f69;
+  margin-top: -30px;
+  /* height: 10vh; */
+  /* padding: 0 16%; */
 }
 
 /* Login   */
@@ -157,7 +170,7 @@ body {
   place-items: center;
   text-align: justify; */
   padding: 20px 0 5px 0;
-  margin: 0 30%;
+  /* margin: 0 30%; */
 }
 .footer-img {
   width: 150px;
@@ -166,25 +179,25 @@ body {
 .footer-text-div {
   /* float: right;
    */
+  float: right;
   padding: 20px 0 5px 0;
-  margin: 0 30%;
+  /* margin: 0 30%; */
 }
 
 .footer-text-icon {
   display: flex;
-  gap: 10px;
+  gap: 40px;
 }
 
 .fotter-ptext {
   color: white;
   font-size: 0.8rem;
 }
-
-.ff-div {
-  background: #066f69;
-  margin-top: -30px;
-  /* height: 10vh; */
-  padding: 0 14.5%;
+.footer-textpp {
+  font-size: 0.7rem;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 .f-hr {
