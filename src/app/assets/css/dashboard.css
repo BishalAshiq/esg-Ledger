@@ -131,6 +131,7 @@
 .tabl-icon {
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 
 .table-nav {
