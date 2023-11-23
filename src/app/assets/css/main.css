@@ -81,7 +81,7 @@ body {
   display: grid;
   place-items: center;
   border: 1px solid rgb(255, 255, 255);
-  margin: 7% 30% 0 30%;
+  margin: 6% 30% 0 30%;
 }
 .hrs {
   display: grid;
@@ -122,6 +122,19 @@ body {
   /* background-color: #066f69; */
   margin: 3% 0;
   /* z-index: 3; */
+}
+
+.login-footer-banner-full-div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #066f69;
+}
+.login-footer-banner-div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
 }
 
 /* styles/login/login.module.css */
@@ -433,7 +446,7 @@ body {
 
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
   .login-full-div {
-    margin-top: 10%;
+    margin-top: 2%;
     height: 20vh;
   }
   .certificate-full-div {
@@ -445,5 +458,13 @@ body {
   }
   .hrs {
     margin-top: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-footer-banner-full-div {
+    /* Adjust styles for smaller screens */
+    padding: 10px; /* Example: reduce padding on smaller screens */
+    margin-top: 10px; /* Adjust the margin-top for smaller screens */
   }
 }
