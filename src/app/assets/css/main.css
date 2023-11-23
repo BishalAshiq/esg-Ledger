@@ -9,6 +9,11 @@ body {
   background-color: white;
   padding: 15px 0;
   border: 1px solid gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .nav-logo-img-div {
@@ -80,7 +85,7 @@ body {
   display: grid;
   place-items: center;
   border: 1px solid rgb(255, 255, 255);
-  margin: 2% 30% 0 30%;
+  margin: 7% 30% 0 30%;
 }
 
 .hrs {
@@ -272,9 +277,9 @@ body {
   border: 1px solid white;
   background-color: white;
   width: 100%;
-  padding: 10px 0;
-  margin: 10px;
-  height: 100%;
+  padding: 10px;
+  /* margin: 10px; */
+  /* height: 100%; */
   overflow-x: hidden;
 }
 .redix-divs {
@@ -291,20 +296,20 @@ body {
   background-color: white;
   width: 100%;
   height: auto;
-  padding: 10px 0;
-  margin: 10px;
+  padding: 10px;
+  /* margin-right: 5%; */
 }
 
 .redixSec-div {
   border: 1px solid white;
   background-color: #e9ebe6;
-  padding: 10px 0;
+  padding: 10px;
   border-radius: 10px;
 }
 
 .certificate-full-div {
   /* height: 100vh; */
-  margin: 2% 0 0 0;
+  margin: 7% 0 1% 0;
 }
 .certificate-div {
 }
@@ -367,11 +372,13 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 5px 0;
+
   color: white;
 }
 .Blockchain-tagone {
   font-size: 1.1rem;
+  padding: 5px 0;
+  margin: 1px 0 0 0;
   font-family: "Libre Franklin", sans-serif;
 }
 
@@ -382,6 +389,7 @@ body {
   display: flex;
   /* align-items: center; */
   justify-content: center;
+  text-align: center;
 }
 
 .Blockchain-tagotwo {
@@ -430,12 +438,26 @@ body {
 .Information-full-div {
   font-family: "Libre Bodoni", serif;
   padding: 0 20px;
-  font-size: 0.9;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: black;
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
+  .login-full-div {
+    margin-top: 10%;
+    height: 20vh;
+  }
+  .certificate-full-div {
+    margin-top: 5%;
+  }
+
   .hr {
-    margin: 6% 30% 0 30%;
+    /* margin: 10% 30% 0 30%; */
+  }
+  .hrs {
+    margin-top: 1px;
   }
 }
 

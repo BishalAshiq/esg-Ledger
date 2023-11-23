@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   background-color: #066f69;
-  /* padding: 15px 20px; */
+  padding: 10px 20px;
 }
 
 .dashnav-img {
@@ -43,10 +43,10 @@
 
 .ViewAll-Items-div {
   /* border: 1px solid gray; */
-  width: 90%;
+  width: 100%;
   overflow-x: hidden;
-  margin: 10% 0;
-  padding: 0 3% 0 3%;
+  /* margin: 10% 0; */
+  padding: 6%;
 }
 
 .check-div {
@@ -202,6 +202,9 @@
   display: flex;
   justify-content: center;
   margin-bottom: -10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 /* Issue Details  */
