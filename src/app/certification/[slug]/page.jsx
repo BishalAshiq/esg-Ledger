@@ -92,7 +92,9 @@ const page = () => {
               </div>
             </div>
 
-            <div className='col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 redix-sec-div'>
+            <div className='col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 '>
+
+            <div className='redix-sec-div'>
               <div className='redixSec-div'>
                 <div className='Blockchain-tagone-div'>
                   <h5 className='Blockchain-tagone'>
@@ -201,6 +203,7 @@ const page = () => {
                     </ol>
                   </ul>
                 </div>
+              </div>
               </div>
             </div>
             <div className='col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>

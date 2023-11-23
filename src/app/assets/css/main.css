@@ -381,39 +381,53 @@ body {
 .Blockchain-tagone-div {
   background-color: #066f69;
   display: flex;
-  margin: 20px 20px;
   justify-content: center;
   align-items: center;
   text-align: center;
-
+  
   color: white;
 }
 .Blockchain-tagone {
+
   font-size: 1.1rem;
   padding: 5px 0;
   margin: 1px 0 0 0;
   font-family: "Libre Franklin", sans-serif;
 }
 
-.Blockchain-tagotwo-div {
-  margin: 10px 20px;
+/* .Blockchain-tagotwo-div {
   gap: 10px;
-  /* padding: 0 50px; */
+  padding: 0 50px;
+  display: flex; */
+  /* flex-wrap: wrap; */
+  /* align-items: center;
+  justify-content: center;
+  text-align: center;
+} */
+.Blockchain-tagotwo-div {
+  gap: 10px;
+  padding: 0 50px;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+
+
 .Blockchain-tagotwo {
   text-align: center;
+  margin: 10px 20px;
   font-size: 1rem;
-  font-size: 400;
+  /* font-size: 400; */
   /* overflow: hidden; */
   /* text-overflow: ellipsis; */
   /* white-space: nowrap; */
   font-family: "Libre Franklin", sans-serif;
   max-width: 100%;
+  white-space: pre-line;
+  /* text-overflow: ellipsis; */
+  overflow: hidden; 
 }
 
 .Blockchain-ptag-div {
