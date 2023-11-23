@@ -452,12 +452,14 @@ body {
   .certificate-full-div {
     margin-top: 5%;
   }
-
+  .slider-login {
+    margin-bottom: 15px;
+  }
   .hr {
     /* margin: 10% 30% 0 30%; */
   }
   .hrs {
-    margin-top: 1px;
+    /* margin-top: 0.1%; */
   }
 }
 

@@ -259,6 +259,7 @@
   height: 5vh;
   border-radius: 2px;
   outline: none;
+  border: none;
 }
 
 .data-th-text-delete {
