@@ -131,6 +131,7 @@
 .tabl-icon {
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 
 .table-nav {
@@ -259,6 +260,7 @@
   height: 5vh;
   border-radius: 2px;
   outline: none;
+  border: none;
 }
 
 .data-th-text-delete {
