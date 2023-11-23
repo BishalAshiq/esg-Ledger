@@ -17,7 +17,7 @@ const page = () => {
     <div className='individual'>
       {" "}
       <div className={styles["background-img"]}>
-        <div>
+        <div className=''>
           <Nav />
         </div>
 

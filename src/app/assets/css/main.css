@@ -8,6 +8,11 @@ body {
   background-color: white;
   padding: 15px 0;
   border: 1px solid gray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .nav-logo-img-div {
@@ -76,7 +81,7 @@ body {
   display: grid;
   place-items: center;
   border: 1px solid rgb(255, 255, 255);
-  margin: 2% 30% 0 30%;
+  margin: 7% 30% 0 30%;
 }
 .hrs {
   display: grid;
@@ -291,7 +296,7 @@ body {
 
 .certificate-full-div {
   /* height: 100vh; */
-  margin: 2% 0 0 0;
+  margin: 5% 0 0 0;
 }
 .certificate-div {
 }
