@@ -79,7 +79,6 @@ const page = () => {
                     <Image src={copy.src} width={20} height={20} alt='' />
                     <h5 className='Blockchain-tagotwo'>
                       f3e516e349300a615665fbcefaf63a53cdcdc9b0a
-                      <br />
                       d88824d34d7eb2ec3f7255e
                     </h5>
                   </div>

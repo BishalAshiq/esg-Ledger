@@ -637,7 +637,7 @@ const ViewAllItemsData = () => {
                       <p className='data-th-text'>{item.product}</p>
                     </td>
                     <td className='data-td'>
-                      <p className='data-th-text'>{item.serial}</p>
+                      <p className='data-th-texts'>{item.serial}</p>
                     </td>
                     <td className='data-td'>
                       <p className='data-th-text'>{item.item}</p>

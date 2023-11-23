@@ -383,11 +383,10 @@ body {
 }
 
 .Blockchain-tagotwo-div {
-  margin: 10px 20px;
   gap: 10px;
-  /* padding: 0 50px; */
+  padding: 0 50px;
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: center;
   text-align: center;
 }
@@ -395,10 +394,11 @@ body {
 .Blockchain-tagotwo {
   text-align: center;
   font-size: 1rem;
-  font-size: 400;
+
   /* overflow: hidden; */
   /* text-overflow: ellipsis; */
   /* white-space: nowrap; */
+  margin: 10px 20px;
   font-family: "Libre Franklin", sans-serif;
   max-width: 100%;
 }
