@@ -286,7 +286,8 @@ const ViewAllItemsData = () => {
                 </tr>
               </thead>
               <tbody>
-                {columns.map((item, index) => (
+                {columns.length> 0 &&
+                columns.map((item, index) => (
                   <tr key={index} className='data-tr'>
                     {headers.length > 0 &&
                       headers.map((head) => (
@@ -298,7 +299,7 @@ const ViewAllItemsData = () => {
                     <td>
                       <div className='tabl-icon ' style={{ height: '20px', width: '15px', marginTop: '-10px' }}>
                         {/* {item.img1} {item.img1} */}
-                        <QRCodeComponent value={item['brand_name']} size={50} />
+                        <QRCodeComponent value={item['lsg_unique_id']} size={50} />
                       </div>
                     </td>
                     <td>
@@ -325,7 +326,8 @@ const ViewAllItemsData = () => {
                       </div>
                     </td>
                   </tr>
-                ))}
+                ))
+                  }
               </tbody>
             </table>
 

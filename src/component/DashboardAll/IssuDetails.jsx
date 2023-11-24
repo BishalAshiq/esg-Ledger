@@ -32,7 +32,7 @@ const IssuDetails = () => {
       }
 
 
-      const response = await axiosInstance.get('download-csv', {
+      const response = await axiosInstance.get('download-xls', {
         responseType: 'blob',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ const IssuDetails = () => {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'brand_cutomize_fields.csv';
+        a.download = 'brand_cutomize_fields.xlsx';
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

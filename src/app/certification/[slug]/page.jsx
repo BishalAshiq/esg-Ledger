@@ -121,7 +121,7 @@ const page = () => {
                   <div className='Blockchain-ptag-div'>
                     <p>{formateDate(item.created_at)}</p>
                   </div>
-                  <div className='Blockchain-ptag-divs'>
+                  {/* <div className='Blockchain-ptag-divs'>
                     <p className='block-ptext'>Brand Name 型號</p>
                     <h5 className='blockchain-h5'> {item.brand_name}</h5>
                   </div>
@@ -129,13 +129,12 @@ const page = () => {
                     <p className='block-ptext'>Item 物品</p>
                     <h5 className='blockchain-h5'> {item.item}</h5>
                     <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
-                  </div>
+                  </div> */}
                   {Object.entries(attribute).map(([key, value]) => (
                     <div className='Blockchain-ptag-divs'>
-                      <p className='block-ptext'>{key} 來源</p>
+                      <p className='block-ptext'>{key} </p>
                       <h5 className='blockchain-h5'>
-                        {value} <br /> 香港本土
-                        土木工程(斜坡維修)及颱風倒塌樹木進行升級改造{" "}
+                        {value} <br /> {" "}
                       </h5>
                     </div>
                   ))}
