@@ -427,7 +427,9 @@ body {
   max-width: 100%;
   white-space: pre-line;
   /* text-overflow: ellipsis; */
-  overflow: hidden; 
+  /* overflow: hidden;  */
+  overflow-wrap:break-word;
+  cursor: pointer;
 }
 
 .Blockchain-ptag-div {
@@ -545,4 +547,9 @@ body {
   100% {
     text-indent: 0em; /* Adjust distance if needed */
   }
+}
+
+.no-decoration {
+  color: black;
+  text-decoration: none;
 }

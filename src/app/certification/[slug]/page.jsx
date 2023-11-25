@@ -14,6 +14,7 @@ import redix from "../../../../public/redix.png";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
+import Link from "next/link";
 
 const page = () => {
   const param = useParams();
@@ -104,14 +105,14 @@ const page = () => {
                       Blockchain Transaction Hx 區塊鏈上鏈紀錄
                     </h5>
                   </div>
-
-                  <div className='Blockchain-tagotwo-div'>
-                    <Image src={copy.src} width={20} height={20} alt='' />
-                    <h5 className='Blockchain-tagotwo'>
-                      {item.block_chain_url}
-                    </h5>
-                  </div>
-
+                  <Link className="no-decoration" href={`https://www.onechainscan.io/transaction/${item.block_chain_url}`} target="_blank">
+                    <div className='Blockchain-tagotwo-div'>
+                      <Image src={copy.src} width={20} height={20} alt='' />
+                      <h5 className='Blockchain-tagotwo'>
+                        {item.block_chain_url}
+                      </h5>
+                    </div>
+                  </Link>
                   <div className='Blockchain-tagone-div'>
                     <h5 className='Blockchain-tagone'>
                       Issue Date 區塊鏈上鏈日期

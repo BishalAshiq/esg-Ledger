@@ -8,11 +8,9 @@ const dashNav = () => {
   const handleLogout = () => {
     if (typeof window !== "undefined") {
       localStorage.removeItem("refreshToken");
-    }
-    if (typeof window !== "undefined") {
+
       localStorage.removeItem("userInfo");
-    }
-    if (typeof window !== "undefined") {
+
       localStorage.removeItem("userId");
     }
     Cookies.remove('refreshToken');

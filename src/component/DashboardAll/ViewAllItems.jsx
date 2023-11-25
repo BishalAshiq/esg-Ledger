@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import ViewAllItemsData from "./ViewAllItemsData";
 import axiosInstance from "../../../utils/axios";
 import { toast } from "react-toastify";
-
+import { useRouter } from "next/navigation";
 
 const ViewAllItems = () => {
   const [showDivs, setShowDivs] = useState(true);
   const [showAdditionalComponent, setShowAdditionalComponent] = useState(false);
   const [showPagePreview, setShowPagePreview] = useState(false);
   // Initial row
-
+  const router = useRouter();
   // const handleIconClick = (id) => {
   //   const updatedRows = rows.filter((row) => row.id !== id);
   //   setRows(updatedRows);
@@ -128,6 +128,17 @@ const ViewAllItems = () => {
           },
         });
 
+      }
+      if (res.data.status == 401) {
+        toast.error(res.data.message, {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        localStorage.removeItem(refreshToken);
+        router.push('/');
       }
       else {
         toast.error("Login failed. Invalid Credentials.", {

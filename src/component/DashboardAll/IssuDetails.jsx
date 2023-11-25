@@ -6,10 +6,12 @@ import axiosInstance from "../../../utils/axios";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const IssuDetails = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
+  
 
   const [headers, setHeaders] = useState([]);
   const [columns, setColumns] = useState([]);
@@ -22,6 +24,7 @@ const IssuDetails = () => {
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
+  const router = useRouter();
 
   const handleDownload = async () => {
     // Make a request to the API endpoint
@@ -40,7 +43,18 @@ const IssuDetails = () => {
           'Authorization': `Bearer ${token}`,
         },
       });
-      console.log(response.data );
+      if (res.data.status == 401) {
+        toast.error(res.data.message, {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        localStorage.removeItem(refreshToken);
+        router.push('/');
+      }
+
       if (response.status == 201) {
 
         toast.error("Please customize fields first.", {
@@ -100,7 +114,26 @@ const IssuDetails = () => {
           setColumns(res.data.data);
           SetIsGenerate(2);
         }
+        if (res.data.status == 201) {
+          // toast.error(res.data.message)
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+        }
         if (res.data.status == 401) {
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          localStorage.removeItem(refreshToken);
+          router.push('/');
         }
       });
   };
