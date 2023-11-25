@@ -140,15 +140,7 @@ const ViewAllItems = () => {
         localStorage.removeItem(refreshToken);
         router.push('/');
       }
-      else {
-        toast.error("Login failed. Invalid Credentials.", {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-      }
+      
     })
 
 
