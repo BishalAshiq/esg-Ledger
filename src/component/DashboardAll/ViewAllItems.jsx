@@ -137,7 +137,7 @@ const ViewAllItems = () => {
             color: "black",
           },
         });
-        localStorage.removeItem(refreshToken);
+        localStorage.removeItem("refreshToken");
         router.push('/');
       }
       

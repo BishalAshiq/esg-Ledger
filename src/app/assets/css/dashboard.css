@@ -136,7 +136,7 @@
 
 .table-nav {
   background-color: #f4f4f4 !important;
-  border-right: 1px solid gray;
+  border-right: 1px solid rgb(165, 165, 165);
 }
 .table-navs {
   background-color: #f4f4f4 !important;
@@ -206,6 +206,18 @@
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
+}
+.data-th-texts {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 /* Issue Details  */
