@@ -284,7 +284,7 @@ body {
 }
 .redix-divs {
   border: 1px solid white;
-  background-color: #e9ebe6;
+  background-color: #ececec;
   width: 100%;
   padding: 5px;
 
@@ -302,7 +302,7 @@ body {
 
 .redixSec-div {
   border: 1px solid white;
-  background-color: #e9ebe6;
+  background-color: #ececec;
   padding: 10px;
   border-radius: 10px;
 }
@@ -333,10 +333,11 @@ body {
   align-items: center;
   text-align: center;
   margin: 10px 0;
+  padding: 0 15px;
 }
 
 .certificate-tags {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
 }
@@ -363,6 +364,7 @@ body {
   text-align: center;
   margin-bottom: 30px;
   font-family: "Roboto", sans-serif;
+  padding: 0 18px;
 }
 
 .Blockchain-tagone-div {
@@ -426,7 +428,7 @@ body {
   color: #066f69;
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .blockchain-h5 {
@@ -477,6 +479,21 @@ body {
   }
   .block-ptwotext {
     margin-top: -10px;
+  }
+  .certificate-tags-div {
+    padding: 0 5px;
+  }
+
+  .certificate-tags {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .certificate-ptag {
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
   }
 }
 
