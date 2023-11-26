@@ -155,6 +155,30 @@ const page = () => {
 
                   <div className='Information-full-div'>
                     <p>Important Information:</p>
+                    <p>
+                      {" "}
+                      1. This certificate is non-transferable and is permanently
+                      recorded on the blockchain
+                    </p>
+                    <p className='block-ptwotext'>
+                      {" "}
+                      2. For any inquiries or conernsm, feel free to contact us
+                      at enquiries@certledger.io
+                    </p>
+                  </div>
+
+                  <div className='Information-full-div'>
+                    <p>重要信息:</p>
+                    <p> 1. 此證書不可轉讓，已永久記錄在區塊鏈上。</p>
+                    <p className='block-ptwotext'>
+                      {" "}
+                      2. 如有任何疑問或關切事 項，可電郵至:
+                      enquiries@certledger.io
+                    </p>
+                  </div>
+                  {/* 
+                  <div className='Information-full-div'>
+                    <p>Important Information:</p>
                     <ul>
                       <ol>
                         1. This certificate is non-transferable and is
@@ -167,16 +191,15 @@ const page = () => {
                     </ul>
                   </div>
                   <div className='Information-full-div'>
-                    <p>重要信息::</p>
+                    <p>重要信息:</p>
                     <ul>
                       <ol>1. 此證書不可轉讓，已永久記錄在區塊鏈上。</ol>
                       <ol>
-                        2. 如有任何疑問或關切事
-                        className="block-ptext"項，可電郵至:
-                        enquiries@certledger.ioh5 className="blockchain-h5"
+                        2. 如有任何疑問或關切事 項，可電郵至:
+                        enquiries@certledger.io
                       </ol>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
