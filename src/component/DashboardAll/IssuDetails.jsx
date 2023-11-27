@@ -87,13 +87,21 @@ const IssuDetails = () => {
 
   const handleFileChange = (e) => {
     SetIsGenerate(1);
-    console.log("handlefile change");
+    // console.log("handlefile change");
     const formData = new FormData();
     formData.append("csv_file", e.target.files[0]);
+
+    let token = "";
+
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+
     axiosInstance
       .post(`/upload-csv`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
+          'Authorization': `Bearer ${token}`,
         },
       })
       .then((res) => {
@@ -191,9 +199,8 @@ const IssuDetails = () => {
 
         <div>
           <div
-            className={` issue-data-table-div ${
-              isGenerate != 2 ? "issue-box-details" : ""
-            }`}>
+            className={` issue-data-table-div ${isGenerate != 2 ? "issue-box-details" : ""
+              }`}>
             {isGenerate == 0 && (
               <div className='no-file-select-div'>
                 <p>No File Select</p>
