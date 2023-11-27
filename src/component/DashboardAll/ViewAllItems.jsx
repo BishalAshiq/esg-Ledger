@@ -146,7 +146,6 @@ const ViewAllItems = () => {
 
   }
 
-  console.log(rows);
   return (
     <div>
       {showPagePreview ? (

@@ -62,9 +62,10 @@ body {
 
 /* Login   */
 
-.ad-tag {
+.heading-tag {
   color: #066f69;
   font-size: 1.2rem;
+  display: block;
 }
 
 .login-banner-img-input-div {
