@@ -8,7 +8,7 @@ export const config = {
 }
 
 export function middleware(request) {
-    console.log(request.cookies.getAll().length);
+    // console.log(request.cookies.getAll().length);
     if (request.cookies.getAll().length == 0) {
         return NextResponse.redirect(new URL('/', request.url).toString(), { status: 307 });
     }

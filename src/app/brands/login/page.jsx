@@ -2,19 +2,19 @@
 import Nav from "@/component/Navbar/Nav";
 import React, { Component, useState } from "react";
 // import Slider from "react-slick";
-import LoginBanner from "../../../public/loginBanner.png";
-import Brands from "../../../public/brands.jpeg";
-import pageLogo from "../../../public/pageLogomd.png";
-import pageicon1 from "../../../public/social1.svg";
-import pageicon2 from "../../../public/social2.svg";
-import pageicon3 from "../../../public/social3.svg";
-import pageicon4 from "../../../public/social4.svg";
+import LoginBanner from "../../../../public/loginBanner.png";
+import Brands from "../../../../public/brands.jpeg";
+import pageLogo from "../../../../public/pageLogomd.png";
+import pageicon1 from "../../../../public/social1.svg";
+import pageicon2 from "../../../../public/social2.svg";
+import pageicon3 from "../../../../public/social3.svg";
+import pageicon4 from "../../../../public/social4.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "../login/login.module.css";
+import styles from "../../login/login.module.css";
 import { toast } from "react-toastify";
-import axiosInstance from "../../../utils/axios";
+import axiosInstance from "../../../../utils/axios";
 import { useRouter } from "next/navigation";
 import Cookies from 'js-cookie';
 
