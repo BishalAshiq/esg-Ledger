@@ -124,8 +124,9 @@ body {
   color: white;
   /* border: 1px solid white; */
   display: flex;
+  width: 500px;
   justify-content: center;
-  margin: 12% 30% 0 30%;
+  margin: 15% 30% 0 30%;
 }
 
 .login-footer-full-div {
@@ -153,6 +154,7 @@ body {
 .slick-dots {
   position: absolute;
   bottom: 20px;
+  height: 45px;
   list-style: none;
   display: flex;
   align-items: center;
@@ -161,7 +163,13 @@ body {
 }
 
 .slick-dots li {
-  margin: 0 8px;
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 33px;
+  margin: 0 5px;
+  padding: 0;
+  cursor: pointer;
 }
 
 .slick-dots li button {
@@ -243,6 +251,8 @@ body {
 .fotter-ptext {
   color: white;
   font-size: 0.8rem;
+  /* border: 1px solid gray; */
+  /* width: 241px; */
 }
 
 .footer-textpp {
@@ -525,6 +535,35 @@ body {
     font-size: 1.4rem;
     font-weight: 700;
     font-family: "Roboto", sans-serif;
+  }
+  .fist-slider-text-div {
+    color: white;
+    /* border: 1px solid rgb(236, 14, 14); */
+    display: flex;
+    justify-content: center;
+    margin: 16% 30% 0 30%;
+  }
+  .slick-dots {
+    height: 10px;
+  }
+  .pioneeringtext {
+    /* border: 1px solid gray; */
+    /* width: 400px; */
+    /* display: grid;
+    place-items: center; */
+    color: white;
+    font-size: 20px;
+    line-height: 1;
+    margin: -1.4% 30%;
+  }
+  .login-banner-img-input-div {
+    display: flex;
+    justify-content: center;
+    padding: 77px 0;
+    width: 100%;
+  }
+  .login-banner-img-input-divs {
+    /* border: 1px solid white; */
   }
 }
 

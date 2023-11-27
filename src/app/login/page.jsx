@@ -16,8 +16,7 @@ import styles from "../login/login.module.css";
 import { toast } from "react-toastify";
 import axiosInstance from "../../../utils/axios";
 import { useRouter } from "next/navigation";
-import Cookies from 'js-cookie';
-
+import Cookies from "js-cookie";
 
 const page = () => {
   const router = useRouter();
@@ -61,61 +60,56 @@ const page = () => {
     password: "",
   });
 
-
   const handleFormChange = (e) => {
     setFormData({
-      ...formData, [e.target.name]: e.target.value
-    })
-  }
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleLogin = async (e) => {
-
     e.preventDefault();
 
-    axiosInstance.post('/login', formData, {
-      withCredentials: true,
-    }).then(res => {
+    axiosInstance
+      .post("/login", formData, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          // router.push("/newsfeed");
 
-      if (res.data.status == 200) {
-        // router.push("/newsfeed");
+          // setCookiesAuthRender(res.data)
+          if (typeof window != "undefined") {
+            localStorage.setItem("refreshToken", res.data.token);
+            localStorage.setItem("userInfo", JSON.stringify(res.data.user));
+            localStorage.setItem("fullname", res.data.user.name);
 
+            localStorage.setItem("userId", res.data.user.id);
+          }
+          Cookies.set("refreshToken", res.data.token, {
+            path: "/",
+            expires: 7,
+          });
 
-        // setCookiesAuthRender(res.data)
-        if (typeof window != "undefined") {
-
-          localStorage.setItem('refreshToken', res.data.token);
-          localStorage.setItem('userInfo', JSON.stringify(res.data.user));
-          localStorage.setItem('fullname', res.data.user.name);
-
-          localStorage.setItem('userId', res.data.user.id);
+          router.push("/dashboard");
+        } else if (res.data.status == 401) {
+          toast.error("Login failed. Please check your email and password.", {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+        } else {
+          toast.error("Login failed. Invalid Credentials.", {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
         }
-        Cookies.set('refreshToken', res.data.token, { path: '/', expires: 7 });
-
-
-        router.push('/dashboard');
-
-
-      } else if (res.data.status == 401) {
-        toast.error("Login failed. Please check your email and password.", {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-      }
-      else {
-        toast.error("Login failed. Invalid Credentials.", {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-      }
-    })
-
-
+      });
   };
 
   return (
@@ -129,12 +123,12 @@ const page = () => {
           <div>
             <div className='fist-slider-text-div'>
               <h1>
-                Unlocking ESG Trust and Transparency with Block chain integrity
+                Unlocking ESG Trust and Transparency with Blockchain integrity
               </h1>
             </div>
           </div>
           <div>
-            <div className='p-3'>
+            <div className='login-banner-img-input-divs'>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
@@ -146,26 +140,43 @@ const page = () => {
 
                 <div className='login-banner-inputs-div'>
                   <h6 className='heading-tag'>Brand Login</h6>
-                  <form className="content" onSubmit={handleLogin} method="post">
+                  <form
+                    className='content'
+                    onSubmit={handleLogin}
+                    method='post'>
                     <div>
                       {" "}
                       <label for='email'>Email</label> <br />
-                      <input type='email' id='email' name='email' onChange={handleFormChange} value={formData.email} required />
+                      <input
+                        type='email'
+                        id='email'
+                        name='email'
+                        onChange={handleFormChange}
+                        value={formData.email}
+                        required
+                      />
                     </div>
                     <div>
                       {" "}
                       <label for='email'>Password</label> <br />
-                      <input type='password' id='Password' name='password' value={formData.password} required
-                        onChange={handleFormChange} />
+                      <input
+                        type='password'
+                        id='Password'
+                        name='password'
+                        value={formData.password}
+                        required
+                        onChange={handleFormChange}
+                      />
                     </div>
 
                     <p className='forget-text'>Forget Password</p>
 
                     <div className='submit-btn-div'>
-                      <button type="submit" className='submit-btn'>Log in</button>
+                      <button type='submit' className='submit-btn'>
+                        Log in
+                      </button>
                     </div>
                   </form>
-
                 </div>
               </div>
             </div>
@@ -218,8 +229,8 @@ const page = () => {
               <div className=''>
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
-                  enquiries@esgledger.co
+                  For inquiries or more information <br />
+                  please contact: enquiries@esgledger.co
                 </p>
               </div>
 
