@@ -51,7 +51,7 @@ const ViewAllItemsData = () => {
   const copyToClipboard = (copy_url) => {
     try {
       // Get the current URL
-      const currentURL = 'http://43.134.110.133/certification/' + copy_url;
+      const currentURL = 'http://esgledger.co/products/' + copy_url;
       console.log(currentURL);
       // Attempt to use the Clipboard API
       if (navigator.clipboard) {
