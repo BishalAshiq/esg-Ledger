@@ -11,7 +11,6 @@ import { useRouter } from "next/navigation";
 const IssuDetails = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
-  
 
   const [headers, setHeaders] = useState([]);
   const [columns, setColumns] = useState([]);
@@ -34,13 +33,12 @@ const IssuDetails = () => {
         token = localStorage.getItem("refreshToken");
       }
 
-
-      const response = await axiosInstance.get('download-xls', {
-        responseType: 'blob',
+      const response = await axiosInstance.get("download-xls", {
+        responseType: "blob",
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${token}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${token}`,
         },
       });
       if (response.status == 401) {
@@ -52,11 +50,10 @@ const IssuDetails = () => {
           },
         });
         localStorage.removeItem("refreshToken");
-        router.push('/');
+        router.push("/");
       }
 
       if (response.status == 201) {
-
         toast.error("Please customize fields first.", {
           position: "top-right",
           style: {
@@ -65,40 +62,32 @@ const IssuDetails = () => {
           },
         });
       } else {
-        const blob = new Blob([response.data], { type: 'text/csv' });
+        const blob = new Blob([response.data], { type: "text/csv" });
         const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
+        const a = document.createElement("a");
         a.href = url;
-        a.download = 'brand_cutomize_fields.xlsx';
+        a.download = "brand_cutomize_fields.xlsx";
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
         window.URL.revokeObjectURL(url);
-
       }
-
-
     } catch (error) {
-      console.error('Error downloading CSV:', error);
+      console.error("Error downloading CSV:", error);
     }
-
-
   };
 
-
   const handleFileClick = (e) => {
-
     e.stopPropagation();
     const fileInput = document.getElementById("fileInput");
     if (fileInput) {
       fileInput.click();
     }
-
   };
 
   const handleFileChange = (e) => {
     SetIsGenerate(1);
-    console.log("handlefile change")
+    console.log("handlefile change");
     const formData = new FormData();
     formData.append("csv_file", e.target.files[0]);
     axiosInstance
@@ -108,7 +97,6 @@ const IssuDetails = () => {
         },
       })
       .then((res) => {
-
         if (res.data.status == 200) {
           setHeaders(res.data.header);
           setColumns(res.data.data);
@@ -133,17 +121,17 @@ const IssuDetails = () => {
             },
           });
           localStorage.removeItem("refreshToken");
-          router.push('/');
+          router.push("/");
         }
       });
   };
   const handleDelete = (deleteId) => {
     const formData = {
-      id: deleteId
-    }
-    axiosInstance.post('/delete-item', formData).then((res) => {
+      id: deleteId,
+    };
+    axiosInstance.post("/delete-item", formData).then((res) => {
       if (res.data.status == 200) {
-        const indexToDelete = columns.findIndex(item => item.id === deleteId);
+        const indexToDelete = columns.findIndex((item) => item.id === deleteId);
 
         if (indexToDelete !== -1) {
           // Create a new array without the deleted item
@@ -162,15 +150,17 @@ const IssuDetails = () => {
           });
         }
       }
-    })
-  }
+    });
+  };
   return (
     <div className='container-fluid mt-4'>
       <div>
-        <h6>Upload recipients and certificates data</h6>
+        <h6 className='tag-text'>Upload recipients and certificates data</h6>
         <div className='issue-upload-full-div'>
-          <div className="csv-a-div">
-            <a className='csv-a text-center' onClick={handleDownload}>Download the CSV template</a>
+          <div className='csv-a-div'>
+            <a className='csv-a text-center' onClick={handleDownload}>
+              Download the CSV template
+            </a>
           </div>
           <div className='issue-upload-div' onClick={handleFileClick}>
             <Image src={upFile.src} width={80} height={80} alt='' />
@@ -178,47 +168,55 @@ const IssuDetails = () => {
             <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
             </p>
-            <input type="file" id="fileInput" onChange={handleFileChange} style={{ display: 'none' }} />
+            <input
+              type='file'
+              id='fileInput'
+              onChange={handleFileChange}
+              style={{ display: "none" }}
+            />
           </div>
         </div>
       </div>
 
       <div className='mt-5'>
         <div className='previe-issue-div'>
-          <h6>Preview</h6>
+          <h6 className='tag-text'>Preview</h6>
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
-            <Link href='/allitems' className='previe-issue-btn'>Mint</Link>
+            <Link href='/allitems'>
+              <p className='previe-issue-btn'> Mint</p>
+            </Link>
           </div>
         </div>
 
         <div>
-          <div className={`mt-4 issue-data-table-div ${isGenerate != 2 ? 'issue-box-details' : ''}`}>
+          <div
+            className={` issue-data-table-div ${
+              isGenerate != 2 ? "issue-box-details" : ""
+            }`}>
             {isGenerate == 0 && (
-              <div className="no-file-select-div">
+              <div className='no-file-select-div'>
                 <p>No File Select</p>
               </div>
             )}
 
             {isGenerate == 1 && (
-              <div className="no-file-select-div">
-                <p>Generating <span className="loading-dot">...</span></p>
+              <div className='no-file-select-div'>
+                <p>
+                  Generating <span className='loading-dot'>...</span>
+                </p>
               </div>
             )}
             {isGenerate == 2 && (
               <table className='table'>
                 <thead>
                   <tr>
-                    {
-                      headers.length > 0 &&
+                    {headers.length > 0 &&
                       headers.map((item) => (
                         <th className='table-nav' scope='col'>
                           <p className='table-th'> {item}</p>
                         </th>
-                      ))
-                    }
-
-
+                      ))}
 
                     <th className='table-navs' scope='col'>
                       <p className='table-ths'> QR code</p>
@@ -242,12 +240,14 @@ const IssuDetails = () => {
                           </td>
                         ))}
 
-
-
                       <td className='data-td'>
-                        <p className='data-th-text-delete' onClick={() => {
-                          handleDelete(item.id)
-                        }}>Delete</p>
+                        <p
+                          className='data-th-text-delete'
+                          onClick={() => {
+                            handleDelete(item.id);
+                          }}>
+                          Delete
+                        </p>
                       </td>
 
                       <td>
@@ -299,7 +299,7 @@ const IssuDetails = () => {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 
