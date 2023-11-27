@@ -137,7 +137,11 @@ const IssuDetails = () => {
     const formData = {
       id: deleteId,
     };
-    axiosInstance.post("/delete-item", formData).then((res) => {
+    axiosInstance.post("/delete-item", formData, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    }).then((res) => {
       if (res.data.status == 200) {
         const indexToDelete = columns.findIndex((item) => item.id === deleteId);
 
