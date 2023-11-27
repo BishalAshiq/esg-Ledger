@@ -126,20 +126,13 @@ const page = () => {
       <div className='login-full-div'>
         <div className='hr' />
         <Slider {...settings} className='slider-login'>
-          <div>
-            <div className='fist-slider-text-div'>
-              <h1>
-                Unlocking ESG Trust and Transparency with Block chain integrity
-              </h1>
-            </div>
-          </div>
-          <div>
+        <div>
             <div className='p-3'>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
                     className='login-banner-img'
-                    src={LoginBanner.src}
+                    src={Brands.src}
                     alt=''
                   />
                 </div>
@@ -171,12 +164,20 @@ const page = () => {
             </div>
           </div>
           <div>
+            <div className='fist-slider-text-div'>
+              <h1>
+                Unlocking ESG Trust and Transparency with Block chain integrity
+              </h1>
+            </div>
+          </div>
+        
+          <div>
             <div className='p-3'>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
                     className='login-banner-img'
-                    src={LoginBanner.src}
+                    src={Brands.src}
                     alt=''
                   />
                 </div>
