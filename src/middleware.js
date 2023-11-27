@@ -8,12 +8,13 @@ export const config = {
 }
 
 export function middleware(request) {
-
+    console.log(request.cookies.getAll().length);
     if (request.cookies.getAll().length == 0) {
         return NextResponse.redirect(new URL('/', request.url).toString(), { status: 307 });
     }
     else {
-        if (request.cookies.get('myCookieName')?.value != "") {
+        // console.log(request.cookies.get('refreshToken')?.value);
+        if (request.cookies.get('refreshToken')?.value != undefined) {
             return NextResponse.next();
         } else {
             return NextResponse.redirect(new URL('/', request.url).toString(), { status: 307 });

@@ -8,13 +8,13 @@ import axiosInstance from "../../../utils/axios";
 import { useRouter } from "next/navigation";
 
 const page = () => {
-    const [activeDiv, setActiveDiv] = useState(3);
+    const [activeDiv, setActiveDiv] = useState(2);
     const router = useRouter();
     const handleTextClick = (divId) => {
         // setActiveDiv(divId);
         router.push('/dashboard');
     };
-   
+
 
     return (
         <div>
@@ -28,15 +28,22 @@ const page = () => {
                     <div className='dash-sidebar-div'>
                         <div
                             onClick={() => handleTextClick(1)}
-                            className={`dashboard-side-bar-li ${activeDiv == 1 || activeDiv == 3 ? "active-das" : ""
+                            className={`dashboard-side-bar-li ${activeDiv === 1 ? "active-das" : ""
                                 }`}>
-                            <h6>View all brands</h6>
+                            <h6>Upload new products</h6>
                         </div>
                         <div
                             onClick={() => handleTextClick(2)}
-                            className={`dashboard-side-bar-li ${(activeDiv == 2) ? "active-das" : ""
+                            className={`dashboard-side-bar-li ${activeDiv === 2 ? "active-das" : ""
                                 }`}>
-                            <h6>View all items</h6>
+                            <h6>View all products</h6>
+                        </div>
+
+                        <div
+                            onClick={() => handleTextClick(3)}
+                            className={`dashboard-side-bar-li ${activeDiv === 3 ? "active-das" : ""
+                                }`}>
+                            <h6>Customie data</h6>
                         </div>
                     </div>
                 </div>
@@ -50,10 +57,11 @@ const page = () => {
                         </div>
                     )}
 
-                    {activeDiv == 2 && (
+                    {activeDiv === 2 && (
                         <div>
                             <div className=''>
-                                <ViewAllItems />
+                                <ViewAllItemsData />
+
                             </div>
                         </div>
                     )}
@@ -61,7 +69,7 @@ const page = () => {
                     {activeDiv === 3 && (
                         <div>
                             <div className=''>
-                                <ViewAllItemsData />
+                                <ViewAllItems />
                             </div>
                         </div>
                     )}
