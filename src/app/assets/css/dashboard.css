@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   align-items: center;
   background-color: #066f69;
-  padding: 10px 20px;
+  padding: 2px 20px 15px 20px;
 }
 
 .dashnav-img {
@@ -12,7 +12,7 @@
 }
 
 .dddssa {
-  height: 20vh;
+  height: 17vh;
   background-color: white;
   box-shadow: rgba(190, 190, 190, 0.45) 22px 11px 10px -17px;
   margin: 0 0 5px 0;
@@ -24,6 +24,7 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid gray;
 }
 .active-das {
   background-color: #86c6ca;
@@ -32,6 +33,7 @@
 
 .dash-side-ptext {
   font-size: 0.9rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .dash-sidebar-div {
@@ -244,7 +246,7 @@
 .issue-upload-div {
   display: grid;
   place-items: center;
-  padding: 20px 0;
+  /* padding: 20px 0; */
 }
 
 .csv-textp {

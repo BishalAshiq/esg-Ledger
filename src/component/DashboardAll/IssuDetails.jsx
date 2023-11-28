@@ -101,7 +101,7 @@ const IssuDetails = () => {
       .post(`/upload-csv`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
-          'Authorization': `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((res) => {
@@ -137,32 +137,36 @@ const IssuDetails = () => {
     const formData = {
       id: deleteId,
     };
-    axiosInstance.post("/delete-item", formData, {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      },
-    }).then((res) => {
-      if (res.data.status == 200) {
-        const indexToDelete = columns.findIndex((item) => item.id === deleteId);
+    axiosInstance
+      .post("/delete-item", formData, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          const indexToDelete = columns.findIndex(
+            (item) => item.id === deleteId
+          );
 
-        if (indexToDelete !== -1) {
-          // Create a new array without the deleted item
-          const updatedColumns = [...columns];
-          updatedColumns.splice(indexToDelete, 1);
+          if (indexToDelete !== -1) {
+            // Create a new array without the deleted item
+            const updatedColumns = [...columns];
+            updatedColumns.splice(indexToDelete, 1);
 
-          // Update the state with the new array
-          setColumns(updatedColumns);
+            // Update the state with the new array
+            setColumns(updatedColumns);
 
-          toast.success("Item Removed", {
-            position: "top-right",
-            style: {
-              background: "white",
-              color: "black",
-            },
-          });
+            toast.success("Item Removed", {
+              position: "top-right",
+              style: {
+                background: "white",
+                color: "black",
+              },
+            });
+          }
         }
-      }
-    });
+      });
   };
   return (
     <div className='container-fluid mt-4'>
@@ -175,7 +179,7 @@ const IssuDetails = () => {
             </a>
           </div>
           <div className='issue-upload-div' onClick={handleFileClick}>
-            <Image src={upFile.src} width={80} height={80} alt='' />
+            <Image src={upFile.src} width={60} height={81} alt='' />
             <p className='csv-textp'>Drag or upload an excel file here.</p>
             <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
@@ -190,7 +194,7 @@ const IssuDetails = () => {
         </div>
       </div>
 
-      <div className='mt-5'>
+      <div className='mt-2'>
         <div className='previe-issue-div'>
           <h6 className='tag-text'>Preview</h6>
           <div className='previe-issue-text'>
@@ -203,8 +207,9 @@ const IssuDetails = () => {
 
         <div>
           <div
-            className={` issue-data-table-div ${isGenerate != 2 ? "issue-box-details" : ""
-              }`}>
+            className={` issue-data-table-div ${
+              isGenerate != 2 ? "issue-box-details" : ""
+            }`}>
             {isGenerate == 0 && (
               <div className='no-file-select-div'>
                 <p>No File Select</p>
