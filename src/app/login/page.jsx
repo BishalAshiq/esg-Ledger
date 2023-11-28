@@ -148,6 +148,7 @@ const page = () => {
                       {" "}
                       <label for='email'>Email</label> <br />
                       <input
+                        className='brand-inp'
                         type='email'
                         id='email'
                         name='email'
@@ -160,6 +161,7 @@ const page = () => {
                       {" "}
                       <label for='email'>Password</label> <br />
                       <input
+                        className='brand-inp'
                         type='password'
                         id='Password'
                         name='password'

@@ -67,14 +67,18 @@ body {
   font-size: 1.2rem;
   display: block;
 }
+.login-banner-img-input-divs {
+  /* border: 1px solid gray; */
+}
 
 .login-banner-img-input-div {
   display: flex;
   justify-content: center;
-  padding: 25px 0;
+  padding: 25px 0 5px 0;
 }
 
 .login-banner-img-div {
+  /* width: 00px; */
 }
 
 .login-banner-img {
@@ -496,7 +500,23 @@ body {
     margin-top: 2%;
     height: 20vh;
   }
-
+  .login-banner-img {
+    width: 100%;
+    height: 400px;
+  }
+  .login-banner-inputs-div {
+    width: 410px;
+    padding: 20px 20px 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+  .submit-btn-div {
+    float: right;
+  }
+  .brand-inp {
+    width: 300px;
+  }
   .certificate-full-div {
     margin-top: 5%;
   }
@@ -559,7 +579,7 @@ body {
   .login-banner-img-input-div {
     display: flex;
     justify-content: center;
-    padding: 77px 0;
+    padding: 77px 0 10px 0;
     width: 100%;
   }
   .login-banner-img-input-divs {
