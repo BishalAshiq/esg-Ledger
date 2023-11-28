@@ -22,9 +22,16 @@
 .dashboard-side-bar-li {
   padding: 20px 25px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 .active-das {
   background-color: #86c6ca;
+  color: white;
+}
+
+.dash-side-ptext {
+  font-size: 0.9rem;
 }
 
 .dash-sidebar-div {
@@ -33,7 +40,7 @@
   height: 100vh;
   /* padding: 20px 0 0 40px; */
   display: flex;
-  align-items: justify;
+  /* align-items: c; */
   /* justify-content: center; */
   flex-direction: column;
   /* justify-content: center; */
@@ -285,4 +292,13 @@
 .issue-svg-div {
   display: flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 3000px) and (min-width: 1370px) {
+  .dash-side-ptext {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
 }

@@ -22,22 +22,25 @@ const page = () => {
           <div className='dash-sidebar-div'>
             <div
               onClick={() => handleTextClick(1)}
-              className={`dashboard-side-bar-li ${activeDiv === 1 ? "active-das" : ""
-                }`}>
-              <h6>Upload new products</h6>
+              className={`dashboard-side-bar-li ${
+                activeDiv === 1 ? "active-das" : ""
+              }`}>
+              <h6 className='dash-side-ptext'>Upload new products</h6>
             </div>
             <div
               onClick={() => handleTextClick(2)}
-              className={`dashboard-side-bar-li ${activeDiv === 2 ? "active-das" : ""
-                }`}>
-              <h6>View all products</h6>
+              className={`dashboard-side-bar-li ${
+                activeDiv === 2 ? "active-das" : ""
+              }`}>
+              <h6 className='dash-side-ptext'>View all products</h6>
             </div>
 
             <div
               onClick={() => handleTextClick(3)}
-              className={`dashboard-side-bar-li ${activeDiv === 3 ? "active-das" : ""
-                }`}>
-              <h6>Customie data</h6>
+              className={`dashboard-side-bar-li ${
+                activeDiv === 3 ? "active-das" : ""
+              }`}>
+              <h6 className='dash-side-ptext'>Customie data</h6>
             </div>
           </div>
         </div>
@@ -55,7 +58,6 @@ const page = () => {
             <div>
               <div className=''>
                 <ViewAllItemsData />
-
               </div>
             </div>
           )}
