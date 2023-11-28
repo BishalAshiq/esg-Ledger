@@ -222,8 +222,8 @@ const page = () => {
               <div className=''>
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
-                  enquiries@esgledger.co
+                  For inquiries or more information <br />
+                  please contact: enquiries@esgledger.co
                 </p>
               </div>
 
