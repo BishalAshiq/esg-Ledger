@@ -74,8 +74,8 @@ body {
 .login-banner-img-input-div {
   display: flex;
   justify-content: center;
-  padding: 60px 0 5px 0;
-  margin: 0 0 3% 0;
+  padding: 40px 0 5px 0;
+  /* margin: 0 0 3% 0; */
 }
 
 .login-banner-img-div {
@@ -131,7 +131,7 @@ body {
   display: flex;
   width: 500px;
   justify-content: center;
-  margin: 14% 30% 0 30%;
+  margin: 12% 30% 2% 30%;
 }
 
 .login-footer-full-div {
@@ -562,7 +562,7 @@ body {
     /* border: 1px solid rgb(236, 14, 14); */
     display: flex;
     justify-content: center;
-    margin: 20% 30% 0 30%;
+    margin: 18% 30% 0 30%;
   }
   .slick-dots {
     height: 10px;
@@ -580,8 +580,8 @@ body {
   .login-banner-img-input-div {
     display: flex;
     justify-content: center;
-    padding: 80px 0 0 0;
-    margin-top: 30px;
+    padding: 60px 0 2% 0;
+    margin-top: 20px;
     /* width: 100%; */
   }
   .login-banner-img-input-divs {

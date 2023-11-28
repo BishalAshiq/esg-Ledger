@@ -172,7 +172,7 @@ const page = () => {
           </div>
           <div>
             <div className='fist-slider-text-div'>
-              <h1>
+              <h1 className='fist-slider-text'>
                 Unlocking ESG Trust and Transparency with Block chain integrity
               </h1>
             </div>
