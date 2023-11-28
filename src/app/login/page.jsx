@@ -184,7 +184,7 @@ const page = () => {
             </div>
           </div>
           <div>
-            <div className='p-3'>
+            <div className='login-banner-img-input-divs'>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img
