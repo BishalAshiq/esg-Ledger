@@ -42,7 +42,7 @@ body {
   text-decoration: none;
   color: #066f69;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .contact-nav-a {
@@ -602,6 +602,13 @@ body {
   .login-full-div {
     margin-top: 2%;
     height: 20vh;
+  }
+  .nav-items-div a {
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+    color: #066f69;
+    font-weight: 500;
+    font-size: 1rem;
   }
   .login-banner-img {
     width: 100%;
