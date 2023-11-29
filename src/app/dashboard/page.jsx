@@ -40,7 +40,7 @@ const page = () => {
               className={`dashboard-side-bar-li ${
                 activeDiv === 3 ? "active-das" : ""
               }`}>
-              <h6 className='dash-side-ptext'>Customie data</h6>
+              <h6 className='dash-side-ptext'>Customize data</h6>
             </div>
           </div>
         </div>

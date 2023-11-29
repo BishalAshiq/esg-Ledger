@@ -22,7 +22,7 @@ const Nav = () => {
                 <Link href='/brands/login'>Brands</Link>
                 <Link href='/about'>About ESGLedger</Link>
                 <Link href='/'>Explorer</Link>
-                <Link className='contact-nav-a' href='/'>
+                <Link className='contact-nav-a' href='/contactUs'>
                   <p>Contact</p>{" "}
                   <span>
                     <svg

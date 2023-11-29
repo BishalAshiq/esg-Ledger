@@ -28,10 +28,93 @@ const page = () => {
         <div className='row'>
           <div className='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'></div>
           <div className='col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8'>
-            <div className='about-main-div'>
+            <div className='contactUs-full-div'>
+              <div className='contactUs-inputs-div'>
+                <div className='row '>
+                  <div className='col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9'>
+                    <div className='contactUs-inpu-div'>
+                      <div>
+                        <h3 className='contactUs-tag'>Contact Us</h3>
+                        <p className='contactUs-des'>
+                          Feel free to reach out to us using the contact
+                          information provided below. Whether you're an art
+                          enthusiast, a collector, an artist, or a potential
+                          partner, your inquiries and feedback are important to
+                          us.
+                        </p>
+                      </div>
+                      <div className='mt-5'>
+                        <div className='row '>
+                          <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
+                            <div>
+                              <label for='name' className='contact-lebel'>
+                                Your Name
+                              </label>{" "}
+                              <br />
+                              <input
+                                className='contact-inp'
+                                type='name'
+                                id='name'
+                                name='name'
+                              />
+                            </div>
+                          </div>
+                          <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
+                            <div>
+                              <label for='Email' className='contact-lebel'>
+                                {" "}
+                                Your Email
+                              </label>{" "}
+                              <br />
+                              <input
+                                className='contact-inp'
+                                type='email'
+                                id='email'
+                                name='Password'
+                              />
+                            </div>
+                          </div>
+                          <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 '>
+                            <div className='contact-inp-text-div'>
+                              <input
+                                className='contact-inp-text'
+                                type='text'
+                                id='text'
+                                name='text'
+                                placeholder='What’s on your mind?'
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <button className='send-btn'>Send It!</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3'>
+                    <div className=''>
+                      <h5>GET IN TOUCH</h5>
+                      <div>
+                        <p>
+                          <span>T:</span> (852) 2186 7799
+                        </p>
+                        <p>
+                          <span>E:</span> collab@artledger.co
+                        </p>
+                        <p>
+                          <span>A:</span> Smart-Space 3F, Units 908-915, Level
+                          9, Cyberport 3, Core F, 100 Cyberport Road, Hong Kong
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* <div className='about-main-div'>
               <div className='about-div'>
                 <div className='about-header-tag-img-div'>
-                  <h3>About</h3>
+                  <h3>Contact Us</h3>
                   <Image src={pageLogonav} width={100} height={35} alt='' />
                 </div>
 
@@ -116,7 +199,7 @@ const page = () => {
                   to us as we work together to drive ESG trust and transparency.
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'></div>
