@@ -193,20 +193,30 @@ const page = () => {
                     alt=''
                   />
                 </div>
-                <div className='login-banner-inputs-div'>
-                  <div>
+                <div className='login-banner-inputss-div'>
+                  <div className='login-banner-inputsingle'>
                     {" "}
                     <label for='password'>New password</label> <br />
-                    <input type='password' id='password' name='Password' />
+                    <input
+                      className='brand-inp'
+                      type='password'
+                      id='password'
+                      name='Password'
+                    />
                   </div>
-                  <div className='mt-2'>
+                  <div>
                     {" "}
                     <label for='email'>Repeat your new password</label> <br />
-                    <input type='password' id='Password' name='password' />
+                    <input
+                      className='brand-inp'
+                      type='password'
+                      id='Password'
+                      name='password'
+                    />
                   </div>
 
-                  <div className='submit-btn-div'>
-                    <button className='submit-btn'>Confirm</button>
+                  <div className='submitn-btn-div'>
+                    <button className='submitn-btn'>Confirm</button>
                   </div>
                 </div>
               </div>

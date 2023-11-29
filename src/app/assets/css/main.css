@@ -23,7 +23,7 @@ body {
 
 .nav-logo-img {
   /* border: 1px solid gray; */
-  width: 208px;
+  width: 185px;
   height: 42px;
 }
 
@@ -108,10 +108,23 @@ body {
   /* border: 1px solid rgb(255, 255, 255); */
   display: flex;
   flex-direction: column;
-  width: 310px;
+  /* width: 310px; */
   /* justify-content: center; */
   /* align-items: start; */
   padding: 30px 40px;
+}
+.login-banner-inputss-div {
+  background-color: white;
+  /* border: 1px solid rgb(255, 255, 255); */
+  display: flex;
+  flex-direction: column;
+  /* width: 310px; */
+  /* justify-content: center; */
+  /* align-items: start; */
+  padding: 30px 40px;
+}
+.brand-inp {
+  width: 100%;
 }
 
 .pioneeringtext {
@@ -309,6 +322,20 @@ body {
 }
 
 .submit-btn {
+  border: none;
+  background-color: #066f69;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  padding: 4px 50px;
+}
+.submitn-btn-div {
+  display: flex !important;
+  margin: auto;
+  justify-content: center !important;
+}
+
+.submitn-btn {
   border: none;
   background-color: #066f69;
   color: white;
@@ -580,17 +607,17 @@ body {
     height: 400px;
   }
   .login-banner-inputs-div {
-    width: 410px;
-    padding: 20px 20px 20px 40px;
+    width: 500px;
+    /* padding: 20px 20px 20px 40px; */
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
   }
   .submit-btn-div {
     float: right;
   }
   .brand-inp {
-    width: 300px;
+    width: 100%;
   }
   .certificate-full-div {
     margin-top: 5%;
@@ -660,6 +687,32 @@ body {
   }
   .login-banner-img-input-divs {
     /* border: 1px solid white; */
+  }
+  .login-banner-inputss-div {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 500px;
+    align-items: center;
+  }
+  .login-banner-inputsingle {
+    margin-top: 60px;
+  }
+
+  .submitn-btn-div {
+    /* display: flex !important;
+    margin: auto;
+    justify-content: center !important; */
+    margin-top: 30px;
+  }
+
+  .submitn-btn {
+    border: none;
+    background-color: #066f69;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    padding: 4px 50px;
   }
 }
 
