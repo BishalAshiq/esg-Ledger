@@ -38,10 +38,11 @@ body {
 }
 
 .nav-items-div a {
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
   color: #066f69;
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .contact-nav-a {
