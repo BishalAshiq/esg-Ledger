@@ -18,6 +18,9 @@ import Link from "next/link";
 import pageLogonav from "../../../public/pageLogonav.png";
 
 const page = () => {
+  const mapUrl =
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8782.242126883268!2d114.1288730487565!3d22.259877475587118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fff0f159fe51%3A0x9dab2f23bc4e5a06!2sChinese%20Culinary%20Institute!5e0!3m2!1sen!2sbd!4v1701320544257!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade';
+
   return (
     <div>
       <div className={styles["background-img"]}>
@@ -25,7 +28,7 @@ const page = () => {
           <Nav />
         </div>
 
-        <div className='row'>
+        <div className='row no-gutters'>
           <div className='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'></div>
           <div className='col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8'>
             <div className='contactUs-full-div'>
@@ -91,19 +94,32 @@ const page = () => {
                     </div>
                   </div>
                   <div className='col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3'>
-                    <div className=''>
-                      <h5>GET IN TOUCH</h5>
+                    <div className='contact-getIn-touch-div'>
+                      <h5 className='cont-get-tag'>GET IN TOUCH</h5>
+                      <div className=''>
+                        <div className='contact-address'>
+                          <span className='cont-add-icon'>T:</span>
+                          <p className='cont-add-text'>(852) 2186 7799</p>
+                        </div>
+                        <div className='contact-address'>
+                          <span className='cont-add-icon'>E:</span>{" "}
+                          <p className='cont-add-text'>collab@artledger.co</p>
+                        </div>
+
+                        <div className='contact-address'>
+                          <span className='cont-add-icon'>A:</span>
+                          <p className='cont-add-text'>
+                            Smart-Space 3F, Units 908-915, Level 9, Cyberport 3,
+                            Core F, 100 Cyberport Road, Hong Kong
+                          </p>
+                        </div>
+                      </div>
                       <div>
-                        <p>
-                          <span>T:</span> (852) 2186 7799
-                        </p>
-                        <p>
-                          <span>E:</span> collab@artledger.co
-                        </p>
-                        <p>
-                          <span>A:</span> Smart-Space 3F, Units 908-915, Level
-                          9, Cyberport 3, Core F, 100 Cyberport Road, Hong Kong
-                        </p>
+                        <iframe
+                          className='iframe-contact'
+                          loading='lazy'
+                          allowFullScreen
+                          src={mapUrl}></iframe>
                       </div>
                     </div>
                   </div>
@@ -212,7 +228,7 @@ const page = () => {
               <div className='footer-img-div'>
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
+                  For inquiries or more information <br /> please contact:
                   enquiries@esgledger.co
                 </p>
               </div>

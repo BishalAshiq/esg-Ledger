@@ -19,16 +19,49 @@ const Nav = () => {
             <div>
               <div className='nav-items-div'>
                 <Link href='/'>Home</Link>
-                <Link href='/brands/login'>Brands</Link>
+                <Link className='contact-nav-a' href='/brands/login'>
+                  {" "}
+                  <p>Brands</p>{" "}
+                  <span>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='10'
+                      height='10'
+                      fill='currentColor'
+                      class='bi bi-chevron-down'
+                      viewBox='0 0 16 16'>
+                      <path
+                        fill-rule='evenodd'
+                        d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
+                      />
+                    </svg>
+                  </span>
+                </Link>
                 <Link href='/about'>About ESGLedger</Link>
-                <Link href='/'>Explorer</Link>
+                <Link className='contact-nav-a' href='/'>
+                  <p>Explorer</p>{" "}
+                  <span>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='10'
+                      height='10'
+                      fill='currentColor'
+                      class='bi bi-chevron-down'
+                      viewBox='0 0 16 16'>
+                      <path
+                        fill-rule='evenodd'
+                        d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
+                      />
+                    </svg>
+                  </span>
+                </Link>
                 <Link className='contact-nav-a' href='/contactUs'>
                   <p>Contact</p>{" "}
                   <span>
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
-                      width='16'
-                      height='16'
+                      width='10'
+                      height='10'
                       fill='currentColor'
                       class='bi bi-chevron-down'
                       viewBox='0 0 16 16'>
