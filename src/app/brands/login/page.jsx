@@ -3,7 +3,7 @@ import Nav from "@/component/Navbar/Nav";
 import React, { Component, useState } from "react";
 // import Slider from "react-slick";
 import LoginBanner from "../../../../public/loginBanner.png";
-import Brands from "../../../../public/brands.jpeg";
+import Brands from "../../../../public/brands.png";
 import pageLogo from "../../../../public/pageLogomd.png";
 import pageicon1 from "../../../../public/social1.svg";
 import pageicon2 from "../../../../public/social2.svg";
@@ -182,22 +182,36 @@ const page = () => {
             <div className='login-banner-img-input-divs'>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
-                  <img className='login-banner-img' src={Brands.src} alt='' />
+                  <img
+                    className='login-banner-img'
+                    src={LoginBanner.src}
+                    alt=''
+                  />
                 </div>
-                <div className='login-banner-inputs-div'>
-                  <div>
+                <div className='login-banner-inputss-div'>
+                  <div className='login-banner-inputsingle'>
                     {" "}
                     <label for='password'>New password</label> <br />
-                    <input type='password' id='password' name='Password' />
+                    <input
+                      className='brand-inp'
+                      type='password'
+                      id='password'
+                      name='Password'
+                    />
                   </div>
-                  <div className='mt-2'>
+                  <div>
                     {" "}
                     <label for='email'>Repeat your new password</label> <br />
-                    <input type='password' id='Password' name='password' />
+                    <input
+                      className='brand-inp'
+                      type='password'
+                      id='Password'
+                      name='password'
+                    />
                   </div>
 
-                  <div className='submit-btn-div'>
-                    <button className='submit-btn'>Confirm</button>
+                  <div className='submitn-btn-div'>
+                    <button className='submitn-btn'>Confirm</button>
                   </div>
                 </div>
               </div>

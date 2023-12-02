@@ -199,7 +199,7 @@ const IssuDetails = () => {
           <h6 className='tag-text'>Preview</h6>
           <div className='previe-issue-text'>
             <p className='previe-issue-btn-text'>Clear</p>
-            <Link href='/allitems'>
+            <Link className='previe-issue-btn-link' href='/allitems'>
               <p className='previe-issue-btn'> Mint</p>
             </Link>
           </div>

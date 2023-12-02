@@ -16,6 +16,11 @@ body {
   z-index: 1000;
 }
 
+.mobile-nav-div {
+  /* display: none; */
+  visibility: hidden;
+}
+
 .nav-logo-img-div {
   display: flex;
   justify-content: start;
@@ -728,6 +733,31 @@ body {
 }
 
 @media (max-width: 768px) {
+  .nav-items-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .full-navbar-div {
+    display: none;
+    visibility: hidden;
+  }
+  .mobile-nav-div {
+    /* display: none; */
+    visibility: visible;
+  }
+  .mob-nav {
+    background-color: #066f69;
+  }
+  .nav-mob-logo-img-div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .nav-mob-logo-img {
+    width: 197px;
+    height: 40px;
+    margin-left: 10px;
+  }
   .login-footer-banner-full-div {
     /* Adjust styles for smaller screens */
     padding: 10px;

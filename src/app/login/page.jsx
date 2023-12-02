@@ -3,7 +3,7 @@ import Nav from "@/component/Navbar/Nav";
 import React, { Component, useState } from "react";
 // import Slider from "react-slick";
 import LoginBanner from "../../../public/loginBanner.png";
-import Brands from "../../../public/brands.jpeg";
+import Brands from "../../../public/brands.png";
 import pageLogo from "../../../public/pageLogomd.png";
 import pageicon1 from "../../../public/social1.svg";
 import pageicon2 from "../../../public/social2.svg";
@@ -131,15 +131,11 @@ const page = () => {
             <div className='login-banner-img-input-divs'>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
-                  <img
-                    className='login-banner-img'
-                    src={LoginBanner.src}
-                    alt=''
-                  />
+                  <img className='login-banner-img' src={Brands.src} alt='' />
                 </div>
 
                 <div className='login-banner-inputs-div'>
-                  <h6 className='heading-tag'>Brand Login</h6>
+                  <h6 className='heading-tag'>Admin Login</h6>
                   <form
                     className='content'
                     onSubmit={handleLogin}
