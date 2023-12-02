@@ -751,12 +751,13 @@ body {
   .nav-mob-logo-img-div {
     display: flex;
     justify-content: center;
+
     gap: 20px;
   }
   .nav-mob-logo-img {
     width: 197px;
-    height: 40px;
-    margin-left: 10px;
+    height: 46px;
+    margin-left: 20px;
   }
   .login-footer-banner-full-div {
     /* Adjust styles for smaller screens */
@@ -764,5 +765,8 @@ body {
     /* Example: reduce padding on smaller screens */
     margin-top: 10px;
     /* Adjust the margin-top for smaller screens */
+  }
+  .footer-img-div {
+    visibility: hidden;
   }
 }
