@@ -22,7 +22,7 @@ const page = () => {
   const [attribute, setAttribute] = useState('');
   useEffect(() => {
 
-    axiosInstance.get('item-details/' + param.slug).then((res) => {
+    axiosInstance.get('item-details/' + param.esg_id).then((res) => {
       setItem(res.data.data)
       const parsedAttribute = JSON.parse((res.data.data.attribute));
 
@@ -32,8 +32,8 @@ const page = () => {
   }, [])
 
 
-  const formateDate = (date) => {
-    const dateString = '2023-11-22T18:32:49.000000Z';
+  const formateDate = (dateString) => {
+    // const dateString = '2023-11-22T18:32:49.000000Z';
     const dateObject = new Date(dateString);
 
     // Format the date as "d M, Y"

@@ -91,7 +91,7 @@ const page = () => {
             expires: 7,
           });
 
-          router.push("/dashboard");
+          router.push("/brands/dashboard");
         } else if (res.data.status == 401) {
           toast.error("Login failed. Please check your email and password.", {
             position: "top-right",
