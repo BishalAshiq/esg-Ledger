@@ -19,28 +19,26 @@ import Link from "next/link";
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
-  const [attribute, setAttribute] = useState('');
+  const [attribute, setAttribute] = useState("");
   useEffect(() => {
-
-    axiosInstance.get('item-details/' + param.esg_id).then((res) => {
-      setItem(res.data.data)
-      const parsedAttribute = JSON.parse((res.data.data.attribute));
+    axiosInstance.get("item-details/" + param.esg_id).then((res) => {
+      setItem(res.data.data);
+      const parsedAttribute = JSON.parse(res.data.data.attribute);
 
       // Set the parsed object in the state
       setAttribute(parsedAttribute);
-    })
-  }, [])
-
+    });
+  }, []);
 
   const formateDate = (dateString) => {
     // const dateString = '2023-11-22T18:32:49.000000Z';
     const dateObject = new Date(dateString);
 
     // Format the date as "d M, Y"
-    const options = { day: 'numeric', month: 'short', year: 'numeric' };
-    const formatted = dateObject.toLocaleDateString('en-US', options);
+    const options = { day: "numeric", month: "short", year: "numeric" };
+    const formatted = dateObject.toLocaleDateString("en-US", options);
     return formatted;
-  }
+  };
 
   return (
     <div className='individual'>
@@ -55,7 +53,7 @@ const page = () => {
             <div className='col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
 
             <div className='col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3'>
-              <div className=" redix-div">
+              <div className=' redix-div'>
                 <div className='redix-divs'>
                   <div className='certificate-image-div'>
                     <Image
@@ -78,9 +76,9 @@ const page = () => {
                   <div className='certificate-des-div'>
                     <h5 className='certificate-h5Tag'>
                       This Certificate has been securely recorded on the
-                      blockchain, ensuring its transparency and immutable record.
-                      It is applicable to products produced in strict compliance
-                      with ESG requirements as listed below.
+                      blockchain, ensuring its transparency and immutable
+                      record. It is applicable to products produced in strict
+                      compliance with ESG requirements as listed below.
                     </h5>
 
                     <h5 className='certificate-h5Tag'>
@@ -93,11 +91,9 @@ const page = () => {
                   </div>
                 </div>
               </div>
-
             </div>
 
             <div className='col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 '>
-
               <div className='redix-sec-div'>
                 <div className='redixSec-div'>
                   <div className='Blockchain-tagone-div'>
@@ -105,7 +101,10 @@ const page = () => {
                       Blockchain Transaction Hx 區塊鏈上鏈紀錄
                     </h5>
                   </div>
-                  <Link className="no-decoration" href={`https://www.onechainscan.io/transaction/${item.block_chain_url}`} target="_blank">
+                  <Link
+                    className='no-decoration'
+                    href={`https://www.onechainscan.io/transaction/${item.block_chain_url}`}
+                    target='_blank'>
                     <div className='Blockchain-tagotwo-div'>
                       <Image src={copy.src} width={20} height={20} alt='' />
                       <h5 className='Blockchain-tagotwo'>
@@ -135,7 +134,7 @@ const page = () => {
                     <div className='Blockchain-ptag-divs'>
                       <p className='block-ptext'>{key} </p>
                       <h5 className='blockchain-h5'>
-                        {value} <br /> {" "}
+                        {value} <br />{" "}
                       </h5>
                     </div>
                   ))}
@@ -204,8 +203,6 @@ const page = () => {
                       enquiries@certledger.io
                     </p>
                   </div>
-
-
                 </div>
               </div>
             </div>
@@ -231,11 +228,12 @@ const page = () => {
                 <p className='footer-textpp'>Join the Community</p>
 
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
                   <img className='social-icon' src={pageicon4.src} alt='' />
+                  <img className='social-icon' src={pageicon3.src} alt='' />
+                  <img className='social-icon' src={pageicon2.src} alt='' />
+                  <img className='social-icon' src={pageicon1.src} alt='' />
                 </div>
+                <p className='footer-textpps'>Join the Community</p>
               </div>
             </div>
 
@@ -248,6 +246,14 @@ const page = () => {
                 <div className=''>
                   <hr className='f-hr' />
                   <p className='f-text'>© 2023 OneChain Ltd.</p>
+                  <div className='footer-privacy-div'>
+                    <Link className='footer-privacy-text' href='/'>
+                      <p>Privacy Policy </p>
+                    </Link>
+                    <Link className='footer-privacy-text' href='/'>
+                      <p>Terms of Service </p>
+                    </Link>
+                  </div>
                 </div>
               </div>
               <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
