@@ -137,6 +137,12 @@ const IssuDetails = () => {
     const formData = {
       id: deleteId,
     };
+    let token = "";
+
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+
     axiosInstance
       .post("/delete-item", formData, {
         headers: {
