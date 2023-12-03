@@ -4,6 +4,7 @@ import DashNav from "@/component/Navbar/dashNav";
 import ViewAllItems from "@/component/DashboardAll/ViewAllItems";
 import IssuDetails from "@/component/DashboardAll/IssuDetails";
 import ViewAllItemsData from "@/component/DashboardAll/ViewAllItemsData";
+import IndividualBrand from "@/component/AllAdminBrand/IndividualBrand";
 
 const page = () => {
   const [activeDiv, setActiveDiv] = useState(1);
@@ -25,14 +26,14 @@ const page = () => {
               className={`dashboard-side-bar-li ${
                 activeDiv === 1 ? "active-das" : ""
               }`}>
-              <h6 className='dash-side-ptext'>Upload new products</h6>
+              <h6 className='dash-side-ptext'>View all brands</h6>
             </div>
             <div
               onClick={() => handleTextClick(2)}
               className={`dashboard-side-bar-li ${
                 activeDiv === 2 ? "active-das" : ""
               }`}>
-              <h6 className='dash-side-ptext'>View all products</h6>
+              <h6 className='dash-side-ptext'>View all items</h6>
             </div>
           </div>
         </div>
@@ -41,7 +42,7 @@ const page = () => {
           {activeDiv === 1 && (
             <div>
               <div className=''>
-                <IssuDetails />
+                <IndividualBrand />
               </div>
             </div>
           )}
