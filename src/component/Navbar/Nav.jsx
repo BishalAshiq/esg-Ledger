@@ -41,7 +41,7 @@ const Nav = () => {
                   </span>
                 </Link>
                 <Link href='/about'>About ESGLedger</Link>
-                <Link className='contact-nav-a' href='/'>
+                <Link className='contact-nav-a' href='https://www.onechainscan.io/' target="_blank">
                   <p>Explorer</p>{" "}
                   <span>
                     <svg

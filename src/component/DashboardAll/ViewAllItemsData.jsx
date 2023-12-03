@@ -48,7 +48,8 @@ const ViewAllItemsData = () => {
 
   const [copySuccess, setCopySuccess] = useState(null);
 
-  const copyToClipboard = (copy_url) => {
+  const copyToClipboard = (e, copy_url) => {
+    e.stopPropagation();
     try {
       // Get the current URL
       const currentURL = 'http://esgledger.co/products/' + copy_url;
@@ -79,6 +80,12 @@ const ViewAllItemsData = () => {
       console.error('Error copying to clipboard:', error);
       setCopySuccess('Copy to clipboard failed');
     }
+  };
+
+
+  const handleRowClick = (lsgUniqueId) => {
+    // Handle redirection logic here
+    window.location.href = `/products/${lsgUniqueId}`;
   };
 
   return (
@@ -166,7 +173,7 @@ const ViewAllItemsData = () => {
               <tbody>
                 {columns.length > 0 &&
                   columns.map((item, index) => (
-                    <tr key={index} className='data-tr'>
+                    <tr key={index} className='data-tr' onClick={() => handleRowClick(item['lsg_unique_id'])}>
                       {headers.length > 0 &&
                         headers.map((head) => (
                           <td className='data-td'>
@@ -181,7 +188,7 @@ const ViewAllItemsData = () => {
                         </div>
                       </td>
                       <td>
-                        <svg onClick={(e) => copyToClipboard(item['lsg_unique_id'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                        <svg onClick={(e) => copyToClipboard(e, item['lsg_unique_id'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
                           <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
                         </svg>
                       </td>
