@@ -131,12 +131,18 @@ const page = () => {
                     <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
                   </div> */}
                   {Object.entries(attribute).map(([key, value]) => (
-                    <div className='Blockchain-ptag-divs'>
-                      <p className='block-ptext'>{key} </p>
-                      <h5 className='blockchain-h5'>
-                        {value} <br />{" "}
-                      </h5>
-                    </div>
+                    <>
+                      {
+                        key != "" && value != "" ?
+                          <div className='Blockchain-ptag-divs'>
+                            <p className='block-ptext'>{key} </p>
+                            <h5 className='blockchain-h5'>
+                              {value} <br />{" "}
+                            </h5>
+                          </div> :
+                          <></>
+                      }
+                    </>
                   ))}
                   {/* <div className='Blockchain-ptag-divs'>
                   <p className='block-ptext'>Product - Front 產品正面</p>
