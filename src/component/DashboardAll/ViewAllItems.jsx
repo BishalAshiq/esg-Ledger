@@ -9,6 +9,9 @@ const ViewAllItems = () => {
   const [showDivs, setShowDivs] = useState(true);
   const [showAdditionalComponent, setShowAdditionalComponent] = useState(false);
   const [showPagePreview, setShowPagePreview] = useState(false);
+  const [brand, setBrand] = useState("");
+  const [product, setProduct] = useState("");
+  console.log(brand,product);
   // Initial row
   const router = useRouter();
   // const handleIconClick = (id) => {
@@ -40,7 +43,6 @@ const ViewAllItems = () => {
   };
 
   const handleInputChange = (id, value) => {
-    console.log(id, value);
     const updatedRows = rows.map((row) =>
       row.id === id ? { ...row, text: value } : row
     );
@@ -55,7 +57,7 @@ const ViewAllItems = () => {
   };
 
   const handleAddRow = () => {
-    const newRow = { id: rows.length + 1+4, text: '', checked: false };
+    const newRow = { id: rows.length + 1 + 4, text: '', checked: false };
     setRows([...rows, newRow]);
   };
 
@@ -75,8 +77,17 @@ const ViewAllItems = () => {
       setFormData(updatedRows);
     } else {
 
-      const newRow = { id, text: value ,checked: false };
-      setFormData([...formData, newRow ]);
+      const newRow = { id, text: value, checked: false };
+      setFormData([...formData, newRow]);
+    }
+
+    if (id == 1) {
+      console.log(id, value);
+      setBrand(value)
+    }
+
+    if (id == 2) {
+      setProduct(value)
     }
     console.log(value, id)
   }
@@ -116,7 +127,11 @@ const ViewAllItems = () => {
       }
     });
 
-    const mergedData = { rows: merged };
+    const mergedData = {
+      product_name: product,
+      brand_name: brand,
+      rows: merged
+    };
     axiosInstance.post('/cutomize-data', mergedData).then(res => {
 
       if (res.data.status == 200) {
@@ -140,7 +155,7 @@ const ViewAllItems = () => {
         localStorage.removeItem("refreshToken");
         router.push('/');
       }
-      
+
     })
 
 
@@ -229,7 +244,7 @@ const ViewAllItems = () => {
             <div className='row checkbox-div '>
               <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                 <div>
-                  <h6>Product</h6>
+                  <h6>Product/Model No</h6>
                 </div>
               </div>
               <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
