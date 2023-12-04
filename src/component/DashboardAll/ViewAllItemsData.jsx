@@ -51,25 +51,13 @@ const ViewAllItemsData = () => {
   const copyToClipboard = (e, copy_url) => {
     e.stopPropagation();
     try {
-<<<<<<< HEAD
       const currentURL = 'https://esgledger.co/' + copy_url;
 
-=======
-      // Get the current URL
-      const currentURL = "http://esgledger.co/products/" + copy_url;
-      console.log(currentURL);
-      // Attempt to use the Clipboard API
->>>>>>> a1e9ee9f4f939ad568b71b4754cc99806cc78e41
       if (navigator.clipboard) {
         navigator.clipboard.writeText(currentURL);
         setCopySuccess("URL copied to clipboard!");
       } else {
-<<<<<<< HEAD
         const textArea = document.createElement('textarea');
-=======
-        // Fallback for non-secure contexts (HTTP)
-        const textArea = document.createElement("textarea");
->>>>>>> a1e9ee9f4f939ad568b71b4754cc99806cc78e41
         textArea.value = currentURL;
         document.body.appendChild(textArea);
         textArea.select();
@@ -96,11 +84,8 @@ const ViewAllItemsData = () => {
     // window.location.href = `/products/${lsgUniqueId}`;
   };
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> a1e9ee9f4f939ad568b71b4754cc99806cc78e41
   return (
     <div className='container-fluid'>
       <div>
