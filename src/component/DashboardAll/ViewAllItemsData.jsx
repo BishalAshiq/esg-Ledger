@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState,useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Downloadicon from "../../../public/downloadicon.svg";
 import QrCode from "../../../public/qrcode.svg";
 import Image from "next/image";
@@ -15,7 +15,6 @@ const ViewAllItemsData = () => {
   const [headers, setHeaders] = useState([]);
   const [columns, setColumns] = useState([]);
   const qrCodeRef = useRef();
-
 
   useEffect(() => {
     axiosInstance.get("/item-list").then((res) => {
@@ -87,8 +86,6 @@ const ViewAllItemsData = () => {
     // Handle redirection logic here
     // window.location.href = `/products/${lsgUniqueId}`;
   };
-
-  
 
   return (
     <div className='container-fluid'>
@@ -184,24 +181,12 @@ const ViewAllItemsData = () => {
                         ))}
 
                       <td>
-<<<<<<< HEAD
-                        <div
-                          className='tabl-icon '
-                          style={{
-                            height: "20px",
-                            width: "15px",
-                            marginTop: "-10px",
-                          }}>
-                          {/* {item.img1} {item.img1} */}
+                        <div className='tabl-icon '>
+                          {/* {item.img1} {item.img1} style={{ height: '20px', width: '15px', marginTop: '-10px' }}*/}
                           <QRCodeComponent
                             value={item["lsg_unique_id"]}
                             size={50}
                           />
-=======
-                        <div className='tabl-icon ' >
-                          {/* {item.img1} {item.img1} style={{ height: '20px', width: '15px', marginTop: '-10px' }}*/}
-                          <QRCodeComponent  value={item['lsg_unique_id']} size={50} />
->>>>>>> 01163e545ecd988c85eca8aade6b92e1c8c85e06
                         </div>
                       </td>
                       <td>
