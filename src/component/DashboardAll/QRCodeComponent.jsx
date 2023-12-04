@@ -2,7 +2,7 @@ import React from 'react';
 import qrcode from 'qrcode';
 
 
-const QRCodeComponent = ({ value, size }) => {
+const QRCodeComponent = ({ value, size, slug }) => {
     const initialSize = 550;
     const handleDownload = async () => {
     
@@ -18,7 +18,7 @@ const QRCodeComponent = ({ value, size }) => {
           
             const a = document.createElement('a');
             a.href = url;
-            a.download = `kibo/${value}.png`;
+            a.download = `${slug}.png`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
