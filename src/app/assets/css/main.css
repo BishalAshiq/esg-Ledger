@@ -745,6 +745,7 @@ body {
   .nav-items-div {
     display: flex;
     flex-direction: column;
+    padding: 17px 0 0 20px;
   }
   .full-navbar-div {
     display: none;

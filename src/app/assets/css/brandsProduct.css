@@ -56,3 +56,24 @@
 .single-hr {
   color: #86c6ca;
 }
+
+/* Individual Brands  */
+
+.individual-product-div {
+  padding: 6% 10%;
+}
+.indi-brand-head-tags {
+  display: flex;
+  justify-content: space-between;
+}
+
+.kibo-inputs {
+  width: 100%;
+  outline: none;
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+.number-of-div {
+  display: flex;
+  justify-content: space-between;
+}

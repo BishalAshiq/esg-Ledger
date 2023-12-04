@@ -41,7 +41,10 @@ const Nav = () => {
                   </span>
                 </Link>
                 <Link href='/about'>About ESGLedger</Link>
-                <Link className='contact-nav-a' href='https://www.onechainscan.io/' target="_blank">
+                <Link
+                  className='contact-nav-a'
+                  href='https://www.onechainscan.io/'
+                  target='_blank'>
                   <p>Explorer</p>{" "}
                   <span>
                     <svg
@@ -105,7 +108,9 @@ const Nav = () => {
             </div>
             <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
               <div className='nav-items-div'>
-                <Link href='/'>Home</Link>
+                <Link className='contact-nav-a' href='/'>
+                  Home
+                </Link>
                 <Link className='contact-nav-a' href='/brands/login'>
                   {" "}
                   <p>Brands</p>{" "}
@@ -124,7 +129,9 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link href='/about'>About ESGLedger</Link>
+                <Link className='contact-nav-a' href='/about'>
+                  About ESGLedger
+                </Link>
                 <Link className='contact-nav-a' href='/'>
                   <p>Explorer</p>{" "}
                   <span>
