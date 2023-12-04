@@ -6,6 +6,7 @@ import "../app/assets/css/main.css";
 import "../app/assets/css/dashboard.css";
 import "../app/assets/css/about.css";
 import "../app/assets/css/contact.css";
+import "../app/assets/css/brandsProduct.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { ToastContainer } from "react-toastify";

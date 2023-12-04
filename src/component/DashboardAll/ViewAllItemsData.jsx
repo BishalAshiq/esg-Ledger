@@ -8,7 +8,6 @@ import QRCodeComponent from "./QRCodeComponent";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-
 const ViewAllItemsData = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,9 +16,8 @@ const ViewAllItemsData = () => {
   const [columns, setColumns] = useState([]);
   const qrCodeRef = useRef();
 
-
   useEffect(() => {
-    axiosInstance.get('/item-list').then((res) => {
+    axiosInstance.get("/item-list").then((res) => {
       if (res.data.status == 200) {
         setHeaders(res.data.header);
         setColumns(res.data.data);
@@ -33,10 +31,10 @@ const ViewAllItemsData = () => {
           },
         });
         localStorage.removeItem("refreshToken");
-        router.push('/');
+        router.push("/");
       }
-    })
-  }, [])
+    });
+  }, []);
 
   const totalPages = Math.ceil(columns.length / itemsPerPage);
 
@@ -53,19 +51,31 @@ const ViewAllItemsData = () => {
   const copyToClipboard = (e, copy_url) => {
     e.stopPropagation();
     try {
+<<<<<<< HEAD
       const currentURL = 'https://esgledger.co/' + copy_url;
 
+=======
+      // Get the current URL
+      const currentURL = "http://esgledger.co/products/" + copy_url;
+      console.log(currentURL);
+      // Attempt to use the Clipboard API
+>>>>>>> a1e9ee9f4f939ad568b71b4754cc99806cc78e41
       if (navigator.clipboard) {
         navigator.clipboard.writeText(currentURL);
-        setCopySuccess('URL copied to clipboard!');
+        setCopySuccess("URL copied to clipboard!");
       } else {
+<<<<<<< HEAD
         const textArea = document.createElement('textarea');
+=======
+        // Fallback for non-secure contexts (HTTP)
+        const textArea = document.createElement("textarea");
+>>>>>>> a1e9ee9f4f939ad568b71b4754cc99806cc78e41
         textArea.value = currentURL;
         document.body.appendChild(textArea);
         textArea.select();
-        document.execCommand('copy');
+        document.execCommand("copy");
         document.body.removeChild(textArea);
-        setCopySuccess('URL copied to clipboard!');
+        setCopySuccess("URL copied to clipboard!");
         toast.success("URL copied to clipboard!", {
           position: "top-right",
           style: {
@@ -76,19 +86,21 @@ const ViewAllItemsData = () => {
       }
     } catch (error) {
       // Handle errors
-      console.error('Error copying to clipboard:', error);
-      setCopySuccess('Copy to clipboard failed');
+      console.error("Error copying to clipboard:", error);
+      setCopySuccess("Copy to clipboard failed");
     }
   };
-
 
   const handleRowClick = (lsgUniqueId) => {
     // Handle redirection logic here
     // window.location.href = `/products/${lsgUniqueId}`;
   };
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a1e9ee9f4f939ad568b71b4754cc99806cc78e41
   return (
     <div className='container-fluid'>
       <div>
@@ -142,19 +154,16 @@ const ViewAllItemsData = () => {
         </div>
 
         <div>
-
           <div className='mt-4'>
             <table className='table'>
               <thead>
                 <tr>
-                  {
-                    headers.length > 0 &&
+                  {headers.length > 0 &&
                     headers.map((item) => (
                       <th className='table-nav' scope='col'>
                         <p className='table-th'> {item}</p>
                       </th>
-                    ))
-                  }
+                    ))}
 
                   <th className='table-nav' scope='col'>
                     <p className='table-th'> QR code</p>
@@ -174,7 +183,10 @@ const ViewAllItemsData = () => {
               <tbody>
                 {columns.length > 0 &&
                   columns.map((item, index) => (
-                    <tr key={index} className='data-tr' onClick={() => handleRowClick(item['lsg_unique_id'])}>
+                    <tr
+                      key={index}
+                      className='data-tr'
+                      onClick={() => handleRowClick(item["lsg_unique_id"])}>
                       {headers.length > 0 &&
                         headers.map((head) => (
                           <td className='data-td'>
@@ -183,7 +195,7 @@ const ViewAllItemsData = () => {
                         ))}
 
                       <td>
-                        <div className='tabl-icon ' >
+                        <div className='tabl-icon '>
                           {/* {item.img1} {item.img1} style={{ height: '20px', width: '15px', marginTop: '-10px' }}*/}
                           <QRCodeComponent value={'https://esgledger.co/'+item['slug']} size={50} slug={item['slug']} />
                         </div>
@@ -213,8 +225,7 @@ const ViewAllItemsData = () => {
                         </div>
                       </td>
                     </tr>
-                  ))
-                }
+                  ))}
               </tbody>
             </table>
 
