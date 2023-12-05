@@ -122,7 +122,7 @@ const page = () => {
         <Slider {...settings} className='slider-login'>
           <div>
             <div className='fist-slider-text-div'>
-              <h1>
+              <h1 className='fist-slider-text-tag'>
                 Unlocking ESG Trust and Transparency with Blockchain integrity
               </h1>
             </div>
@@ -190,29 +190,35 @@ const page = () => {
                   />
                 </div>
                 <div className='login-banner-inputss-div'>
-                  <div className='login-banner-inputsingle'>
-                    {" "}
-                    <label for='password'>New password</label> <br />
-                    <input
-                      className='brand-inp'
-                      type='password'
-                      id='password'
-                      name='Password'
-                    />
-                  </div>
-                  <div>
-                    {" "}
-                    <label for='email'>Repeat your new password</label> <br />
-                    <input
-                      className='brand-inp'
-                      type='password'
-                      id='Password'
-                      name='password'
-                    />
-                  </div>
+                  <div className='login-banner-inputs-div '>
+                    <form className='content' method='post'>
+                      <div className='mb-2'>
+                        {" "}
+                        <label for='password'>New password</label> <br />
+                        <input
+                          className='brand-input'
+                          type='password'
+                          id='password'
+                          name='Password'
+                          required
+                        />
+                      </div>
+                      <div>
+                        {" "}
+                        <label for='email'>Repeat your new password</label>{" "}
+                        <br />
+                        <input
+                          className='brand-input'
+                          type='password'
+                          id='Password'
+                          name='password'
+                        />
+                      </div>
 
-                  <div className='submitn-btn-div'>
-                    <button className='submitn-btn'>Confirm</button>
+                      <div className='submitn-btn-div'>
+                        <button className='submitn-btn'>Confirm</button>
+                      </div>
+                    </form>{" "}
                   </div>
                 </div>
               </div>

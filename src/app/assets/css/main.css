@@ -7,7 +7,7 @@ body {
 /* Navbar  */
 .full-navbar-div {
   background-color: white;
-  padding: 15px 0;
+  padding: 15px 0 0 0;
   border: 1px solid gray;
   position: fixed;
   top: 0;
@@ -28,8 +28,9 @@ body {
 
 .nav-logo-img {
   /* border: 1px solid gray; */
-  width: 185px;
-  height: 42px;
+  /* width: 185px;
+  height: 42px; */
+  width: 85%;
 }
 
 .nav-items-div {
@@ -265,7 +266,7 @@ body {
 }
 
 .footer-img {
-  width: 150px;
+  width: 60%;
 }
 
 .footer-text-div {
@@ -629,14 +630,35 @@ body {
     height: 400px;
   }
   .login-banner-inputs-div {
-    width: 500px;
-    /* padding: 20px 20px 20px 40px; */
+    width: 450px;
+    padding: 20px 20px 20px 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: justify;
+  }
+  .content {
+    /* border: 1px solid gray; */
+    width: 100%;
+  }
+  .brand-input {
+    width: 100%;
+    outline: none;
+    /* margin: 10px 0; */
+  }
+  .forget-text {
+    font-size: 0.8rem;
+    color: #00b3ff;
   }
   .submit-btn-div {
-    float: right;
+    /* float: right; */
+  }
+  .submit-btn {
+    border: none;
+    background-color: #066f69;
+    color: white;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    padding: 4px 90px;
   }
   .brand-inp {
     width: 100%;
@@ -684,8 +706,12 @@ body {
     color: white;
     /* border: 1px solid rgb(236, 14, 14); */
     display: flex;
+    width: 35%;
     justify-content: center;
-    margin: 18% 30% 0 30%;
+    margin: 14% 30% 0 30%;
+  }
+  .fist-slider-text-tag {
+    font-size: 55px;
   }
   .slick-dots {
     height: 10px;
@@ -772,6 +798,9 @@ body {
     width: 197px;
     height: 46px;
     margin-left: 20px;
+  }
+  .blockchain-h5 {
+    font-size: 0.8rem;
   }
   .login-footer-banner-full-div {
     /* Adjust styles for smaller screens */

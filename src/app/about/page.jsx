@@ -32,7 +32,7 @@ const page = () => {
               <div className='about-div'>
                 <div className='about-header-tag-img-div'>
                   <h3>About</h3>
-                  <Image src={pageLogonav} width={100} height={24} alt='' />
+                  <Image src={pageLogonav} width={110} height={24} alt='' />
                 </div>
 
                 <div className='about-header-des-div'>

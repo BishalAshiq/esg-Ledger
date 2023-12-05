@@ -21,13 +21,15 @@ const page = () => {
   const [item, setItem] = useState({});
   const [attribute, setAttribute] = useState("");
   useEffect(() => {
-    axiosInstance.get("item-details/" + param.brand_name+"/"+param.product_name).then((res) => {
-      setItem(res.data.data);
-      const parsedAttribute = JSON.parse(res.data.data.attribute);
+    axiosInstance
+      .get("item-details/" + param.brand_name + "/" + param.product_name)
+      .then((res) => {
+        setItem(res.data.data);
+        const parsedAttribute = JSON.parse(res.data.data.attribute);
 
-      // Set the parsed object in the state
-      setAttribute(parsedAttribute);
-    });
+        // Set the parsed object in the state
+        setAttribute(parsedAttribute);
+      });
   }, []);
 
   const formateDate = (dateString) => {
@@ -132,16 +134,16 @@ const page = () => {
                   </div> */}
                   {Object.entries(attribute).map(([key, value]) => (
                     <>
-                      {
-                        key != "" && value != "" ?
-                          <div className='Blockchain-ptag-divs'>
-                            <p className='block-ptext'>{key} </p>
-                            <h5 className='blockchain-h5'>
-                              {value} <br />{" "}
-                            </h5>
-                          </div> :
-                          <></>
-                      }
+                      {key != "" && value != "" ? (
+                        <div className='Blockchain-ptag-divs'>
+                          <p className='block-ptext'>{key} </p>
+                          <h5 className='blockchain-h5'>
+                            {value} <br />{" "}
+                          </h5>
+                        </div>
+                      ) : (
+                        <></>
+                      )}
                     </>
                   ))}
                   {/* <div className='Blockchain-ptag-divs'>
