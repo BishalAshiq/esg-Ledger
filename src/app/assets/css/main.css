@@ -100,7 +100,7 @@ body {
   display: grid;
   place-items: center;
   border: 1px solid rgb(255, 255, 255);
-  margin: 6% 30% 0 30%;
+  margin: 11% 30% 0 30%;
 }
 
 .hrs {
@@ -115,7 +115,7 @@ body {
   /* border: 1px solid rgb(255, 255, 255); */
   display: flex;
   flex-direction: column;
-  /* width: 310px; */
+  width: 290px;
   /* justify-content: center; */
   /* align-items: start; */
   padding: 30px 40px;
@@ -125,7 +125,7 @@ body {
   /* border: 1px solid rgb(255, 255, 255); */
   display: flex;
   flex-direction: column;
-  /* width: 310px; */
+  width: 338px;
   /* justify-content: center; */
   /* align-items: start; */
   padding: 30px 40px;
@@ -243,6 +243,15 @@ body {
 
   background-color: #066f69;
 }
+.content {
+  /* border: 1px solid gray; */
+  /* width: 100%; */
+}
+.brand-input {
+  width: 100%;
+  outline: none;
+  /* margin: 10px 0; */
+}
 
 .logins-footer-div {
   position: relative;
@@ -344,6 +353,7 @@ body {
   display: flex !important;
   margin: auto;
   justify-content: center !important;
+  padding: 10px 0 0 0;
 }
 
 .submitn-btn {
@@ -465,7 +475,7 @@ body {
 
 .Blockchain-tagone {
   font-size: 1.1rem;
-  padding: 5px 0;
+  padding: 5px;
   margin: 1px 0 0 0;
   font-family: "Roboto", sans-serif;
 }
@@ -523,15 +533,14 @@ body {
   font-size: 1.1rem;
   font-weight: 700;
 }
-
-.Information-full-div {
+.Information-full-divs {
   font-family: "Roboto", sans-serif;
   margin: 20px 30px !important;
   /* display: inline; */
   font-size: 0.7rem;
   font-style: italic;
-  color: black;
-  font-weight: 700;
+  color: #141414;
+  font-weight: 600;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -539,9 +548,29 @@ body {
   text-align: justify;
   /* line-height: 1.4; */
 }
+.Information-full-div {
+  font-family: "Roboto", sans-serif;
+  margin: 20px 30px !important;
+  /* display: inline; */
+  font-size: 0.7rem;
+  /* font-style: italic; */
+  color: #141414;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: justify;
+  /* line-height: 1.4; */
+}
+.block-ptwotext-add {
+  margin-left: 5px;
+
+  text-decoration: underline;
+}
 
 .block-ptwotext {
-  margin-top: -10px;
+  margin-top: -4px;
 }
 
 .issue-box-details {
@@ -618,6 +647,36 @@ body {
     margin-top: 2%;
     height: 20vh;
   }
+  .Information-full-divs {
+    font-family: "Roboto", sans-serif;
+    margin: 20px 30px !important;
+    /* display: inline; */
+    font-size: 1rem;
+    font-style: italic;
+    color: #141414;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: justify;
+    /* line-height: 1.4; */
+  }
+  .Information-full-div {
+    font-family: "Roboto", sans-serif;
+    margin: 20px 30px !important;
+    /* display: inline; */
+    font-size: 1rem;
+    /* font-style: italic; */
+    color: #141414;
+    font-weight: 530;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: justify;
+    /* line-height: 1.4; */
+  }
   .nav-items-div a {
     font-family: "Roboto", sans-serif;
     text-decoration: none;
@@ -631,7 +690,7 @@ body {
   }
   .login-banner-inputs-div {
     width: 450px;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 52px 20px 58px;
     display: flex;
     justify-content: center;
     align-items: justify;
@@ -641,13 +700,14 @@ body {
     width: 100%;
   }
   .brand-input {
-    width: 100%;
+    width: 96%;
     outline: none;
     /* margin: 10px 0; */
   }
   .forget-text {
     font-size: 0.8rem;
     color: #00b3ff;
+    margin-right: 15px;
   }
   .submit-btn-div {
     /* float: right; */
@@ -661,7 +721,7 @@ body {
     padding: 4px 90px;
   }
   .brand-inp {
-    width: 100%;
+    width: 96%;
   }
   .certificate-full-div {
     margin-top: 5%;
@@ -684,7 +744,7 @@ body {
   }
 
   .block-ptwotext {
-    margin-top: -10px;
+    margin-top: -6px;
   }
 
   .certificate-tags-div {
@@ -765,6 +825,9 @@ body {
   .login-footer-banner-full-div {
     padding: 25px 0 0 0;
   }
+  .blockchain-h5 {
+    padding: 0 14%;
+  }
 }
 
 @media (max-width: 768px) {
@@ -799,9 +862,7 @@ body {
     height: 46px;
     margin-left: 20px;
   }
-  .blockchain-h5 {
-    font-size: 0.8rem;
-  }
+
   .login-footer-banner-full-div {
     /* Adjust styles for smaller screens */
     padding: 10px;
@@ -885,10 +946,72 @@ body {
     border-top-right-radius: 0;
     border: none;
   }
+  .Information-full-divs {
+    line-height: 1.2;
+    font-size: 0.8rem;
+    font-weight: 600;
+    /* text-align: ; */
+    font-family: "Roboto", sans-serif;
+  }
+  .Information-full-div {
+    line-height: 1.4;
+    font-size: 0.9rem;
+    font-weight: 600;
+    /* text-align: justify; */
+    font-family: "Roboto", sans-serif;
+  }
+  .Blockchain-ptag-divs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0 5px 0;
+    /* line-height: 0.4; */
+    padding: 0 37px;
+  }
+  .block-ptwotext {
+    /* line-height: 1.9; */
+    /* white-space-collapse: discard; */
+    margin: 0 0 0 0;
+    font-size: 0.7rem;
+    color: #141414;
+    font-weight: 600;
+    margin: 0 0 1px 0;
+  }
+  .block-ptwotextc {
+    margin: 0 0 0 0;
+    font-size: 0.6rem;
+    color: #000000;
+    font-weight: 500;
+    /* word-spacing: -9px; */
+    /* font-style: italic; */
+    font-family: "Roboto", sans-serif;
+    word-spacing: -1px;
+  }
+  .block-ptwotext-add {
+    text-decoration: underline;
+    /* margin-top: -30px; */
+    /* line-height: 0.8; */
+  }
+  .cc-mob {
+  }
 
-  .block-ptext {
+  .blockchain-h5 {
+    font-size: 0.9rem;
+    /* line-height: 0.9; */
+  }
+
+  .Blockchain-tagone {
     font-size: 1rem;
-    display: inline-block;
+    padding: 9px 3px;
+    margin: 1px 0 0 0;
+    font-family: "Roboto", sans-serif;
+    /* margin-top: -20px; */
+  }
+  .block-ptext {
+    font-size: 0.9rem;
+    /* display: inline-block; */
     width: 105%;
     /* border: 1px solid gray; */
   }

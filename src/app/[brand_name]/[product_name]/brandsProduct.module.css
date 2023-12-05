@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 120vh; /* Adjust as needed */
+  height: 100vh; /* Adjust as needed */
   /* overflow-y: scroll; */
   overflow-x: hidden;
   display: flex;

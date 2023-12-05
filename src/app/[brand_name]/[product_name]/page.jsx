@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "../../login/login.module.css";
+import styles from "./brandsProduct.module.css";
 import Nav from "@/component/Navbar/Nav";
 import pageLogo from "../../../../public/pageLogomd.png";
 import pageicon1 from "../../../../public/social1.svg";
@@ -188,28 +188,37 @@ const page = () => {
                     Methodist Centre 循道衛理中心
                   </h5>
                 </div> */}
-                  <div className='Information-full-div'>
+
+                  <div className='Information-full-divs'>
                     <p>Important Information:</p>
-                    <p>
-                      {" "}
-                      1. This certificate is non-transferable and is permanently
-                      recorded on the blockchain
-                    </p>
-                    <p className='block-ptwotext'>
-                      {" "}
-                      2. For any inquiries or conernsm, feel free to contact us
-                      at enquiries@certledger.io
-                    </p>
+                    <ol>
+                      <li className='block-ptwotext'>
+                        This certificate is non-transferable and is permanently
+                        recorded on the blockchain
+                      </li>
+                      <li className='block-ptwotext'>
+                        For any inquiries or conernsm, feel free to contact us
+                        at enquiries@certledger.io
+                      </li>
+                    </ol>
                   </div>
 
                   <div className='Information-full-div'>
-                    <p>重要信息:</p>
-                    <p> 1. 此證書不可轉讓，已永久記錄在區塊鏈上。</p>
-                    <p className='block-ptwotext'>
-                      {" "}
-                      2. 如有任何疑問或關切事 項，可電郵至:
-                      enquiries@certledger.io
-                    </p>
+                    <p className='block-ptwotextcs'>重要信息:</p>
+
+                    <ol>
+                      <li className='block-ptwotextc'>
+                        此證書不可轉讓，已永久記錄在區塊鏈上。
+                      </li>
+                      <li className='block-ptwotextc cc-mob'>
+                        如有任何疑問或關切事項 可電郵至:
+                        <span className='block-ptwotext-add'>
+                          {" "}
+                          enquiries@certledger.io
+                        </span>
+                        。
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>

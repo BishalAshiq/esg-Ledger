@@ -65,6 +65,8 @@
 .indi-brand-head-tags {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid #88c9d7;
+  margin: 0 0 60px 0;
 }
 
 .kibo-inputs {
@@ -73,7 +75,24 @@
   margin-top: 10px;
   font-size: 0.8rem;
 }
+
 .number-of-div {
   display: flex;
   justify-content: space-between;
+}
+.indu-brand-edit {
+  color: #00b3ff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}
+.contact-word {
+  font-family: "Roboto", sans-serif;
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.indi-brand-hr {
+  margin-top: -10%;
+  color: #00b3ff;
 }

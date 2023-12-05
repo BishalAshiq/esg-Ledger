@@ -11,7 +11,7 @@ const IndividualBrand = () => {
         <div className='row'>
           <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
             <div className='indi-brand-head-tags'>
-              <div>
+              <div className='indi-brand-ico-tag'>
                 <Image src={BackIcon.src} width={20} height={20} alt='' />
                 <label
                   className='form-check-label single-checkbox-text'
@@ -19,7 +19,7 @@ const IndividualBrand = () => {
                   Account
                 </label>
               </div>
-              <p>Edit</p>
+              <p className='indu-brand-edit'>Edit</p>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ const IndividualBrand = () => {
 
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
-              <p>Contact person</p>
+              <p className='contact-word'>Contact person</p>
             </div>
           </div>
           <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
@@ -49,7 +49,7 @@ const IndividualBrand = () => {
 
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
-              <p>Contact number</p>
+              <p className='contact-word'>Contact number</p>
             </div>
           </div>
           <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
@@ -62,7 +62,7 @@ const IndividualBrand = () => {
 
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
-              <p>Contact email</p>
+              <p className='contact-word'>Contact email</p>
             </div>
           </div>
           <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
@@ -75,7 +75,7 @@ const IndividualBrand = () => {
 
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
-              <p>Website</p>
+              <p className='contact-word'>Website</p>
             </div>
           </div>
           <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
@@ -88,28 +88,28 @@ const IndividualBrand = () => {
 
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
-              <p>Number of products</p>
+              <p className='contact-word'>Number of products</p>
             </div>
           </div>
           <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
             <div className='number-of-div'>
               <p>100</p>
-              <p>View all</p>
+              <p className='indu-brand-edit'>View all</p>
             </div>
           </div>
-          <hr />
+          <hr className='indi-brand-hr' />
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
-              <p>Number of items</p>
+              <p className='contact-word'>Number of items</p>
             </div>
           </div>
           <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
             <div className='number-of-div'>
               <p>500</p>
-              <p>View all</p>
+              <p className='indu-brand-edit'>View all</p>
             </div>
           </div>
-          <hr />
+          <hr className='indi-brand-hr' />
         </div>
       </div>
     </div>
