@@ -1,0 +1,239 @@
+"use client";
+import React, { useEffect, useState, useRef } from "react";
+import Downloadicon from "../../../public/downloadicon.svg";
+import QrCode from "../../../public/qrcode.svg";
+import Image from "next/image";
+import axiosInstance from "../../../utils/axios";
+import QRCodeComponent from "../DashboardAll/QRCodeComponent";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+
+const ViewAllBrands = () => {
+  const itemsPerPage = 15;
+  const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const [headers, setHeaders] = useState([]);
+  const [columns, setColumns] = useState([]);
+  const qrCodeRef = useRef();
+
+  useEffect(() => {
+    axiosInstance.get("/item-list").then((res) => {
+      if (res.data.status == 200) {
+        setHeaders(res.data.header);
+        setColumns(res.data.data);
+      }
+      if (res.data.status == 401) {
+        toast.error(res.data.message, {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        localStorage.removeItem("refreshToken");
+        router.push("/");
+      }
+    });
+  }, []);
+
+  const totalPages = Math.ceil(columns.length / itemsPerPage);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentData = columns.slice(startIndex, endIndex);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
+  const [copySuccess, setCopySuccess] = useState(null);
+
+  const copyToClipboard = (e, copy_url) => {
+    e.stopPropagation();
+    try {
+      const currentURL = "https://esgledger.co/" + copy_url;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(currentURL);
+        setCopySuccess("URL copied to clipboard!");
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = currentURL;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+        setCopySuccess("URL copied to clipboard!");
+        toast.success("URL copied to clipboard!", {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+      }
+    } catch (error) {
+      // Handle errors
+      console.error("Error copying to clipboard:", error);
+      setCopySuccess("Copy to clipboard failed");
+    }
+  };
+
+  const handleRowClick = (lsgUniqueId) => {
+    // Handle redirection logic here
+    // window.location.href = `/products/${lsgUniqueId}`;
+  };
+
+  return (
+    <div className='container-fluid'>
+      <div>
+        <div className='data-search-input-div'>
+          <span>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='16'
+              height='16'
+              fill='currentColor'
+              class='bi bi-search'
+              viewBox='0 0 16 16'>
+              <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
+            </svg>
+          </span>
+          <input
+            className='data-search-input'
+            type='search'
+            placeholder='Search by “brand name, Item, Product”'
+          />
+        </div>
+
+        {/* <div>
+          <div className='filter-text-select-div'>
+            <p className='filter-text-p'>Filter by</p>
+            <select
+              className='form-select form-select-sm filter-select'
+              aria-label='Small select example'>
+              <option selected>Issuer</option>
+              <option value='1'>One</option>
+              <option value='2'>Two</option>
+              <option value='3'>Three</option>
+            </select>
+            <select
+              className='form-select form-select-sm filter-select'
+              aria-label='Small select example'>
+              <option selected>Program</option>
+              <option value='1'>One</option>
+              <option value='2'>Two</option>
+              <option value='3'>Three</option>
+            </select>
+            <select
+              className='form-select form-select-sm filter-select'
+              aria-label='Small select example'>
+              <option selected>Class</option>
+              <option value='1'>One</option>
+              <option value='2'>Two</option>
+              <option value='3'>Three</option>
+            </select>
+          </div>
+        </div> */}
+
+        <div>
+          <div className='mt-4'>
+            <table className='table'>
+              <thead>
+                <tr>
+                  {/* {headers.length > 0 &&
+                    headers.map((item) => (
+                      <th className='table-nav' scope='col'>
+                        <p className='table-th'> {item}</p>
+                      </th>
+                    ))} */}
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Name</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Contact name</p>
+                  </th>
+
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Contact number</p>
+                  </th>
+
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> Contact Email</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-th'> No. items</p>
+                  </th>
+                  <th className='table-nav' scope='col'>
+                    <p className='table-ths'> No. items</p>
+                  </th>
+                  {/* <th className='table-navs' scope='col'>
+                  <p className='table-ths'> QR code</p>
+                </th> */}
+                </tr>
+              </thead>
+              <tbody>
+                <td>
+                  <p>Preface</p>
+                </td>
+                <td>
+                  <p>Preface</p>
+                </td>
+                <td>
+                  <p>Preface</p>
+                </td>
+                <td>
+                  <p>Preface</p>
+                </td>
+                <td>
+                  <p>Preface</p>
+                </td>
+                <td>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='36'
+                    height='36'
+                    fill='#155C79'
+                    class='bi bi-three-dots'
+                    viewBox='0 0 16 16'>
+                    <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
+                  </svg>
+                </td>
+              </tbody>
+            </table>
+
+            <div className='pagination'>
+              <svg
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage === 1}
+                xmlns='http://www.w3.org/2000/svg'
+                width='20'
+                height='20'
+                fill='#86C6CA'
+                class='bi bi-caret-left-fill'
+                viewBox='0 0 16 16'>
+                <path d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z' />
+              </svg>
+
+              <span>{` ${currentPage} / ${totalPages}`}</span>
+
+              <svg
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage === totalPages}
+                xmlns='http://www.w3.org/2000/svg'
+                width='16'
+                height='16'
+                fill='#86C6CA'
+                class='bi bi-caret-right-fill'
+                viewBox='0 0 16 16'>
+                <path d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z' />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ViewAllBrands;
