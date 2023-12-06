@@ -110,6 +110,11 @@ const IndividualBrand = () => {
             </div>
           </div>
           <hr className='indi-brand-hr' />
+          <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+            <div className='button-of-div'>
+              <button className='reset-btn'>Reset password</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

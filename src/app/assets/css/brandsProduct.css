@@ -79,6 +79,7 @@
 .number-of-div {
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
 }
 .indu-brand-edit {
   color: #00b3ff;
@@ -93,6 +94,64 @@
   font-weight: 600;
 }
 .indi-brand-hr {
-  margin-top: -10%;
+  padding-top: -30%;
   color: #00b3ff;
+}
+.button-of-div {
+  display: flex;
+  justify-content: end;
+}
+.reset-btn {
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  background-color: #066f69;
+  color: white;
+  font-family: "Roboto", sans-serif;
+
+  padding: 5px 40px;
+}
+
+.accordion-item {
+  background-color: #066f69 !important;
+  color: white !important;
+}
+.accordion-body {
+  background-color: #e9ebe6 !important;
+  color: rgb(15, 14, 14) !important;
+  border: none !important;
+}
+.uppor {
+}
+.accor-tag-div {
+  display: flex;
+  justify-content: space-between;
+
+  /* background-color: #066f69 !important;
+  color: white !important; */
+}
+.accordion-header {
+  margin-left: 38%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+.accordion-button {
+  /* padding: 0 10px; */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  background-color: #066f69 !important;
+  color: white !important;
+  width: 100% !important; /* Ensure the button takes up the full width */
+  border: 1px solid rgb(255, 255, 255);
+}
+.accordion-button::after {
+  visibility: hidden;
+}
+.chevron-icon {
+  margin-right: 10px;
+  cursor: pointer;
 }
