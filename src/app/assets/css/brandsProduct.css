@@ -68,7 +68,23 @@
   border-bottom: 1px solid #88c9d7;
   margin: 0 0 60px 0;
 }
-
+.kibo-upload-icon {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.kibo-imgs-div {
+}
+.kibo-imgs {
+  width: 100px;
+  height: 55px;
+}
+.kibo-upload {
+  color: #00b3ff;
+  font-weight: 600;
+  /* margin-left: 10px; */
+}
 .kibo-inputs {
   width: 100%;
   outline: none;
@@ -81,8 +97,22 @@
   justify-content: space-between;
   margin-top: 5px;
 }
+.edit-delete-div {
+  display: flex;
+  gap: 10px;
+}
+.indi-brand-ico-tag {
+  display: flex;
+  gap: 10px;
+}
 .indu-brand-edit {
   color: #00b3ff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.indu-brand-edits {
+  color: #ff0000;
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
 }

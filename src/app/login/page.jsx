@@ -20,6 +20,7 @@ import Cookies from "js-cookie";
 
 const page = () => {
   const router = useRouter();
+
   var settings = {
     dots: true,
     infinite: false,
@@ -189,37 +190,34 @@ const page = () => {
                     alt=''
                   />
                 </div>
-                <div className='login-banner-inputss-div'>
-                  <div className='login-banner-inputs-div '>
-                    <form className='content' method='post'>
-                      <div className='mb-2'>
-                        {" "}
-                        <label for='password'>New password</label> <br />
-                        <input
-                          className='brand-input'
-                          type='password'
-                          id='password'
-                          name='Password'
-                          required
-                        />
-                      </div>
-                      <div>
-                        {" "}
-                        <label for='email'>Repeat your new password</label>{" "}
-                        <br />
-                        <input
-                          className='brand-input'
-                          type='password'
-                          id='Password'
-                          name='password'
-                        />
-                      </div>
+                <div className='login-banner-inputs-div'>
+                  <form className='content' method='post'>
+                    <div className='mb-2'>
+                      {" "}
+                      <label for='password'>New password</label> <br />
+                      <input
+                        className='brand-input'
+                        type='password'
+                        id='password'
+                        name='Password'
+                        required
+                      />
+                    </div>
+                    <div>
+                      {" "}
+                      <label for='email'>Repeat your new password</label> <br />
+                      <input
+                        className='brand-input'
+                        type='password'
+                        id='Password'
+                        name='password'
+                      />
+                    </div>
 
-                      <div className='submitn-btn-div'>
-                        <button className='submitn-btn'>Confirm</button>
-                      </div>
-                    </form>{" "}
-                  </div>
+                    <div className='submitn-btn-div'>
+                      <button className='submitn-btn'>Confirm</button>
+                    </div>
+                  </form>{" "}
                 </div>
               </div>
             </div>

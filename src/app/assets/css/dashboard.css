@@ -107,11 +107,17 @@
   width: 70%;
   margin: 0 0 0 40px;
 }
+.admin-header-search-div {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .data-search-input-div {
-  width: 100%;
+  width: 78%;
   display: flex;
-  gap: 20px;
+  /* gap: 20px; */
   margin: 20px 0;
   border-radius: 5px;
   padding: 5px 10px;
@@ -121,6 +127,16 @@
   border: none;
   outline: none;
   width: 100%;
+}
+.admin-header-search-btn {
+  border: none;
+  background-color: #86c6ca;
+  font-size: 0.8rem;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  padding: 5px 50px;
 }
 
 .filter-text-select-div {
@@ -301,9 +317,72 @@
   justify-content: center;
 }
 
+.indi-filter-div {
+  display: flex;
+  gap: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #49494a;
+}
+.filt-twenty {
+  color: #00a5be;
+}
+.text-tr {
+  display: flex;
+  justify-content: center;
+}
+.text-tricon {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  text-align: end;
+}
+.brand-all-data {
+  margin: 10px 0;
+  height: 1vh !important;
+  border: 1px solid rgb(207, 207, 207);
+  /* margin-top: 20px; */
+}
+.brand-all-data:hover {
+  cursor: pointer;
+  /* background-color: #f8f8f8;
+  border: none; */
+}
+
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
   .dash-side-ptext {
     font-size: 1.1rem;
+  }
+  .admin-header-search-div {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .data-search-input-div {
+    width: 83%;
+    display: flex;
+    /* gap: 20px; */
+    margin: 20px 0;
+    border-radius: 5px;
+    padding: 5px 10px;
+    border: 1px solid rgb(216, 216, 216);
+  }
+  .data-search-input {
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+  .admin-header-search-btn {
+    border: none;
+    background-color: #86c6ca;
+    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 70px;
   }
 }
 
