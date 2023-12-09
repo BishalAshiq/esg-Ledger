@@ -171,7 +171,7 @@ const ViewAllItemsData = () => {
                     <tr
                       key={index}
                       className='data-tr'
-                      onClick={() => handleRowClick(item["lsg_unique_id"])}>
+                      onClick={() => handleRowClick(item["slug"])}>
                       {headers.length > 0 &&
                         headers.map((head) => (
                           <td className='data-td'>
