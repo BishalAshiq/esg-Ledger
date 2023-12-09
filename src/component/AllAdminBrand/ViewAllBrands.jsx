@@ -8,13 +8,14 @@ import QRCodeComponent from "../DashboardAll/QRCodeComponent";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import IndividualBrand from "./IndividualBrand";
+import CreateBrand from "./CreateBrand";
 
 const ViewAllBrands = () => {
   const itemsPerPage = 15;
   const [currentPage, setCurrentPage] = useState(1);
+  const [brandList, setBrandList] = useState([]);
   const router = useRouter();
-  const [headers, setHeaders] = useState([]);
-  const [columns, setColumns] = useState([]);
+  const [token, setToken] = useState(null);
   const qrCodeRef = useRef();
   // Step 1: Create a state variable for the new component visibility
   const [showBrandSingleProducts, setShowBrandSingleProducts] = useState(false);
@@ -24,11 +25,25 @@ const ViewAllBrands = () => {
     setShowBrandSingleProducts(!showBrandSingleProducts);
   };
 
+  const handleEditFrom = () => {
+
+  }
+
   useEffect(() => {
-    axiosInstance.get("/item-list").then((res) => {
+    let token = "";
+
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+
+    axiosInstance.get("/brand-list", {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => {
       if (res.data.status == 200) {
-        setHeaders(res.data.header);
-        setColumns(res.data.data);
+        setBrandList(res.data.data);
       }
       if (res.data.status == 401) {
         toast.error(res.data.message, {
@@ -44,11 +59,11 @@ const ViewAllBrands = () => {
     });
   }, []);
 
-  const totalPages = Math.ceil(columns.length / itemsPerPage);
+  const totalPages = Math.ceil(brandList.length / itemsPerPage);
 
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
-  const currentData = columns.slice(startIndex, endIndex);
+  const currentData = brandList.slice(startIndex, endIndex);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
@@ -92,6 +107,14 @@ const ViewAllBrands = () => {
     // window.location.href = `/products/${lsgUniqueId}`;
   };
 
+
+  const handleSearch = (keyword) => {
+    axiosInstance.post('search-brand', {
+      keyword: keyword
+    }).then((res) => {
+      setBrandList(res.data.data);
+    })
+  }
   return (
     <div className='container-fluid'>
       {!showBrandSingleProducts ? (
@@ -111,7 +134,9 @@ const ViewAllBrands = () => {
               </span>
               <input
                 className='data-search-input'
-                type='search'
+                type='search' onKeyUp={(e) => {
+                  handleSearch(e.target.value)
+                }}
                 placeholder='Search by “brand name, Item, Product”'
               />
             </div>
@@ -138,7 +163,7 @@ const ViewAllBrands = () => {
             </span>
             <p>
               Search by ________ total of{" "}
-              <span className='filt-twenty'>21</span> collections
+              <span className='filt-twenty'>{brandList.length}</span> collections
             </p>
           </div>
 
@@ -209,125 +234,44 @@ const ViewAllBrands = () => {
                   </tr>
                 </thead>
                 <tbody className='brand-all-data'>
-                  <td>
-                    <p className='text-tr'>Preface</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>Preface AI</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>+852 24210010</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>school@preface.ai</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>600</p>
-                  </td>
-                  <td>
-                    <div className='text-tricon'>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        width='26'
-                        height='26'
-                        fill='#155C79'
-                        class='bi bi-three-dots'
-                        viewBox='0 0 16 16'>
-                        <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
-                      </svg>
-                    </div>
-                  </td>
+                  {
+                    brandList.length > 0 &&
+                    brandList.map((brand, index) => (
+                      <tr className='brand-all-data' key={index}>
+                        <td>
+                          <p className='text-tr'>{brand.name}</p>
+                        </td>
+                        <td>
+                          <p className='text-tr'>{brand.contact_person}</p>
+                        </td>
+                        <td>
+                          <p className='text-tr'>{brand.contact_number}</p>
+                        </td>
+                        <td>
+                          <p className='text-tr'>{brand.email}</p>
+                        </td>
+                        <td>
+                          <p className='text-tr'>{brand.brands_item_count}</p>
+                        </td>
+                        <td>
+                          <div className='text-tricon'>
+                            <svg onClick={sh}
+                              xmlns='http://www.w3.org/2000/svg'
+                              width='26'
+                              height='26'
+                              fill='#155C79'
+                              class='bi bi-three-dots'
+                              viewBox='0 0 16 16'>
+                              <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
+                            </svg>
+                          </div>
+                        </td>
+                      </tr>
+                    ))
+                  }
+
                 </tbody>
-                <tbody className='brand-all-data'>
-                  <td>
-                    <p className='text-tr'>Preface</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>Preface AI</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>+852 24210010</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>school@preface.ai</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>600</p>
-                  </td>
-                  <td>
-                    <div className='text-tricon'>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        width='26'
-                        height='26'
-                        fill='#155C79'
-                        class='bi bi-three-dots'
-                        viewBox='0 0 16 16'>
-                        <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
-                      </svg>
-                    </div>
-                  </td>
-                </tbody>
-                <tbody className='brand-all-data'>
-                  <td>
-                    <p className='text-tr'>Preface</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>Preface AI</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>+852 24210010</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>school@preface.ai</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>600</p>
-                  </td>
-                  <td>
-                    <div className='text-tricon'>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        width='26'
-                        height='26'
-                        fill='#155C79'
-                        class='bi bi-three-dots'
-                        viewBox='0 0 16 16'>
-                        <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
-                      </svg>
-                    </div>
-                  </td>
-                </tbody>
-                <tbody className='brand-all-data'>
-                  <td>
-                    <p className='text-tr'>Preface</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>Preface AI</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>+852 24210010</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>school@preface.ai</p>
-                  </td>
-                  <td>
-                    <p className='text-tr'>600</p>
-                  </td>
-                  <td>
-                    <div className='text-tricon'>
-                      <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        width='26'
-                        height='26'
-                        fill='#155C79'
-                        class='bi bi-three-dots'
-                        viewBox='0 0 16 16'>
-                        <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
-                      </svg>
-                    </div>
-                  </td>
-                </tbody>
+
               </table>
 
               <div className='pagination'>
@@ -362,8 +306,10 @@ const ViewAllBrands = () => {
         </div>
       ) : (
         // Only render the BrandSingleProducts component when showBrandSingleProducts is true
-        <IndividualBrand />
+        
+        <CreateBrand />
       )}
+
     </div>
   );
 };
