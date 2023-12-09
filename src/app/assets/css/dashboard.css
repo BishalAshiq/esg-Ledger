@@ -175,6 +175,7 @@
   text-align: center;
   align-items: center;
   margin-bottom: -2px;
+  font-size: 0.9rem;
 }
 .table-ths {
   display: flex;
