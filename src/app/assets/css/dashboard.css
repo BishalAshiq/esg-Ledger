@@ -338,6 +338,39 @@
   align-items: end;
   text-align: end;
 }
+.icon-container {
+  position: relative;
+  /* background-color: white; */
+  display: inline-block;
+}
+
+.link-container {
+  position: absolute;
+  top: 100%;
+  border: 1px solid rgb(247, 247, 247);
+  /* background-color: rgb(255, 255, 255); */
+  left: -34px;
+  padding: 10px;
+  z-index: 4;
+  background-color: white; /* Set the background color here */
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a box shadow */
+  opacity: 5;
+  display: none;
+  flex-direction: column;
+}
+.link-container a {
+  text-decoration: none;
+  color: #49494a;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}
+
+.icon-container:hover .link-container {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+}
 .brand-all-data {
   margin: 10px 0;
   height: 1vh !important;

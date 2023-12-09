@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import IndividualBrand from "./IndividualBrand";
 import CreateBrand from "./CreateBrand";
+import Link from "next/link";
 
 const ViewAllBrands = () => {
   const itemsPerPage = 15;
@@ -25,9 +26,7 @@ const ViewAllBrands = () => {
     setShowBrandSingleProducts(!showBrandSingleProducts);
   };
 
-  const handleEditFrom = () => {
-
-  }
+  const handleEditFrom = () => {};
 
   useEffect(() => {
     let token = "";
@@ -36,27 +35,29 @@ const ViewAllBrands = () => {
       token = localStorage.getItem("refreshToken");
     }
 
-    axiosInstance.get("/brand-list", {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((res) => {
-      if (res.data.status == 200) {
-        setBrandList(res.data.data);
-      }
-      if (res.data.status == 401) {
-        toast.error(res.data.message, {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-        localStorage.removeItem("refreshToken");
-        router.push("/");
-      }
-    });
+    axiosInstance
+      .get("/brand-list", {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          setBrandList(res.data.data);
+        }
+        if (res.data.status == 401) {
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          localStorage.removeItem("refreshToken");
+          router.push("/");
+        }
+      });
   }, []);
 
   const totalPages = Math.ceil(brandList.length / itemsPerPage);
@@ -107,14 +108,15 @@ const ViewAllBrands = () => {
     // window.location.href = `/products/${lsgUniqueId}`;
   };
 
-
   const handleSearch = (keyword) => {
-    axiosInstance.post('search-brand', {
-      keyword: keyword
-    }).then((res) => {
-      setBrandList(res.data.data);
-    })
-  }
+    axiosInstance
+      .post("search-brand", {
+        keyword: keyword,
+      })
+      .then((res) => {
+        setBrandList(res.data.data);
+      });
+  };
   return (
     <div className='container-fluid'>
       {!showBrandSingleProducts ? (
@@ -134,8 +136,9 @@ const ViewAllBrands = () => {
               </span>
               <input
                 className='data-search-input'
-                type='search' onKeyUp={(e) => {
-                  handleSearch(e.target.value)
+                type='search'
+                onKeyUp={(e) => {
+                  handleSearch(e.target.value);
                 }}
                 placeholder='Search by “brand name, Item, Product”'
               />
@@ -163,7 +166,8 @@ const ViewAllBrands = () => {
             </span>
             <p>
               Search by ________ total of{" "}
-              <span className='filt-twenty'>{brandList.length}</span> collections
+              <span className='filt-twenty'>{brandList.length}</span>{" "}
+              collections
             </p>
           </div>
 
@@ -234,8 +238,7 @@ const ViewAllBrands = () => {
                   </tr>
                 </thead>
                 <tbody className='brand-all-data'>
-                  {
-                    brandList.length > 0 &&
+                  {brandList.length > 0 &&
                     brandList.map((brand, index) => (
                       <tr className='brand-all-data' key={index}>
                         <td>
@@ -255,23 +258,27 @@ const ViewAllBrands = () => {
                         </td>
                         <td>
                           <div className='text-tricon'>
-                            <svg onClick={sh}
-                              xmlns='http://www.w3.org/2000/svg'
-                              width='26'
-                              height='26'
-                              fill='#155C79'
-                              class='bi bi-three-dots'
-                              viewBox='0 0 16 16'>
-                              <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
-                            </svg>
+                            <div className='icon-container'>
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='26'
+                                height='26'
+                                fill='#155C79'
+                                className='bi bi-three-dots'
+                                viewBox='0 0 16 16'>
+                                <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
+                              </svg>
+
+                              <div className='link-container'>
+                                <Link href='/'>Edit</Link>
+                                <Link href='/'>Delete</Link>
+                              </div>
+                            </div>
                           </div>
                         </td>
                       </tr>
-                    ))
-                  }
-
+                    ))}
                 </tbody>
-
               </table>
 
               <div className='pagination'>
@@ -306,10 +313,9 @@ const ViewAllBrands = () => {
         </div>
       ) : (
         // Only render the BrandSingleProducts component when showBrandSingleProducts is true
-        
+
         <CreateBrand />
       )}
-
     </div>
   );
 };
