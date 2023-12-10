@@ -7,14 +7,18 @@ import Image from "next/image";
 import IndiEditBrands from "./IndiEditBrands";
 import axiosInstance from "../../../utils/axios";
 import { base_url } from "../../../utils/auth";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 
 const IndividualBrand = ({ brandId }) => {
+  const router = useRouter();
   const [showBrandSingleProducts, setShowBrandSingleProducts] = useState(false);
   const handleThreeDotsClick = () => {
     setShowBrandSingleProducts(!showBrandSingleProducts);
   };
   const [brand, setBrand] = useState({});
+  const [authToken, setAuthToken] = useState({});
 
   const [formData, setFormData] = useState({
     brand_id: "",
@@ -28,7 +32,17 @@ const IndividualBrand = ({ brandId }) => {
   })
 
   useEffect(() => {
-    axiosInstance.get('brand-details/' + brandId).then((result) => {
+    let token = "";
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+    setAuthToken(token);
+    axiosInstance.get('brand-details/' + brandId, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((result) => {
       if (result.data.status == 200) {
         let brand = result.data.data;
         setFormData(prevFormData => ({
@@ -57,8 +71,71 @@ const IndividualBrand = ({ brandId }) => {
   };
 
   const handleFormEdit = (e) => {
-    axiosInstance.post('/save-brand', formData).then((res) => {
+    axiosInstance.post('/save-brand', formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${authToken}`,
+      },
+    }).then((res) => {
+      if (res.data.status == 401) {
+        toast.error(res.data.message, {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        localStorage.removeItem("refreshToken");
+        router.push("/");
+      }
 
+
+      if (res.data.status == 200) {
+        toast.success(res.data.message, {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        // router.push("/");
+      }
+    })
+  };
+
+  const hanleBrandDelete = (e) => {
+    const deleteFormData = {
+      brandId: brandId
+    }
+    axiosInstance.post('/delete-brand', deleteFormData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${authToken}`,
+      },
+    }).then((res) => {
+      if (res.data.status == 401) {
+        toast.error(res.data.message, {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        localStorage.removeItem("refreshToken");
+        router.push("/");
+      }
+
+
+      if (res.data.status == 200) {
+        toast.success(res.data.message, {
+          position: "top-right",
+          style: {
+            background: "white",
+            color: "black",
+          },
+        });
+        // router.push("/");
+      }
     })
   };
   console.log(base_url, brandId);
@@ -89,7 +166,7 @@ const IndividualBrand = ({ brandId }) => {
                       onClick={handleFormEdit}>
                       Edit
                     </p>
-                    <p className='indu-brand-edits'>Delete</p>
+                    <p className='indu-brand-edits' onClick={hanleBrandDelete}>Delete</p>
                   </div>
                 </div>
               </div>
