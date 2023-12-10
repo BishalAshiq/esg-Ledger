@@ -114,7 +114,45 @@
 .indu-brand-edits {
   color: #ff0000;
   font-family: "Roboto", sans-serif;
+  cursor: pointer;
   font-size: 0.9rem;
+}
+.Modal-header-div {
+  display: flex;
+
+  padding: 50px 20px;
+  color: white;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.yes-modal-btn {
+  background-color: #86c6ca;
+  color: white;
+  padding: 2px 30px;
+  border: 1px solid #86c6ca;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  font-weight: 300;
+  outline: none;
+}
+.no-modal-btn {
+  background-color: #066f69;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  color: white;
+  padding: 2px 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-weight: 300;
+  outline: none;
+}
+.created-modal-save-btn-div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
 }
 .contact-word {
   font-family: "Roboto", sans-serif;

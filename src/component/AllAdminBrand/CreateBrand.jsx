@@ -7,6 +7,34 @@ import { toast } from "react-toastify";
 
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+
+// Modal
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "#066F69",
+  boxShadow: 24,
+  borderRadius: 2,
+  p: 4,
+};
+const styleDelete = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  borderRadius: 2,
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "#066F69",
+  boxShadow: 24,
+  p: 4,
+};
 
 const CreateBrand = () => {
   // Step 1: Create a state variable for the new component visibility
@@ -19,8 +47,13 @@ const CreateBrand = () => {
 
   const [imageSrc, setImageSrc] = useState("/kibo.png"); // Set the initial image source
 
-
-
+  // Modal
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [openD, setOpenD] = React.useState(false);
+  const handleOpenD = () => setOpenD(true);
+  const handleCloseD = () => setOpenD(false);
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -43,12 +76,12 @@ const CreateBrand = () => {
     contact_number: "",
     contact_email: "",
     website: "",
-    password: ""
-  })
+    password: "",
+  });
   const handleFormData = (e) => {
     const { name, value } = e.target;
 
-    setFormData(prevFormData => ({
+    setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
@@ -61,50 +94,50 @@ const CreateBrand = () => {
       token = localStorage.getItem("refreshToken");
     }
     const brandFormData = new FormData();
-    brandFormData.append('logo', files);
-    brandFormData.append('name', formData.name);
-    brandFormData.append('contact_person', formData.contact_person);
-    brandFormData.append('contact_number', formData.contact_number);
-    brandFormData.append('contact_email', formData.contact_email);
-    brandFormData.append('website', formData.website);
-    brandFormData.append('password', formData.password);
+    brandFormData.append("logo", files);
+    brandFormData.append("name", formData.name);
+    brandFormData.append("contact_person", formData.contact_person);
+    brandFormData.append("contact_number", formData.contact_number);
+    brandFormData.append("contact_email", formData.contact_email);
+    brandFormData.append("website", formData.website);
+    brandFormData.append("password", formData.password);
 
-
-    axiosInstance.post("/save-brand", brandFormData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((res) => {
-      if (res.data.status == 200) {
-        toast.success(res.data.message, {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-        router.push("/admin/brands/view");
-      }
-      if (res.data.status == 401) {
-        toast.error(res.data.message, {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-        localStorage.removeItem("refreshToken");
-        router.push("/");
-      }
-    });
-
-  }
+    axiosInstance
+      .post("/save-brand", brandFormData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          toast.success(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          router.push("/admin/brands/view");
+        }
+        if (res.data.status == 401) {
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          localStorage.removeItem("refreshToken");
+          router.push("/");
+        }
+      });
+  };
   console.log(files);
   return (
     <div>
       <div className='individual-product-div'>
-        <form method="post" onSubmit={handleFormSubmit}>
+        <form method='post' onSubmit={handleFormSubmit}>
           <div className='row'>
             <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
               <div className='indi-brand-head-tags'>
@@ -122,9 +155,65 @@ const CreateBrand = () => {
                 </label> */}
                 </div>
                 <div className='edit-delete-div'>
-                  <p className='indu-brand-edit'>Save</p>
-                  <p className='indu-brand-edits'>Delete</p>
+                  <p className='indu-brand-edit' onClick={handleOpen}>
+                    Save
+                  </p>
+                  <p className='indu-brand-edits' onClick={handleOpenD}>
+                    Delete
+                  </p>
                 </div>
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby='modal-modal-title'
+                  aria-describedby='modal-modal-description'>
+                  <Box sx={style}>
+                    <div className='Modal-header-div'>
+                      <p>Do you wish to save the changes?</p>
+                      <div className='created-modal-save-btn-div'>
+                        <button className='yes-modal-btn'>Yes</button>
+                        <button className='no-modal-btn'>No</button>
+                      </div>
+                    </div>
+                    {/* <Typography
+                      id='modal-modal-title'
+                      variant='h6'
+                      component='h2'>
+                      Text in a modal
+                    </Typography>
+                    <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+                      Duis mollis, est non commodo luctus, nisi erat porttitor
+                      ligula.
+                    </Typography> */}
+                  </Box>
+                </Modal>
+                <Modal
+                  open={openD}
+                  onClose={handleCloseD}
+                  aria-labelledby='modal-modal-title'
+                  aria-describedby='modal-modal-description'>
+                  <Box sx={styleDelete}>
+                    <div className='Modal-header-div'>
+                      <p>
+                        Are you sure you want to delete this brand account?{" "}
+                      </p>
+                      <div className='created-modal-save-btn-div'>
+                        <button className='yes-modal-btn'>Cancel</button>
+                        <button className='no-modal-btn'>Delete</button>
+                      </div>
+                    </div>
+                    {/* <Typography
+                      id='modal-modal-title'
+                      variant='h6'
+                      component='h2'>
+                      Text in a modal
+                    </Typography>
+                    <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+                      Duis mollis, est non commodo luctus, nisi erat porttitor
+                      ligula.
+                    </Typography> */}
+                  </Box>
+                </Modal>
               </div>
             </div>
 
@@ -159,7 +248,7 @@ const CreateBrand = () => {
                     id='fileInput'
                     style={{ display: "none" }}
                     onChange={handleImageUpload}
-                    accept="image/jpeg, image/jpg, image/png"
+                    accept='image/jpeg, image/jpg, image/png'
                   />
                 </span>
               </div>
@@ -171,9 +260,12 @@ const CreateBrand = () => {
               </div>
             </div>
             <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input className='kibo-inputs' type='text' placeholder='KIBO'
+              <input
+                className='kibo-inputs'
+                type='text'
+                placeholder='KIBO'
                 value={formData.name}
-                name="name"
+                name='name'
                 onChange={handleFormData}
                 required
               />
@@ -185,7 +277,14 @@ const CreateBrand = () => {
               </div>
             </div>
             <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input className='kibo-inputs' type='text' placeholder='KIBO' value={formData.contact_person} name="contact_person" onChange={handleFormData} />
+              <input
+                className='kibo-inputs'
+                type='text'
+                placeholder='KIBO'
+                value={formData.contact_person}
+                name='contact_person'
+                onChange={handleFormData}
+              />
             </div>
 
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
@@ -198,7 +297,7 @@ const CreateBrand = () => {
                 className='kibo-inputs'
                 type='number'
                 placeholder='+852 24210010'
-                name="contact_number"
+                name='contact_number'
                 onChange={handleFormData}
                 value={formData.contact_number}
               />
@@ -214,7 +313,7 @@ const CreateBrand = () => {
                 className='kibo-inputs'
                 type='email'
                 placeholder='hello@kibo.eco'
-                name="contact_email"
+                name='contact_email'
                 onChange={handleFormData}
                 value={formData.contact_email}
               />
@@ -230,7 +329,7 @@ const CreateBrand = () => {
                 className='kibo-inputs'
                 type='text'
                 placeholder='https://kibo.eco/'
-                name="website"
+                name='website'
                 onChange={handleFormData}
                 value={formData.website}
               />
@@ -246,14 +345,13 @@ const CreateBrand = () => {
                 className='kibo-inputs'
                 type='password'
                 placeholder='*********'
-                name="password"
+                name='password'
                 onChange={handleFormData}
                 value={formData.password}
               />
             </div>
 
-
-            <hr className='indi-brand-hr' />
+            {/* <hr className='indi-brand-hr' /> */}
             {/* <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
             <div className='kibo-img-div'>
               <p className='contact-word'>Number of items</p>
