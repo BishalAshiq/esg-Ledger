@@ -20,14 +20,18 @@ const ViewAllBrands = () => {
   const qrCodeRef = useRef();
   // Step 1: Create a state variable for the new component visibility
   const [showBrandSingleProducts, setShowBrandSingleProducts] = useState(false);
-
-  // Step 2: Add an event handler to show/hide the BrandSingleProducts component
+  const [showEditBrand, setShowEditBrand] = useState(false);
+  const [brandId, setBrandId] = useState(0);
   const handleThreeDotsClick = () => {
     setShowBrandSingleProducts(!showBrandSingleProducts);
   };
 
-  const handleEditFrom = () => {};
-
+  const handleEditFrom = (brandId) => {
+    setBrandId(brandId);
+    setShowEditBrand(!showEditBrand);
+    setShowBrandSingleProducts(!showBrandSingleProducts);
+  };
+  console.log(showEditBrand);
   useEffect(() => {
     let token = "";
 
@@ -270,7 +274,9 @@ const ViewAllBrands = () => {
                               </svg>
 
                               <div className='link-container'>
-                                <Link href='/'>Edit</Link>
+                                <span onClick={() => {
+                                  handleEditFrom(brand.id)
+                                }}>Edit</span>
                                 <Link href='/'>Delete</Link>
                               </div>
                             </div>
@@ -314,7 +320,12 @@ const ViewAllBrands = () => {
       ) : (
         // Only render the BrandSingleProducts component when showBrandSingleProducts is true
 
-        <CreateBrand />
+        (showEditBrand == true) ?
+          <IndividualBrand brandId={brandId} />
+          :
+          <CreateBrand />
+
+
       )}
     </div>
   );

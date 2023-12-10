@@ -171,7 +171,12 @@ const CreateBrand = () => {
               </div>
             </div>
             <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input className='kibo-inputs' type='text' placeholder='KIBO' value={formData.name} name="name" onChange={handleFormData} required />
+              <input className='kibo-inputs' type='text' placeholder='KIBO'
+                value={formData.name}
+                name="name"
+                onChange={handleFormData}
+                required
+              />
             </div>
 
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>

@@ -5,3 +5,5 @@ export const isAuthenticated = () => {
     }
     return false;
 };
+
+export const base_url = "http://10.81.11.62:8001";

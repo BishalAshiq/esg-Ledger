@@ -1,19 +1,67 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Kibo from "../../../public/kibo.png";
 import BackIcon from "../../../public/back.svg";
 import ProCopy from "../../../public/procopy.svg";
 import Image from "next/image";
 import IndiEditBrands from "./IndiEditBrands";
+import axiosInstance from "../../../utils/axios";
+import { base_url } from "../../../utils/auth";
 
-const IndividualBrand = () => {
-  // Step 1: Create a state variable for the new component visibility
+
+const IndividualBrand = ({ brandId }) => {
   const [showBrandSingleProducts, setShowBrandSingleProducts] = useState(false);
-
-  // Step 2: Add an event handler to show/hide the BrandSingleProducts component
   const handleThreeDotsClick = () => {
     setShowBrandSingleProducts(!showBrandSingleProducts);
   };
+  const [brand, setBrand] = useState({});
+
+  const [formData, setFormData] = useState({
+    brand_id: "",
+    name: "",
+    contact_person: "",
+    contact_number: "",
+    contact_email: "",
+    website: "",
+    brands_item_count: 0,
+    logo: ""
+  })
+
+  useEffect(() => {
+    axiosInstance.get('brand-details/' + brandId).then((result) => {
+      if (result.data.status == 200) {
+        let brand = result.data.data;
+        setFormData(prevFormData => ({
+          ...prevFormData,
+          brand_id: brand.id,
+          name: brand.name,
+          contact_person: brand.contact_person,
+          contact_number: brand.contact_number,
+          contact_email: brand.email,
+          website: brand.website,
+          logo: brand.logo,
+          brands_item_count: brand.brands_item_count
+        }));
+      }
+    })
+  }, [])
+
+
+  const handleFormData = (e) => {
+    const { name, value } = e.target;
+
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const handleFormEdit = (e) => {
+    axiosInstance.post('/save-brand', formData).then((res) => {
+
+    })
+  };
+  console.log(base_url, brandId);
   return (
     <div>
       {!showBrandSingleProducts ? (
@@ -38,7 +86,7 @@ const IndividualBrand = () => {
                   <div className='edit-delete-div'>
                     <p
                       className='indu-brand-edit'
-                      onClick={handleThreeDotsClick}>
+                      onClick={handleFormEdit}>
                       Edit
                     </p>
                     <p className='indu-brand-edits'>Delete</p>
@@ -48,17 +96,29 @@ const IndividualBrand = () => {
 
               <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
                 <div className='kibo-img-div'>
-                  <Image
-                    className='kibo-img'
-                    src={Kibo}
-                    height={50}
-                    width={70}
-                    alt=''
-                  />
+                  {
+                    (formData.logo == "" ? <Image
+                      className='kibo-img'
+                      src={Kibo}
+                      height={50}
+                      width={70}
+                      alt=''
+                    /> :
+                      <img src={`${base_url}/uploads/${formData.logo}`}
+                        height={50}
+                        width={70}
+                      />
+                    )
+                  }
+
                 </div>
               </div>
               <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-                <input className='kibo-inputs' type='text' placeholder='KIBO' />
+                <input className='kibo-inputs' type='text' placeholder='KIBO'
+                  value={formData.name}
+                  name="name"
+                  onChange={handleFormData}
+                  required />
               </div>
 
               <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
@@ -67,7 +127,11 @@ const IndividualBrand = () => {
                 </div>
               </div>
               <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-                <input className='kibo-inputs' type='text' placeholder='KIBO' />
+                <input className='kibo-inputs' type='text' placeholder='KIBO'
+                  value={formData.contact_person}
+                  name="contact_person"
+                  onChange={handleFormData}
+                  required />
               </div>
 
               <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
@@ -79,7 +143,10 @@ const IndividualBrand = () => {
                 <input
                   className='kibo-inputs'
                   type='number'
-                  placeholder='+852 24210010'
+                  placeholder='+852 24210010' value={formData.contact_number}
+                  name="contact_number"
+                  onChange={handleFormData}
+
                 />
               </div>
 
@@ -93,6 +160,11 @@ const IndividualBrand = () => {
                   className='kibo-inputs'
                   type='email'
                   placeholder='hello@kibo.eco'
+                  value={formData.contact_email}
+
+                  name="contact_email"
+                  onChange={handleFormData}
+                  required
                 />
               </div>
 
@@ -106,6 +178,10 @@ const IndividualBrand = () => {
                   className='kibo-inputs'
                   type='text'
                   placeholder='https://kibo.eco/'
+                  value={formData.website}
+                  name="website"
+                  onChange={handleFormData}
+                  required
                 />
               </div>
 
@@ -116,7 +192,7 @@ const IndividualBrand = () => {
               </div>
               <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
                 <div className='number-of-div'>
-                  <p>100</p>
+                  <p>{formData.brands_item_count}</p>
                   <p className='indu-brand-edit'>View all</p>
                 </div>
               </div>
