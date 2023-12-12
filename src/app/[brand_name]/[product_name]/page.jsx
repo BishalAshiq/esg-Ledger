@@ -139,21 +139,18 @@ const page = () => {
 
   const processString = (inputString) => {
     // Split the string by "/"
-    const values = inputString.split('/');
-    
+    const values = inputString.split("/");
+
     if (values.length > 0) {
-      
       const processedValues = values.map((value, index) => (
         <React.Fragment key={index}>
-          {(value)} <br />
+          {value} <br />
         </React.Fragment>
       ));
       return processedValues;
     } else {
       return values;
     }
-
-
   };
   return (
     <div className='individual'>
@@ -184,8 +181,8 @@ const page = () => {
                     <h2 className='certificate-tags'>
                       THE BLOCKCHAIN CERTIFICATE
                     </h2>
-                    <p className='certificate-ptag'>區塊鏈防偽證書</p>
-                    <p className='certificate-ptag'>by OneChain®</p>
+                    <span className='certificate-ptag'>區塊鏈防偽證書</span>
+                    <span className='certificate-ptag'>by OneChain®</span>
                   </div>
 
                   <div className='certificate-des-div'>
@@ -251,7 +248,7 @@ const page = () => {
                         <div className='Blockchain-ptag-divs'>
                           <p className='block-ptext'>{key} </p>
                           <h5 className='blockchain-h5'>
-                            {processString(value)} 
+                            {processString(value)}
                           </h5>
                         </div>
                       ) : (

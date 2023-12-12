@@ -120,7 +120,7 @@ const Nav = () => {
                 </span>
               </button>
             </div>
-            <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
+            {/* <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
               <div className='nav-items-div-mob'>
                 <Link className='contact-nav-a-mov' href='#'>
                   <p> Home</p>
@@ -181,7 +181,7 @@ const Nav = () => {
                   </span>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </nav>
       </div>
