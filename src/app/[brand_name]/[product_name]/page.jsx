@@ -744,8 +744,8 @@ const page = () => {
                         recorded on the blockchain
                       </li>
                       <li className='block-ptwotext'>
-                        For any inquiries or conernsm, feel free to contact us
-                        at enquiries@certledger.io
+                        For any inquiries or conerns, feel free to contact us
+                        at enquiries@esgledger.co
                       </li>
                     </ol>
                   </div>
@@ -761,7 +761,7 @@ const page = () => {
                         如有任何疑問或關切事項 可電郵至:
                         <span className='block-ptwotext-add'>
                           {" "}
-                          enquiries@certledger.io
+                          enquiries@esgledger.co
                         </span>
                         。
                       </li>
