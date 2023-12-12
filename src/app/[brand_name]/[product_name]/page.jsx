@@ -137,6 +137,24 @@ const page = () => {
     }
   };
 
+  const processString = (inputString) => {
+    // Split the string by "/"
+    const values = inputString.split('/');
+    
+    if (values.length > 0) {
+      
+      const processedValues = values.map((value, index) => (
+        <React.Fragment key={index}>
+          {(value)} <br />
+        </React.Fragment>
+      ));
+      return processedValues;
+    } else {
+      return values;
+    }
+
+
+  };
   return (
     <div className='individual'>
       {" "}
@@ -233,7 +251,7 @@ const page = () => {
                         <div className='Blockchain-ptag-divs'>
                           <p className='block-ptext'>{key} </p>
                           <h5 className='blockchain-h5'>
-                            {value} <br />{" "}
+                            {processString(value)} 
                           </h5>
                         </div>
                       ) : (
@@ -284,18 +302,17 @@ const page = () => {
                   </h5>
                 </div> */}
 
-                  <div className=''>
+                  {/* <div className=''>
                     <div className='accordion' id='accordionExample'>
                       <div className='accordion-item'>
-                        {/* <p>Completed</p> */}
+
                         <div className='accor-tag-div'>
                           <h6 className='accordion-header'>
                             <div
-                              className={`accordion-button ${
-                                isAccordionExpanded("collapseOne")
+                              className={`accordion-button ${isAccordionExpanded("collapseOne")
                                   ? ""
                                   : "collapsed"
-                              }`}
+                                }`}
                               type='button'
                               data-bs-toggle='collapse'
                               data-bs-target='#collapseOne'
@@ -343,23 +360,14 @@ const page = () => {
 
                         <div
                           id='collapseOne'
-                          className={`accordion-collapse collapse ${
-                            isAccordionExpanded("collapseOne") ? "show" : ""
-                          }`}
+                          className={`accordion-collapse collapse ${isAccordionExpanded("collapseOne") ? "show" : ""
+                            }`}
                           data-bs-parent='#accordionExample'>
                           <div className='accordion-body'>
                             <div className='Blockchain-ptag-div'>
                               <p>{formateDate(item.created_at)}</p>
                             </div>
-                            {/* <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Brand Name 型號</p>
-                    <h5 className='blockchain-h5'> {item.brand_name}</h5>
-                  </div>
-                  <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Item 物品</p>
-                    <h5 className='blockchain-h5'> {item.item}</h5>
-                    <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
-                  </div> */}
+
                             {Object.entries(attribute).map(([key, value]) => (
                               <>
                                 {key != "" && value != "" ? (
@@ -379,15 +387,14 @@ const page = () => {
                       </div>
 
                       <div className='accordion-item'>
-                        {/* <p>4 steps left</p> */}
+
                         <div className='accor-tag-div'>
                           <h6 className='accordion-header'>
                             <div
-                              className={`accordion-button ${
-                                isAccordionExpanded2("collapseTwo")
+                              className={`accordion-button ${isAccordionExpanded2("collapseTwo")
                                   ? ""
                                   : "collapsed"
-                              }`}
+                                }`}
                               type='button'
                               data-bs-toggle='collapse'
                               data-bs-target='#collapseTwo'
@@ -437,23 +444,14 @@ const page = () => {
 
                         <div
                           id='collapseTwo'
-                          className={`accordion-collapse collapse ${
-                            isAccordionExpanded2("collapseTwo") ? "show" : ""
-                          }`}
+                          className={`accordion-collapse collapse ${isAccordionExpanded2("collapseTwo") ? "show" : ""
+                            }`}
                           data-bs-parent='#accordionExample'>
                           <div className='accordion-body'>
                             <div className='Blockchain-ptag-div'>
                               <p>{formateDate(item.created_at)}</p>
                             </div>
-                            {/* <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Brand Name 型號</p>
-                    <h5 className='blockchain-h5'> {item.brand_name}</h5>
-                  </div>
-                  <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Item 物品</p>
-                    <h5 className='blockchain-h5'> {item.item}</h5>
-                    <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
-                  </div> */}
+
                             {Object.entries(attribute).map(([key, value]) => (
                               <>
                                 {key != "" && value != "" ? (
@@ -473,15 +471,14 @@ const page = () => {
                       </div>
 
                       <div className='accordion-item'>
-                        {/* <p>1 steps left</p> */}
+
                         <div className='accor-tag-div'>
                           <h6 className='accordion-header'>
                             <div
-                              className={`accordion-button ${
-                                isAccordionExpanded3("collapsethree")
+                              className={`accordion-button ${isAccordionExpanded3("collapsethree")
                                   ? ""
                                   : "collapsed"
-                              }`}
+                                }`}
                               type='button'
                               data-bs-toggle='collapse'
                               data-bs-target='#collapsethree'
@@ -535,23 +532,14 @@ const page = () => {
 
                         <div
                           id='collapsethree'
-                          className={`accordion-collapse collapse ${
-                            isAccordionExpanded3("collapsethree") ? "show" : ""
-                          }`}
+                          className={`accordion-collapse collapse ${isAccordionExpanded3("collapsethree") ? "show" : ""
+                            }`}
                           data-bs-parent='#accordionExample'>
                           <div className='accordion-body'>
                             <div className='Blockchain-ptag-div'>
                               <p>{formateDate(item.created_at)}</p>
                             </div>
-                            {/* <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Brand Name 型號</p>
-                    <h5 className='blockchain-h5'> {item.brand_name}</h5>
-                  </div>
-                  <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Item 物品</p>
-                    <h5 className='blockchain-h5'> {item.item}</h5>
-                    <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
-                  </div> */}
+                          
                             {Object.entries(attribute).map(([key, value]) => (
                               <>
                                 {key != "" && value != "" ? (
@@ -571,15 +559,14 @@ const page = () => {
                       </div>
 
                       <div className='accordion-item'>
-                        {/* <p>1 steps left</p> */}
+
                         <div className='accor-tag-div'>
                           <h6 className='accordion-header'>
                             <div
-                              className={`accordion-button ${
-                                isAccordionExpanded4("collapsefour")
+                              className={`accordion-button ${isAccordionExpanded4("collapsefour")
                                   ? ""
                                   : "collapsed"
-                              }`}
+                                }`}
                               type='button'
                               data-bs-toggle='collapse'
                               data-bs-target='#collapsefour'
@@ -633,23 +620,14 @@ const page = () => {
 
                         <div
                           id='collapsefour'
-                          className={`accordion-collapse collapse ${
-                            isAccordionExpanded4("collapsefour") ? "show" : ""
-                          }`}
+                          className={`accordion-collapse collapse ${isAccordionExpanded4("collapsefour") ? "show" : ""
+                            }`}
                           data-bs-parent='#accordionExample'>
                           <div className='accordion-body'>
                             <div className='Blockchain-ptag-div'>
                               <p>{formateDate(item.created_at)}</p>
                             </div>
-                            {/* <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Brand Name 型號</p>
-                    <h5 className='blockchain-h5'> {item.brand_name}</h5>
-                  </div>
-                  <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Item 物品</p>
-                    <h5 className='blockchain-h5'> {item.item}</h5>
-                    <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
-                  </div> */}
+                           
                             {Object.entries(attribute).map(([key, value]) => (
                               <>
                                 {key != "" && value != "" ? (
@@ -669,15 +647,14 @@ const page = () => {
                       </div>
 
                       <div className='accordion-item'>
-                        {/* <p>1 steps left</p> */}
+
                         <div className='accor-tag-div'>
                           <h6 className='accordion-header'>
                             <div
-                              className={`accordion-button ${
-                                isAccordionExpanded5("collapsefive")
+                              className={`accordion-button ${isAccordionExpanded5("collapsefive")
                                   ? ""
                                   : "collapsed"
-                              }`}
+                                }`}
                               type='button'
                               data-bs-toggle='collapse'
                               data-bs-target='#collapsefive'
@@ -731,23 +708,14 @@ const page = () => {
 
                         <div
                           id='collapsefive'
-                          className={`accordion-collapse collapse ${
-                            isAccordionExpanded5("collapsefive") ? "show" : ""
-                          }`}
+                          className={`accordion-collapse collapse ${isAccordionExpanded5("collapsefive") ? "show" : ""
+                            }`}
                           data-bs-parent='#accordionExample'>
                           <div className='accordion-body'>
                             <div className='Blockchain-ptag-div'>
                               <p>{formateDate(item.created_at)}</p>
                             </div>
-                            {/* <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Brand Name 型號</p>
-                    <h5 className='blockchain-h5'> {item.brand_name}</h5>
-                  </div>
-                  <div className='Blockchain-ptag-divs'>
-                    <p className='block-ptext'>Item 物品</p>
-                    <h5 className='blockchain-h5'> {item.item}</h5>
-                    <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
-                  </div> */}
+                           
                             {Object.entries(attribute).map(([key, value]) => (
                               <>
                                 {key != "" && value != "" ? (
@@ -766,7 +734,7 @@ const page = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className='Information-full-divs'>
                     <p>Important Information:</p>
@@ -776,8 +744,8 @@ const page = () => {
                         recorded on the blockchain
                       </li>
                       <li className='block-ptwotext'>
-                        For any inquiries or conernsm, feel free to contact us
-                        at enquiries@certledger.io
+                        For any inquiries or concerns, feel free to contact us
+                        at enquiries@esgledger.co
                       </li>
                     </ol>
                   </div>
@@ -793,7 +761,7 @@ const page = () => {
                         如有任何疑問或關切事項 可電郵至:
                         <span className='block-ptwotext-add'>
                           {" "}
-                          enquiries@certledger.io
+                          enquiries@esgledger.co
                         </span>
                         。
                       </li>

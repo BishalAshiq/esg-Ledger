@@ -4,6 +4,7 @@
   /* border: 1px solid gray; */
   padding: 6% 7% 4% 11%;
 }
+
 .single-products-full-div {
   margin-top: 5%;
 }
@@ -12,11 +13,13 @@
   display: flex;
   gap: 10px;
 }
+
 .single-checkbox-text {
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
 }
+
 .single-products-div {
   border-top: 0.5px solid #86c6ca;
   border-bottom: -0.5px solid #86c6ca !important;
@@ -29,6 +32,7 @@
   font-family: "Roboto", sans-serif;
   margin-top: 10px;
 }
+
 .tag-kinbo {
   font-size: 0.9rem;
   font-weight: 400;
@@ -41,6 +45,7 @@
   align-items: center;
   padding: 70px 0 0 30px;
 }
+
 .single-product-qr-text {
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
@@ -53,6 +58,7 @@
   text-align: center;
   gap: 20px;
 }
+
 .single-hr {
   color: #86c6ca;
 }
@@ -62,29 +68,34 @@
 .individual-product-div {
   padding: 6% 10%;
 }
+
 .indi-brand-head-tags {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #88c9d7;
   margin: 0 0 60px 0;
 }
+
 .kibo-upload-icon {
   margin-top: 25px;
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.kibo-imgs-div {
-}
+
+.kibo-imgs-div {}
+
 .kibo-imgs {
   width: 100px;
   height: 55px;
 }
+
 .kibo-upload {
   color: #00b3ff;
   font-weight: 600;
   /* margin-left: 10px; */
 }
+
 .kibo-inputs {
   width: 100%;
   outline: none;
@@ -97,26 +108,31 @@
   justify-content: space-between;
   margin-top: 5px;
 }
+
 .edit-delete-div {
   display: flex;
   gap: 10px;
 }
+
 .indi-brand-ico-tag {
   display: flex;
   gap: 10px;
 }
+
 .indu-brand-edit {
   color: #00b3ff;
   font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   cursor: pointer;
 }
+
 .indu-brand-edits {
   color: #ff0000;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   font-size: 0.9rem;
 }
+
 .Modal-header-div {
   display: flex;
 
@@ -127,6 +143,7 @@
   align-items: center;
   text-align: center;
 }
+
 .yes-modal-btn {
   background-color: #86c6ca;
   color: white;
@@ -138,6 +155,7 @@
   font-weight: 300;
   outline: none;
 }
+
 .no-modal-btn {
   background-color: #066f69;
   font-family: "Roboto", sans-serif;
@@ -149,11 +167,13 @@
   font-weight: 300;
   outline: none;
 }
+
 .created-modal-save-btn-div {
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
+
 .contact-word {
   font-family: "Roboto", sans-serif;
   display: inline-block;
@@ -161,14 +181,17 @@
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .indi-brand-hr {
   padding-top: -30%;
   color: #00b3ff;
 }
+
 .button-of-div {
   display: flex;
   justify-content: end;
 }
+
 .reset-btn {
   border: none;
   border-radius: 5px;
@@ -184,13 +207,15 @@
   background-color: #066f69 !important;
   color: white !important;
 }
+
 .accordion-body {
   background-color: #e9ebe6 !important;
   color: rgb(15, 14, 14) !important;
   border: none !important;
 }
-.uppor {
-}
+
+.uppor {}
+
 .accor-tag-div {
   display: flex;
   justify-content: space-between;
@@ -198,6 +223,7 @@
   /* background-color: #066f69 !important;
   color: white !important; */
 }
+
 .accordion-header {
   margin-left: 38%;
   display: flex !important;
@@ -205,6 +231,7 @@
   align-items: center !important;
   text-align: center !important;
 }
+
 .accordion-button {
   /* padding: 0 10px; */
   display: flex !important;
@@ -213,13 +240,21 @@
   text-align: center !important;
   background-color: #066f69 !important;
   color: white !important;
-  width: 100% !important; /* Ensure the button takes up the full width */
+  width: 100% !important;
+  /* Ensure the button takes up the full width */
   border: 1px solid rgb(255, 255, 255);
 }
+
 .accordion-button::after {
   visibility: hidden;
 }
+
 .chevron-icon {
   margin-right: 10px;
   cursor: pointer;
+}
+
+
+.created-modal-success {
+  color: #86C6CA;
 }
