@@ -744,7 +744,7 @@ const page = () => {
                         recorded on the blockchain
                       </li>
                       <li className='block-ptwotext'>
-                        For any inquiries or conerns, feel free to contact us
+                        For any inquiries or concerns, feel free to contact us
                         at enquiries@esgledger.co
                       </li>
                     </ol>
