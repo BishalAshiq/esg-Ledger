@@ -973,7 +973,7 @@ body {
   .block-ptwotext {
     /* line-height: 1.9; */
     /* white-space-collapse: discard; */
-    margin: 0 0 0 0;
+    /* margin: 0 0 0 0; */
     font-size: 0.7rem;
     color: #141414;
     font-weight: 600;
