@@ -11,6 +11,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import { useRouter } from "next/navigation";
 
 // Modal
 const style = {
@@ -37,6 +38,7 @@ const styleDelete = {
 };
 
 const CreateBrand = () => {
+  const router = useRouter();
   // Step 1: Create a state variable for the new component visibility
   const [showBrandSingleProducts, setShowBrandSingleProducts] = useState(false);
 
@@ -120,6 +122,17 @@ const CreateBrand = () => {
           });
           router.push("/admin/brands/view");
         }
+
+        if (res.data.status == 201) {
+          toast.success(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          // router.push("/admin/brands/view");
+        }
         if (res.data.status == 401) {
           toast.error(res.data.message, {
             position: "top-right",
@@ -154,14 +167,16 @@ const CreateBrand = () => {
                   Account
                 </label> */}
                 </div>
-                <div className='edit-delete-div'>
+                
+                {/* <div className='edit-delete-div'>
                   <p className='indu-brand-edit' onClick={handleOpen}>
                     Save
                   </p>
                   <p className='indu-brand-edits' onClick={handleOpenD}>
                     Delete
                   </p>
-                </div>
+                </div> */}
+
                 <Modal
                   open={open}
                   onClose={handleClose}

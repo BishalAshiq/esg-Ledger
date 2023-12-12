@@ -17,7 +17,17 @@ const ViewAllItemsData = () => {
   const qrCodeRef = useRef();
 
   useEffect(() => {
-    axiosInstance.get("/item-list").then((res) => {
+    let token = "";
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+
+    axiosInstance.get("/item-list", {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => {
       if (res.data.status == 200) {
         setHeaders(res.data.header);
         setColumns(res.data.data);
@@ -64,24 +74,30 @@ const ViewAllItemsData = () => {
         document.execCommand("copy");
         document.body.removeChild(textArea);
         setCopySuccess("URL copied to clipboard!");
-        toast.success("URL copied to clipboard!", {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
       }
+      toast.success("URL copied to clipboard!", {
+        position: "top-right",
+        style: {
+          background: "white",
+          color: "black",
+        },
+      });
     } catch (error) {
       // Handle errors
-      console.error("Error copying to clipboard:", error);
+      toast.error("URL copied to clipboard!", {
+        position: "top-right",
+        style: {
+          background: "white",
+          color: "black",
+        },
+      });
       setCopySuccess("Copy to clipboard failed");
     }
   };
 
   const handleRowClick = (lsgUniqueId) => {
     // Handle redirection logic here
-    // window.location.href = `/products/${lsgUniqueId}`;
+    window.location.href = `/${lsgUniqueId}`;
   };
 
 
@@ -166,7 +182,7 @@ const ViewAllItemsData = () => {
                 </tr>
               </thead>
               <tbody>
-                {columns.length > 0 &&
+                {columns.length > 0 ?
                   columns.map((item, index) => (
                     <tr
                       key={index}
@@ -182,7 +198,7 @@ const ViewAllItemsData = () => {
                       <td>
                         <div className='tabl-icon '>
                           {/* {item.img1} {item.img1} style={{ height: '20px', width: '15px', marginTop: '-10px' }}*/}
-                          <QRCodeComponent value={'https://esgledger.co/'+item['slug']} size={50} slug={item['slug']} />
+                          <QRCodeComponent value={'https://esgledger.co/' + item['slug']} size={50} slug={item['slug']} />
                         </div>
                       </td>
                       <td>
@@ -210,7 +226,14 @@ const ViewAllItemsData = () => {
                         </div>
                       </td>
                     </tr>
-                  ))}
+                  ))
+:
+                <>
+                  <tr>
+                    <td colSpan={headers.length+2} className="text-center">No data found</td>
+                  </tr>
+                </>
+                }
               </tbody>
             </table>
 
