@@ -41,7 +41,7 @@ const IssuDetails = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      if (response.status == 401) {
+      if (response.data.status == 401) {
         toast.error("Token Failed Please Login", {
           position: "top-right",
           style: {

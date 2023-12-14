@@ -21,15 +21,19 @@ const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
   const [attribute, setAttribute] = useState("");
+  const [column, setColumn] = useState("");
   useEffect(() => {
     axiosInstance
       .get("item-details/" + param.brand_name + "/" + param.product_name)
       .then((res) => {
         setItem(res.data.data);
+        console.log(res.data.data);
         const parsedAttribute = JSON.parse(res.data.data.attribute);
-
+        console.log(parsedAttribute);
         // Set the parsed object in the state
         setAttribute(parsedAttribute);
+        setColumn(res.data.category_arr);
+        console.log(parsedAttribute['Product'])
       });
   }, []);
 
@@ -242,6 +246,7 @@ const page = () => {
                     <h5 className='blockchain-h5'> {item.item}</h5>
                     <h5 className='blockchain-h5'>木製復古遊戲機 </h5>
                   </div> */}
+{/* 
                   {Object.entries(attribute).map(([key, value]) => (
                     <>
                       {key != "" && value != "" ? (
@@ -255,7 +260,23 @@ const page = () => {
                         <></>
                       )}
                     </>
-                  ))}
+                  ))} */}
+
+                  {/* {Object.entries(column).map(([key, value]) => (
+                    <>
+                      {key != "" && value != "" ? (
+                        <div className='Blockchain-ptag-divs'>
+                          <p className='block-ptext'>{key} </p>
+                          <h5 className='blockchain-h5'>
+                            {processString(value)}
+                          </h5>
+                        </div>
+                      ) : (
+                        <></>
+                      )}
+                    </>
+                  ))} */}
+
                   {/* <div className='Blockchain-ptag-divs'>
                   <p className='block-ptext'>Product - Front 產品正面</p>
                   <h5 className='blockchain-h5'>

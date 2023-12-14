@@ -65,6 +65,10 @@ const ViewAllItems = () => {
     { id: 1, text: "", checked: false },
   ]);
 
+  const [subCategory, setSubCategory] = useState([
+    { id: 1, text: "", index: '', checked: false },
+  ]);
+
   const handleAddClickt = (currindex) => {
     const newId = itemst.length;
     const newIndex = currindex + 1;
@@ -99,12 +103,8 @@ const ViewAllItems = () => {
     setItemst(updatedItemst);
   };
 
-  // Initial row
   const router = useRouter();
-  // const handleIconClick = (id) => {
-  //   const updatedRows = rows.filter((row) => row.id !== id);
-  //   setRows(updatedRows);
-  // };
+
 
   const handleOpenPagePreview = () => {
     setShowPagePreview(true);
@@ -114,9 +114,6 @@ const ViewAllItems = () => {
     setShowPagePreview(false);
   };
 
-  // const handleIconClick = () => {
-  //   setShowDivs(!showDivs);
-  // };
 
   const handleAddMoreClick = () => {
     setShowAdditionalComponent(!showAdditionalComponent);
@@ -180,7 +177,7 @@ const ViewAllItems = () => {
       );
       setFormData(updatedRows);
     } else {
-      const newRow = { id, checked: true, text: "" }; // Assuming you want to set text to an empty string for new rows
+      const newRow = { id, checked: true, text: "" };
       setFormData([...formData, newRow]);
     }
   };
@@ -212,14 +209,48 @@ const ViewAllItems = () => {
       );
       setCategory(updatedRows);
     } else {
-      const newRow = { id, checked: true, text: "" }; // Assuming you want to set text to an empty string for new rows
+      const newRow = { id, checked: true, text: "" };
       setCategory([...category, newRow]);
     }
   };
-  console.log(category);
+
+
+  const handleSubCategoryChange = (id, value, currIndex) => {
+    const rowExists = subCategory.some((row) => row.id === id && row.index==currIndex);
+
+    if (rowExists) {
+      const updatedRows = subCategory.map((row) =>
+        row.id === id   && row.index==currIndex ? { ...row, text: value, index: currIndex } : row
+      );
+      setSubCategory(updatedRows);
+    } else {
+      const newRow = { id, text: value, checked: false, index: currIndex };
+      setSubCategory([...subCategory, newRow]);
+    }
+
+
+  };
+
+
+  const handleSubCategoryCheckboxChange = (id, currIndex) => {
+    const rowExists = subCategory.some((row) => row.id === id && row.index==currIndex);
+
+    if (rowExists) {
+      const updatedRows = subCategory.map((row) =>
+        row.id == id && row.index==currIndex ? { ...row, checked: !row.checked, index: currIndex } : row
+      );
+      setSubCategory(updatedRows);
+    } else {
+      const newRow = { id, checked: true, text: "", index: currIndex };
+      setSubCategory([...subCategory, newRow]);
+    }
+  };
+
+
+  console.log(subCategory);
   const handleCustomizeForm = (e) => {
     e.preventDefault();
-    // const mergedData = { ...formData, rows: [...rows] };
+
 
     const merged = [...rows];
 
@@ -239,6 +270,9 @@ const ViewAllItems = () => {
       product_name: product,
       brand_name: brand,
       rows: merged,
+      category: category,
+      subCategory: subCategory,
+
     };
     axiosInstance.post("/cutomize-data", mergedData).then((res) => {
       if (res.data.status == 200) {
@@ -555,7 +589,7 @@ const ViewAllItems = () => {
                           <input
                             type='text'
                             className='ser-item-input'
-                            onChange={(e) => handleTextChange(item.id, e.target.value)}
+                            onChange={(e) => handleSubCategoryChange(item.id, e.target.value, index)}
                           />
                         </div>
                         <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
@@ -566,7 +600,7 @@ const ViewAllItems = () => {
                                 type='checkbox'
                                 value=''
                                 id='flexCheckChecked'
-                                onChange={() => handleCheckboxChange(item.id)}
+                                onChange={() => handleSubCategoryCheckboxChange(item.id, index)}
                               // checked
                               />
 
