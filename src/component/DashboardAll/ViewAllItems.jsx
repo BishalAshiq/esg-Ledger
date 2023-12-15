@@ -66,23 +66,15 @@ const ViewAllItems = () => {
   ]);
 
   const [subCategory, setSubCategory] = useState([
-    { id: 1, text: "", index: '', checked: false },
+    {
+      // id: 1, text: "", index: '', checked: false
+    },
   ]);
 
   const handleAddClickt = (currindex) => {
     const newId = itemst.length;
     const newIndex = currindex + 1;
     setItemst([...itemst, { id: newId, text: "", isChecked: false }]);
-    // setItems((prevFields) => {
-    //   const existingFields = [];
-    //   const newFields = [...existingFields, { id: 1, text: "", isChecked: false }];
-
-    //   return {
-    //     ...prevFields,
-    //     [newId]: newFields,
-    //   };
-    // });
-
   };
   const handleDeleteClickt = (id) => {
     const updatedItemst = itemst.filter((itemt) => itemt.id !== id);
@@ -216,11 +208,11 @@ const ViewAllItems = () => {
 
 
   const handleSubCategoryChange = (id, value, currIndex) => {
-    const rowExists = subCategory.some((row) => row.id === id && row.index==currIndex);
+    const rowExists = subCategory.some((row) => row.id === id && row.index == currIndex);
 
     if (rowExists) {
       const updatedRows = subCategory.map((row) =>
-        row.id === id   && row.index==currIndex ? { ...row, text: value, index: currIndex } : row
+        row.id === id && row.index == currIndex ? { ...row, text: value, index: currIndex } : row
       );
       setSubCategory(updatedRows);
     } else {
@@ -233,11 +225,11 @@ const ViewAllItems = () => {
 
 
   const handleSubCategoryCheckboxChange = (id, currIndex) => {
-    const rowExists = subCategory.some((row) => row.id === id && row.index==currIndex);
+    const rowExists = subCategory.some((row) => row.id === id && row.index == currIndex);
 
     if (rowExists) {
       const updatedRows = subCategory.map((row) =>
-        row.id == id && row.index==currIndex ? { ...row, checked: !row.checked, index: currIndex } : row
+        row.id == id && row.index == currIndex ? { ...row, checked: !row.checked, index: currIndex } : row
       );
       setSubCategory(updatedRows);
     } else {
@@ -274,7 +266,17 @@ const ViewAllItems = () => {
       subCategory: subCategory,
 
     };
-    axiosInstance.post("/cutomize-data", mergedData).then((res) => {
+
+    let token = "";
+    if (typeof window !== "undefined") {
+      token = localStorage.getItem("refreshToken");
+    }
+    axiosInstance.post("/cutomize-data", mergedData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
+      },
+    }).then((res) => {
       if (res.data.status == 200) {
         toast.success(res.data.message, {
           position: "top-right",
@@ -483,7 +485,7 @@ const ViewAllItems = () => {
                 <div key={itemt.id} className='row checkbox-div '>
                   <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                     <div className='d-items-div'>
-                      <h6>Item {index}</h6>
+                      <h6>Item</h6>
                       <svg
                         onClick={(e) => {
                           handleAddClick(index)
