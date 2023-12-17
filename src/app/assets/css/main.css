@@ -894,13 +894,15 @@ body {
     visibility: hidden;
   }
   .certificate-tags {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 700;
+    display: inline;
     font-family: "Roboto", sans-serif;
   }
   .certificate-ptag {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: 700;
+    display: inline;
     line-height: 1.2;
     font-family: "Roboto", sans-serif;
   }
