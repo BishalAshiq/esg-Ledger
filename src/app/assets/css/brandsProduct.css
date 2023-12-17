@@ -255,14 +255,23 @@
 }
 
 .chevron-icon {
-  margin-right: 10px;
+  margin: 12px 10px 0 0;
   cursor: pointer;
 }
 
 .created-modal-success {
   color: #86c6ca;
 }
+/* #chevron-btn-down {
+  margin-top: 20px !important;
+} */
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
+  .accordion-button::after {
+    visibility: hidden;
+  }
+  .accordion-button:focus {
+    outline: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -275,5 +284,9 @@
 
   .accordion-button:focus {
     outline: none !important;
+  }
+  .chevron-icon {
+    margin: 12px 10px 0 0;
+    cursor: pointer;
   }
 }

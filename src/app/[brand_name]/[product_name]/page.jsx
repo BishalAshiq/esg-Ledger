@@ -68,7 +68,9 @@ const page = () => {
   // };
 
   const handleAccordionClicks = (accordionId) => {
-    setActiveAccordion((prevAccordion) => (prevAccordion === accordionId ? null : accordionId));
+    setActiveAccordion((prevAccordion) =>
+      prevAccordion === accordionId ? null : accordionId
+    );
   };
   const isAccordionExpanded2 = (accordionId) => {
     return activeAccordion2 === accordionId;
@@ -150,7 +152,6 @@ const page = () => {
       return values;
     }
   };
-
 
   const [activeAccordions, setActiveAccordions] = useState([]);
 
@@ -243,80 +244,122 @@ const page = () => {
                     <p>{formateDate(item.created_at)}</p>
                   </div>
 
-
-
-
-
-
-                  {Object.keys(attribute).map((key) => (
-                    key != "" && (
-                      <>
-                        {typeof attribute[key] === 'object' && attribute[key] !== null ? (
-                          <>
-                            <div className=''>
-                              <div className='accordion' id='accordionExample'>
-                                <div className='accordion-item'>
-
-                                  <div className='accor-tag-div'>
-                                    <h6 className='accordion-header'>
-                                      <div
-                                        className={`accordion-button ${isAccordionExpanded(`collapse${key}`) ? "" : "collapsed"}`}
-
-                                        type='button'
-                                        data-bs-target={`#collapse${key}`}
-                                        aria-expanded={isAccordionExpanded(`collapse${key}`)}
-                                        aria-controls={`collapse${key}`}
-                                        onClick={() => handleAccordionClicks(`collapse${key}`)}
-                                      >
-                                        {key}
-                                      </div>
-                                    </h6>
-
-                                    <div className='chevron-icon'>
-                                      {isAccordionExpanded(`collapse${key}`) ? (
-                                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' className='bi bi-chevron-up'
-                                          viewBox='0 0 16 16' onClick={() => handleAccordionClicks(`collapse${key}`)}>
-                                          <path fill-rule='evenodd'
-                                            d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z' />
-                                        </svg>
-                                      ) : (
-                                        <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' className='bi bi-chevron-down'
-                                          viewBox='0 0 16 16' onClick={() => handleAccordionClicks(`collapse${key}`)}>
-                                          <path fill-rule='evenodd'
-                                            d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z' />
-                                        </svg>
-                                      )}
-                                    </div>
-                                  </div>
-
-                                  <div id={`collapse${key}`} className={`accordion-collapse collapse ${isAccordionExpanded(`collapse${key}`) ? "show" : ""}`}
-                                    data-bs-parent='#accordionExample'>
-                                    <div className='accordion-body'>
-
-
-                                      {Object.entries(attribute[key]).map(([innerKey, innerValue], index) => (
-                                        <>
-                                          {innerKey != "" && innerValue != "" ? (
-                                            <div className='Blockchain-ptag-divs'>
-                                              <p className='block-ptext'>{innerKey} </p>
-                                              <h5 className='blockchain-h5'>
-                                                {innerValue} <br />{" "}
-                                              </h5>
-                                            </div>
-                                          ) : (
-                                            <></>
+                  {Object.keys(attribute).map(
+                    (key) =>
+                      key != "" && (
+                        <>
+                          {typeof attribute[key] === "object" &&
+                          attribute[key] !== null ? (
+                            <>
+                              <div className=''>
+                                <div
+                                  className='accordion'
+                                  id='accordionExample'>
+                                  <div className='accordion-item'>
+                                    <div className='accor-tag-div'>
+                                      <h6 className='accordion-header'>
+                                        <div
+                                          className={`accordion-button ${
+                                            isAccordionExpanded(
+                                              `collapse${key}`
+                                            )
+                                              ? ""
+                                              : "collapsed"
+                                          }`}
+                                          type='button'
+                                          data-bs-target={`#collapse${key}`}
+                                          aria-expanded={isAccordionExpanded(
+                                            `collapse${key}`
                                           )}
-                                        </>
-                                      ))}
+                                          aria-controls={`collapse${key}`}
+                                          onClick={() =>
+                                            handleAccordionClicks(
+                                              `collapse${key}`
+                                            )
+                                          }>
+                                          {key}
+                                        </div>
+                                      </h6>
+
+                                      <div className='chevron-icon'>
+                                        {isAccordionExpanded(
+                                          `collapse${key}`
+                                        ) ? (
+                                          <svg
+                                            id='chevron-btn-down'
+                                            xmlns='http://www.w3.org/2000/svg'
+                                            width='16'
+                                            height='16'
+                                            fill='currentColor'
+                                            className='bi bi-chevron-up '
+                                            viewBox='0 0 16 16'
+                                            onClick={() =>
+                                              handleAccordionClicks(
+                                                `collapse${key}`
+                                              )
+                                            }>
+                                            <path
+                                              fill-rule='evenodd'
+                                              d='M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z'
+                                            />
+                                          </svg>
+                                        ) : (
+                                          <svg
+                                            xmlns='http://www.w3.org/2000/svg'
+                                            width='16'
+                                            height='16'
+                                            fill='currentColor'
+                                            className='bi bi-chevron-down'
+                                            viewBox='0 0 16 16'
+                                            onClick={() =>
+                                              handleAccordionClicks(
+                                                `collapse${key}`
+                                              )
+                                            }>
+                                            <path
+                                              fill-rule='evenodd'
+                                              d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
+                                            />
+                                          </svg>
+                                        )}
+                                      </div>
+                                    </div>
+
+                                    <div
+                                      id={`collapse${key}`}
+                                      className={`accordion-collapse collapse ${
+                                        isAccordionExpanded(`collapse${key}`)
+                                          ? "show"
+                                          : ""
+                                      }`}
+                                      data-bs-parent='#accordionExample'>
+                                      <div className='accordion-body'>
+                                        {Object.entries(attribute[key]).map(
+                                          ([innerKey, innerValue], index) => (
+                                            <>
+                                              {innerKey != "" &&
+                                              innerValue != "" ? (
+                                                <div className='Blockchain-ptag-divs'>
+                                                  <p className='block-ptext'>
+                                                    {innerKey}{" "}
+                                                  </p>
+                                                  <h5 className='blockchain-h5'>
+                                                    {innerValue} <br />{" "}
+                                                  </h5>
+                                                </div>
+                                              ) : (
+                                                <></>
+                                              )}
+                                            </>
+                                          )
+                                        )}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-
-                          </>
-                        )
-                          : (
+                            </>
+                          ) : (
                             <div className='Blockchain-ptag-divs'>
                               <p className='block-ptext'>{key} </p>
                               <h5 className='blockchain-h5'>
@@ -324,9 +367,9 @@ const page = () => {
                               </h5>
                             </div>
                           )}
-                      </>
-                    )))}
-
+                        </>
+                      )
+                  )}
 
                   <div className='Information-full-divs'>
                     <p>Important Information:</p>
@@ -416,8 +459,8 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div >
-    </div >
+      </div>
+    </div>
   );
 };
 
