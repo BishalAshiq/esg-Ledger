@@ -59,7 +59,9 @@ const ViewAllItems = () => {
   }]);
 
   const [formData, setFormData] = useState([
-    { id: 1, text: "", checked: false },
+    { id: 1, text: 'Brand Name', checked: true },
+    { id: 2, text: 'Product No', checked: true },
+    { id: 3, text: 'Serial', checked: true }
   ]);
   const [category, setCategory] = useState([
     { id: 1, text: "", checked: false },
@@ -340,9 +342,9 @@ const ViewAllItems = () => {
                     </svg>
                   </span>
                   <button
-                    onClick={handleOpenPagePreview}
+                    type='submit'
                     className='view-add-btn'>
-                    + Add more
+                    +  Save Customize Data
                   </button>
                 </div>
               </div>
@@ -354,24 +356,24 @@ const ViewAllItems = () => {
                   <h6>Brand</h6>
                 </div>
               </div>
-              <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+              <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center'>
                 <div>
                   <p>Yes by default</p>
                 </div>
               </div>
               <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
-                <div>
+                {/* <div>
                   <input
                     type='text'
                     className='ser-item-input'
                     name='brand_name'
                     onChange={(e) => handleFormChange(1, e.target.value)}
                   />
-                </div>
+                </div> */}
               </div>
               <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                 <div>
-                  <div class='form-check'>
+                  {/* <div class='form-check'>
                     <input
                       class='form-check-input'
                       type='checkbox'
@@ -382,7 +384,7 @@ const ViewAllItems = () => {
                         handleFormCheckboxChange(1, e.target.value)
                       }
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -393,25 +395,25 @@ const ViewAllItems = () => {
                   <h6>Product/Model No</h6>
                 </div>
               </div>
-              <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+              <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center'>
                 <div>
                   <p>Yes by default</p>
                 </div>
               </div>
               <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
-                <div>
+                {/* <div>
                   <input
                     type='text'
                     className='ser-item-input'
                     name='product_name'
                     onChange={(e) => handleFormChange(2, e.target.value)}
                   />
-                </div>
+                </div> */}
               </div>
               <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                 <div>
                   <div class='form-check'>
-                    <input
+                    {/* <input
                       class='form-check-input'
                       type='checkbox'
                       value='1'
@@ -420,7 +422,7 @@ const ViewAllItems = () => {
                       onChange={(e) =>
                         handleFormCheckboxChange(2, e.target.value)
                       }
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -432,24 +434,24 @@ const ViewAllItems = () => {
                   <h6>Serial</h6>
                 </div>
               </div>
-              <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+              <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center '>
                 <div>
                   <p>Yes by default</p>
                 </div>
               </div>
               <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
-                <div>
+                {/* <div>
                   <input
                     type='text'
                     className='ser-item-input'
                     name='serial'
                     onChange={(e) => handleFormChange(3, e.target.value)}
                   />
-                </div>
+                </div> */}
               </div>
               <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
                 <div>
-                  <div class='form-check'>
+                  {/* <div class='form-check'>
                     <input
                       class='form-check-input'
                       type='checkbox'
@@ -460,11 +462,11 @@ const ViewAllItems = () => {
                         handleFormCheckboxChange(3, e.target.value)
                       }
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
-                <div>
+                {/* <div>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='16'
@@ -474,7 +476,7 @@ const ViewAllItems = () => {
                     viewBox='0 0 16 16'>
                     <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z' />
                   </svg>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -482,10 +484,16 @@ const ViewAllItems = () => {
 
             {itemst.map((itemt, index) => (
               <>
-                <div key={itemt.id} className='row checkbox-div '>
+                <div key={itemt.id} className='row checkbox-div pb-10'>
                   <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                     <div className='d-items-div'>
-                      <h6>Item</h6>
+                      <h6>Add new item</h6>
+
+                    </div>
+                  </div>
+
+                  <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 text-center'>
+                    <div>
                       <svg
                         onClick={(e) => {
                           handleAddClick(index)
@@ -498,19 +506,6 @@ const ViewAllItems = () => {
                         viewBox='0 0 16 16'>
                         <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z' />
                       </svg>
-                    </div>
-                  </div>
-
-                  <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
-                    <div>
-                      <div class='form-check'>
-                        <input
-                          class='form-check-input'
-                          type='checkbox'
-                          value=''
-                          id='flexCheckChecked'
-                        />
-                      </div>
                     </div>
                   </div>
 
@@ -586,7 +581,18 @@ const ViewAllItems = () => {
                 {
                   items[index]?.length > 0 ?
                     items[index].map((item, iIndex) => (
-                      <div key={item.id} className='row checkbox-div '>
+                      <div key={item.id} className='row checkbox-div pb-10'>
+                        <div className='col-3 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
+
+                        </div>
+                        <div className='col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
+                          <div className='d-items-div'>
+                            <h6>Add new sub item</h6>
+
+                          </div>
+                        </div>
+                        <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+                        </div>
                         <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                           <input
                             type='text'
@@ -594,7 +600,7 @@ const ViewAllItems = () => {
                             onChange={(e) => handleSubCategoryChange(item.id, e.target.value, index)}
                           />
                         </div>
-                        <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+                        <div className='col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
                           <div>
                             <div class='form-check'>
                               <input
@@ -606,20 +612,23 @@ const ViewAllItems = () => {
                               // checked
                               />
 
-                              <svg
-                                onClick={() => handleDeleteClick(item.id, index)}
-                                xmlns='http://www.w3.org/2000/svg'
-                                width='16'
-                                height='16'
-                                fill='#86C6CA'
-                                class='bi bi-dash-circle-fill'
-                                viewBox='0 0 16 16'>
-                                <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z' />
-                              </svg>
+
                             </div>
                           </div>
                         </div>
-                        <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '></div>
+
+                        <div className='col-3 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
+                          <svg
+                            onClick={() => handleDeleteClick(item.id, index)}
+                            xmlns='http://www.w3.org/2000/svg'
+                            width='16'
+                            height='16'
+                            fill='#86C6CA'
+                            class='bi bi-dash-circle-fill'
+                            viewBox='0 0 16 16'>
+                            <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z' />
+                          </svg>
+                        </div>
                         <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
                           <div></div>
                         </div>
@@ -680,13 +689,7 @@ const ViewAllItems = () => {
               </div>
             )} */}
 
-            <div className='col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 '>
-              <div className='view-addbtn-div'>
-                <button type='submit' className='view-add-btn'>
-                  Save Customize Data
-                </button>
-              </div>
-            </div>
+
           </div>
         </form>
       )}

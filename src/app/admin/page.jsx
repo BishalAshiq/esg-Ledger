@@ -121,13 +121,7 @@ const page = () => {
       <div className='login-full-div'>
         <div className='hr' />
         <Slider {...settings} className='slider-login'>
-          <div>
-            <div className='fist-slider-text-div'>
-              <h1 className='fist-slider-text-tag'>
-                Unlocking ESG Trust and Transparency with Blockchain Integrity
-              </h1>
-            </div>
-          </div>
+         
           <div>
             <div className='login-banner-img-input-divs'>
               <div className=' login-banner-img-input-div'>

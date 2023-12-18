@@ -207,7 +207,7 @@ const ViewAllBrands = () => {
 
           <div>
             <div className='mt-4'>
-              <table className='table'>
+              <table className='full-table'>
                 <thead className=''>
                   <tr>
                     {/* {headers.length > 0 &&
@@ -217,72 +217,80 @@ const ViewAllBrands = () => {
                        </th>
                      ))} */}
                     <th className='table-nav' scope='col'>
-                      <p className='table-th'> Name</p>
+                      <span className='table-th'> Name</span>
                     </th>
                     <th className='table-nav' scope='col'>
-                      <p className='table-th'> Contact name</p>
-                    </th>
-
-                    <th className='table-nav' scope='col'>
-                      <p className='table-th'> Contact number</p>
+                      <span className='table-th'> Contact name</span>
                     </th>
 
                     <th className='table-nav' scope='col'>
-                      <p className='table-th'> Contact Email</p>
+                      <span className='table-th'> Contact number</span>
+                    </th>
+
+                    <th className='table-nav' scope='col'>
+                      <span className='table-th'> Contact Email</span>
                     </th>
                     <th className='table-nav' scope='col'>
-                      <p className='table-th'> No. items</p>
+                      <span className='table-th'> No. items</span>
                     </th>
                     <th className='table-navs' scope='col'>
-                      <p className='table-ths'> No. items</p>
+                      <span className='table-ths'> No. items</span>
                     </th>
                     {/* <th className='table-navs' scope='col'>
                    <p className='table-ths'> QR code</p>
                  </th> */}
                   </tr>
+                  <tr>
+                    <th colSpan={6}></th>
+                  </tr>
                 </thead>
-                <tbody className='brand-all-data'>
+                <tbody >
                   {brandList.length > 0 &&
                     brandList.map((brand, index) => (
-                      <tr className='brand-all-data' key={index}>
-                        <td>
-                          <p className='text-tr'>{brand.name}</p>
-                        </td>
-                        <td>
-                          <p className='text-tr'>{brand.contact_person}</p>
-                        </td>
-                        <td>
-                          <p className='text-tr'>{brand.contact_number}</p>
-                        </td>
-                        <td>
-                          <p className='text-tr'>{brand.email}</p>
-                        </td>
-                        <td>
-                          <p className='text-tr'>{brand.brands_item_count}</p>
-                        </td>
-                        <td>
-                          <div className='text-tricon'>
-                            <div className='icon-container'>
-                              <svg
-                                xmlns='http://www.w3.org/2000/svg'
-                                width='26'
-                                height='26'
-                                fill='#155C79'
-                                className='bi bi-three-dots'
-                                viewBox='0 0 16 16'>
-                                <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
-                              </svg>
+                      <>
+                        <tr className='data-tr' key={index}>
+                          <td className='data-td'>
+                            <span>{brand.name}</span>
+                          </td>
+                          <td className='data-td'>
+                            <span>{brand.contact_person}</span>
+                          </td>
+                          <td className='data-td'>
+                            <span>{brand.contact_number}</span>
+                          </td>
+                          <td className='data-td'>
+                            <span>{brand.email}</span>
+                          </td>
+                          <td className='data-td'>
+                            <span>{brand.brands_item_count}</span>
+                          </td>
+                          <td className='data-td'>
+                            <div className='text-tricon'>
+                              <div className='icon-container'>
+                                <svg
+                                  xmlns='http://www.w3.org/2000/svg'
+                                  width='26'
+                                  height='26'
+                                  fill='#155C79'
+                                  className='bi bi-three-dots'
+                                  viewBox='0 0 16 16'>
+                                  <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
+                                </svg>
 
-                              <div className='link-container'>
-                                <span onClick={() => {
-                                  handleEditFrom(brand.id)
-                                }}>Edit</span>
-                                <Link href='/'>Delete</Link>
+                                <div className='link-container'>
+                                  <span onClick={() => {
+                                    handleEditFrom(brand.id)
+                                  }}>Edit</span>
+                                  <Link href='/'>Delete</Link>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </td>
-                      </tr>
+                          </td>
+                        </tr>
+                        <tr >
+                          <th colSpan={6}></th>
+                        </tr>
+                      </>
                     ))}
                 </tbody>
               </table>

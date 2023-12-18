@@ -14,8 +14,8 @@ import "react-toastify/dist/ReactToastify.css";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "ESGLedger",
-  description: "Next app",
+  title: "ESGLedger by OneChain",
+  description: "Unlocking ESG Transparency & Trust with Blockchain Integrity",
 };
 
 export default function RootLayout({ children }) {

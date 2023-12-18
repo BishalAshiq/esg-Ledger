@@ -124,7 +124,7 @@ const ViewAllItemsData = () => {
           />
         </div>
 
-        <div>
+        {/* <div>
           <div className='filter-text-select-div'>
             <p className='filter-text-p'>Filter by</p>
             <select
@@ -152,67 +152,71 @@ const ViewAllItemsData = () => {
               <option value='3'>Three</option>
             </select>
           </div>
-        </div>
+        </div> */}
 
         <div>
           <div className='mt-4'>
-            <table className='table'>
+            <table className='full-table'>
               <thead>
                 <tr>
                   {headers.length > 0 &&
                     headers.map((item) => (
                       <th className='table-nav' scope='col'>
-                        <p className='table-th'> {item}</p>
+                        <span className='table-th'> {item}</span>
                       </th>
                     ))}
 
                   <th className='table-nav' scope='col'>
-                    <p className='table-th'> QR code</p>
+                    <span className='table-th'> QR code</span>
                   </th>
 
                   <th className='table-nav' scope='col'>
-                    <p className='table-th'> Action</p>
+                    <span className='table-th'> Action</span>
                   </th>
-                  <th className='table-navs' scope='col'>
+                  {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> Action</p>
-                  </th>
+                  </th> */}
                   {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
                   </th> */}
+                </tr>
+                <tr>
+                  <th colSpan={headers.length + 2} className="text-center"></th>
                 </tr>
               </thead>
               <tbody>
                 {columns.length > 0 ?
                   columns.map((item, index) => (
-                    <tr
-                      key={index}
-                      className='data-tr'
-                      onClick={() => handleRowClick(item["slug"])}>
-                      {headers.length > 0 &&
-                        headers.map((head) => (
-                          <td className='data-td'>
-                            <p className='data-th-text'>{item[head]}</p>
-                          </td>
-                        ))}
+                    <>
+                      <tr
+                        key={index}
+                        className='data-tr'
+                        onClick={() => handleRowClick(item["slug"])}>
+                        {headers.length > 0 &&
+                          headers.map((head) => (
+                            <td className='data-td'>
+                              <span className='data-th-text'>{item[head]}</span>
+                            </td>
+                          ))}
 
-                      <td>
-                        <div className='tabl-icon '>
-                          {/* {item.img1} {item.img1} style={{ height: '20px', width: '15px', marginTop: '-10px' }}*/}
-                          <QRCodeComponent value={'https://esgledger.co/' + item['slug']} size={50} slug={item['slug']} />
-                        </div>
-                      </td>
-                      <td>
+                        <td>
+                          <div className='tabl-icon '>
+                            {/* {item.img1} {item.img1} style={{ height: '20px', width: '15px', marginTop: '-10px' }}*/}
+                            <QRCodeComponent value={'https://esgledger.co/' + item['slug']} size={50} slug={item['slug']} />
+                          </div>
+                        </td>
+                        <td>
 
-                        <svg onClick={(e) => copyToClipboard(e, item['slug'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
-                          <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
-                        </svg>
-                      </td>
-                      {/* <td>
+                          <svg onClick={(e) => copyToClipboard(e, item['slug'])} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
+                          </svg>
+                        </td>
+                        {/* <td>
                       <div className='tabl-icon'>
                         QR code and download icon
                       </div>
                     </td> */}
-                      <td>
+                        {/* <td>
                         <div className='th-svg-div'>
                           <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -224,15 +228,19 @@ const ViewAllItemsData = () => {
                             <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
                           </svg>
                         </div>
-                      </td>
-                    </tr>
+                      </td> */}
+                      </tr>
+                      <tr>
+                        <td colSpan={headers.length + 2} className="text-center"></td>
+                      </tr>
+                    </>
                   ))
-:
-                <>
-                  <tr>
-                    <td colSpan={headers.length+2} className="text-center">No data found</td>
-                  </tr>
-                </>
+                  :
+                  <>
+                    <tr>
+                      <td colSpan={headers.length + 2} className="text-center">No data found</td>
+                    </tr>
+                  </>
                 }
               </tbody>
             </table>

@@ -177,10 +177,10 @@ const IssuDetails = () => {
   return (
     <div className='container-fluid mt-4'>
       <div>
-        <h6 className='tag-text'>Upload recipients and certificates data</h6>
+        <h6 className='tag-text pb-2'>Upload product data</h6>
         <div className='issue-upload-full-div'>
           <div className='csv-a-div'>
-            <a className='csv-a text-center' onClick={handleDownload}>
+            <a className='csv-a text-center ' onClick={handleDownload}>
               Download the CSV template
             </a>
           </div>
@@ -201,21 +201,24 @@ const IssuDetails = () => {
       </div>
 
       <div className='mt-2'>
-        <div className='previe-issue-div'>
+
+        <div className='previe-issue-div pt-1'>
           <h6 className='tag-text'>Preview</h6>
-          <div className='previe-issue-text'>
-            <p className='previe-issue-btn-text'>Clear</p>
-            <Link className='previe-issue-btn-link' href='/allitems'>
-              <p className='previe-issue-btn'> Mint</p>
-            </Link>
-          </div>
+          {isGenerate == 2 && (
+            <div className='previe-issue-text'>
+              <p className='previe-issue-btn-text'>Clear</p>
+              <Link className='previe-issue-btn-link' href='/allitems'>
+                <p className='previe-issue-btn'> Mint</p>
+              </Link>
+            </div>
+          )}
         </div>
+
 
         <div>
           <div
-            className={` issue-data-table-div ${
-              isGenerate != 2 ? "issue-box-details" : ""
-            }`}>
+            className={` issue-data-table-div ${isGenerate != 2 ? "issue-box-details" : ""
+              }`}>
             {isGenerate == 0 && (
               <div className='no-file-select-div'>
                 <p>No File Select</p>
@@ -230,62 +233,76 @@ const IssuDetails = () => {
               </div>
             )}
             {isGenerate == 2 && (
-              <table className='table'>
+              <table className='full-table'>
                 <thead>
                   <tr>
                     {headers.length > 0 &&
                       headers.map((item) => (
                         <th className='table-nav' scope='col'>
-                          <p className='table-th'> {item}</p>
+                          <span className='table-th'> {item}</span>
                         </th>
                       ))}
 
                     <th className='table-navs' scope='col'>
-                      <p className='table-ths'> QR code</p>
+                      <span className='table-ths'> QR code</span>
                     </th>
                     {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
                   </th> */}
                     <th className='table-navs' scope='col'>
-                      <p className='table-ths'> QR code</p>
+                      <span className='table-ths'> QR code</span>
                     </th>
+                  </tr>
+                  <tr>
+                    <th colSpan={headers.length + 2} className="text-center"></th>
                   </tr>
                 </thead>
                 <tbody>
                   {columns.map((item, index) => (
-                    <tr key={index} className='data-tr'>
-                      {headers.length > 0 &&
-                        headers.map((head) => (
-                          <td className='data-td'>
-                            {/* <p className='data-th-text'>{item.brand}</p> */}
-                            <p className='data-th-text'>{item[head]}</p>
-                          </td>
-                        ))}
+                    <>
+                      <tr key={index} className='data-tr'>
+                        {headers.length > 0 &&
+                          headers.map((head) => (
+                            <td className='data-td'>
+                              {/* <p className='data-th-text'>{item.brand}</p> */}
+                              <span className='data-th-text'>{item[head]}</span>
+                            </td>
+                          ))}
 
-                      <td className='data-td'>
-                        <p
-                          className='data-th-text-delete'
-                          onClick={() => {
-                            handleDelete(item.id);
-                          }}>
-                          Delete
-                        </p>
-                      </td>
+                        <td className='data-td'>
+                          <span
+                            className='data-td cursor-pointer text-red'
+                            onClick={() => {
+                              handleDelete(item.id);
+                            }}>
+                            Delete
+                          </span>
+                        </td>
 
-                      <td>
-                        <div className='issue-svg-div'>
-                          <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='24'
-                            height='24'
-                            fill='#155C79'
-                            className='bi bi-three-dots'
-                            viewBox='0 0 16 16'>
-                            <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
-                          </svg>
-                        </div>
-                      </td>
-                    </tr>
+                        <td className='data-td'>
+                          <div className='issue-svg-div'>
+                            <svg
+                              xmlns='http://www.w3.org/2000/svg'
+                              width='24'
+                              height='24'
+                              fill='#155C79'
+                              className='bi bi-three-dots'
+                              viewBox='0 0 16 16'>
+                              <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                            </svg>
+                          </div>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td colSpan={columns.length + 2} className="text-center"></td>
+                      </tr>
+                      <tr>
+                        <td colSpan={columns.length + 2} className="text-center"></td>
+                      </tr>
+                    </>
+
+
                   ))}
                 </tbody>
               </table>

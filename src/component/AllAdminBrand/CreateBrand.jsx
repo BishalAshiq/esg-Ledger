@@ -278,7 +278,7 @@ const CreateBrand = () => {
               <input
                 className='kibo-inputs'
                 type='text'
-                placeholder='KIBO'
+                placeholder=''
                 value={formData.name}
                 name='name'
                 onChange={handleFormData}
@@ -295,7 +295,7 @@ const CreateBrand = () => {
               <input
                 className='kibo-inputs'
                 type='text'
-                placeholder='KIBO'
+                placeholder=''
                 value={formData.contact_person}
                 name='contact_person'
                 onChange={handleFormData}
@@ -311,7 +311,7 @@ const CreateBrand = () => {
               <input
                 className='kibo-inputs'
                 type='number'
-                placeholder='+852 24210010'
+                placeholder=''
                 name='contact_number'
                 onChange={handleFormData}
                 value={formData.contact_number}
@@ -327,7 +327,7 @@ const CreateBrand = () => {
               <input
                 className='kibo-inputs'
                 type='email'
-                placeholder='hello@kibo.eco'
+                placeholder=''
                 name='contact_email'
                 onChange={handleFormData}
                 value={formData.contact_email}
@@ -343,7 +343,7 @@ const CreateBrand = () => {
               <input
                 className='kibo-inputs'
                 type='text'
-                placeholder='https://kibo.eco/'
+                placeholder=''
                 name='website'
                 onChange={handleFormData}
                 value={formData.website}
@@ -359,7 +359,7 @@ const CreateBrand = () => {
               <input
                 className='kibo-inputs'
                 type='password'
-                placeholder='*********'
+                placeholder=''
                 name='password'
                 onChange={handleFormData}
                 value={formData.password}
