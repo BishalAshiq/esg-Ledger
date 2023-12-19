@@ -195,7 +195,7 @@ const ViewAllItemsData = () => {
                         {headers.length > 0 &&
                           headers.map((head) => (
                             <td className='data-td'>
-                              <span className='data-th-text'>{item[head]}</span>
+                              <span className='data-th-text'>{item[head] != null ? item[head] :"N/A"}</span>
                             </td>
                           ))}
 

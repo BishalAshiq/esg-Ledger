@@ -377,7 +377,7 @@ body {
 
 .redix-divs {
   border: 1px solid white;
-  background-color: #ececec;
+  background-color: #066F690D;
   width: 100%;
   padding: 5px;
 
@@ -395,7 +395,7 @@ body {
 
 .redixSec-div {
   border: 1px solid white;
-  background-color: #ececec;
+  background-color: #066F690D;
   padding: 10px;
   border-radius: 10px;
 }
@@ -1124,4 +1124,38 @@ body {
     width: 105%;
     /* border: 1px solid gray; */
   }
+}
+
+/* Notification */
+.Toastify__toast-container {
+  width: 300px!important;
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+}
+
+.Toastify__progress-bar--success{
+  background-color: #86C6CA!important;
+}
+.Toastify__toast--success {
+  background-color: #86C6CA!important;
+  color: #fff!important;
+}
+
+.Toastify__toast--error {
+  background-color: #FB542FE0!important;
+  color: #fff!important;
+}
+
+.Toastify__toast-icon svg{
+  fill: white;
+}
+.Toastify__close-button {
+  display: none;
+}
+
+.custom-toast-margin{
+  margin-left: 5px;;
 }

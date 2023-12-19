@@ -191,8 +191,8 @@ const page = () => {
                     <h2 className='certificate-tags'>
                       THE BLOCKCHAIN CERTIFICATE
                     </h2>
-                    <span className='certificate-ptag'>區塊鏈防偽證書</span>
-                    <span className='certificate-ptag'>by OneChain®</span>
+                    <span className='certificate-ptag mt-2'>區塊鏈防偽證書</span>
+                    <span className='certificate-ptag mt-3'>by OneChain®</span>
                   </div>
 
                   <div className='certificate-des-div'>
@@ -395,7 +395,6 @@ const page = () => {
                       <li className='block-ptwotextc cc-mob'>
                         如有任何疑問或關切事項 可電郵至:
                         <span className='block-ptwotext-add'>
-                          {" "}
                           enquiries@esgledger.co
                         </span>
                         。

@@ -6,6 +6,7 @@ import IssuDetails from "@/component/DashboardAll/IssuDetails";
 import ViewAllItemsData from "@/component/DashboardAll/ViewAllItemsData";
 import IndividualBrand from "@/component/AllAdminBrand/IndividualBrand";
 import ViewAllBrands from "@/component/AllAdminBrand/ViewAllBrands";
+import BrandList from "@/component/AllAdminBrand/BrandList";
 
 const page = () => {
   const [activeDiv, setActiveDiv] = useState(1);
@@ -52,7 +53,7 @@ const page = () => {
           {activeDiv === 2 && (
             <div>
               <div className=''>
-                <h2>Helloss</h2>
+                <BrandList />
                 {/* <ViewAllItemsData /> */}
               </div>
             </div>

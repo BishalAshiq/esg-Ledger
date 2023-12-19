@@ -47,7 +47,7 @@ const CreateBrand = () => {
     setShowBrandSingleProducts(!showBrandSingleProducts);
   };
 
-  const [imageSrc, setImageSrc] = useState("/kibo.png"); // Set the initial image source
+  const [imageSrc, setImageSrc] = useState(""); // Set the initial image source
 
   // Modal
   const [open, setOpen] = React.useState(false);
@@ -167,7 +167,7 @@ const CreateBrand = () => {
                   Account
                 </label> */}
                 </div>
-                
+
                 {/* <div className='edit-delete-div'>
                   <p className='indu-brand-edit' onClick={handleOpen}>
                     Save
@@ -234,13 +234,19 @@ const CreateBrand = () => {
 
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
               <div className='kibo-imgs-div'>
-                <Image
-                  className='kibo-imgs'
-                  src={imageSrc}
-                  height={50}
-                  width={70}
-                  alt=''
-                />
+                {
+                  imageSrc != "" ?
+                    <Image
+                      className='kibo-imgs'
+                      src={imageSrc}
+                      height={50}
+                      width={70}
+                      alt=''
+                    />
+                    :
+                    ""
+                }
+
               </div>
             </div>
             <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>

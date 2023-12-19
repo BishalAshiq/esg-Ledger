@@ -306,14 +306,11 @@ const IndividualBrand = ({ brandId }) => {
               <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
                 <div className='kibo-img-div'>
                   {
-                    (formData.logo == "" ? <Image
-                      className='kibo-img'
-                      src={Kibo}
-                      height={50}
-                      width={70}
-                      alt=''
-                    /> :
+                    (formData.logo == "" ?
+                      <></>
+                      :
                       <img src={`${base_url}/uploads/${formData.logo}`}
+                        className='kibo-img'
                         height={50}
                         width={70}
                       />

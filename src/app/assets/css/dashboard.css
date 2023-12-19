@@ -349,6 +349,13 @@
   position: relative;
   /* background-color: white; */
   display: inline-block;
+  
+
+}
+
+.view-all-link{
+  text-decoration: none;
+  color:#00B3FF;
 }
 
 .link-container {

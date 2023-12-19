@@ -265,7 +265,7 @@ const IssuDetails = () => {
                           headers.map((head) => (
                             <td className='data-td'>
                               {/* <p className='data-th-text'>{item.brand}</p> */}
-                              <span className='data-th-text'>{item[head]}</span>
+                              <span className='data-th-text'>{item[head] != null ? item[head] : "N/A"}</span>
                             </td>
                           ))}
 
