@@ -377,7 +377,7 @@ body {
 
 .redix-divs {
   border: 1px solid white;
-  background-color: #066F690D;
+  background-color: #066f690d;
   width: 100%;
   padding: 5px;
 
@@ -395,7 +395,7 @@ body {
 
 .redixSec-div {
   border: 1px solid white;
-  background-color: #066F690D;
+  background-color: #066f690d;
   padding: 10px;
   border-radius: 10px;
 }
@@ -648,12 +648,46 @@ body {
   padding-bottom: 15px; /* Adjust the bottom padding as needed */
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
-} 
+}
 
-.text-red{
+.text-red {
   color: red;
+}
+
+/* Notification */
+.Toastify__toast-container {
+  width: 300px !important;
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: "Arial", sans-serif;
+}
+
+.Toastify__progress-bar--success {
+  background-color: #86c6ca !important;
+}
+.Toastify__toast--success {
+  background-color: #86c6ca !important;
+  color: #fff !important;
+}
+
+.Toastify__toast--error {
+  background-color: #fb542fe0 !important;
+  color: #fff !important;
+}
+
+.Toastify__toast-icon svg {
+  fill: white;
+}
+.Toastify__close-button {
+  display: none;
+}
+
+.custom-toast-margin {
+  margin-left: 5px;
 }
 
 @keyframes loading {
@@ -1126,36 +1160,11 @@ body {
   }
 }
 
-/* Notification */
-.Toastify__toast-container {
-  width: 300px!important;
-}
-
-.Toastify__toast {
-  border-radius: 8px;
-  font-family: 'Arial', sans-serif;
-}
-
-.Toastify__progress-bar--success{
-  background-color: #86C6CA!important;
-}
-.Toastify__toast--success {
-  background-color: #86C6CA!important;
-  color: #fff!important;
-}
-
-.Toastify__toast--error {
-  background-color: #FB542FE0!important;
-  color: #fff!important;
-}
-
-.Toastify__toast-icon svg{
-  fill: white;
-}
-.Toastify__close-button {
-  display: none;
-}
-
-.custom-toast-margin{
-  margin-left: 5px;;
+/* Macbook PRo  */
+@media (max-width: 1680px) and (min-width: 1368px) {
+  .fist-slider-text-tag {
+    font-size: 55px;
+    margin-top: 40px;
+    line-height: 1.2;
+  }
 }

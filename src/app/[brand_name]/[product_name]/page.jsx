@@ -191,7 +191,9 @@ const page = () => {
                     <h2 className='certificate-tags'>
                       THE BLOCKCHAIN CERTIFICATE
                     </h2>
-                    <span className='certificate-ptag mt-2'>區塊鏈防偽證書</span>
+                    <span className='certificate-ptag mt-2'>
+                      區塊鏈防偽證書
+                    </span>
                     <span className='certificate-ptag mt-3'>by OneChain®</span>
                   </div>
 

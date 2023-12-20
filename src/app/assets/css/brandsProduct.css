@@ -291,3 +291,12 @@
     cursor: pointer;
   }
 }
+
+/* Macbook PRo  */
+@media (max-width: 1680px) and (min-width: 1368px) {
+  /* .fist-slider-text-tag {
+    font-size: 55px;
+    margin-top: 50px;
+    line-height: 1.1;
+  } */
+}
