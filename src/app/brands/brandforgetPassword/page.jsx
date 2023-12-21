@@ -2,116 +2,20 @@
 import Nav from "@/component/Navbar/Nav";
 import React, { Component, useState } from "react";
 // import Slider from "react-slick";
-import LoginBanner from "../../../public/loginBanner.png";
-import Brands from "../../../public/brands.png";
-import pageLogo from "../../../public/pageLogomd.png";
-import pageicon1 from "../../../public/social1.svg";
-import pageicon2 from "../../../public/social2.svg";
-import pageicon3 from "../../../public/social3.svg";
-import pageicon4 from "../../../public/social4.svg";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import styles from "../login/login.module.css";
-import { toast } from "react-toastify";
-import axiosInstance from "../../../utils/axios";
+import LoginBanner from "../../../../public/loginBanner.png";
+
+import pageLogo from "../../../../public/pageLogomd.png";
+import pageicon1 from "../../../../public/social1.svg";
+import pageicon2 from "../../../../public/social2.svg";
+import pageicon3 from "../../../../public/social3.svg";
+import pageicon4 from "../../../../public/social4.svg";
+
+import styles from "../../login/login.module.css";
+
 import { useRouter } from "next/navigation";
-import Cookies from "js-cookie";
 
 const page = () => {
   const router = useRouter();
-
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleFormChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    axiosInstance
-      .post("/login", formData, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        if (res.data.status == 200) {
-          // router.push("/newsfeed");
-
-          // setCookiesAuthRender(res.data)
-          if (typeof window != "undefined") {
-            localStorage.setItem("refreshToken", res.data.token);
-            localStorage.setItem("userInfo", JSON.stringify(res.data.user));
-            localStorage.setItem("fullname", res.data.user.name);
-
-            localStorage.setItem("userId", res.data.user.id);
-          }
-          Cookies.set("refreshToken", res.data.token, {
-            path: "/",
-            expires: 7,
-          });
-
-          router.push("/admin/brands/view");
-        } else if (res.data.status == 401) {
-          toast.error("Login failed. Please check your email and password.", {
-            position: "top-right",
-            style: {
-              background: "white",
-              color: "black",
-            },
-          });
-        } else {
-          toast.error("Login failed. Invalid Credentials.", {
-            position: "top-right",
-            style: {
-              background: "white",
-              color: "black",
-            },
-          });
-        }
-      });
-  };
 
   return (
     <div className={styles["background-img"]}>
@@ -125,50 +29,40 @@ const page = () => {
             <div className='login-banner-img-input-divs'>
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
-                  <img className='login-banner-img' src={Brands.src} alt='' />
+                  <img
+                    className='login-banner-img'
+                    src={LoginBanner.src}
+                    alt=''
+                  />
                 </div>
-
                 <div className='login-banner-inputs-div'>
-                  <h6 className='heading-tag'>Admin Login</h6>
-                  <form
-                    className='content'
-                    onSubmit={handleLogin}
-                    method='post'>
-                    <div>
+                  <form className='content' method='post'>
+                    <div className='mb-2'>
                       {" "}
-                      <label for='email'>Email</label> <br />
+                      <label for='password'>New password</label> <br />
                       <input
-                        className='brand-inp'
-                        type='email'
-                        id='email'
-                        name='email'
-                        onChange={handleFormChange}
-                        value={formData.email}
+                        className='brand-input'
+                        type='password'
+                        id='password'
+                        name='Password'
                         required
                       />
                     </div>
                     <div>
                       {" "}
-                      <label for='email'>Password</label> <br />
+                      <label for='email'>Repeat your new password</label> <br />
                       <input
-                        className='brand-inp'
+                        className='brand-input'
                         type='password'
                         id='Password'
                         name='password'
-                        value={formData.password}
-                        required
-                        onChange={handleFormChange}
                       />
                     </div>
 
-                    <p className='forget-text'>Forget Password</p>
-
-                    <div className='submit-btn-div'>
-                      <button type='submit' className='submit-btn'>
-                        Log in
-                      </button>
+                    <div className='submitn-btn-div'>
+                      <button className='submitn-btn'>Confirm</button>
                     </div>
-                  </form>
+                  </form>{" "}
                 </div>
               </div>
             </div>

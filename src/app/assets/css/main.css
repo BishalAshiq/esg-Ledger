@@ -136,12 +136,12 @@ body {
 
 .pioneeringtext {
   /* border: 1px solid gray; */
-  /* width: 400px; */
+  width: 15%;
   /* display: grid;
   place-items: center; */
   color: white;
   font-size: 0.8rem;
-  line-height: 1;
+  line-height: 1.2;
   margin: -1.4% 30%;
 }
 
@@ -841,22 +841,23 @@ body {
     display: flex;
     width: 35%;
     justify-content: center;
-    margin: 14% 30% 0 30%;
+    margin: 12% 30% 0 30%;
   }
   .fist-slider-text-tag {
     font-size: 55px;
+    margin: 0 0 7% 0;
   }
   .slick-dots {
     height: 10px;
   }
   .pioneeringtext {
     /* border: 1px solid gray; */
-    /* width: 400px; */
+    width: 15%;
     /* display: grid;
     place-items: center; */
     color: white;
     font-size: 20px;
-    line-height: 1;
+    line-height: 1.2;
     margin: -1.4% 30%;
   }
   .login-banner-img-input-div {
@@ -904,6 +905,47 @@ body {
 }
 
 @media (max-width: 768px) {
+  .login-full-div {
+    margin-top: 20%;
+    height: 20vh;
+  }
+  .fist-slider-text-div {
+    color: white;
+    /* border: 1px solid rgb(236, 14, 14); */
+    display: flex;
+    width: 78%;
+    /* justify-content: center; */
+    margin: 14% 30% 0 10%;
+  }
+  .fist-slider-text-tag {
+    font-size: 32px;
+    text-align: start;
+  }
+  .hr {
+    display: none;
+  }
+
+  .hrs {
+    width: 80%;
+    border-top: 1px solid rgb(255, 255, 255);
+    margin: 1% 30% 2% 10%;
+    /* display: none; */
+  }
+  .hrs-mob {
+    /* border-top: 1px solid rgb(255, 255, 255); */
+  }
+  .pioneeringtext {
+    /* border: 1px solid gray; */
+    width: 60%;
+    /* display: flex !important;
+    justify-content: start !important;
+    flex-direction: column !important; */
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin: -1.4% 30% 0 10%;
+  }
+
   .nav-items-div {
     display: flex;
     flex-direction: column;
@@ -990,12 +1032,12 @@ body {
     /* background-color: #066f69; */
   }
   .mob-nav {
-    background-color: #e9e9e9;
+    /* background-color: #e9e9e9; */
   }
   .nav-mob-logo-img-div {
     display: flex;
     justify-content: center;
-    background-color: #066f69;
+    /* background-color: #066f69; */
     gap: 20px;
     padding: 25px 100% 14px 75%;
     margin-top: -20px;

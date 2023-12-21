@@ -1,10 +1,62 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PageLogo from "../../../public/pageLogonavas.png";
 import PageLogomob from "../../../public/pageLogomd.png";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import companyLogo from "../../../public/pageLogonavas.png";
+import companyLogo1 from "../../../public/pageLogomd.png";
 
 const Nav = () => {
+  const [navbarColor, setNavbarColor] = useState(null);
+  const [navbarTextColor, setNavbarTextColor] = useState(null);
+  const [dropdownColor, setDropdownColor] = useState(null);
+  const [buttonColor, setButtonColor] = useState(null);
+  const [logoColor, setLogoColor] = useState("black");
+  const [logoUrl, setLogoUrl] = useState("");
+  const router = useRouter();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      setLogoUrl(companyLogo);
+    } else if (location.pathname === "/landingPage") {
+      setLogoUrl(companyLogo1);
+    } else {
+      setLogoUrl(companyLogo);
+    }
+  }, [location]);
+
+  useEffect(() => {
+    switch (location.pathname) {
+      case "/landingPage":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("#404040");
+        setButtonColor("#1e397a");
+        break;
+
+      case "/google_privacy_Policies":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("#404040");
+        setButtonColor("#1e397a");
+        break;
+      case "/RequestQuotation":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("#404040");
+        setButtonColor("#1e397a");
+        break;
+      case "/RequestDemo":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("#404040");
+        setButtonColor("#1e397a");
+        break;
+    }
+  }, [location.pathname]);
+
   return (
     <div>
       <div className='full-navbar-div'>
@@ -85,15 +137,13 @@ const Nav = () => {
         </div>
       </div>
       <div className='mobile-nav-div'>
-        <nav class='navbar navbar-expand-lg mob-nav fixed-top'>
+        <nav
+          class='navbar navbar-expand-lg mob-nav fixed-top'
+          style={{ backgroundColor: navbarColor }}>
           <div class=''>
             <div className='nav-mob-logo-img-div'>
-              <Link href='#'>
-                <img
-                  className='nav-mob-logo-img'
-                  src={PageLogomob.src}
-                  alt=''
-                />
+              <Link href='/landingPage'>
+                <img className='nav-mob-logo-img' src={logoUrl.src} alt='' />
               </Link>
               <button
                 className='navbar-toggler'
@@ -105,7 +155,7 @@ const Nav = () => {
                 aria-label='Toggle navigation'>
                 <span className=''>
                   {" "}
-                  {/* <svg
+                  <svg
                     xmlns='http://www.w3.org/2000/svg'
                     width='26'
                     height='26'
@@ -116,11 +166,11 @@ const Nav = () => {
                       fill-rule='evenodd'
                       d='M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5m0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5'
                     />
-                  </svg> */}
+                  </svg>
                 </span>
               </button>
             </div>
-            {/* <div class='collapse navbar-collapse' id='navbarTogglerDemo02'>
+            <div class='collapse navbar-collapse ' id='navbarTogglerDemo02'>
               <div className='nav-items-div-mob'>
                 <Link className='contact-nav-a-mov' href='#'>
                   <p> Home</p>
@@ -181,7 +231,7 @@ const Nav = () => {
                   </span>
                 </Link>
               </div>
-            </div> */}
+            </div>
           </div>
         </nav>
       </div>

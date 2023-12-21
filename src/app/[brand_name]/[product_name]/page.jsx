@@ -22,6 +22,7 @@ const page = () => {
   const [item, setItem] = useState({});
   const [attribute, setAttribute] = useState("");
   const [column, setColumn] = useState("");
+
   useEffect(() => {
     axiosInstance
       .get("item-details/" + param.brand_name + "/" + param.product_name)
