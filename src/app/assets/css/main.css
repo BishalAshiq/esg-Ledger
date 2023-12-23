@@ -953,8 +953,8 @@ body {
   }
 
   .nav-mob-logo-img {
-    width: 188px;
-    height: 53px;
+    width: 167px;
+    height: 41px;
     /* display: flex;
     justify-content: center;
     align-items: center; */
@@ -966,7 +966,7 @@ body {
     border: none !important;
   }
   .navbar-toggler-color {
-    color: white !important;
+    color: rgb(10, 9, 9) !important;
   }
   .nav-items-div-mob {
     display: flex;
@@ -1040,7 +1040,7 @@ body {
     /* background-color: #066f69; */
     gap: 20px;
     padding: 25px 100% 14px 75%;
-    margin-top: -20px;
+    /* margin-top: -20px; */
     /* width: 200%; */
   }
 

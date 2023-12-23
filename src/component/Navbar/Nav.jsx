@@ -18,9 +18,9 @@ const Nav = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (location.pathname === "/") {
+    if (location.pathname === "/landingPage") {
       setLogoUrl(companyLogo);
-    } else if (location.pathname === "/landingPage") {
+    } else if (location.pathname === "/") {
       setLogoUrl(companyLogo1);
     } else {
       setLogoUrl(companyLogo);
@@ -32,8 +32,8 @@ const Nav = () => {
       case "/landingPage":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
-        setDropdownColor("#404040");
-        setButtonColor("#1e397a");
+        setDropdownColor("");
+        setButtonColor("#066F69");
         break;
 
       case "/google_privacy_Policies":
@@ -137,7 +137,94 @@ const Nav = () => {
         </div>
       </div>
       <div className='mobile-nav-div'>
-        <nav
+        <nav class='navbar navbar-expand-lg bg-body-tertiary'>
+          <div class='container-fluid'>
+            <button
+              class='navbar-toggler'
+              type='button'
+              data-bs-toggle='collapse'
+              data-bs-target='#navbarTogglerDemo01'
+              aria-controls='navbarTogglerDemo01'
+              aria-expanded='false'
+              aria-label='Toggle navigation'>
+              <span class='navbar-toggler-icon'></span>
+            </button>
+            <div class='collapse navbar-collapse' id='navbarTogglerDemo01'>
+              <div className='nav-mob-logo-img-div'>
+                <Link href='/landingPage'>
+                  <img className='nav-mob-logo-img' src={logoUrl.src} alt='' />
+                </Link>
+              </div>
+              <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                <div className='nav-items-div-mob'>
+                  <Link className='contact-nav-a-mov' href='#'>
+                    <p> Home</p>
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='#'>
+                    {" "}
+                    <p>Brands</p>{" "}
+                    <span>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='10'
+                        height='10'
+                        fill='currentColor'
+                        class='bi bi-chevron-down'
+                        viewBox='0 0 16 16'>
+                        <path
+                          fill-rule='evenodd'
+                          d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
+                        />
+                      </svg>
+                    </span>
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='#'>
+                    <p> About ESGLedger</p>
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='#'>
+                    <p>Explorer</p>{" "}
+                    <span>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='10'
+                        height='10'
+                        fill='currentColor'
+                        class='bi bi-chevron-down'
+                        viewBox='0 0 16 16'>
+                        <path
+                          fill-rule='evenodd'
+                          d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
+                        />
+                      </svg>
+                    </span>
+                  </Link>
+                  <Link className='contact-nav-a-mov' href='#'>
+                    <p>Contact</p>{" "}
+                    <span>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='10'
+                        height='10'
+                        fill='currentColor'
+                        class='bi bi-chevron-down'
+                        viewBox='0 0 16 16'>
+                        <path
+                          fill-rule='evenodd'
+                          d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'
+                        />
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
+              </ul>
+              {/* <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> */}
+            </div>
+          </div>
+        </nav>
+        {/* <nav
           class='navbar navbar-expand-lg mob-nav fixed-top'
           style={{ backgroundColor: navbarColor }}>
           <div class=''>
@@ -149,13 +236,14 @@ const Nav = () => {
                 className='navbar-toggler'
                 type='button'
                 data-bs-toggle='collapse'
-                data-bs-target='#navbarTogglerDemo02'
-                aria-controls='navbarTogglerDemo02'
+                data-bs-target='#navbarTogglerDemo01'
+                aria-controls='navbarTogglerDemo01'
                 aria-expanded='false'
                 aria-label='Toggle navigation'>
                 <span className=''>
                   {" "}
                   <svg
+                    style={{ backgroundColor: buttonColor }}
                     xmlns='http://www.w3.org/2000/svg'
                     width='26'
                     height='26'
@@ -170,8 +258,10 @@ const Nav = () => {
                 </span>
               </button>
             </div>
-            <div class='collapse navbar-collapse ' id='navbarTogglerDemo02'>
-              <div className='nav-items-div-mob'>
+            <div className='collapse navbar-collapse' id='navbarTogglerDemo01'>
+         
+            </div>
+                 <div className='nav-items-div-mob'>
                 <Link className='contact-nav-a-mov' href='#'>
                   <p> Home</p>
                 </Link>
@@ -231,10 +321,17 @@ const Nav = () => {
                   </span>
                 </Link>
               </div>
-            </div>
           </div>
-        </nav>
+        </nav> */}
       </div>
+      <script
+        src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js'
+        integrity='sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r'
+        crossorigin='anonymous'></script>
+      <script
+        src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js'
+        integrity='sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+'
+        crossorigin='anonymous'></script>
     </div>
   );
 };
