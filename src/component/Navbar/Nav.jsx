@@ -15,6 +15,7 @@ const Nav = () => {
   const [buttonColor, setButtonColor] = useState(null);
   const [logoColor, setLogoColor] = useState("black");
   const [logoUrl, setLogoUrl] = useState("");
+  const [location, setLocation] = useState("");
   const router = useRouter();
 
   useEffect(() => {

@@ -139,19 +139,23 @@ const page = () => {
 
   const processString = (inputString) => {
     // Split the string by "/"
+    if (inputString != null) {
+      const values = inputString.split("/");
 
-    const values = inputString.split("/");
-
-    if (values.length > 0) {
-      const processedValues = values.map((value, index) => (
-        <React.Fragment key={index}>
-          {value} <br />
-        </React.Fragment>
-      ));
-      return processedValues;
+      if (values.length > 0) {
+        const processedValues = values.map((value, index) => (
+          <React.Fragment key={index}>
+            {value} <br />
+          </React.Fragment>
+        ));
+        return processedValues;
+      } else {
+        return values;
+      }
     } else {
-      return values;
+      return inputString;
     }
+
   };
 
   const [activeAccordions, setActiveAccordions] = useState([]);
@@ -252,7 +256,7 @@ const page = () => {
                       key != "" && (
                         <>
                           {typeof attribute[key] === "object" &&
-                          attribute[key] !== null ? (
+                            attribute[key] !== null ? (
                             <>
                               <div className=''>
                                 <div
@@ -262,13 +266,12 @@ const page = () => {
                                     <div className='accor-tag-div'>
                                       <h6 className='accordion-header'>
                                         <div
-                                          className={`accordion-button ${
-                                            isAccordionExpanded(
-                                              `collapse${key}`
-                                            )
-                                              ? ""
-                                              : "collapsed"
-                                          }`}
+                                          className={`accordion-button ${isAccordionExpanded(
+                                            `collapse${key}`
+                                          )
+                                            ? ""
+                                            : "collapsed"
+                                            }`}
                                           type='button'
                                           data-bs-target={`#collapse${key}`}
                                           aria-expanded={isAccordionExpanded(
@@ -330,18 +333,17 @@ const page = () => {
 
                                     <div
                                       id={`collapse${key}`}
-                                      className={`accordion-collapse collapse ${
-                                        isAccordionExpanded(`collapse${key}`)
-                                          ? "show"
-                                          : ""
-                                      }`}
+                                      className={`accordion-collapse collapse ${isAccordionExpanded(`collapse${key}`)
+                                        ? "show"
+                                        : ""
+                                        }`}
                                       data-bs-parent='#accordionExample'>
                                       <div className='accordion-body'>
                                         {Object.entries(attribute[key]).map(
                                           ([innerKey, innerValue], index) => (
                                             <>
                                               {innerKey != "" &&
-                                              innerValue != "" ? (
+                                                innerValue != "" ? (
                                                 <div className='Blockchain-ptag-divs'>
                                                   <p className='block-ptext'>
                                                     {innerKey}{" "}
