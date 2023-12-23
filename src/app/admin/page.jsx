@@ -2,8 +2,9 @@
 import Nav from "@/component/Navbar/Nav";
 import React, { Component, useState } from "react";
 // import Slider from "react-slick";
-import LoginBanner from "../../../public/loginBanner.png";
+// import LoginBanner from "../../../public/loginBanner.png";
 import Brands from "../../../public/brands.png";
+import LoginBanner from "../../../public/loginBannermob.png";
 import pageLogo from "../../../public/pageLogomd.png";
 import pageicon1 from "../../../public/social1.svg";
 import pageicon2 from "../../../public/social2.svg";
@@ -21,40 +22,40 @@ import Cookies from "js-cookie";
 const page = () => {
   const router = useRouter();
 
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+  // var settings = {
+  //   dots: false,
+  //   infinite: false,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   initialSlide: 0,
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 3,
+  //         infinite: true,
+  //         dots: true,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 480,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //   ],
+  // };
 
   const [formData, setFormData] = useState({
     email: "",
@@ -126,6 +127,11 @@ const page = () => {
               <div className=' login-banner-img-input-div'>
                 <div className='login-banner-img-div'>
                   <img className='login-banner-img' src={Brands.src} alt='' />
+                  <img
+                    className='login-banner-img-mob'
+                    src={LoginBanner.src}
+                    alt=''
+                  />
                 </div>
 
                 <div className='login-banner-inputs-div'>
@@ -171,12 +177,15 @@ const page = () => {
                   </form>
                 </div>
               </div>
+              <div className='green-mob-div'>
+                <span className='green-mob'>hello</span>
+              </div>
             </div>
           </div>
         </div>
-        <div className='hrs' />
+        <div className='hrss' />
 
-        <div className='pioneeringtext'>
+        <div className='pioneeringtexts'>
           <p>
             A pioneering blockchain-driven
             <br /> platform under OneChain®
@@ -184,11 +193,11 @@ const page = () => {
         </div>
       </div>
 
-      <div className='login-footer-banner-full-div'>
-        <div className='row'>
+      <div className='login-footer-banner-full-div '>
+        <div className='row '>
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
           <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
-            <div className='login-footer-banner-div'>
+            <div className='login-footer-banner-div web-view'>
               <div className=''>
                 <img className='footer-img' src={pageLogo.src} alt='' />
                 <p className='fotter-ptext'>
@@ -208,12 +217,38 @@ const page = () => {
                 </div>
               </div>
             </div>
-            <div className=''>
+            <div className='mobile-version-div'>
+              <p className='fotter-ptext-mob'>
+                For inquiries or more information <br />
+                please contact: enquiries@esgledger.co
+              </p>
+
+              <div className='footer-text-icon'>
+                <img className='social-icon' src={pageicon4.src} alt='' />
+                <img className='social-icon' src={pageicon3.src} alt='' />
+                <img className='social-icon' src={pageicon2.src} alt='' />
+                <img className='social-icon' src={pageicon1.src} alt='' />
+
+                {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
+              </div>
+              <p className='fotter-joitext-mob'>Join the Community</p>
+            </div>
+            <div className='f-hr-divweb'>
               <hr className='f-hr' />
               <p className='f-text'>© 2023 OneChain Ltd.</p>
             </div>
           </div>
           <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
+        </div>
+        <div className='mobile-version-divs'>
+          <div>
+            <hr className='f-hr' />
+            <p className='f-text'>© 2023 OneChain Ltd.</p>
+          </div>
+          <div className='pol-mob-div'>
+            <p className='polmob-text'>Privacy Policy</p>
+            <p className='polmob-text'>Terms of Service</p>
+          </div>
         </div>
       </div>
     </div>
