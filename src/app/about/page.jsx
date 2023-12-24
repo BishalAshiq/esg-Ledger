@@ -31,8 +31,14 @@ const page = () => {
             <div className='about-main-div'>
               <div className='about-div'>
                 <div className='about-header-tag-img-div'>
-                  <h3>About</h3>
-                  <Image src={pageLogonav} width={110} height={24} alt='' />
+                  <h3 className='abt-tags'>About</h3>
+                  <Image
+                    className='abt-logo-mob'
+                    src={pageLogonav}
+                    width={110}
+                    height={24}
+                    alt=''
+                  />
                 </div>
 
                 <div className='about-header-des-div'>
@@ -61,7 +67,7 @@ const page = () => {
                   </p>
                 </div>
 
-                <div className='about-header-des-divs'>
+                <div className='about-header-des-divs '>
                   <h5 className='about-header-desc-h6'>What Sets Us Apart</h5>
                   <h6 className='about-header-des-h6'>
                     Blockchain-Powered Authentication
@@ -90,7 +96,7 @@ const page = () => {
                   </div>
                 </div>
 
-                <div className='about-header-des-div'>
+                <div className='about-header-des-div '>
                   <h6 className='about-header-desc-h6'>
                     Join Us on the Journey
                   </h6>
@@ -122,44 +128,61 @@ const page = () => {
           <div className='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'></div>
         </div>
 
-        <div className='logins-footer-div'>
-          <div className='logins-footer-full-div row'>
+        <div className='login-footer-banner-full-div '>
+          <div className='row '>
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
-            <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-              <div className='footer-img-div'>
-                <img className='footer-img' src={pageLogo.src} alt='' />
-                <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
-                  enquiries@esgledger.co
-                </p>
-              </div>
-            </div>
+            <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
+              <div className='login-footer-banner-div web-view'>
+                <div className=''>
+                  <img className='footer-img' src={pageLogo.src} alt='' />
+                  <p className='fotter-ptext'>
+                    For inquiries or more information <br />
+                    please contact: enquiries@esgledger.co
+                  </p>
+                </div>
 
-            <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-              <div className='footer-text-div'>
-                <p className='footer-textpp'>Join the Community</p>
+                <div className=''>
+                  <p className='footer-textpp'>Join the Community</p>
+
+                  <div className='footer-text-icon'>
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </div>
+                </div>
+              </div>
+              <div className='mobile-version-div'>
+                <p className='fotter-ptext-mob'>
+                  For inquiries or more information <br />
+                  please contact: enquiries@esgledger.co
+                </p>
 
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
                   <img className='social-icon' src={pageicon4.src} alt='' />
+                  <img className='social-icon' src={pageicon3.src} alt='' />
+                  <img className='social-icon' src={pageicon2.src} alt='' />
+                  <img className='social-icon' src={pageicon1.src} alt='' />
+
+                  {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
                 </div>
+                <p className='fotter-joitext-mob'>Join the Community</p>
+              </div>
+              <div className='f-hr-divweb'>
+                <hr className='f-hr' />
+                <p className='f-text'>© 2023 OneChain Ltd.</p>
               </div>
             </div>
-
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
           </div>
-          <div className='ffs-div'>
-            <div className='row'>
-              <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
-              <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
-                <div className=''>
-                  <hr className='f-hr' />
-                  <p className='f-text'>© 2023 OneChain Ltd.</p>
-                </div>
-              </div>
-              <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+          <div className='mobile-version-divs'>
+            <div>
+              <hr className='f-hr' />
+              <p className='f-text'>© 2023 OneChain Ltd.</p>
+            </div>
+            <div className='pol-mob-div'>
+              <p className='polmob-text'>Privacy Policy</p>
+              <p className='polmob-text'>Terms of Service</p>
             </div>
           </div>
         </div>

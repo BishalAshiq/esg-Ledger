@@ -139,4 +139,12 @@
 }
 
 @media (max-width: 768px) {
+  .contactUs-inputs-div {
+    padding: 38px 11px;
+  }
+  .contact-getIn-touch-div {
+    background-color: #86c6ca;
+    padding: 14px 10px 30px 9px;
+    margin: 25% 3% 0 3%;
+  }
 }

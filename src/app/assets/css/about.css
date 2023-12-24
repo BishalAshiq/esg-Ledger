@@ -90,3 +90,114 @@
     height: 80vh;
   }
 }
+
+@media (max-width: 768px) {
+  .login-footer-banner-full-div {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 4px 0 0 0;
+    margin-top: 30px;
+    background-color: #066f69;
+  }
+  .about-main-div {
+    margin: 20% 0% 2% 2%;
+    color: white;
+    background-color: #86c6ca;
+    width: 96%;
+    height: 162vh;
+    padding: 3%;
+  }
+
+  .about-div {
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    height: 132vh;
+    border-radius: 6px;
+  }
+  .about-contacts-des-div {
+    padding: 18px 18px;
+  }
+  .about-contacts-btn {
+    color: #494949;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    border-radius: 5px;
+    background: #fff;
+  }
+  .about-header-des-p {
+    color: #494949;
+    text-align: justify;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px; /* 135.714% */
+  }
+  .about-contacts-desp {
+    color: #494949;
+    text-align: justify;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px; /* 135.714% */
+  }
+
+  /* 
+  .mob-divabt {
+    display: none;
+    visibility: hidden;
+  } */
+  .abt-logo-mob {
+    display: none;
+    visibility: hidden;
+  }
+  .abt-tags {
+    color: #066f69;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .about-header-des-h6 {
+    /* color: #066f69; */
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .about-header-desc-h6 {
+    color: #066f69;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 844px) {
+  .about-main-div {
+    margin: 20% 0% 2% 2%;
+    color: white;
+    background-color: #86c6ca;
+    width: 96%;
+    height: 176vh;
+    padding: 3%;
+  }
+
+  .about-div {
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    height: 148vh;
+    border-radius: 6px;
+  }
+}

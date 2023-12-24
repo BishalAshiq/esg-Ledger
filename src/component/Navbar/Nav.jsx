@@ -48,6 +48,18 @@ const Nav = () => {
         setDropdownColor("");
         setButtonColor("black");
         break;
+      case "/brands/login":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
+      case "/contactUs":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
     }
   }, [location.pathname]);
 
