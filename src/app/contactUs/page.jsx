@@ -50,7 +50,7 @@ const page = () => {
                         <div className='row '>
                           <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
                             <div>
-                              <label for='name' className='contact-lebel'>
+                              <label for='name' className='contact-lebel '>
                                 Your Name
                               </label>{" "}
                               <br />
@@ -63,7 +63,7 @@ const page = () => {
                             </div>
                           </div>
                           <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
-                            <div>
+                            <div className='mt-3'>
                               <label for='Email' className='contact-lebel'>
                                 {" "}
                                 Your Email

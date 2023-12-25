@@ -122,7 +122,7 @@ const ViewAllBrands = () => {
       });
   };
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid mob-view-brand'>
       {!showBrandSingleProducts ? (
         <div>
           <div className='admin-header-search-div'>
@@ -147,7 +147,7 @@ const ViewAllBrands = () => {
                 placeholder='Search by “brand name, Item, Product”'
               />
             </div>
-            <div>
+            <div className='admin-header-search-btn-div'>
               <button
                 className='admin-header-search-btn'
                 onClick={handleThreeDotsClick}>
@@ -244,7 +244,7 @@ const ViewAllBrands = () => {
                     <th colSpan={6}></th>
                   </tr>
                 </thead>
-                <tbody >
+                <tbody>
                   {brandList.length > 0 &&
                     brandList.map((brand, index) => (
                       <>
@@ -278,16 +278,19 @@ const ViewAllBrands = () => {
                                 </svg>
 
                                 <div className='link-container'>
-                                  <span onClick={() => {
-                                    handleEditFrom(brand.id)
-                                  }}>Edit</span>
+                                  <span
+                                    onClick={() => {
+                                      handleEditFrom(brand.id);
+                                    }}>
+                                    Edit
+                                  </span>
                                   <Link href='/'>Delete</Link>
                                 </div>
                               </div>
                             </div>
                           </td>
                         </tr>
-                        <tr >
+                        <tr>
                           <th colSpan={6}></th>
                         </tr>
                       </>
@@ -325,15 +328,12 @@ const ViewAllBrands = () => {
             </div>
           </div>
         </div>
+      ) : // Only render the BrandSingleProducts component when showBrandSingleProducts is true
+
+      showEditBrand == true ? (
+        <IndividualBrand brandId={brandId} />
       ) : (
-        // Only render the BrandSingleProducts component when showBrandSingleProducts is true
-
-        (showEditBrand == true) ?
-          <IndividualBrand brandId={brandId} />
-          :
-          <CreateBrand />
-
-
+        <CreateBrand />
       )}
     </div>
   );
