@@ -207,7 +207,7 @@ const ViewAllBrands = () => {
 
           <div>
             <div className='mt-4'>
-              <table className='full-table'>
+              <table className='full-table table table-responsive'>
                 <thead className=''>
                   <tr>
                     {/* {headers.length > 0 &&

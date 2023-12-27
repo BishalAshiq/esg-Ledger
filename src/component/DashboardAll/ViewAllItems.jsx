@@ -16,7 +16,7 @@ const ViewAllItems = () => {
     0: [
       { id: 1, text: "", isChecked: false },
       // Add more initial items as needed
-    ]
+    ],
   });
 
   const handleAddClick = (index) => {
@@ -31,11 +31,12 @@ const ViewAllItems = () => {
     });
   };
 
-
   const handleDeleteClick = (id, currindex) => {
     setItems((prevItems) => {
       const updatedItems = { ...prevItems };
-      updatedItems[currindex] = updatedItems[currindex].filter((item) => item.id !== id);
+      updatedItems[currindex] = updatedItems[currindex].filter(
+        (item) => item.id !== id
+      );
       return updatedItems;
     });
   };
@@ -54,14 +55,18 @@ const ViewAllItems = () => {
     setItems(updatedItems);
   };
 
-  const [itemst, setItemst] = useState([{
-    id: 0, text: "", isChecked: false
-  }]);
+  const [itemst, setItemst] = useState([
+    {
+      id: 0,
+      text: "",
+      isChecked: false,
+    },
+  ]);
 
   const [formData, setFormData] = useState([
-    { id: 1, text: 'Brand Name', checked: true },
-    { id: 2, text: 'Product No', checked: true },
-    { id: 3, text: 'Serial', checked: true }
+    { id: 1, text: "Brand Name", checked: true },
+    { id: 2, text: "Product No", checked: true },
+    { id: 3, text: "Serial", checked: true },
   ]);
   const [category, setCategory] = useState([
     { id: 1, text: "", checked: false },
@@ -99,7 +104,6 @@ const ViewAllItems = () => {
 
   const router = useRouter();
 
-
   const handleOpenPagePreview = () => {
     setShowPagePreview(true);
   };
@@ -107,7 +111,6 @@ const ViewAllItems = () => {
   const handleClosePagePreview = () => {
     setShowPagePreview(false);
   };
-
 
   const handleAddMoreClick = () => {
     setShowAdditionalComponent(!showAdditionalComponent);
@@ -138,7 +141,6 @@ const ViewAllItems = () => {
   };
 
   const [rows, setRows] = useState([{ id: 5, text: "", checked: false }]);
-
 
   const handleFormChange = (id, value) => {
     const rowExists = formData.some((row) => row.id === id);
@@ -176,7 +178,6 @@ const ViewAllItems = () => {
     }
   };
 
-
   const handleCategoryChange = (id, value) => {
     const rowExists = category.some((row) => row.id === id);
 
@@ -189,10 +190,7 @@ const ViewAllItems = () => {
       const newRow = { id, text: value, checked: false };
       setCategory([...category, newRow]);
     }
-
-
   };
-
 
   const handleCategoryCheckboxChange = (id) => {
     const rowExists = category.some((row) => row.id === id);
@@ -208,30 +206,34 @@ const ViewAllItems = () => {
     }
   };
 
-
   const handleSubCategoryChange = (id, value, currIndex) => {
-    const rowExists = subCategory.some((row) => row.id === id && row.index == currIndex);
+    const rowExists = subCategory.some(
+      (row) => row.id === id && row.index == currIndex
+    );
 
     if (rowExists) {
       const updatedRows = subCategory.map((row) =>
-        row.id === id && row.index == currIndex ? { ...row, text: value, index: currIndex } : row
+        row.id === id && row.index == currIndex
+          ? { ...row, text: value, index: currIndex }
+          : row
       );
       setSubCategory(updatedRows);
     } else {
       const newRow = { id, text: value, checked: false, index: currIndex };
       setSubCategory([...subCategory, newRow]);
     }
-
-
   };
 
-
   const handleSubCategoryCheckboxChange = (id, currIndex) => {
-    const rowExists = subCategory.some((row) => row.id === id && row.index == currIndex);
+    const rowExists = subCategory.some(
+      (row) => row.id === id && row.index == currIndex
+    );
 
     if (rowExists) {
       const updatedRows = subCategory.map((row) =>
-        row.id == id && row.index == currIndex ? { ...row, checked: !row.checked, index: currIndex } : row
+        row.id == id && row.index == currIndex
+          ? { ...row, checked: !row.checked, index: currIndex }
+          : row
       );
       setSubCategory(updatedRows);
     } else {
@@ -240,11 +242,9 @@ const ViewAllItems = () => {
     }
   };
 
-
   console.log(subCategory);
   const handleCustomizeForm = (e) => {
     e.preventDefault();
-
 
     const merged = [...rows];
 
@@ -266,40 +266,41 @@ const ViewAllItems = () => {
       rows: merged,
       category: category,
       subCategory: subCategory,
-
     };
 
     let token = "";
     if (typeof window !== "undefined") {
       token = localStorage.getItem("refreshToken");
     }
-    axiosInstance.post("/cutomize-data", mergedData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${token}`,
-      },
-    }).then((res) => {
-      if (res.data.status == 200) {
-        toast.success(res.data.message, {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-      }
-      if (res.data.status == 401) {
-        toast.error(res.data.message, {
-          position: "top-right",
-          style: {
-            background: "white",
-            color: "black",
-          },
-        });
-        localStorage.removeItem("refreshToken");
-        router.push("/");
-      }
-    });
+    axiosInstance
+      .post("/cutomize-data", mergedData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+        if (res.data.status == 200) {
+          toast.success(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+        }
+        if (res.data.status == 401) {
+          toast.error(res.data.message, {
+            position: "top-right",
+            style: {
+              background: "white",
+              color: "black",
+            },
+          });
+          localStorage.removeItem("refreshToken");
+          router.push("/");
+        }
+      });
   };
 
   return (
@@ -341,10 +342,8 @@ const ViewAllItems = () => {
                       <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z' />
                     </svg>
                   </span>
-                  <button
-                    type='submit'
-                    className='view-add-btn'>
-                    +  Save Customize Data
+                  <button type='submit' className='view-add-btn'>
+                    + Save Customize Data
                   </button>
                 </div>
               </div>
@@ -480,15 +479,12 @@ const ViewAllItems = () => {
               </div>
             </div>
 
-
-
             {itemst.map((itemt, index) => (
               <>
                 <div key={itemt.id} className='row checkbox-div pb-10'>
                   <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                     <div className='d-items-div'>
                       <h6>Add new item</h6>
-
                     </div>
                   </div>
 
@@ -496,7 +492,7 @@ const ViewAllItems = () => {
                     <div>
                       <svg
                         onClick={(e) => {
-                          handleAddClick(index)
+                          handleAddClick(index);
                         }}
                         xmlns='http://www.w3.org/2000/svg'
                         width='16'
@@ -511,8 +507,13 @@ const ViewAllItems = () => {
 
                   <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
                     <div>
-                      <input type='text' className='ser-item-input' name='item'
-                        onChange={(e) => handleCategoryChange(index, e.target.value)}
+                      <input
+                        type='text'
+                        className='ser-item-input'
+                        name='item'
+                        onChange={(e) =>
+                          handleCategoryChange(index, e.target.value)
+                        }
                       />
                     </div>
                   </div>
@@ -529,7 +530,6 @@ const ViewAllItems = () => {
                           onChange={(e) =>
                             handleCategoryCheckboxChange(index, e.target.value)
                           }
-
                         />
                       </div>
                     </div>
@@ -537,34 +537,31 @@ const ViewAllItems = () => {
 
                   <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
                     <div>
-                      {
-                        index > 0 ?
-
-                          <svg
-                            onClick={() => handleDeleteClickt(itemt.id)}
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='16'
-                            height='16'
-                            fill='#86C6CA'
-                            class='bi bi-dash-circle-fill'
-                            viewBox='0 0 16 16'>
-                            <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z' />
-                          </svg>
-
-                          :
-                          <svg
-                            onClick={(e) => {
-                              handleAddClickt(index)
-                            }}
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='16'
-                            height='16'
-                            fill='#86C6CA'
-                            class='bi bi-plus-circle-fill'
-                            viewBox='0 0 16 16'>
-                            <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z' />
-                          </svg>
-                      }
+                      {index > 0 ? (
+                        <svg
+                          onClick={() => handleDeleteClickt(itemt.id)}
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='16'
+                          height='16'
+                          fill='#86C6CA'
+                          class='bi bi-dash-circle-fill'
+                          viewBox='0 0 16 16'>
+                          <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1z' />
+                        </svg>
+                      ) : (
+                        <svg
+                          onClick={(e) => {
+                            handleAddClickt(index);
+                          }}
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='16'
+                          height='16'
+                          fill='#86C6CA'
+                          class='bi bi-plus-circle-fill'
+                          viewBox='0 0 16 16'>
+                          <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z' />
+                        </svg>
+                      )}
                       {/* <svg
                     
                       xmlns='http://www.w3.org/2000/svg'
@@ -578,64 +575,67 @@ const ViewAllItems = () => {
                     </div>
                   </div>
                 </div>
-                {
-                  items[index]?.length > 0 ?
-                    items[index].map((item, iIndex) => (
-                      <div key={item.id} className='row checkbox-div pb-10'>
-                        <div className='col-3 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
-
+                {items[index]?.length > 0 ? (
+                  items[index].map((item, iIndex) => (
+                    <div key={item.id} className='row checkbox-div pb-10'>
+                      <div className='col-3 col-sm-1 col-md-1 col-lg-1 col-xl-1 '></div>
+                      <div className='col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
+                        <div className='d-items-div'>
+                          <h6>Add new sub item</h6>
                         </div>
-                        <div className='col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
-                          <div className='d-items-div'>
-                            <h6>Add new sub item</h6>
-
-                          </div>
-                        </div>
-                        <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
-                        </div>
-                        <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
-                          <input
-                            type='text'
-                            className='ser-item-input'
-                            onChange={(e) => handleSubCategoryChange(item.id, e.target.value, index)}
-                          />
-                        </div>
-                        <div className='col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
-                          <div>
-                            <div class='form-check'>
-                              <input
-                                class='form-check-input'
-                                type='checkbox'
-                                value=''
-                                id='flexCheckChecked'
-                                onChange={() => handleSubCategoryCheckboxChange(item.id, index)}
-                              // checked
-                              />
-
-
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className='col-3 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
-                          <svg
-                            onClick={() => handleDeleteClick(item.id, index)}
-                            xmlns='http://www.w3.org/2000/svg'
-                            width='16'
-                            height='16'
-                            fill='#86C6CA'
-                            class='bi bi-dash-circle-fill'
-                            viewBox='0 0 16 16'>
-                            <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z' />
-                          </svg>
-                        </div>
-                        <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
-                          <div></div>
-                        </div>
-                        <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 '></div>
                       </div>
-                    )) : <></>
-                }
+                      <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '></div>
+                      <div className='col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 '>
+                        <input
+                          type='text'
+                          className='ser-item-input'
+                          onChange={(e) =>
+                            handleSubCategoryChange(
+                              item.id,
+                              e.target.value,
+                              index
+                            )
+                          }
+                        />
+                      </div>
+                      <div className='col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
+                        <div>
+                          <div class='form-check'>
+                            <input
+                              class='form-check-input'
+                              type='checkbox'
+                              value=''
+                              id='flexCheckChecked'
+                              onChange={() =>
+                                handleSubCategoryCheckboxChange(item.id, index)
+                              }
+                              // checked
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className='col-3 col-sm-1 col-md-1 col-lg-1 col-xl-1 '>
+                        <svg
+                          onClick={() => handleDeleteClick(item.id, index)}
+                          xmlns='http://www.w3.org/2000/svg'
+                          width='16'
+                          height='16'
+                          fill='#86C6CA'
+                          class='bi bi-dash-circle-fill'
+                          viewBox='0 0 16 16'>
+                          <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z' />
+                        </svg>
+                      </div>
+                      <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 '>
+                        <div></div>
+                      </div>
+                      <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 '></div>
+                    </div>
+                  ))
+                ) : (
+                  <></>
+                )}
               </>
             ))}
 
@@ -688,8 +688,6 @@ const ViewAllItems = () => {
                 ))}
               </div>
             )} */}
-
-
           </div>
         </form>
       )}

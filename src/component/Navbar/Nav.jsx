@@ -25,7 +25,7 @@ const Nav = () => {
     } else {
       setLogoUrl(companyLogo);
     }
-  }, [location]);
+  }, [router]);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -61,7 +61,7 @@ const Nav = () => {
         setButtonColor("black");
         break;
     }
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   return (
     <div>

@@ -156,7 +156,7 @@ const page = () => {
                 </div>
 
                 <div className='login-banner-inputs-div'>
-                  <h6 className='heading-tag'>Admin Login</h6>
+                  <h6 className='heading-tag'>Brands Login</h6>
                   <form
                     className='content'
                     onSubmit={handleLogin}
