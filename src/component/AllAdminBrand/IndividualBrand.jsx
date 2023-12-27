@@ -355,18 +355,38 @@ const IndividualBrand = ({brandId}) => {
                                 </div>
                             </div>
 
-                            <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                                <div className="kibo-img-div">
-                                    {formData.logo == "" ? (
-                                        <></>
-                                    ) : (
-                                        <img
-                                            src={`${base_url}/uploads/${formData.logo}`}
-                                            className="kibo-img"
-                                            height={50}
-                                            width={70}
+                            <div className="container">
+                                <div className="mb-2 row">
+                                    <div className="col-12 col-md-2 ">
+                                        <div className="kibo-img-div">
+                                            <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
+                                                <div className="kibo-img-div">
+                                                    {formData.logo == "" ? (
+                                                        <></>
+                                                    ) : (
+                                                        <img
+                                                            src={`${base_url}/uploads/${formData.logo}`}
+                                                            className="kibo-img"
+                                                            height={50}
+                                                            width={70}
+                                                        />
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="col-12 col-md-10">
+                                        <input
+                                            className="kibo-inputs"
+                                            type="text"
+                                            placeholder="KIBO"
+                                            // value={formData.name}
+                                            name="name"
+                                            onChange={handleFormData}
+                                            required
                                         />
-                                    )}
+                                    </div>
                                 </div>
                             </div>
 
@@ -377,22 +397,22 @@ const IndividualBrand = ({brandId}) => {
                                 },
                                 {
                                     title: " Contact number",
-                                    value: formData.contact_person,
-                                },
-                                {
-                                    title: "Contact email",
                                     value: formData.contact_number,
                                 },
                                 {
-                                    title: "Website",
+                                    title: "Contact email",
                                     value: formData.contact_email,
                                 },
                                 {
-                                    title: "Number of Product",
+                                    title: "Website",
                                     value: formData.website,
                                 },
-                            ].map((each) => (
-                                <div className="container">
+                                {
+                                    title: "Number of Product",
+                                    value: formData.brands_item_count,
+                                },
+                            ].map((each, index) => (
+                                <div key={index} className="container">
                                     <div className="mb-2 row">
                                         <div className="col-12 col-md-2 ">
                                             <div className="kibo-img-div">
