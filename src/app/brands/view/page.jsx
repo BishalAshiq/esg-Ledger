@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import DashNav from "@/component/Navbar/dashNav";
 import ViewAllItems from "@/component/DashboardAll/ViewAllItems";
 import IssuDetails from "@/component/DashboardAll/IssuDetails";
@@ -17,17 +17,17 @@ const page = () => {
                 <DashNav />
             </div>
 
-            <div className='row'>
-                <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'>
-                    <div className='dddssa' />
+            <div className="row">
+                <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                    <div className="dddssa" />
 
                     <Navbar activeDiv={2} />
                 </div>
 
-                <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
+                <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
                     {activeDiv === 1 && (
                         <div>
-                            <div className=''>
+                            <div className="">
                                 <IssuDetails />
                             </div>
                         </div>
@@ -35,7 +35,7 @@ const page = () => {
 
                     {activeDiv === 2 && (
                         <div>
-                            <div className=''>
+                            <div className="">
                                 <ViewAllItemsData />
                             </div>
                         </div>
@@ -43,16 +43,16 @@ const page = () => {
 
                     {activeDiv === 3 && (
                         <div>
-                            <div className=''>
+                            <div className="">
                                 <ViewAllItems />
                             </div>
                         </div>
                     )}
                 </div>
             </div>
-            <div className='dashboard-footer-div'>
-                <div className='dashboard-footer'>
-                    <p className='dashboard-footer-text'>
+            <div className="dashboard-footer-div">
+                <div className="dashboard-footer">
+                    <p className="dashboard-footer-text">
                         © 2023 OneChain Ltd. All Rights Reserved.
                     </p>
                 </div>
