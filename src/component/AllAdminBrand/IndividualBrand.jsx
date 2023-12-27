@@ -407,10 +407,6 @@ const IndividualBrand = ({brandId}) => {
                                     title: "Website",
                                     value: formData.website,
                                 },
-                                {
-                                    title: "Number of Product",
-                                    value: formData.brands_item_count,
-                                },
                             ].map((each, index) => (
                                 <div key={index} className="container">
                                     <div className="mb-2 row">
@@ -437,11 +433,16 @@ const IndividualBrand = ({brandId}) => {
                                 </div>
                             ))}
 
-                            <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                                <div className="number-of-div">
-                                    <p>{formData.brands_item_count}</p>
-                                    <p className="indu-brand-edit">View all</p>
+                            <div className="number-of-div d-flex justify-content-between mt-4 ">
+                                <div className="d-flex justify-content-between ">
+                                    <p className="font-weight-bold ">
+                                        Number of Products
+                                    </p>
+                                    <p className="pl-4">
+                                        {formData.brands_item_count}
+                                    </p>
                                 </div>
+                                <p className="indu-brand-edit">View all</p>
                             </div>
                             <hr className="indi-brand-hr" />
                             {/* <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>

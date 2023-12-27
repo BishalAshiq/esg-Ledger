@@ -151,7 +151,7 @@ const ViewAllBrands = () => {
                         </div>
                         <div className="admin-header-search-btn-div">
                             <button
-                                className="admin-header-search-btn"
+                                className="admin-header-search-btn text-nowrap py-2"
                                 onClick={handleThreeDotsClick}
                             >
                                 Add new brand

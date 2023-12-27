@@ -296,102 +296,55 @@ const CreateBrand = () => {
                             </div>
                         </div>
 
-                        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                            <div className="kibo-img-div">
-                                <p className="contact-word">Name *</p>
+                        {[
+                            {
+                                title: "Name *",
+                                value: formData.name,
+                            },
+                            {
+                                title: "Contact person",
+                                value: formData.contact_person,
+                            },
+                            {
+                                title: "Contact number",
+                                value: formData.contact_number,
+                            },
+                            {
+                                title: "Contact email",
+                                value: formData.contact_email,
+                            },
+                            {
+                                title: "Website",
+                                value: formData.website,
+                            },
+                            {
+                                title: "Password",
+                                value: formData.password,
+                            },
+                        ].map((each, index) => (
+                            <div key={index} className="container">
+                                <div className="mb-4 row">
+                                    <div className="col-12 col-md-2">
+                                        <div className="kibo-img-div">
+                                            <p className="contact-word mb-0">
+                                                {each.title}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className="col-12 col-md-10">
+                                        <input
+                                            className="kibo-inputs"
+                                            type="text"
+                                            placeholder=""
+                                            value={formData.value}
+                                            name="name"
+                                            onChange={handleFormData}
+                                            required
+                                        />
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                            <input
-                                className="kibo-inputs"
-                                type="text"
-                                placeholder=""
-                                value={formData.name}
-                                name="name"
-                                onChange={handleFormData}
-                                required
-                            />
-                        </div>
-
-                        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                            <div className="kibo-img-div">
-                                <p className="contact-word">Contact person</p>
-                            </div>
-                        </div>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                            <input
-                                className="kibo-inputs"
-                                type="text"
-                                placeholder=""
-                                value={formData.contact_person}
-                                name="contact_person"
-                                onChange={handleFormData}
-                            />
-                        </div>
-
-                        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                            <div className="kibo-img-div">
-                                <p className="contact-word">Contact number</p>
-                            </div>
-                        </div>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                            <input
-                                className="kibo-inputs"
-                                type="number"
-                                placeholder=""
-                                name="contact_number"
-                                onChange={handleFormData}
-                                value={formData.contact_number}
-                            />
-                        </div>
-
-                        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                            <div className="kibo-img-div">
-                                <p className="contact-word">Contact email</p>
-                            </div>
-                        </div>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                            <input
-                                className="kibo-inputs"
-                                type="email"
-                                placeholder=""
-                                name="contact_email"
-                                onChange={handleFormData}
-                                value={formData.contact_email}
-                            />
-                        </div>
-
-                        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                            <div className="kibo-img-div">
-                                <p className="contact-word">Website</p>
-                            </div>
-                        </div>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                            <input
-                                className="kibo-inputs"
-                                type="text"
-                                placeholder=""
-                                name="website"
-                                onChange={handleFormData}
-                                value={formData.website}
-                            />
-                        </div>
-
-                        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
-                            <div className="kibo-img-div">
-                                <p className="contact-word">Password</p>
-                            </div>
-                        </div>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
-                            <input
-                                className="kibo-inputs"
-                                type="password"
-                                placeholder=""
-                                name="password"
-                                onChange={handleFormData}
-                                value={formData.password}
-                            />
-                        </div>
+                        ))}
 
                         {/* <hr className='indi-brand-hr' /> */}
                         {/* <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
