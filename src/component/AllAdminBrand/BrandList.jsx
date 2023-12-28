@@ -145,9 +145,9 @@ const BrandList = () => {
                                 placeholder="Search by “brand name, Item, Product”"
                             />
                         </div>
-                        <div>
+                        <div className="admin-header-search-btn-div">
                             <button
-                                className="admin-header-search-btn"
+                                className="admin-header-search-btn text-nowrap py-2"
                                 onClick={handleThreeDotsClick}
                             >
                                 Add new brand
@@ -210,7 +210,7 @@ const BrandList = () => {
                     <div>
                         <div className="mt-4">
                             <table className="full-table">
-                                <thead className="">
+                                <thead className="w-100">
                                     <tr>
                                         {/* {headers.length > 0 &&
                      headers.map((item) => (

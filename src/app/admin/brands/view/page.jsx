@@ -17,9 +17,7 @@ const page = () => {
 
     return (
         <div>
-            <div>
-                <DashNav />
-            </div>
+            <DashNav />
 
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2">
@@ -42,7 +40,7 @@ const page = () => {
                                 >
                                     <path
                                         d="M8 7.5V15M5 10L8 7L11 10"
-                                        stroke="white"
+                                        stroke="#150404"
                                         stroke-width="1.5"
                                     />
                                     <rect
@@ -51,7 +49,7 @@ const page = () => {
                                         width="14.5"
                                         height="21.5"
                                         rx="3.25"
-                                        stroke="white"
+                                        stroke="#150404"
                                         stroke-width="1.5"
                                     />
                                 </svg>

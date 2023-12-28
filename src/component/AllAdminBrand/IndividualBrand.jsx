@@ -409,7 +409,7 @@ const IndividualBrand = ({brandId}) => {
                                 },
                             ].map((each, index) => (
                                 <div key={index} className="container">
-                                    <div className="mb-2 row">
+                                    <div className=" row">
                                         <div className="col-12 col-md-2 ">
                                             <div className="kibo-img-div">
                                                 <p className="contact-word mb-0 ">
@@ -435,7 +435,7 @@ const IndividualBrand = ({brandId}) => {
 
                             <div className="number-of-div d-flex justify-content-between mt-4 ">
                                 <div className="d-flex justify-content-between ">
-                                    <p className="font-weight-bold ">
+                                    <p className="font-weight-bold">
                                         Number of Products
                                     </p>
                                     <p className="pl-4">
