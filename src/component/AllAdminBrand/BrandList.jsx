@@ -1,15 +1,11 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
-import Downloadicon from "../../../public/downloadicon.svg";
-import QrCode from "../../../public/qrcode.svg";
-import Image from "next/image";
-import axiosInstance from "../../../utils/axios";
-import QRCodeComponent from "../DashboardAll/QRCodeComponent";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
-import IndividualBrand from "./IndividualBrand";
-import CreateBrand from "./CreateBrand";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { toast } from "react-toastify";
+import axiosInstance from "../../../utils/axios";
+import CreateBrand from "./CreateBrand";
+import IndividualBrand from "./IndividualBrand";
 
 const BrandList = () => {
   const itemsPerPage = 15;
@@ -296,11 +292,11 @@ const BrandList = () => {
         </div>
       ) : // Only render the BrandSingleProducts component when showBrandSingleProducts is true
 
-      showEditBrand == true ? (
-        <IndividualBrand brandId={brandId} />
-      ) : (
-        <CreateBrand />
-      )}
+        showEditBrand == true ? (
+          <IndividualBrand brandId={brandId} />
+        ) : (
+          <CreateBrand />
+        )}
     </div>
   );
 };

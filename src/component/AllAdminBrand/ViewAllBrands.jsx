@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useState, useRef } from "react";
+import React, {useEffect, useState, useRef} from "react";
 import Downloadicon from "../../../public/downloadicon.svg";
 import QrCode from "../../../public/qrcode.svg";
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
 import QRCodeComponent from "../DashboardAll/QRCodeComponent";
-import { useRouter } from "next/navigation";
-import { toast } from "react-toastify";
+import {useRouter} from "next/navigation";
+import {toast} from "react-toastify";
 import IndividualBrand from "./IndividualBrand";
 import CreateBrand from "./CreateBrand";
 import Link from "next/link";
@@ -122,55 +122,58 @@ const ViewAllBrands = () => {
       });
   };
   return (
-    <div className='container-fluid mob-view-brand'>
+    <div className="container-fluid mob-view-brand">
       {!showBrandSingleProducts ? (
         <div>
-          <div className='admin-header-search-div'>
-            <div className='data-search-input-div'>
+          <div className="admin-header-search-div">
+            <div className="data-search-input-div">
               <span>
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='16'
-                  height='16'
-                  fill='currentColor'
-                  class='bi bi-search'
-                  viewBox='0 0 16 16'>
-                  <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg>
               </span>
               <input
-                className='data-search-input'
-                type='search'
+                className="data-search-input"
+                type="search"
                 onKeyUp={(e) => {
                   handleSearch(e.target.value);
                 }}
-                placeholder='Search by “brand name, Item, Product”'
+                placeholder="Search by “brand name, Item, Product”"
               />
             </div>
-            <div className='admin-header-search-btn-div'>
+            <div className="admin-header-search-btn-div">
               <button
-                className='admin-header-search-btn'
-                onClick={handleThreeDotsClick}>
+                className="admin-header-search-btn text-nowrap py-2"
+                onClick={handleThreeDotsClick}
+              >
                 Add new brand
               </button>
             </div>
           </div>
 
-          <div className='indi-filter-div'>
+          <div className="indi-filter-div">
             <span>
               <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='23'
-                height='23'
-                fill='#49494a'
-                class='bi bi-sort-down'
-                viewBox='0 0 16 16'>
-                <path d='M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z' />
+                xmlns="http://www.w3.org/2000/svg"
+                width="23"
+                height="23"
+                fill="#49494a"
+                class="bi bi-sort-down"
+                viewBox="0 0 16 16"
+              >
+                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z" />
               </svg>
             </span>
             <p>
               Search by ________ total of{" "}
-              <span className='filt-twenty'>{brandList.length}</span>{" "}
+              <span className="filt-twenty">{brandList.length}</span>{" "}
               collections
             </p>
           </div>
@@ -216,25 +219,25 @@ const ViewAllBrands = () => {
                          <p className='table-th'> {item}</p>
                        </th>
                      ))} */}
-                    <th className='table-nav' scope='col'>
-                      <span className='table-th'> Name</span>
+                    <th className="table-nav" scope="col">
+                      <span className="table-th"> Name</span>
                     </th>
-                    <th className='table-nav' scope='col'>
-                      <span className='table-th'> Contact name</span>
-                    </th>
-
-                    <th className='table-nav' scope='col'>
-                      <span className='table-th'> Contact number</span>
+                    <th className="table-nav" scope="col">
+                      <span className="table-th"> Contact name</span>
                     </th>
 
-                    <th className='table-nav' scope='col'>
-                      <span className='table-th'> Contact Email</span>
+                    <th className="table-nav" scope="col">
+                      <span className="table-th"> Contact number</span>
                     </th>
-                    <th className='table-nav' scope='col'>
-                      <span className='table-th'> No. items</span>
+
+                    <th className="table-nav" scope="col">
+                      <span className="table-th"> Contact Email</span>
                     </th>
-                    <th className='table-navs' scope='col'>
-                      <span className='table-ths'> No. items</span>
+                    <th className="table-nav" scope="col">
+                      <span className="table-th"> No. items</span>
+                    </th>
+                    <th className="table-navs" scope="col">
+                      <span className="table-ths"> No. items</span>
                     </th>
                     {/* <th className='table-navs' scope='col'>
                    <p className='table-ths'> QR code</p>
@@ -248,43 +251,45 @@ const ViewAllBrands = () => {
                   {brandList.length > 0 &&
                     brandList.map((brand, index) => (
                       <>
-                        <tr className='data-tr' key={index}>
-                          <td className='data-td'>
+                        <tr className="data-tr" key={index}>
+                          <td className="data-td">
                             <span>{brand.name}</span>
                           </td>
-                          <td className='data-td'>
+                          <td className="data-td">
                             <span>{brand.contact_person}</span>
                           </td>
-                          <td className='data-td'>
+                          <td className="data-td">
                             <span>{brand.contact_number}</span>
                           </td>
-                          <td className='data-td'>
+                          <td className="data-td">
                             <span>{brand.email}</span>
                           </td>
-                          <td className='data-td'>
+                          <td className="data-td">
                             <span>{brand.brands_item_count}</span>
                           </td>
-                          <td className='data-td'>
-                            <div className='text-tricon'>
-                              <div className='icon-container'>
+                          <td className="data-td">
+                            <div className="text-tricon">
+                              <div className="icon-container">
                                 <svg
-                                  xmlns='http://www.w3.org/2000/svg'
-                                  width='26'
-                                  height='26'
-                                  fill='#155C79'
-                                  className='bi bi-three-dots'
-                                  viewBox='0 0 16 16'>
-                                  <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3' />
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="26"
+                                  height="26"
+                                  fill="#155C79"
+                                  className="bi bi-three-dots"
+                                  viewBox="0 0 16 16"
+                                >
+                                  <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3" />
                                 </svg>
 
-                                <div className='link-container'>
+                                <div className="link-container">
                                   <span
                                     onClick={() => {
                                       handleEditFrom(brand.id);
-                                    }}>
+                                    }}
+                                  >
                                     Edit
                                   </span>
-                                  <Link href='/'>Delete</Link>
+                                  <Link href="/">Delete</Link>
                                 </div>
                               </div>
                             </div>
@@ -298,17 +303,18 @@ const ViewAllBrands = () => {
                 </tbody>
               </table>
 
-              <div className='pagination'>
+              <div className="pagination">
                 <svg
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='20'
-                  height='20'
-                  fill='#86C6CA'
-                  class='bi bi-caret-left-fill'
-                  viewBox='0 0 16 16'>
-                  <path d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z' />
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="#86C6CA"
+                  class="bi bi-caret-left-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z" />
                 </svg>
 
                 <span>{` ${currentPage} / ${totalPages}`}</span>
@@ -316,13 +322,14 @@ const ViewAllBrands = () => {
                 <svg
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='16'
-                  height='16'
-                  fill='#86C6CA'
-                  class='bi bi-caret-right-fill'
-                  viewBox='0 0 16 16'>
-                  <path d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z' />
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="#86C6CA"
+                  class="bi bi-caret-right-fill"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                 </svg>
               </div>
             </div>

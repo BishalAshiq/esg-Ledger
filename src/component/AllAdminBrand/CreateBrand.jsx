@@ -88,7 +88,7 @@ const CreateBrand = () => {
       [name]: value,
     }));
   };
-
+  console.log(formData);
   const handleFormSubmit = (e) => {
     e.preventDefault();
     let token = "";
@@ -149,16 +149,17 @@ const CreateBrand = () => {
   console.log(files);
   return (
     <div>
-      <div className='individual-product-div'>
-        <form method='post' onSubmit={handleFormSubmit}>
-          <div className='row'>
-            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-              <div className='indi-brand-head-tags'>
-                <div className='indi-brand-ico-tag'>
-                  <Image src={BackIcon} width={20} height={20} alt='' />
+      <div className="individual-product-div">
+        <form method="post" onSubmit={handleFormSubmit}>
+          <div className="row">
+            <div className="col-12 col-sm-12 col-md-12 d-none d-md-block col-lg-12 col-xl-12">
+              <div className="indi-brand-head-tags">
+                <div className="indi-brand-ico-tag">
+                  <Image src={BackIcon} width={20} height={20} alt="" />
                   <label
-                    className='form-check-label single-checkbox-text'
-                    for='flexCheckDefault'>
+                    className="form-check-label single-checkbox-text"
+                    for="flexCheckDefault"
+                  >
                     View all brands - add new brand
                   </label>
                   {/* <label
@@ -180,14 +181,15 @@ const CreateBrand = () => {
                 <Modal
                   open={open}
                   onClose={handleClose}
-                  aria-labelledby='modal-modal-title'
-                  aria-describedby='modal-modal-description'>
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
                   <Box sx={style}>
-                    <div className='Modal-header-div'>
+                    <div className="Modal-header-div">
                       <p>Do you wish to save the changes?</p>
-                      <div className='created-modal-save-btn-div'>
-                        <button className='yes-modal-btn'>Yes</button>
-                        <button className='no-modal-btn'>No</button>
+                      <div className="created-modal-save-btn-div">
+                        <button className="yes-modal-btn">Yes</button>
+                        <button className="no-modal-btn">No</button>
                       </div>
                     </div>
                     {/* <Typography
@@ -205,16 +207,17 @@ const CreateBrand = () => {
                 <Modal
                   open={openD}
                   onClose={handleCloseD}
-                  aria-labelledby='modal-modal-title'
-                  aria-describedby='modal-modal-description'>
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
                   <Box sx={styleDelete}>
-                    <div className='Modal-header-div'>
+                    <div className="Modal-header-div">
                       <p>
                         Are you sure you want to delete this brand account?{" "}
                       </p>
-                      <div className='created-modal-save-btn-div'>
-                        <button className='yes-modal-btn'>Cancel</button>
-                        <button className='no-modal-btn'>Delete</button>
+                      <div className="created-modal-save-btn-div">
+                        <button className="yes-modal-btn">Cancel</button>
+                        <button className="no-modal-btn">Delete</button>
                       </div>
                     </div>
                     {/* <Typography
@@ -232,145 +235,167 @@ const CreateBrand = () => {
               </div>
             </div>
 
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
-              <div className='kibo-imgs-div'>
-                {
-                  imageSrc != "" ?
+            <div className="d-flex flex-column d-md-none  align-items-center ">
+              <div className="">
+                <div className="kibo-imgs-div">
+                  {imageSrc != "" ? (
                     <Image
-                      className='kibo-imgs'
+                      className="kibo-imgs"
                       src={imageSrc}
-                      height={50}
-                      width={70}
-                      alt=''
+                      height={80}
+                      width={100}
+                      alt=""
                     />
-                    :
+                  ) : (
                     ""
-                }
+                  )}
+                </div>
+              </div>
 
+              <div className="indi-brand-ico-tag mt-4">
+                <Image src={BackIcon} width={20} height={20} alt="" />
+                <label
+                  className="form-check-label single-checkbox-text"
+                  for="flexCheckDefault"
+                >
+                  View all brands - add new brand
+                  <hr />
+                </label>
+              </div>
+
+              <div className="">
+                {/* <input className='kibo-inputs' type='text' placeholder='KIBO' /> */}
+                <div className="kibo-upload-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="#88C9D7"
+                    class="bi bi-upload"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z" />
+                  </svg>
+                  <span className="kibo-upload">
+                    <label htmlFor="fileInput">Upload Image</label>
+                    <input
+                      type="file"
+                      id="fileInput"
+                      style={{ display: "none" }}
+                      onChange={handleImageUpload}
+                      accept="image/jpeg, image/jpg, image/png"
+                    />
+                  </span>
+                </div>
               </div>
             </div>
-            <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
+
+            <div className="col-2 col-sm-2 d-none d-md-block col-md-2 col-lg-2 col-xl-2 pb-2">
+              <div className="kibo-imgs-div">
+                {imageSrc != "" ? (
+                  <Image
+                    className="kibo-imgs"
+                    src={imageSrc}
+                    height={50}
+                    width={100}
+                    alt=""
+                  />
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+
+            <div className="col-10 col-sm-10 d-none d-md-block col-md-10 col-lg-10 col-xl-10">
               {/* <input className='kibo-inputs' type='text' placeholder='KIBO' /> */}
-              <div className='kibo-upload-icon'>
+              <div className="kibo-upload-icon">
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='16'
-                  height='16'
-                  fill='#88C9D7'
-                  class='bi bi-upload'
-                  viewBox='0 0 16 16'>
-                  <path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5' />
-                  <path d='M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z' />
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="#88C9D7"
+                  class="bi bi-upload"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                  <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z" />
                 </svg>
-                <span className='kibo-upload'>
-                  <label htmlFor='fileInput'>Upload Image</label>
+                <span className="kibo-upload">
+                  <label htmlFor="fileInput">Upload Image</label>
                   <input
-                    type='file'
-                    id='fileInput'
+                    type="file"
+                    id="fileInput"
                     style={{ display: "none" }}
                     onChange={handleImageUpload}
-                    accept='image/jpeg, image/jpg, image/png'
+                    accept="image/jpeg, image/jpg, image/png"
                   />
                 </span>
               </div>
             </div>
 
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
-              <div className='kibo-img-div'>
-                <p className='contact-word'>Name *</p>
-              </div>
-            </div>
-            <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input
-                className='kibo-inputs'
-                type='text'
-                placeholder=''
-                value={formData.name}
-                name='name'
-                onChange={handleFormData}
-                required
-              />
-            </div>
+            {[
+              {
+                title: "Name *",
+                value: formData.name,
+                type: "text",
+                name: "name"
+              },
+              {
+                title: "Contact person",
+                value: formData.contact_person,
+                type: "text",
+                name: "contact_person"
+              },
+              {
+                title: "Contact number",
+                value: formData.contact_number,
+                type: "text",
+                name: "contact_number"
+              },
+              {
+                title: "Contact email",
+                value: formData.contact_email,
+                type: "text",
+                name: "contact_email"
+              },
+              {
+                title: "Website",
+                value: formData.website,
+                type: "text",
+                name: "website"
+              },
+              {
+                title: "Password",
+                value: formData.password,
+                type: "password",
+                name: "password"
+              },
+            ].map((each, index) => (
+              <div key={index} className="container">
+                <div className=" row">
+                  <div className="col-12 col-md-2">
+                    <div className="kibo-img-div">
+                      <p className="contact-word mb-0 mb-lg-3 text-nowrap">
+                        {each.title}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="col-12 col-md-10">
+                    <input
+                      className="kibo-inputs"
+                      type={each.type}
+                      placeholder=""
+                      value={formData.value}
+                      name={each.name}
+                      onChange={handleFormData}
 
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
-              <div className='kibo-img-div'>
-                <p className='contact-word'>Contact person</p>
+                      required
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input
-                className='kibo-inputs'
-                type='text'
-                placeholder=''
-                value={formData.contact_person}
-                name='contact_person'
-                onChange={handleFormData}
-              />
-            </div>
-
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
-              <div className='kibo-img-div'>
-                <p className='contact-word'>Contact number</p>
-              </div>
-            </div>
-            <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input
-                className='kibo-inputs'
-                type='number'
-                placeholder=''
-                name='contact_number'
-                onChange={handleFormData}
-                value={formData.contact_number}
-              />
-            </div>
-
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
-              <div className='kibo-img-div'>
-                <p className='contact-word'>Contact email</p>
-              </div>
-            </div>
-            <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input
-                className='kibo-inputs'
-                type='email'
-                placeholder=''
-                name='contact_email'
-                onChange={handleFormData}
-                value={formData.contact_email}
-              />
-            </div>
-
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
-              <div className='kibo-img-div'>
-                <p className='contact-word'>Website</p>
-              </div>
-            </div>
-            <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input
-                className='kibo-inputs'
-                type='text'
-                placeholder=''
-                name='website'
-                onChange={handleFormData}
-                value={formData.website}
-              />
-            </div>
-
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
-              <div className='kibo-img-div'>
-                <p className='contact-word'>Password</p>
-              </div>
-            </div>
-            <div className='col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10'>
-              <input
-                className='kibo-inputs'
-                type='password'
-                placeholder=''
-                name='password'
-                onChange={handleFormData}
-                value={formData.password}
-              />
-            </div>
+            ))}
 
             {/* <hr className='indi-brand-hr' /> */}
             {/* <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2'>
@@ -385,9 +410,14 @@ const CreateBrand = () => {
             </div>
           </div> */}
             {/* <hr className='indi-brand-hr' /> */}
-            <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-              <div className='button-of-div'>
-                <button className='reset-btn'>Create account</button>
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <div className="button-of-div">
+                <button className="reset-btn d-md-none w-100 mt-3">
+                  Create account
+                </button>
+                <button className="reset-btn d-none d-md-block mt-3">
+                  Create account
+                </button>
               </div>
             </div>
           </div>
