@@ -103,7 +103,9 @@ const page = () => {
                         </div>
                         <div className='contact-address'>
                           <span className='cont-add-icon'>E:</span>{" "}
-                          <p className='cont-add-text'>collab@artledger.co</p>
+                          <p className='cont-add-text'>
+                            enquiries@esgledger.co
+                          </p>
                         </div>
 
                         <div className='contact-address'>
