@@ -152,7 +152,7 @@ const CreateBrand = () => {
       <div className="individual-product-div">
         <form method="post" onSubmit={handleFormSubmit}>
           <div className="row">
-            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div className="col-12 col-sm-12 col-md-12 d-none d-md-block col-lg-12 col-xl-12">
               <div className="indi-brand-head-tags">
                 <div className="indi-brand-ico-tag">
                   <Image src={BackIcon} width={20} height={20} alt="" />
@@ -236,13 +236,13 @@ const CreateBrand = () => {
             </div>
 
             <div className="d-flex flex-column d-md-none  align-items-center ">
-              <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 pb-2">
+              <div className="">
                 <div className="kibo-imgs-div">
                   {imageSrc != "" ? (
                     <Image
                       className="kibo-imgs"
                       src={imageSrc}
-                      height={50}
+                      height={80}
                       width={100}
                       alt=""
                     />
@@ -252,7 +252,18 @@ const CreateBrand = () => {
                 </div>
               </div>
 
-              <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+              <div className="indi-brand-ico-tag mt-4">
+                <Image src={BackIcon} width={20} height={20} alt="" />
+                <label
+                  className="form-check-label single-checkbox-text"
+                  for="flexCheckDefault"
+                >
+                  View all brands - add new brand
+                  <hr />
+                </label>
+              </div>
+
+              <div className="">
                 {/* <input className='kibo-inputs' type='text' placeholder='KIBO' /> */}
                 <div className="kibo-upload-icon">
                   <svg

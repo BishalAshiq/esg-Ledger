@@ -381,20 +381,20 @@ const ViewAllItems = () => {
             </div>
 
             <div className=" ">
-              <div className="w-100  d-flex justify-content-start justify-content-md-between align-items-center">
+              <div className="w-100  d-flex justify-content-between justify-content-md-start align-items-center">
                 <h6 className="mb-0 mt-0 w-25">Brand</h6>
                 <p className="mb-0 mt-0 w-md-100">Yes by default</p>
               </div>
               <div className="checkbox-div" />
 
-              <div className="w-100  d-flex justify-content-start justify-content-md-between align-items-center">
+              <div className="w-100  d-flex justify-content-between justify-content-md-start align-items-center">
                 <h6 className="mb-0 mt-0 w-25">Products</h6>
                 <p className="mb-0 mt-0">Yes by default</p>
               </div>
 
               <div className="checkbox-div" />
 
-              <div className="w-100  d-flex justify-content-start justify-content-md-between align-items-center">
+              <div className="w-100  d-flex justify-content-between justify-content-md-start align-items-center">
                 <h6 className="mb-0 mt-0 w-25">Serial</h6>
                 <p className="mb-0 mt-0">Yes by default</p>
               </div>
@@ -545,7 +545,9 @@ const ViewAllItems = () => {
                 )}
               </>
             ))}
-
+            <button type="submit" className="view-add-btn w-100 mt-2 d-md-none">
+              + Save Customize Data
+            </button>
             {/* {rows.length > 0 && (
               <div className='more-two-divs'>
                 {rows.map((row) => (
