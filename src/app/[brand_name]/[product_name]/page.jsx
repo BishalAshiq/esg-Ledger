@@ -12,11 +12,12 @@ import pageicon4 from "../../../../public/social4.svg";
 import certified from "../../../../public/certified.svg";
 import copy from "../../../../public/copy.svg";
 import redix from "../../../../public/redix.png";
+import NoImage from "../../../../public/no-image.jpg";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
-
+import { base_url } from "../../../../utils/auth"
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
@@ -155,7 +156,6 @@ const page = () => {
     } else {
       return inputString;
     }
-
   };
 
   const [activeAccordions, setActiveAccordions] = useState([]);
@@ -216,7 +216,15 @@ const page = () => {
                   </div>
 
                   <div className='certificate-imageSec-div'>
-                    <img src={redix.src} alt='' />
+                    {
+                      item?.brand_details?.logo != null ?
+                        <img src={`${base_url}/uploads/${item?.brand_details?.logo}`} className="certificate-image-img" />
+                        :
+                        <>
+                          <img src={NoImage.src} alt='' />
+                        </>
+                    }
+
                   </div>
                 </div>
               </div>
@@ -256,7 +264,7 @@ const page = () => {
                       key != "" && (
                         <>
                           {typeof attribute[key] === "object" &&
-                            attribute[key] !== null ? (
+                          attribute[key] !== null ? (
                             <>
                               <div className=''>
                                 <div
@@ -266,12 +274,13 @@ const page = () => {
                                     <div className='accor-tag-div'>
                                       <h6 className='accordion-header'>
                                         <div
-                                          className={`accordion-button ${isAccordionExpanded(
-                                            `collapse${key}`
-                                          )
-                                            ? ""
-                                            : "collapsed"
-                                            }`}
+                                          className={`accordion-button ${
+                                            isAccordionExpanded(
+                                              `collapse${key}`
+                                            )
+                                              ? ""
+                                              : "collapsed"
+                                          }`}
                                           type='button'
                                           data-bs-target={`#collapse${key}`}
                                           aria-expanded={isAccordionExpanded(
@@ -333,17 +342,18 @@ const page = () => {
 
                                     <div
                                       id={`collapse${key}`}
-                                      className={`accordion-collapse collapse ${isAccordionExpanded(`collapse${key}`)
-                                        ? "show"
-                                        : ""
-                                        }`}
+                                      className={`accordion-collapse collapse ${
+                                        isAccordionExpanded(`collapse${key}`)
+                                          ? "show"
+                                          : ""
+                                      }`}
                                       data-bs-parent='#accordionExample'>
                                       <div className='accordion-body'>
                                         {Object.entries(attribute[key]).map(
                                           ([innerKey, innerValue], index) => (
                                             <>
                                               {innerKey != "" &&
-                                                innerValue != "" ? (
+                                              innerValue != "" ? (
                                                 <div className='Blockchain-ptag-divs'>
                                                   <p className='block-ptext'>
                                                     {innerKey}{" "}
@@ -378,7 +388,7 @@ const page = () => {
 
                   <div className='Information-full-divs'>
                     <p>Important Information:</p>
-                    <ol>
+                    <ol className=''>
                       <li className='block-ptwotext'>
                         This certificate is non-transferable and is permanently
                         recorded on the blockchain
@@ -413,53 +423,61 @@ const page = () => {
           </div>
         </div>
 
-        <div className='logins-footer-div'>
-          <div className='logins-footer-full-div row'>
+        <div className='redix-footer-banner-full-div '>
+          <div className='row '>
             <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
-            <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-              <div className='footer-img-div'>
-                <img className='footer-img' src={pageLogo.src} alt='' />
-                <p className='fotter-ptext'>
-                  For inquiries or more information please contact:
-                  enquiries@esgledger.co
-                </p>
-              </div>
-            </div>
+            <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
+              <div className='login-footer-banner-div web-view'>
+                <div className=''>
+                  <img className='footer-img' src={pageLogo.src} alt='' />
+                  <p className='fotter-ptext'>
+                    For inquiries or more information <br />
+                    please contact: enquiries@esgledger.co
+                  </p>
+                </div>
 
-            <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4'>
-              <div className='footer-text-div'>
-                <p className='footer-textpp'>Join the Community</p>
+                <div className=''>
+                  <p className='footer-textpp'>Join the Community</p>
+
+                  <div className='footer-text-icon'>
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </div>
+                </div>
+              </div>
+              <div className='mobile-version-div'>
+                <p className='fotter-ptext-mob'>
+                  For inquiries or more information <br />
+                  please contact: enquiries@esgledger.co
+                </p>
 
                 <div className='footer-text-icon'>
                   <img className='social-icon' src={pageicon4.src} alt='' />
                   <img className='social-icon' src={pageicon3.src} alt='' />
                   <img className='social-icon' src={pageicon2.src} alt='' />
                   <img className='social-icon' src={pageicon1.src} alt='' />
+
+                  {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
                 </div>
-                <p className='footer-textpps'>Join the Community</p>
+                <p className='fotter-joitext-mob'>Join the Community</p>
+              </div>
+              <div className='f-hr-divweb'>
+                <hr className='f-hr' />
+                <p className='f-text'>© 2023 OneChain Ltd.</p>
               </div>
             </div>
-
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
           </div>
-          <div className='ffs-div'>
-            <div className='row'>
-              <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
-              <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
-                <div className=''>
-                  <hr className='f-hr' />
-                  <p className='f-text'>© 2023 OneChain Ltd.</p>
-                  <div className='footer-privacy-div'>
-                    <Link className='footer-privacy-text' href='/'>
-                      <p>Privacy Policy </p>
-                    </Link>
-                    <Link className='footer-privacy-text' href='/'>
-                      <p>Terms of Service </p>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-              <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
+          <div className='mobile-version-divs'>
+            <div>
+              <hr className='f-hr' />
+              <p className='f-text'>© 2023 OneChain Ltd.</p>
+            </div>
+            <div className='pol-mob-div'>
+              <p className='polmob-text'>Privacy Policy</p>
+              <p className='polmob-text'>Terms of Service</p>
             </div>
           </div>
         </div>

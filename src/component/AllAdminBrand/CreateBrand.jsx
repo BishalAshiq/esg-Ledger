@@ -88,7 +88,7 @@ const CreateBrand = () => {
       [name]: value,
     }));
   };
-
+  console.log(formData);
   const handleFormSubmit = (e) => {
     e.preventDefault();
     let token = "";
@@ -247,19 +247,18 @@ const CreateBrand = () => {
                       alt=""
                     />
                   ) : (
-                    ""
+                    <div className="kibo-no-imgs">no Image</div>
                   )}
                 </div>
               </div>
 
-              <div className="indi-brand-ico-tag mt-4">
+              <div className="indi-brand-ico-tag mt-2">
                 <Image src={BackIcon} width={20} height={20} alt="" />
                 <label
                   className="form-check-label single-checkbox-text"
                   for="flexCheckDefault"
                 >
                   View all brands - add new brand
-                  <hr />
                 </label>
               </div>
 
@@ -338,26 +337,38 @@ const CreateBrand = () => {
               {
                 title: "Name *",
                 value: formData.name,
+                type: "text",
+                name: "name",
               },
               {
                 title: "Contact person",
                 value: formData.contact_person,
+                type: "text",
+                name: "contact_person",
               },
               {
                 title: "Contact number",
                 value: formData.contact_number,
+                type: "text",
+                name: "contact_number",
               },
               {
                 title: "Contact email",
                 value: formData.contact_email,
+                type: "text",
+                name: "contact_email",
               },
               {
                 title: "Website",
                 value: formData.website,
+                type: "text",
+                name: "website",
               },
               {
                 title: "Password",
                 value: formData.password,
+                type: "password",
+                name: "password",
               },
             ].map((each, index) => (
               <div key={index} className="container">
@@ -372,10 +383,10 @@ const CreateBrand = () => {
                   <div className="col-12 col-md-10">
                     <input
                       className="kibo-inputs"
-                      type="text"
+                      type={each.type}
                       placeholder=""
                       value={formData.value}
-                      name="name"
+                      name={each.name}
                       onChange={handleFormData}
                       required
                     />

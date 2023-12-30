@@ -217,21 +217,24 @@ const IndividualBrand = ({brandId}) => {
                   Account
                 </label> */}
                   </div>
-                  <div className="edit-delete-div">
-                    <p
-                      className="indu-brand-edit"
-                      onClick={handleOpen}
-                      // onClick={handleFormEdit}
-                    >
-                      Save
-                    </p>
-                    <p
-                      className="indu-brand-edits"
-                      onClick={handleOpenD}
-                      // onClick={hanleBrandDelete}
-                    >
-                      Delete
-                    </p>
+
+                  <div className="d-none d-md-block">
+                    <div className="edit-delete-div ">
+                      <p
+                        className="indu-brand-edit"
+                        onClick={handleOpen}
+                        // onClick={handleFormEdit}
+                      >
+                        Save
+                      </p>
+                      <p
+                        className="indu-brand-edits"
+                        onClick={handleOpenD}
+                        // onClick={hanleBrandDelete}
+                      >
+                        Delete
+                      </p>
+                    </div>
                   </div>
 
                   <Modal
@@ -429,7 +432,7 @@ const IndividualBrand = ({brandId}) => {
             </div>
           </div> */}
               {/* <hr className='indi-brand-hr' /> */}
-              <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              {/* <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <div className="button-of-div">
                   <button className="reset-btn d-md-none w-100 mt-3">
                     Reset password
@@ -438,7 +441,7 @@ const IndividualBrand = ({brandId}) => {
                     Reset password
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
