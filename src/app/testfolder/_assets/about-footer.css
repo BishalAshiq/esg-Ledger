@@ -1,0 +1,34 @@
+.footer__wrapper {
+  background-color: #066f69;
+  width: 100%;
+  height: 255px;
+}
+
+.footer__content__wrapper {
+  /* width: 70%;  dig display*/
+  width: 100%;
+  margin: auto;
+  margin-top: 15px;
+  padding-top: 27px;
+}
+.logo__social {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+}
+.logo__social .logo {
+  display: none;
+  /* big display block */
+}
+.logo__social .social {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  gap: 23px;
+  color: #ffffff;
+}

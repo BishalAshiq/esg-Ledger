@@ -17,7 +17,7 @@ const page = () => {
   };
 
   return (
-    <div className="m_over-flow">
+    <div className="m_over-flow ">
       <DashNav />
 
       <div className="row">
@@ -144,6 +144,7 @@ const page = () => {
           )}
         </div>
       </div>
+
       <div className="dashboard-footer-div">
         <div className="dashboard-footer">
           <p className="dashboard-footer-text">
