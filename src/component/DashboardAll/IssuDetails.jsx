@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import upFile from "../../../public/upFile.svg";
+import upFile from "../../../public/download.png";
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
 import axios from "axios";
@@ -179,14 +179,18 @@ const IssuDetails = () => {
       <div className='issuess-upload-full-div'>
         <h6 className='tag-text pb-2'>Upload product data</h6>
         <div className='issue-upload-full-div'>
-          <div className='csv-a-div'>
-            <a className='csv-a text-center ' onClick={handleDownload}>
-              Download the CSV template
-            </a>
-          </div>
-          <div className='issue-upload-div px-2' onClick={handleFileClick}>
-            <Image src={upFile.src} width={60} height={81} alt='' />
-            <p className='csv-textp'>Drag or upload an excel file here.</p>
+          <a className='csvs-a' onClick={handleDownload}>
+            Download the CSV template
+          </a>
+          <div className='issue-upload-div' onClick={handleFileClick}>
+            <Image
+              className='file-image'
+              src={upFile.src}
+              width={40}
+              height={40}
+              alt=''
+            />
+            <p className='csv-textp'>Doc name</p>
             <p className='csv-textp2'>
               Only CSV and XLSX formats are supported
             </p>

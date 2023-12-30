@@ -282,12 +282,24 @@
 .issue-upload-full-div {
   border: 1px solid gray;
 }
+.csv-a-div {
+  display: grid;
+  place-items: center;
+  padding: 20px 0 0 0;
+}
 
 .csv-a {
   margin-bottom: 10px;
   color: #00b3ff;
   font-size: 0.8rem;
   cursor: pointer;
+}
+.csvs-a {
+  /* border: 1px solid gray; */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+  font-size: 0.8rem;
 }
 .issue-upload-div {
   display: grid;
@@ -469,6 +481,9 @@
     display: block; /* Display table as block-level to enable scrolling */
     white-space: nowrap; /* Prevent table cells from wrapping */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+  .issuess-upload-full-div {
+    margin-top: 20px;
   }
   .table {
     width: 100%;

@@ -99,7 +99,7 @@ const Nav = () => {
           <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 '>
             <div>
               <div className='nav-items-div'>
-                <Link href='/'>Home</Link>
+                <Link href='/admin'>Home</Link>
                 <Link className='contact-nav-a' href='/brands/login'>
                   {" "}
                   <p>Brands</p>{" "}

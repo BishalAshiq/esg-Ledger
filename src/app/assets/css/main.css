@@ -606,11 +606,6 @@ body {
   height: 50vh;
 }
 
-.csv-a-div {
-  display: grid;
-  place-items: center;
-  padding: 20px 0 0 0;
-}
 .tag-text {
   padding-left: 10px;
 }
