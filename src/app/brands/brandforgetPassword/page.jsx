@@ -1,6 +1,6 @@
 "use client";
 import Nav from "@/component/Navbar/Nav";
-import React, { Component, useState } from "react";
+import React, {Component, useState} from "react";
 // import Slider from "react-slick";
 import LoginBanner from "../../../../public/loginBanner.png";
 
@@ -12,7 +12,7 @@ import pageicon4 from "../../../../public/social4.svg";
 
 import styles from "../../login/login.module.css";
 
-import { useRouter } from "next/navigation";
+import {useRouter} from "next/navigation";
 
 const page = () => {
   const router = useRouter();
@@ -22,45 +22,45 @@ const page = () => {
       <div>
         <Nav />
       </div>
-      <div className='login-full-div'>
-        <div className='hr' />
-        <div className='slider-login'>
+      <div className="login-full-div">
+        <div className="hr" />
+        <div className="slider-login">
           <div>
-            <div className='login-banner-img-input-divs'>
-              <div className=' login-banner-img-input-div'>
-                <div className='login-banner-img-div'>
+            <div className="login-banner-img-input-divs">
+              <div className=" login-banner-img-input-div">
+                <div className="login-banner-img-div">
                   <img
-                    className='login-banner-img'
+                    className="login-banner-img"
                     src={LoginBanner.src}
-                    alt=''
+                    alt=""
                   />
                 </div>
-                <div className='login-banner-inputs-div'>
-                  <form className='content' method='post'>
-                    <div className='mb-2'>
+                <div className="login-banner-inputs-div">
+                  <form className="content" method="post">
+                    <div className="mb-2">
                       {" "}
-                      <label for='password'>New password</label> <br />
+                      <label for="password">New password</label> <br />
                       <input
-                        className='brand-input'
-                        type='password'
-                        id='password'
-                        name='Password'
+                        className="brand-input"
+                        type="password"
+                        id="password"
+                        name="Password"
                         required
                       />
                     </div>
                     <div>
                       {" "}
-                      <label for='email'>Repeat your new password</label> <br />
+                      <label for="email">Repeat your new password</label> <br />
                       <input
-                        className='brand-input'
-                        type='password'
-                        id='Password'
-                        name='password'
+                        className="brand-input"
+                        type="password"
+                        id="Password"
+                        name="password"
                       />
                     </div>
 
-                    <div className='submitn-btn-div'>
-                      <button className='submitn-btn'>Confirm</button>
+                    <div className="submitn-btn-div">
+                      <button className="submitn-btn">Confirm</button>
                     </div>
                   </form>{" "}
                 </div>
@@ -68,9 +68,9 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className='hrs' />
+        <div className="hrs" />
 
-        <div className='pioneeringtext'>
+        <div className="pioneeringtext">
           <p>
             A pioneering blockchain-driven
             <br /> platform under OneChain®
@@ -78,36 +78,36 @@ const page = () => {
         </div>
       </div>
 
-      <div className='login-footer-banner-full-div'>
-        <div className='row'>
-          <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
-          <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
-            <div className='login-footer-banner-div'>
-              <div className=''>
-                <img className='footer-img' src={pageLogo.src} alt='' />
-                <p className='fotter-ptext'>
+      <div className="login-footer-banner-full-div">
+        <div className="row">
+          <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+          <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+            <div className="login-footer-banner-div">
+              <div className="">
+                <img className="footer-img" src={pageLogo.src} alt="" />
+                <p className="fotter-ptext">
                   For inquiries or more information <br />
                   please contact: enquiries@esgledger.co
                 </p>
               </div>
 
-              <div className=''>
-                <p className='footer-textpp'>Join the Community</p>
+              <div className="">
+                <p className="footer-textpp">Join the Community</p>
 
-                <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
-                  <img className='social-icon' src={pageicon4.src} alt='' />
+                <div className="footer-text-icon">
+                  <img className="social-icon" src={pageicon1.src} alt="" />
+                  <img className="social-icon" src={pageicon2.src} alt="" />
+                  <img className="social-icon" src={pageicon3.src} alt="" />
+                  <img className="social-icon" src={pageicon4.src} alt="" />
                 </div>
               </div>
             </div>
-            <div className=''>
-              <hr className='f-hr' />
-              <p className='f-text'>© 2023 OneChain Ltd.</p>
+            <div className="">
+              <hr className="f-hr" />
+              <p className="f-text">© 2023 OneChain Ltd.</p>
             </div>
           </div>
-          <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
+          <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3"></div>
         </div>
       </div>
     </div>

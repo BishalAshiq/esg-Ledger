@@ -92,7 +92,7 @@ const page = () => {
                 </svg>
               </span>
             </div>
-            <div
+            {/* <div
               onClick={() => handleTextClick(3)}
               className={`dashboard-side-bar-li ${
                 activeDiv === 3 ? "active-das" : ""
@@ -113,7 +113,7 @@ const page = () => {
                   />
                 </svg>
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -147,11 +147,11 @@ const page = () => {
         </div>
       </div>
       <div className="dashboard-footer-div">
-        <div className="dashboard-footer">
-          <p className="dashboard-footer-text">
-            © 2023 OneChain Ltd. All Rights Reserved.
-          </p>
-        </div>
+        {/* <div className="dashboard-footer"> */}
+        <p className="dashboard-footer-text">
+          © 2023 OneChain Ltd. All Rights Reserved.
+        </p>
+        {/* </div> */}
       </div>
     </div>
   );
