@@ -12,11 +12,12 @@ import pageicon4 from "../../../../public/social4.svg";
 import certified from "../../../../public/certified.svg";
 import copy from "../../../../public/copy.svg";
 import redix from "../../../../public/redix.png";
+import NoImage from "../../../../public/no-image.jpg";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
-
+import { base_url } from "../../../../utils/auth"
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
@@ -216,7 +217,15 @@ const page = () => {
                   </div>
 
                   <div className='certificate-imageSec-div'>
-                    <img src={redix.src} alt='' />
+                    {
+                      item?.brand_details?.logo != null ?
+                        <img src={`${base_url}/uploads/${item?.brand_details?.logo}`} className="certificate-image-img" />
+                        :
+                        <>
+                          <img src={NoImage.src} alt='' />
+                        </>
+                    }
+
                   </div>
                 </div>
               </div>
