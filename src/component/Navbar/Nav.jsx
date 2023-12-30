@@ -20,8 +20,8 @@ const Nav = () => {
   useEffect(() => {
     if (location.pathname === "/landingPage") {
       setLogoUrl(companyLogo);
-    } else if (location.pathname === "/") {
-      setLogoUrl(companyLogo1);
+    } else if (location.pathname === "/admin") {
+      setLogoUrl(companyLogo);
     } else {
       setLogoUrl(companyLogo);
     }
@@ -29,6 +29,18 @@ const Nav = () => {
 
   useEffect(() => {
     switch (location.pathname) {
+      case "/":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
+      case "/admin":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
       case "/landingPage":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
@@ -55,6 +67,12 @@ const Nav = () => {
         setButtonColor("black");
         break;
       case "/contactUs":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
+      case "/redix/15696":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
         setDropdownColor("");

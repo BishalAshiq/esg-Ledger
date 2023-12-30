@@ -1,11 +1,11 @@
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Login from "../app/admin/page";
+import LandinPage from "../app/landingPage/page";
 
 export default function Home() {
-    return (
-        <div>
-            <Login />
-        </div>
-    );
+  return (
+    <div>
+      <LandinPage />
+    </div>
+  );
 }

@@ -489,9 +489,14 @@
   .active-das {
     width: 100%;
   }
+  .dashboard-footer-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
   .dashboard-footer-text {
     color: #000;
-    text-align: center;
+    /* margin: 0; */
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-style: normal;
