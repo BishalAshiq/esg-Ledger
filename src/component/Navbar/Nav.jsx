@@ -18,14 +18,16 @@ const Nav = () => {
   const router = useRouter();
 
   useEffect(() => {
-    if (location.pathname === "/landingPage") {
+    if (router.pathname === "/landingPage") {
       setLogoUrl(companyLogo);
-    } else if (location.pathname === "/admin") {
+    } else if (router.pathname === "/admin") {
       setLogoUrl(companyLogo);
+    } else if (router.pathname === "/") {
+      setLogoUrl(companyLogo1);
     } else {
       setLogoUrl(companyLogo);
     }
-  }, [location]);
+  }, [router]);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -79,7 +81,7 @@ const Nav = () => {
         setButtonColor("black");
         break;
     }
-  }, [location.pathname]);
+  }, [router.pathname]);
 
   return (
     <div>

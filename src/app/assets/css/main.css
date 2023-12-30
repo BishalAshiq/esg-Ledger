@@ -439,6 +439,11 @@ body {
   display: flex;
   justify-content: center;
   padding: 5px 0 25px 0;
+  height: 150px;
+}
+
+.certificate-image-img{
+ object-fit: contain;
 }
 
 .certificate-tags-div {
