@@ -200,6 +200,7 @@
   /* margin-bottom: -2px; */
   font-size: 0.8rem;
   font-weight: 700;
+  padding: 0 60px !important;
 }
 .table-ths {
   display: flex;
@@ -543,5 +544,6 @@
   }
   .table-navs {
     width: 100%;
+    padding: 2px 4px;
   }
 }
