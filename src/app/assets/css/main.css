@@ -442,8 +442,8 @@ body {
   height: 150px;
 }
 
-.certificate-image-img{
- object-fit: contain;
+.certificate-image-img {
+  object-fit: contain;
 }
 
 .certificate-tags-div {
@@ -1198,146 +1198,6 @@ body {
   }
   .login-footer-banner-full-div {
     padding: 15px 10px 10px 10px;
-<<<<<<< HEAD
-    margin-top: 10px;
-  }
-  .footer-img-div {
-    visibility: hidden;
-  }
-
-  .footer-text-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 20px;
-  }
-  .ffs-div {
-    margin-top: -70px;
-  }
-  .f-text {
-    display: flex;
-    justify-content: center;
-    font-family: "Roboto", sans-serif;
-    font-size: 0.8rem;
-    font-weight: 300;
-  }
-  .footer-textpp {
-    visibility: hidden;
-    display: none;
-  }
-  .footer-textpps {
-    visibility: visible;
-    font-size: 0.9rem;
-    color: white;
-    display: flex;
-    justify-content: center;
-    margin-top: 15px;
-  }
-
-  .footer-privacy-div {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    padding: 0 0 60px 0;
-    visibility: visible;
-  }
-  .footer-privacy-div a {
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-family: "Roboto", sans-serif;
-    color: white;
-    margin-top: -15px;
-  }
-  .footer-privacy-text {
-    width: fit-content;
-  }
-  .mobile-nav-div {
-    border: none;
-  }
-  .redix-div {
-    padding: 20px 10px 0 10px;
-    border: none;
-    margin-top: 7%;
-  }
-
-  .redix-divs {
-    border: none;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  .redix-sec-div {
-    padding: 0 10px 10px 10px;
-    border: none;
-  }
-  .redixSec-div {
-    /* padding: 20px 0 0 0; */
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border: none;
-  }
-  .Information-full-divs {
-    line-height: 1.2;
-    font-size: 0.8rem;
-    font-weight: 600;
-    /* text-align: ; */
-    font-family: "Roboto", sans-serif;
-  }
-  .Information-full-div {
-    line-height: 1.4;
-    font-size: 0.9rem;
-    font-weight: 600;
-    /* text-align: justify; */
-    font-family: "Roboto", sans-serif;
-  }
-  .Blockchain-ptag-divs {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 30px 0 5px 0;
-    /* line-height: 0.4; */
-    padding: 0 37px;
-  }
-  .block-ptwotext {
-    /* line-height: 1.9; */
-    /* white-space-collapse: discard; */
-    /* margin: 0 0 0 0; */
-    font-size: 0.8rem;
-    color: #141414;
-    font-weight: 500;
-    margin: 0;
-  }
-  .block-ptwotextc {
-    margin: 0;
-    font-size: 0.8rem;
-    color: #000000;
-    font-weight: 500;
-    /* word-spacing: -9px; */
-    /* font-style: italic; */
-    /* text-align: justify; */
-    font-family: "Roboto", sans-serif;
-    word-spacing: -1px;
-  }
-  .block-ptwotext-add {
-    text-decoration: underline;
-    font-size: 0.8rem;
-    color: #141414;
-    font-weight: 500;
-    /* margin-top: -30px; */
-    /* line-height: 0.8; */
-  }
-  .cc-mob {
-  }
-
-  .blockchain-h5 {
-    font-size: 0.9rem;
-    /* line-height: 0.9; */
-  }
-
-=======
 
     margin-top: 10px;
   }
@@ -1485,7 +1345,6 @@ body {
     /* line-height: 0.9; */
   }
 
->>>>>>> 038c4ace485d7f21c438d19b800f0f819fa72fc5
   .Blockchain-tagone {
     font-size: 1rem;
     padding: 9px 3px;
