@@ -75,7 +75,7 @@ const Nav = () => {
         setButtonColor("black");
         break;
       case "/redix/15696":
-        setNavbarColor("white");
+        setNavbarColor("#066f69");
         setNavbarTextColor("#404040");
         setDropdownColor("");
         setButtonColor("black");
