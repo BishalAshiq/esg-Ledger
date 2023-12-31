@@ -155,6 +155,10 @@
     display: block;
     margin-top: 4px;
   }
+
+  .About__Article {
+    margin-bottom: 25px;
+  }
 }
 
 /* _______ For Mobile Version Responsive ________ */
