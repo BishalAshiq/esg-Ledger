@@ -208,10 +208,10 @@ const Nav = () => {
             </div>
             <div className='collapse navbar-collapse' id='navbarTogglerDemo01'>
               <div className='nav-items-div-mob'>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/admin'>
                   <p> Home</p>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/brands/login'>
                   {" "}
                   <p>Brands</p>{" "}
                   <span>
@@ -229,7 +229,7 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/about'>
                   <p> About ESGLedger</p>
                 </Link>
                 <Link className='contact-nav-a-mov' href='#'>
@@ -249,7 +249,7 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link className='contact-nav-a-mov' href='#'>
+                <Link className='contact-nav-a-mov' href='/contactUs'>
                   <p>Contact</p>{" "}
                   <span>
                     <svg
