@@ -4,12 +4,20 @@
   width: 100%;
 }
 .dashnav-div {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: center; */
   background-color: #066f69;
   padding: 15px 30px;
+}
+.dashnav-img-div {
+  display: flex;
+  justify-content: start;
+}
+.logout-btn {
+  display: flex;
+  justify-content: end;
 }
 
 .dashnav-img {
@@ -488,6 +496,16 @@
   .issuess-upload-full-div {
     margin-top: 20px;
   }
+  .view-add-btn {
+    background-color: #066f69;
+    color: white;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    padding: 8px 30px;
+    border: none;
+    font-weight: 700;
+  }
+
   .table {
     width: 100%;
   }
@@ -496,6 +514,25 @@
   }
   .mob-view-brand {
     overflow: scroll;
+  }
+  .dashnav-div {
+    /* display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center; */
+    background-color: #066f69;
+    padding: 15px 30px;
+  }
+  .dashnav-img-div {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  .logout-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* border: 1px solid gray; */
   }
   .dash-sidebar-div {
     height: 5vh;
