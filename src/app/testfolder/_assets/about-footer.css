@@ -37,6 +37,7 @@
 
 .social p {
   margin-top: 20px;
+  font-size: 15px;
 }
 
 .footer__bottom {
@@ -47,6 +48,7 @@
 }
 .footer__bottom p {
   margin-top: 5px;
+  font-size: 13px;
 }
 
 .footer__bottom .link__area {
@@ -55,6 +57,7 @@
   align-items: center;
   width: 80%;
   margin: auto;
+  font-size: 13px;
 }
 
 .link__area .link {
