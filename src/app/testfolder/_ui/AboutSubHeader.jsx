@@ -2,7 +2,6 @@ import React from "react";
 import AboutArticle from "./AboutArticle";
 
 export default function AboutSubHeader({subHeader, changeColor = true}) {
-  console.log(subHeader);
   return (
     <div>
       <h4

@@ -57,6 +57,14 @@
   font-weight: 600;
   line-height: normal;
 }
+.About__Header_Logo .img {
+  display: none;
+}
+
+.About__Header_Logo .about {
+  font-size: 20px;
+  margin-right: 10px;
+}
 
 .About__Article {
   color: #494949;
@@ -131,6 +139,21 @@
   .contact__wrapper .content__text {
     margin-left: 73px;
     margin-right: 28px;
+  }
+
+  .About__Header_Logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .About__Header_Logo .about {
+    font-size: 40px;
+    margin-right: 20px;
+  }
+
+  .About__Header_Logo .img {
+    display: block;
+    margin-top: 4px;
   }
 }
 

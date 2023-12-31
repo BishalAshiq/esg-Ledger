@@ -1,6 +1,6 @@
 export const aboutData = [
   {
-    title: "About",
+    title: "",
     sub_title: [
       {
         title: "Unlocking ESG Trust and Transparency with ESGLedger.",
