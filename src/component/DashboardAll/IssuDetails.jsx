@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 import upFile from "../../../public/upFile.svg";
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
 import axios from "axios";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import {useRouter} from "next/navigation";
 
 const IssuDetails = () => {
   const itemsPerPage = 15;
@@ -62,7 +62,7 @@ const IssuDetails = () => {
           },
         });
       } else {
-        const blob = new Blob([response.data], { type: "text/csv" });
+        const blob = new Blob([response.data], {type: "text/csv"});
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
@@ -175,39 +175,39 @@ const IssuDetails = () => {
       });
   };
   return (
-    <div className='container-fluid'>
-      <div className='issuess-upload-full-div'>
-        <h6 className='tag-text pb-2'>Upload product data</h6>
-        <div className='issue-upload-full-div'>
-          <div className='csv-a-div'>
-            <a className='csv-a text-center ' onClick={handleDownload}>
+    <div className="container-fluid mt-4">
+      <div className="issuess-upload-full-div">
+        <h6 className="tag-text pb-2">Upload product data</h6>
+        <div className="issue-upload-full-div">
+          <div className="csv-a-div">
+            <a className="csv-a text-center " onClick={handleDownload}>
               Download the CSV template
             </a>
           </div>
-          <div className='issue-upload-div px-2' onClick={handleFileClick}>
-            <Image src={upFile.src} width={60} height={81} alt='' />
-            <p className='csv-textp'>Drag or upload an excel file here.</p>
-            <p className='csv-textp2'>
+          <div className="issue-upload-div px-2" onClick={handleFileClick}>
+            <Image src={upFile.src} width={60} height={81} alt="" />
+            <p className="csv-textp">Drag or upload an excel file here.</p>
+            <p className="csv-textp2">
               Only CSV and XLSX formats are supported
             </p>
             <input
-              type='file'
-              id='fileInput'
+              type="file"
+              id="fileInput"
               onChange={handleFileChange}
-              style={{ display: "none" }}
+              style={{display: "none"}}
             />
           </div>
         </div>
       </div>
 
-      <div className='mt-2'>
-        <div className='previe-issue-div pt-1'>
-          <h6 className='tag-text'>Preview</h6>
+      <div className="mt-2">
+        <div className="previe-issue-div pt-1">
+          <h6 className="tag-text">Preview</h6>
           {isGenerate == 2 && (
-            <div className='previe-issue-text'>
-              <p className='previe-issue-btn-text'>Clear</p>
-              <Link className='previe-issue-btn-link' href='/allitems'>
-                <p className='previe-issue-btn'> Mint</p>
+            <div className="previe-issue-text">
+              <p className="previe-issue-btn-text">Clear</p>
+              <Link className="previe-issue-btn-link" href="/allitems">
+                <p className="previe-issue-btn"> Mint</p>
               </Link>
             </div>
           )}
@@ -217,81 +217,85 @@ const IssuDetails = () => {
           <div
             className={` issue-data-table-div ${
               isGenerate != 2 ? "issue-box-details" : ""
-            }`}>
+            }`}
+          >
             {isGenerate == 0 && (
-              <div className='no-file-select-div'>
+              <div className="no-file-select-div">
                 <p>No File Select</p>
               </div>
             )}
 
             {isGenerate == 1 && (
-              <div className='no-file-select-div'>
+              <div className="no-file-select-div">
                 <p>
-                  Generating <span className='loading-dot'>...</span>
+                  Generating <span className="loading-dot">...</span>
                 </p>
               </div>
             )}
             {isGenerate == 2 && (
-              <table className='full-table'>
+              <table className="full-table">
                 <thead>
                   <tr>
                     {headers.length > 0 &&
                       headers.map((item) => (
-                        <th className='table-nav' scope='col'>
-                          <span className='table-th'> {item}</span>
+                        <th className="table-nav" scope="col">
+                          <span className="table-th"> {item}</span>
                         </th>
                       ))}
 
-                    <th className='table-navs' scope='col'>
-                      <span className='table-ths'> QR code</span>
+                    <th className="table-navs" scope="col">
+                      <span className="table-ths"> QR code</span>
                     </th>
                     {/* <th className='table-navs' scope='col'>
                     <p className='table-ths'> QR code</p>
                   </th> */}
-                    <th className='table-navs' scope='col'>
-                      <span className='table-ths'> QR code</span>
+                    <th className="table-navs" scope="col">
+                      <span className="table-ths"> QR code</span>
                     </th>
                   </tr>
                   <tr>
                     <th
                       colSpan={headers.length + 2}
-                      className='text-center'></th>
+                      className="text-center"
+                    ></th>
                   </tr>
                 </thead>
                 <tbody>
                   {columns.map((item, index) => (
                     <>
-                      <tr key={index} className='data-tr'>
+                      <tr key={index} className="data-tr">
                         {headers.length > 0 &&
                           headers.map((head) => (
-                            <td className='data-td'>
+                            <td className="data-td">
                               {/* <p className='data-th-text'>{item.brand}</p> */}
-                              <span className='data-th-text'>
+                              <span className="data-th-text">
                                 {item[head] != null ? item[head] : "N/A"}
                               </span>
                             </td>
                           ))}
 
-                        <td className='data-td'>
+                        <td className="data-td">
                           <span
-                            className='data-td cursor-pointer text-red'
+                            className="data-td cursor-pointer text-red"
                             onClick={() => {
                               handleDelete(item.id);
-                            }}>
+                            }}
+                          >
                             Delete
                           </span>
                         </td>
 
-                        <td className='data-td'>
-                          <div className='issue-svg-div'>
+                        <td className="data-td">
+                          <div className="issue-svg-div">
                             <svg
-                              xmlns='http://www.w3.org/2000/svg'
-                              width='24'
-                              height='24'
-                              fill='#155C79'
-                              className='bi bi-three-dots'
-                              viewBox='0 0 16 16'>
-                              <path d='M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z' />
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              fill="#155C79"
+                              className="bi bi-three-dots"
+                              viewBox="0 0 16 16"
+                            >
+                              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                             </svg>
                           </div>
                         </td>
@@ -300,12 +304,14 @@ const IssuDetails = () => {
                       <tr>
                         <td
                           colSpan={columns.length + 2}
-                          className='text-center'></td>
+                          className="text-center"
+                        ></td>
                       </tr>
                       <tr>
                         <td
                           colSpan={columns.length + 2}
-                          className='text-center'></td>
+                          className="text-center"
+                        ></td>
                       </tr>
                     </>
                   ))}
