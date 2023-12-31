@@ -21,6 +21,10 @@ const page = () => {
   const mapUrl =
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8782.242126883268!2d114.1288730487565!3d22.259877475587118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fff0f159fe51%3A0x9dab2f23bc4e5a06!2sChinese%20Culinary%20Institute!5e0!3m2!1sen!2sbd!4v1701320544257!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade';
 
+const sendEmail= () =>{
+
+}
+
   return (
     <div>
       <div className={styles["background-img"]}>
