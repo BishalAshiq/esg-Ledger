@@ -67,7 +67,7 @@ const sendEmail= () =>{
                             </div>
                           </div>
                           <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
-                            <div className='mt-3'>
+                            <div className=''>
                               <label for='Email' className='contact-lebel'>
                                 {" "}
                                 Your Email
@@ -120,7 +120,7 @@ const sendEmail= () =>{
                           </p>
                         </div>
                       </div>
-                      <div>
+                      <div className='contact-ifram-div'>
                         <iframe
                           className='iframe-contact'
                           loading='lazy'

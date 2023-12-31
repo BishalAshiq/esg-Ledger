@@ -91,6 +91,25 @@
   }
 }
 
+@media (max-width: 740px) {
+  .about-main-div {
+    margin: 20% 0% 2% 2%;
+    color: white;
+    background-color: #86c6ca;
+    width: 96%;
+    height: 162vh;
+    padding: 3%;
+  }
+
+  .about-div {
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    height: 132vh;
+    border-radius: 6px;
+  }
+}
+
 @media (max-width: 768px) {
   .login-footer-banner-full-div {
     position: relative;
@@ -189,7 +208,7 @@
     color: white;
     background-color: #86c6ca;
     width: 96%;
-    height: 176vh;
+    height: 156vh;
     padding: 3%;
   }
 
@@ -197,7 +216,7 @@
     background-color: white;
     width: 100%;
     padding: 20px;
-    height: 148vh;
+    height: 130vh;
     border-radius: 6px;
   }
 }

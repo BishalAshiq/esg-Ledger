@@ -173,6 +173,22 @@ body {
   margin-top: 30px;
   background-color: #066f69;
 }
+.redix-footer-banner-full-div {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 4px 0 0 0;
+  /* margin-top: 30px; */
+  background-color: #066f69;
+}
+.login-about-footer-banner-full-div {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  padding: 4px 0 0 0;
+  margin-top: 30px;
+  background-color: #066f69;
+}
 
 .login-footer-banner-div {
   display: flex;
@@ -426,8 +442,8 @@ body {
   height: 150px;
 }
 
-.certificate-image-img{
- object-fit: contain;
+.certificate-image-img {
+  object-fit: contain;
 }
 
 .certificate-tags-div {
@@ -590,11 +606,6 @@ body {
   height: 50vh;
 }
 
-.csv-a-div {
-  display: grid;
-  place-items: center;
-  padding: 20px 0 0 0;
-}
 .tag-text {
   padding-left: 10px;
 }
@@ -1185,7 +1196,13 @@ body {
 
     margin-top: 10px;
   }
+  .redix-footer-banner-full-div {
+    /* padding: 15px 10px 10px 10px; */
+
+    /* margin-top: 10px; */
+  }
   .footer-img-div {
+    display: none;
     visibility: hidden;
   }
 
@@ -1241,7 +1258,7 @@ body {
   .redix-div {
     padding: 20px 10px 0 10px;
     border: none;
-    margin-top: 7%;
+    margin-top: 4.5%;
   }
 
   .redix-divs {
@@ -1263,16 +1280,18 @@ body {
   }
   .Information-full-divs {
     line-height: 1.2;
+    margin: 25px 2px 0 2px !important;
     font-size: 0.8rem;
     font-weight: 600;
-    /* text-align: ; */
+    text-align: start;
     font-family: "Roboto", sans-serif;
   }
   .Information-full-div {
     line-height: 1.4;
     font-size: 0.9rem;
+    margin: 0 2px !important;
     font-weight: 600;
-    /* text-align: justify; */
+    text-align: left;
     font-family: "Roboto", sans-serif;
   }
   .Blockchain-ptag-divs {

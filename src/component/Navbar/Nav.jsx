@@ -20,6 +20,8 @@ const Nav = () => {
   useEffect(() => {
     if (router.pathname === "/landingPage") {
       setLogoUrl(companyLogo);
+    } else if (router.pathname === "/admin") {
+      setLogoUrl(companyLogo);
     } else if (router.pathname === "/") {
       setLogoUrl(companyLogo1);
     } else {
@@ -28,7 +30,19 @@ const Nav = () => {
   }, [router]);
 
   useEffect(() => {
-    switch (router.pathname) {
+    switch (location.pathname) {
+      case "/":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
+      case "/admin":
+        setNavbarColor("white");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
       case "/landingPage":
         setNavbarColor("white");
         setNavbarTextColor("#404040");
@@ -60,6 +74,12 @@ const Nav = () => {
         setDropdownColor("");
         setButtonColor("black");
         break;
+      case "/redix/15696":
+        setNavbarColor("#066f69");
+        setNavbarTextColor("#404040");
+        setDropdownColor("");
+        setButtonColor("black");
+        break;
     }
   }, [router.pathname]);
 
@@ -79,7 +99,7 @@ const Nav = () => {
           <div className='col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 '>
             <div>
               <div className='nav-items-div'>
-                <Link href='/'>Home</Link>
+                <Link href='/admin'>Home</Link>
                 <Link className='contact-nav-a' href='/brands/login'>
                   {" "}
                   <p>Brands</p>{" "}

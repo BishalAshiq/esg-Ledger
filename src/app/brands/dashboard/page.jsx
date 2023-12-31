@@ -10,6 +10,7 @@ const page = () => {
   const handleTextClick = (divId) => {
     setActiveDiv(divId);
   };
+
   return (
     <div>
       <div>
@@ -27,29 +28,50 @@ const page = () => {
               }`}>
               <h6 className='dash-side-ptext'>Upload new products</h6>
               <span className='dashboard-icon'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='16'
-                  height='23'
-                  viewBox='0 0 16 23'
-                  fill='none'>
-                  <path
-                    d='M8 7.5V15M5 10L8 7L11 10'
-                    stroke='white'
-                    stroke-width='1.5'
-                  />
-                  <rect
-                    x='0.75'
-                    y='0.75'
-                    width='14.5'
-                    height='21.5'
-                    rx='3.25'
-                    stroke='white'
-                    stroke-width='1.5'
-                  />
-                </svg>
+                {activeDiv === 1 ? (
+                  <svg
+                    width='16'
+                    height='23'
+                    viewBox='0 0 16 23'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'>
+                    <g clip-path='url(#clip0_249_26)'>
+                      <path
+                        d='M8 7.5V15M5 10L8 7L11 10'
+                        stroke='white'
+                        stroke-width='1.5'
+                      />
+                      <rect
+                        x='0.75'
+                        y='0.75'
+                        width='14.5'
+                        height='21.5'
+                        rx='3.25'
+                        stroke='white'
+                        stroke-width='1.5'
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id='clip0_249_26'>
+                        <rect width='16' height='23' fill='white' />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='26'
+                    height='24'
+                    fill='currentColor'
+                    className='bi bi-file-arrow-up'
+                    viewBox='0 0 16 16'>
+                    <path d='M8 11a.5.5 0 0 0 .5-.5V6.707l1.146 1.147a.5.5 0 0 0 .708-.708l-2-2a.5.5 0 0 0-.708 0l-2 2a.5.5 0 1 0 .708.708L7.5 6.707V10.5a.5.5 0 0 0 .5.5' />
+                    <path d='M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1' />
+                  </svg>
+                )}
               </span>
             </div>
+
             <div
               onClick={() => handleTextClick(2)}
               className={`dashboard-side-bar-li ${

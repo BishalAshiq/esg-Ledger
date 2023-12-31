@@ -17,7 +17,7 @@
 }
 
 .dddssa {
-  height: 17vh;
+  height: 15vh;
   background-color: white;
   box-shadow: rgba(190, 190, 190, 0.45) 22px 11px 10px -17px;
   margin: 0 0 0px 0;
@@ -145,6 +145,19 @@
   color: white;
   padding: 5px 50px;
 }
+.admin-header-search-btn_mb {
+  background-color: #86c6ca;
+  text-wrap: nowrap;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%; /* 18px */
+  border: none;
+  border-radius: 5px;
+}
 
 .filter-text-select-div {
   display: flex;
@@ -181,12 +194,14 @@
 }
 .table-th {
   display: flex;
+  width: 100%;
   justify-content: center;
   text-align: center;
   align-items: center;
   /* margin-bottom: -2px; */
   font-size: 0.8rem;
   font-weight: 700;
+  padding: 0 60px !important;
 }
 .table-ths {
   display: flex;
@@ -214,6 +229,7 @@
   display: flex;
   justify-content: start;
   border-top: 1px solid #e3e2e2;
+  width: 100%;
 }
 .dashboard-footer {
   /* padding: 10px 0; */
@@ -267,12 +283,24 @@
 .issue-upload-full-div {
   border: 1px solid gray;
 }
+.csv-a-div {
+  display: grid;
+  place-items: center;
+  padding: 20px 0 0 0;
+}
 
 .csv-a {
   margin-bottom: 10px;
   color: #00b3ff;
   font-size: 0.8rem;
   cursor: pointer;
+}
+.csvs-a {
+  /* border: 1px solid gray; */
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+  font-size: 0.8rem;
 }
 .issue-upload-div {
   display: grid;
@@ -332,9 +360,11 @@
 
 .indi-filter-div {
   display: flex;
+  align-items: center;
+  width: 100%;
   gap: 10px;
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-size: 12px;
   color: #49494a;
 }
 .filt-twenty {
@@ -447,11 +477,16 @@
 
 @media (max-width: 768px) {
   .full-table {
+    padding: 2px;
     overflow: auto; /* Allow horizontal scrolling */
     width: 100% !important;
     display: block; /* Display table as block-level to enable scrolling */
     white-space: nowrap; /* Prevent table cells from wrapping */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    border: 1px solid rgb(219, 219, 219);
+  }
+  .issuess-upload-full-div {
+    margin-top: 20px;
   }
   .table {
     width: 100%;
@@ -463,7 +498,7 @@
     overflow: scroll;
   }
   .dash-sidebar-div {
-    height: 10vh;
+    height: 5vh;
     display: flex !important;
     justify-content: space-around !important;
     flex-direction: row;
@@ -480,23 +515,35 @@
     /* display: flex; */
     /* justify-content: center; */
   }
+
+  .active-das .dashboard-icon svg {
+    color: white !important;
+  }
+
   .dashboard-side-bar-li {
     width: 100%;
     display: flex;
-    height: 8vh;
+    align-items: center;
+    height: 6vh;
     /* justify-content: center; */
   }
   .active-das {
     width: 100%;
   }
+  .dashboard-footer-div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
   .dashboard-footer-text {
     color: #000;
-    text-align: center;
+    /* margin: 0; */
     font-family: "Roboto", sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 19px; /* 135.714% */
+    margin: auto;
   }
 
   .data-search-input {
@@ -517,8 +564,10 @@
   }
   .table-th {
     width: 100%;
+    padding: 0 60px !important;
   }
   .table-navs {
     width: 100%;
+    padding: 2px 4px;
   }
 }

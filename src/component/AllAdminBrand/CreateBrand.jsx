@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 import Kibo from "../../../public/kibo.png";
 import BackIcon from "../../../public/back.svg";
-import { toast } from "react-toastify";
+import {toast} from "react-toastify";
 
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
@@ -11,7 +11,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { useRouter } from "next/navigation";
+import {useRouter} from "next/navigation";
 
 // Modal
 const style = {
@@ -81,7 +81,7 @@ const CreateBrand = () => {
     password: "",
   });
   const handleFormData = (e) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
 
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -247,19 +247,18 @@ const CreateBrand = () => {
                       alt=""
                     />
                   ) : (
-                    ""
+                    <div className="kibo-no-imgs">no Image</div>
                   )}
                 </div>
               </div>
 
-              <div className="indi-brand-ico-tag mt-4">
+              <div className="indi-brand-ico-tag mt-2">
                 <Image src={BackIcon} width={20} height={20} alt="" />
                 <label
                   className="form-check-label single-checkbox-text"
                   for="flexCheckDefault"
                 >
                   View all brands - add new brand
-                  <hr />
                 </label>
               </div>
 
@@ -282,7 +281,7 @@ const CreateBrand = () => {
                     <input
                       type="file"
                       id="fileInput"
-                      style={{ display: "none" }}
+                      style={{display: "none"}}
                       onChange={handleImageUpload}
                       accept="image/jpeg, image/jpg, image/png"
                     />
@@ -326,7 +325,7 @@ const CreateBrand = () => {
                   <input
                     type="file"
                     id="fileInput"
-                    style={{ display: "none" }}
+                    style={{display: "none"}}
                     onChange={handleImageUpload}
                     accept="image/jpeg, image/jpg, image/png"
                   />
@@ -339,37 +338,37 @@ const CreateBrand = () => {
                 title: "Name *",
                 value: formData.name,
                 type: "text",
-                name: "name"
+                name: "name",
               },
               {
                 title: "Contact person",
                 value: formData.contact_person,
                 type: "text",
-                name: "contact_person"
+                name: "contact_person",
               },
               {
                 title: "Contact number",
                 value: formData.contact_number,
                 type: "text",
-                name: "contact_number"
+                name: "contact_number",
               },
               {
                 title: "Contact email",
                 value: formData.contact_email,
                 type: "text",
-                name: "contact_email"
+                name: "contact_email",
               },
               {
                 title: "Website",
                 value: formData.website,
                 type: "text",
-                name: "website"
+                name: "website",
               },
               {
                 title: "Password",
                 value: formData.password,
                 type: "password",
-                name: "password"
+                name: "password",
               },
             ].map((each, index) => (
               <div key={index} className="container">
@@ -389,7 +388,6 @@ const CreateBrand = () => {
                       value={formData.value}
                       name={each.name}
                       onChange={handleFormData}
-
                       required
                     />
                   </div>
