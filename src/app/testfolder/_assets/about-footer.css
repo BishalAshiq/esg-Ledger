@@ -75,6 +75,16 @@
   line-height: normal;
 }
 
+.social__ac__link {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.social__ac__link .social_icon_link {
+  margin: 0px 22px;
+}
+
 @media screen and (min-width: 1023px) {
   .logo__social {
     display: flex;
