@@ -50,7 +50,10 @@ const page = () => {
           )}
         </div>
       </div>
-      <div className="dashboard-footer-div">
+      <div
+        style={{position: "fixed", bottom: 0, width: "100%"}}
+        className="dashboard-footer-div"
+      >
         <div className="dashboard-footer">
           <p className="dashboard-footer-text">
             © 2023 OneChain Ltd. All Rights Reserved.

@@ -72,7 +72,6 @@
 .indi-brand-head-tags {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #88c9d7;
   /* margin: 0 0 60px 0; */
   margin-bottom: 18px;
   padding-bottom: 10px;
