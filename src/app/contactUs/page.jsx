@@ -21,9 +21,78 @@ const page = () => {
   const mapUrl =
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8782.242126883268!2d114.1288730487565!3d22.259877475587118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fff0f159fe51%3A0x9dab2f23bc4e5a06!2sChinese%20Culinary%20Institute!5e0!3m2!1sen!2sbd!4v1701320544257!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade';
 
-const sendEmail= () =>{
 
-}
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+  });
+
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(formData);
+
+  const sendEmail = async () => {
+    try {
+      const url = "https://api.brevo.com/v3/smtp/email";
+
+      const headers = new Headers({
+        "Content-Type": "application/json",
+        "api-key": "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",
+      });
+
+      const body = JSON.stringify({
+        sender: {
+          name: formData.name,
+          email: formData.email,
+        },
+        to: [{ email: "enquiries@esgledger.co" }],
+        htmlContent: formData.subject,
+        subject: formData.subject,
+      });
+
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers,
+          body,
+        });
+
+        if (response.ok) {
+          return new NextResponse(
+            JSON.stringify({
+              success: true,
+              message: "Successfully sent",
+            }),
+            { status: 200 }
+          );
+        }
+      } catch (e) {
+        return new NextResponse(
+          JSON.stringify({
+            success: true,
+            message: "Failed to send email",
+          }),
+          { status: 400 }
+        );
+      }
+      return new NextResponse(
+        JSON.stringify({
+          success: true,
+          message: "Failed to send email",
+        }),
+        { status: 400 }
+      );
+
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  }
 
   return (
     <div>
@@ -63,6 +132,8 @@ const sendEmail= () =>{
                                 type='name'
                                 id='name'
                                 name='name'
+                                onChange={handleFormChange}
+                                value={formData.name}
                               />
                             </div>
                           </div>
@@ -77,7 +148,9 @@ const sendEmail= () =>{
                                 className='contact-inp'
                                 type='email'
                                 id='email'
-                                name='Password'
+                                name='email'
+                                onChange={handleFormChange}
+                                value={formData.email}
                               />
                             </div>
                           </div>
@@ -87,13 +160,15 @@ const sendEmail= () =>{
                                 className='contact-inp-text'
                                 type='text'
                                 id='text'
-                                name='text'
+                                name='subject'
                                 placeholder='What’s on your mind?'
+                                onChange={handleFormChange}
+                                value={formData.subject}
                               />
                             </div>
                           </div>
                         </div>
-                        <button className='send-btn'>Send It!</button>
+                        <button className='send-btn' onClick={sendEmail}>Send It!</button>
                       </div>
                     </div>
                   </div>
