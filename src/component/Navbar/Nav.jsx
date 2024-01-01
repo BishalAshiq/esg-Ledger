@@ -230,7 +230,7 @@ const Nav = () => {
             >
               <div
                 style={{
-                  paddingTop: "10px",
+                  paddingTop: "20px",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
