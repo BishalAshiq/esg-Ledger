@@ -5,75 +5,75 @@ import Image from "next/image";
 import "../_assets/about-footer.css";
 import {facebook, instagram, linkedin, youtube} from "../_assets";
 import Link from "next/link";
+import pageLogo from "../../../../public/pageLogomd.png";
+import pageicon1 from "../../../../public/social1.svg";
+import pageicon2 from "../../../../public/social2.svg";
+import pageicon3 from "../../../../public/social3.svg";
+import pageicon4 from "../../../../public/social4.svg";
 
 export default function AboutFooter() {
   return (
-    <div className="footer__wrapper">
-      <div className="footer__content__wrapper">
-        <div className="footer__content">
-          <div className="logo__social">
-            <div className="special__mobile">
-              <p>
-                For inquiries or more information please contact:
-                enquiries@esgledger.co
+    <div
+      style={{
+        position: "relative",
+        bottom: "0",
+      }}
+      className="login-footer-banner-full-div "
+    >
+      <div className="row ">
+        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+        <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+          <div className="login-footer-banner-div web-view">
+            <div className="">
+              <img className="footer-img" src={pageLogo.src} alt="" />
+              <p className="fotter-ptext">
+                For inquiries or more information <br />
+                please contact: enquiries@esgledger.co
               </p>
             </div>
-            <div className="logo">
-              <Image src={logo} alt="logo" />
-              <p>
-                For inquiries or more information please contact:
-                enquiries@esgledger.co
-              </p>
-            </div>
-            <div className="social">
-              <div className="social__ac__link">
-                {[
-                  {
-                    href: "#",
-                    icon: facebook,
-                    alt: "facebook",
-                  },
-                  {
-                    href: "#",
-                    icon: instagram,
-                    alt: "instagram",
-                  },
-                  {
-                    href: "#",
-                    icon: linkedin,
-                    alt: "linkedin",
-                  },
-                  {
-                    href: "#",
-                    icon: youtube,
-                    alt: "youtube",
-                  },
-                ].map((each, index) => (
-                  <Link
-                    className="social_icon_link"
-                    key={index}
-                    href={each.href}
-                  >
-                    <Image src={each.icon} alt={each.alt} />
-                  </Link>
-                ))}
+
+            <div className="">
+              <p className="footer-textpp">Join the Community</p>
+
+              <div className="footer-text-icon">
+                <img className="social-icon" src={pageicon1.src} alt="" />
+                <img className="social-icon" src={pageicon2.src} alt="" />
+                <img className="social-icon" src={pageicon3.src} alt="" />
+                <img className="social-icon" src={pageicon4.src} alt="" />
               </div>
-              <p>Join the Community</p>
             </div>
           </div>
+          <div className="mobile-version-div">
+            <p className="fotter-ptext-mob">
+              For inquiries or more information <br />
+              please contact: enquiries@esgledger.co
+            </p>
 
-          <div className="footer__bottom">
-            <p>© 2023 OneChain Ltd.</p>
+            <div className="footer-text-icon">
+              <img className="social-icon" src={pageicon4.src} alt="" />
+              <img className="social-icon" src={pageicon3.src} alt="" />
+              <img className="social-icon" src={pageicon2.src} alt="" />
+              <img className="social-icon" src={pageicon1.src} alt="" />
 
-            <div className="link__area">
-              <Link className="link" href={"#"}>
-                Privacy Policy
-              </Link>
-              <Link className="link" href={"#"}>
-                Terms of Service
-              </Link>
+              {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
             </div>
+            <p className="fotter-joitext-mob">Join the Community</p>
           </div>
+          <div className="f-hr-divweb">
+            <hr className="f-hr" />
+            <p className="f-text">© 2023 OneChain Ltd.</p>
+          </div>
+        </div>
+        <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3"></div>
+      </div>
+      <div className="mobile-version-divs">
+        <div>
+          <hr className="f-hr" />
+          <p className="f-text">© 2023 OneChain Ltd.</p>
+        </div>
+        <div className="pol-mob-div">
+          <p className="polmob-text">Privacy Policy</p>
+          <p className="polmob-text">Terms of Service</p>
         </div>
       </div>
     </div>
