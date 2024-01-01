@@ -51,7 +51,7 @@ const page = () => {
         </div>
       </div>
       <div
-        style={{position: "fixed", bottom: 0, width: "100%"}}
+        style={{position: "relative", bottom: 0, width: "100%"}}
         className="dashboard-footer-div"
       >
         <div className="dashboard-footer">

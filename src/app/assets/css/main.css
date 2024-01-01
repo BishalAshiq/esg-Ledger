@@ -1363,3 +1363,7 @@ body {
     line-height: 1.2;
   }
 }
+.pagination-btn{
+  background-color: white;
+  border: 0px;
+}
