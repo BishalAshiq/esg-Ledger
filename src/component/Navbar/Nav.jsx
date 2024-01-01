@@ -120,7 +120,14 @@ const Nav = () => {
                     </svg>
                   </span>
                 </Link>
-                <Link href="/about">About ESGLedger</Link>
+                <Link
+                  style={{
+                    whiteSpace: "nowrap",
+                  }}
+                  href="/about"
+                >
+                  About ESGLedger
+                </Link>
                 <Link
                   className="contact-nav-a"
                   href="https://www.onechainscan.io/"
