@@ -209,7 +209,7 @@ const page = () => {
           {activeDiv === 2 && (
             <div>
               <div className="">
-                <BrandList />
+                <ViewAllItemByBrand />
                 {/* <ViewAllItemsData /> */}
               </div>
             </div>
