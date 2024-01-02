@@ -17,7 +17,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
-import { base_url } from "../../../../utils/auth"
+import { base_url } from "../../../../utils/auth";
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
@@ -216,15 +216,16 @@ const page = () => {
                   </div>
 
                   <div className='certificate-imageSec-div'>
-                    {
-                      item?.brand_details?.logo != null ?
-                        <img src={`${base_url}/uploads/${item?.brand_details?.logo}`} className="certificate-image-img" />
-                        :
-                        <>
-                          <img src={NoImage.src} alt='' />
-                        </>
-                    }
-
+                    {item?.brand_details?.logo != null ? (
+                      <img
+                        src={`${base_url}/uploads/${item?.brand_details?.logo}`}
+                        className='certificate-image-img'
+                      />
+                    ) : (
+                      <>
+                        <img src={NoImage.src} alt='' />
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -272,29 +273,27 @@ const page = () => {
                                   id='accordionExample'>
                                   <div className='accordion-item'>
                                     <div className='accor-tag-div'>
-                                      <h6 className='accordion-header'>
-                                        <div
-                                          className={`accordion-button ${
-                                            isAccordionExpanded(
-                                              `collapse${key}`
-                                            )
-                                              ? ""
-                                              : "collapsed"
-                                          }`}
-                                          type='button'
-                                          data-bs-target={`#collapse${key}`}
-                                          aria-expanded={isAccordionExpanded(
+                                      {/* <h6 className='accordion-header'> */}
+                                      <div
+                                        className={`accordion-button ${
+                                          isAccordionExpanded(`collapse${key}`)
+                                            ? ""
+                                            : "collapsed"
+                                        }`}
+                                        type='button'
+                                        data-bs-target={`#collapse${key}`}
+                                        aria-expanded={isAccordionExpanded(
+                                          `collapse${key}`
+                                        )}
+                                        aria-controls={`collapse${key}`}
+                                        onClick={() =>
+                                          handleAccordionClicks(
                                             `collapse${key}`
-                                          )}
-                                          aria-controls={`collapse${key}`}
-                                          onClick={() =>
-                                            handleAccordionClicks(
-                                              `collapse${key}`
-                                            )
-                                          }>
-                                          {key}
-                                        </div>
-                                      </h6>
+                                          )
+                                        }>
+                                        <span className='kwy'> {key}</span>
+                                      </div>
+                                      {/* </h6> */}
 
                                       <div className='chevron-icon'>
                                         {isAccordionExpanded(
