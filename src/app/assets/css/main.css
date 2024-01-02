@@ -1129,8 +1129,8 @@ body {
   }
   .nav-items-div-mob a {
     text-decoration: none;
-    color: #00a5bd;
-    font-weight: 500;
+    color: #066f69;
+    font-weight: 600;
     display: flex;
     /* text-align: center; */
     /* align-items: center; */
@@ -1356,7 +1356,26 @@ body {
     /* border: 1px solid gray; */
   }
 }
-
+@media (max-width: 480px) {
+  .nav-mob-logo-img {
+    width: 167px;
+    height: 37px;
+    /* display: flex;
+  justify-content: center;
+  align-items: center; */
+    margin-left: 108px;
+  }
+}
+@media (max-width: 390px) {
+  .nav-mob-logo-img {
+    width: 167px;
+    height: 37px;
+    /* display: flex;
+  justify-content: center;
+  align-items: center; */
+    margin-left: 55px;
+  }
+}
 /* Macbook PRo  */
 @media (max-width: 1680px) and (min-width: 1368px) {
   .fist-slider-text-tag {
