@@ -170,9 +170,9 @@ const Nav = () => {
           <div className='w-100'>
             <div className='w-100  d-flex align-items-center justify-content-between'>
               <Link
-                style={{
-                  marginLeft: "50px",
-                }}
+                // style={{
+                //   marginLeft: "50px",
+                // }}
                 href='/landingPage'>
                 <img className='nav-mob-logo-img' src={logoUrl.src} alt='' />
               </Link>
