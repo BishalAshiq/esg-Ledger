@@ -268,9 +268,16 @@
   justify-content: center;
   margin: 0 auto;
   bottom: 0;
-  left: 10px;
+  left: 12px;
   right: 0;
   bottom: 15px;
+  color: #fff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
   position: absolute;
 }
 
