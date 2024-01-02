@@ -944,6 +944,13 @@ body {
   .body {
     overflow-x: hidden;
   }
+  .navBorder {
+    /* height: 5vh; */
+    border: 2px solid #066f69;
+    width: 40%;
+    margin: 0 0 0 20%;
+    border-radius: 5px;
+  }
   .login-full-div {
     margin-top: 20%;
     height: 100vh;
@@ -1119,8 +1126,8 @@ body {
     display: flex;
     gap: 2px;
     flex-direction: column;
-    /* align-items: center; */
-    justify-content: end;
+    align-items: center;
+    justify-content: center;
     margin-top: 8px;
     text-align: center;
     /* align-items: center !important; */
@@ -1136,7 +1143,7 @@ body {
     /* align-items: center; */
     font-size: 0.8rem;
     font-family: "Roboto", sans-serif;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 40px;
   }
 
   .contact-nav-a-mov {
@@ -1357,23 +1364,78 @@ body {
   }
 }
 @media (max-width: 480px) {
-  .nav-mob-logo-img {
+  .nav-mob-lgo-img-link {
+    display: flex !important;
+    justify-content: end;
+  }
+  .nav-mob-lgo-img {
     width: 167px;
     height: 37px;
+
     /* display: flex;
   justify-content: center;
   align-items: center; */
-    margin-left: 160px;
+    margin: 0 40px 0 83px;
+  }
+  .nav-items-div-mob {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    text-align: center;
+    /* align-items: center !important; */
+    /* text-align: center !important; */
+    text-decoration: none;
+  }
+  .nav-items-div-mob a {
+    text-decoration: none;
+    color: #066f69;
+    font-weight: 600;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    margin: 0 0 0 40px;
   }
 }
 @media (max-width: 390px) {
-  .nav-mob-logo-img {
+  .nav-mob-lgo-img-link {
+    display: flex !important;
+    justify-content: end !important;
+  }
+  .nav-mob-lgo-img {
     width: 167px;
     height: 37px;
     /* display: flex;
   justify-content: center;
   align-items: center; */
-    margin-left: 110px;
+    margin: 0 10px 0 30px;
+  }
+  .nav-items-div-mob {
+    display: flex;
+    gap: 2px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+    text-align: center;
+    align-items: center !important;
+    text-align: center !important;
+    text-decoration: none;
+  }
+  .nav-items-div-mob a {
+    text-decoration: none;
+    color: #066f69;
+    font-weight: 600;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 0.8rem;
+    font-family: "Roboto", sans-serif;
+    margin: 0 0 0 20%;
   }
 }
 /* Macbook PRo  */
