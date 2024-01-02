@@ -265,7 +265,7 @@ const page = () => {
                       key != "" && (
                         <>
                           {typeof attribute[key] === "object" &&
-                          attribute[key] !== null ? (
+                            attribute[key] !== null ? (
                             <>
                               <div className=''>
                                 <div
@@ -275,11 +275,10 @@ const page = () => {
                                     <div className='accor-tag-div'>
                                       {/* <h6 className='accordion-header'> */}
                                       <div
-                                        className={`accordion-button ${
-                                          isAccordionExpanded(`collapse${key}`)
-                                            ? ""
-                                            : "collapsed"
-                                        }`}
+                                        className={`accordion-button ${isAccordionExpanded(`collapse${key}`)
+                                          ? ""
+                                          : "collapsed"
+                                          }`}
                                         type='button'
                                         data-bs-target={`#collapse${key}`}
                                         aria-expanded={isAccordionExpanded(
@@ -341,18 +340,17 @@ const page = () => {
 
                                     <div
                                       id={`collapse${key}`}
-                                      className={`accordion-collapse collapse ${
-                                        isAccordionExpanded(`collapse${key}`)
-                                          ? "show"
-                                          : ""
-                                      }`}
+                                      className={`accordion-collapse collapse ${isAccordionExpanded(`collapse${key}`)
+                                        ? "show"
+                                        : ""
+                                        }`}
                                       data-bs-parent='#accordionExample'>
                                       <div className='accordion-body'>
                                         {Object.entries(attribute[key]).map(
                                           ([innerKey, innerValue], index) => (
                                             <>
                                               {innerKey != "" &&
-                                              innerValue != "" ? (
+                                                innerValue != "" ? (
                                                 <div className='Blockchain-ptag-divs'>
                                                   <p className='block-ptext'>
                                                     {innerKey}{" "}
@@ -439,10 +437,18 @@ const page = () => {
                   <p className='footer-textpp'>Join the Community</p>
 
                   <div className='footer-text-icon'>
-                    <img className='social-icon' src={pageicon1.src} alt='' />
-                    <img className='social-icon' src={pageicon2.src} alt='' />
-                    <img className='social-icon' src={pageicon3.src} alt='' />
-                    <img className='social-icon' src={pageicon4.src} alt='' />
+                    <a href="https://www.facebook.com/onechainhk">
+                      <img className='social-icon' src={pageicon4.src} alt='' />
+                    </a>
+                    <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                      <img className='social-icon' src={pageicon3.src} alt='' />
+                    </a>
+                    <a href="https://www.linkedin.com/company/one-chain/">
+                      <img className='social-icon' src={pageicon2.src} alt='' />
+                    </a>
+                    <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                      <img className='social-icon' src={pageicon1.src} alt='' />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -453,11 +459,18 @@ const page = () => {
                 </p>
 
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon4.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-
+                  <a href="https://www.facebook.com/onechainhk">
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </a>
+                  <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                  </a>
+                  <a href="https://www.linkedin.com/company/one-chain/">
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                  </a>
+                  <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                  </a>
                   {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
                 </div>
                 <p className='fotter-joitext-mob'>Join the Community</p>
