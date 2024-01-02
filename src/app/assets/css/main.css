@@ -1366,7 +1366,7 @@ body {
 @media (max-width: 480px) {
   .nav-mob-lgo-img-link {
     display: flex !important;
-    justify-content: end;
+    justify-content: end; 
   }
   .nav-mob-lgo-img {
     width: 167px;
@@ -1438,6 +1438,8 @@ body {
     margin: 0 0 0 20%;
   }
 }
+
+
 /* Macbook PRo  */
 @media (max-width: 1680px) and (min-width: 1368px) {
   .fist-slider-text-tag {
