@@ -76,7 +76,7 @@ const Nav = () => {
         setButtonColor("black");
         break;
       default:
-        setNavbarColor("#066f69");
+        setNavbarColor("white");
         setNavbarTextColor("#404040");
         setDropdownColor("");
         setButtonColor("black");
