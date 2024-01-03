@@ -1,9 +1,9 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import Kibo from "../../../public/kibo.png";
 import BackIcon from "../../../public/back.svg";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
 
 import Image from "next/image";
 import axiosInstance from "../../../utils/axios";
@@ -11,7 +11,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
+import ViewAllBrands from "./ViewAllBrands";
 
 // Modal
 const style = {
@@ -56,7 +57,7 @@ const CreateBrand = () => {
   const [openD, setOpenD] = React.useState(false);
   const handleOpenD = () => setOpenD(true);
   const handleCloseD = () => setOpenD(false);
-
+  const [showAllBrand, setShowAllBrand] = useState(false);
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
     setFiles(file);
@@ -71,7 +72,7 @@ const CreateBrand = () => {
       reader.readAsDataURL(file);
     }
   };
-  const [files, setFiles] = useState();
+  const [files, setFiles] = useState('');
   const [formData, setFormData] = useState({
     name: "",
     contact_person: "",
@@ -81,14 +82,14 @@ const CreateBrand = () => {
     password: "",
   });
   const handleFormData = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
 
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
     }));
   };
-  console.log(formData);
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     let token = "";
@@ -120,7 +121,8 @@ const CreateBrand = () => {
               color: "black",
             },
           });
-          router.push("/admin/brands/view");
+          // router.push("/admin/brands/view");
+          setShowAllBrand(!showAllBrand);
         }
 
         if (res.data.status == 201) {
@@ -149,7 +151,9 @@ const CreateBrand = () => {
   console.log(files);
   return (
     <div>
+      {showAllBrand == false ?
       <div className="individual-product-div">
+        
         <form method="post" onSubmit={handleFormSubmit}>
           <div className="row">
             <div className="col-12 col-sm-12 col-md-12 d-none d-md-block col-lg-12 col-xl-12">
@@ -281,7 +285,7 @@ const CreateBrand = () => {
                     <input
                       type="file"
                       id="fileInput"
-                      style={{display: "none"}}
+                      style={{ display: "none" }}
                       onChange={handleImageUpload}
                       accept="image/jpeg, image/jpg, image/png"
                     />
@@ -325,7 +329,7 @@ const CreateBrand = () => {
                   <input
                     type="file"
                     id="fileInput"
-                    style={{display: "none"}}
+                    style={{ display: "none" }}
                     onChange={handleImageUpload}
                     accept="image/jpeg, image/jpg, image/png"
                   />
@@ -421,6 +425,9 @@ const CreateBrand = () => {
           </div>
         </form>
       </div>
+      :
+        <ViewAllBrands />
+      }
     </div>
   );
 };

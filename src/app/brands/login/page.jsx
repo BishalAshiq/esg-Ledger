@@ -125,6 +125,7 @@ const page = () => {
           );
           router.push("/brands/upload");
         } else if (res.data.status == 401) {
+          
           toast.error("Incorrect password", {
             position: "top-right",
           });
@@ -132,6 +133,8 @@ const page = () => {
           toast.error("Incorrect password", {
             position: "top-right",
           });
+
+          
         }
       });
   };
