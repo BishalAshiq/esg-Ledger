@@ -173,7 +173,8 @@ const Nav = () => {
           style={{ backgroundColor: navbarColor }}>
           <div className=''>
             <div className='row'>
-              <div className='col-11 col-sm-11 col-md-11 col-lg-11 col-xl-11 '>
+            {/* <div className='col-11 col-sm-3'></div> */}
+              <div className='col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 '>
                 <Link
                   // style={{
                   //   marginLeft: "50px",
