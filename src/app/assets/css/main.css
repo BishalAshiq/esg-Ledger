@@ -946,7 +946,7 @@ body {
   }
   .navBorder {
     /* height: 5vh; */
-    border: 2px solid #066f69;
+    border: 2px solid #ffffff;
     width: 40%;
     margin: 0 0 0 20%;
     border-radius: 5px;
@@ -1202,7 +1202,8 @@ body {
   }
   .login-footer-banner-full-div {
     padding: 15px 10px 10px 10px;
-
+    position: relative !important;
+    bottom: 0;
     margin-top: 10px;
   }
   .redix-footer-banner-full-div {
@@ -1267,7 +1268,7 @@ body {
   .redix-div {
     padding: 20px 10px 0 10px;
     border: none;
-    margin-top: 4.5%;
+    /* margin-top: 4.5%; */
   }
 
   .redix-divs {

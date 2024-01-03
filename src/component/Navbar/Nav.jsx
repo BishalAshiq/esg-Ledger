@@ -14,72 +14,76 @@ const Nav = () => {
   const [navbarTextColor, setNavbarTextColor] = useState(null);
   const [dropdownColor, setDropdownColor] = useState(null);
   const [buttonColor, setButtonColor] = useState(null);
+  const [borderColor, setborderColor] = useState(null);
   const [logoColor, setLogoColor] = useState("black");
   const [logoUrl, setLogoUrl] = useState("");
   const router = useRouter();
 
   useEffect(() => {
-    if (router.pathname === "/landingPage") {
-      setLogoUrl(companyLogo);
-    } else if (router.pathname === "/admin") {
-      setLogoUrl(companyLogo);
-    } else if (router.pathname === "/") {
-      setLogoUrl(companyLogo1);
-    } else {
-      setLogoUrl(companyLogo);
-    }
-  }, [router]);
-
-  useEffect(() => {
     switch (location.pathname) {
       case "/":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/admin":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/landingPage":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
 
       case "/login":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/about":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/brands/login":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       case "/contactUs":
+        setLogoUrl(companyLogo);
         setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setNavbarTextColor("#066F69");
+        setDropdownColor("white");
+        setButtonColor("#066F69");
+        setborderColor("#066F69");
         break;
       default:
-        setNavbarColor("white");
-        setNavbarTextColor("#404040");
-        setDropdownColor("");
-        setButtonColor("black");
+        setLogoUrl(PageLogomob);
+        setNavbarColor("#066F69");
+        setNavbarTextColor("white");
+        setDropdownColor("#066F69");
+        setButtonColor("white");
         break;
     }
   }, [router.pathname]);
@@ -182,7 +186,7 @@ const Nav = () => {
               <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1'>
                 <button
                   style={{
-                    backgroundColor: "white",
+                    backgroundColor: dropdownColor,
                     border: "none",
                   }}
                   type='button'
@@ -193,6 +197,7 @@ const Nav = () => {
                   aria-label='Toggle navigation'>
                   <span className='svg-iconic'>
                     <svg
+                      style={{ color: buttonColor }}
                       xmlns='http://www.w3.org/2000/svg'
                       width='18'
                       height='18'
@@ -200,17 +205,17 @@ const Nav = () => {
                       fill='none'>
                       <path
                         d='M1 1H17.4706'
-                        stroke='#066F69'
+                        stroke={buttonColor}
                         stroke-linecap='round'
                       />
                       <path
                         d='M1 9H17.4706'
-                        stroke='#066F69'
+                        stroke={buttonColor}
                         stroke-linecap='round'
                       />
                       <path
                         d='M1 17H17.4706'
-                        stroke='#066F69'
+                        stroke={buttonColor}
                         stroke-linecap='round'
                       />
                     </svg>
@@ -236,11 +241,11 @@ const Nav = () => {
                   // }}
                   className='nav-items-div-mob text-center'>
                   <Link className='contact-nav-a-mov' href='/admin'>
-                    <p> Home</p>
+                    <p style={{ color: navbarTextColor }}> Home</p>
                   </Link>
                   <Link className='contact-nav-a-mov' href='/brands/login'>
                     {" "}
-                    <p>Brands</p>{" "}
+                    <p style={{ color: navbarTextColor }}>Brands</p>{" "}
                     {/* <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -258,10 +263,10 @@ const Nav = () => {
                     </span> */}
                   </Link>
                   <Link className='contact-nav-a-mov' href='/about'>
-                    <p> About ESGLedger</p>
+                    <p style={{ color: navbarTextColor }}> About ESGLedger</p>
                   </Link>
                   <Link className='contact-nav-a-mov' href='#'>
-                    <p>Explorer</p>{" "}
+                    <p style={{ color: navbarTextColor }}>Explorer</p>{" "}
                     {/* <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -279,7 +284,7 @@ const Nav = () => {
                     </span> */}
                   </Link>
                   <Link className='contact-nav-a-mov' href='/contactUs'>
-                    <p>Contact</p>{" "}
+                    <p style={{ color: navbarTextColor }}>Contact</p>{" "}
                     {/* <span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -297,7 +302,9 @@ const Nav = () => {
                     </span> */}
                   </Link>
 
-                  <div className='navBorder'></div>
+                  <div
+                    className='navBorder'
+                    style={{ borderColor: borderColor }}></div>
                 </div>
               </div>
             </div>
