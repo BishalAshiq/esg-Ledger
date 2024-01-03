@@ -187,7 +187,10 @@ const page = () => {
                       method='post'>
                       <div>
                         {" "}
-                        <label for='email'>Email</label> <br />
+                        <label for='email' className='bname'>
+                          Email
+                        </label>{" "}
+                        <br />
                         <input
                           className='brand-inp'
                           type='email'
@@ -198,9 +201,12 @@ const page = () => {
                           required
                         />
                       </div>
-                      <div>
+                      <div className='password-inpi'>
                         {" "}
-                        <label for='email'>Password</label> <br />
+                        <label className='bname' for='email'>
+                          Password
+                        </label>{" "}
+                        <br />
                         <input
                           className='brand-inp'
                           type='password'
