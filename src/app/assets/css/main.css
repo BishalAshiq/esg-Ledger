@@ -966,6 +966,44 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Notification */
+  .Toastify__toast-container {
+    width: 100% !important;
+    /* margin: 0 0 0 40px; */
+  }
+
+  .Toastify__toast {
+    border-radius: 8px;
+    font-family: "Arial", sans-serif;
+    /* height: 2vh !important; */
+  }
+
+  .Toastify__progress-bar--success {
+    background-color: #86c6ca !important;
+    /* height: 2vh !important; */
+  }
+  .Toastify__toast--success {
+    margin: 0 15% 0 15%;
+    background-color: #86c6ca !important;
+    /* height: 2vh !important; */
+    border-radius: 10px !important;
+    color: #fff !important;
+  }
+
+  .Toastify__toast--error {
+    background-color: #fb542fe0 !important;
+    /* height: 2vh !important; */
+    color: #fff !important;
+    /* height: 2vh !important; */
+  }
+
+  .Toastify__toast-icon svg {
+    fill: white;
+  }
+  .Toastify__close-button {
+    display: none;
+    /* height: 2vh !important; */
+  }
   .nav-mob-lgo-FULL-div {
     display: flex;
     gap: 110px;
