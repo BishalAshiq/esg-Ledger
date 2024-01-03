@@ -941,6 +941,24 @@ body {
 }
 
 @media (max-width: 768px) {
+  .nav-mob-lgo-FULL-div {
+    display: flex;
+    gap: 110px;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 0 0 0 168px; /* Add padding for better spacing */
+  }
+
+  .nav-mob-lgo-img-link-div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-mob-toggle-div {
+    display: flex;
+    justify-content: flex-end;
+  }
   .body {
     overflow-x: hidden;
   }
@@ -1183,6 +1201,7 @@ body {
   .mobile-nav-div {
     /* display: none; */
     visibility: visible;
+    border: none;
     /* background-color: #066f69; */
   }
   .mob-nav {
@@ -1263,7 +1282,6 @@ body {
     width: fit-content;
   }
   .mobile-nav-div {
-    border: none;
   }
   .redix-div {
     padding: 20px 10px 0 10px;
@@ -1364,19 +1382,36 @@ body {
     /* border: 1px solid gray; */
   }
 }
+
 @media (max-width: 480px) {
-  .nav-mob-lgo-img-link {
-    display: flex !important;
-    justify-content: end; 
+  /* Add these styles to your CSS */
+  .nav-mob-lgo-FULL-div {
+    display: flex;
+    gap: 80px;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 0 0 0 140px; /* Add padding for better spacing */
   }
+
+  .nav-mob-lgo-img-link-div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-mob-toggle-div {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   .nav-mob-lgo-img {
-    width: 167px;
+    width: 145px;
     height: 37px;
 
     /* display: flex;
   justify-content: center;
   align-items: center; */
-    margin: 0 40px 0 83px;
+    /* margin: 0 40px 0 83px; */
   }
   .nav-items-div-mob {
     display: flex;
@@ -1401,19 +1436,39 @@ body {
     font-family: "Roboto", sans-serif;
     margin: 0 0 0 40px;
   }
+  .redix-div {
+    padding: 20px 10px 0 10px;
+    border: none;
+    margin-top: -10px;
+  }
 }
 @media (max-width: 390px) {
-  .nav-mob-lgo-img-link {
-    display: flex !important;
-    justify-content: end !important;
+  /* Add these styles to your CSS */
+  .nav-mob-lgo-FULL-div {
+    display: flex;
+    gap: 70px;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 0 0 0 128px; /* Add padding for better spacing */
+  }
+
+  .nav-mob-lgo-img-link-div {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-mob-toggle-div {
+    display: flex;
+    justify-content: flex-end;
   }
   .nav-mob-lgo-img {
-    width: 167px;
+    width: 147px;
     height: 37px;
     /* display: flex;
   justify-content: center;
   align-items: center; */
-    margin: 0 10px 0 30px;
+    /* margin: 0 10px 0 30px; */
   }
   .nav-items-div-mob {
     display: flex;
@@ -1438,8 +1493,12 @@ body {
     font-family: "Roboto", sans-serif;
     margin: 0 0 0 20%;
   }
+  .redix-div {
+    padding: 20px 10px 0 10px;
+    border: none;
+    margin-top: -10px;
+  }
 }
-
 
 /* Macbook PRo  */
 @media (max-width: 1680px) and (min-width: 1368px) {

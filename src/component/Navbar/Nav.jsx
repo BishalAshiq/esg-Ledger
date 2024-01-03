@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import PageLogo from "../../../public/pageLogonavas.png";
-import PageLogomob from "../../../public/pageLogomd.png";
+import PageLogo from "../../../public/pageLogonavas.svg";
+import PageLogomob from "../../../public/pageLogomd.svg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import companyLogo from "../../../public/pageLogonavas.png";
+import companyLogo from "../../../public/pageLogonavas.svg";
 import companyLogo1 from "../../../public/pageLogomd.png";
 import "./mobileNav.css";
 
@@ -169,59 +169,60 @@ const Nav = () => {
       </div>
       <div className='mobile-nav-div'>
         <nav
-          class='navbar navbar-expand-lg mob-nav fixed-top w-100'
+          className='navbar navbar-expand-lg mob-nav fixed-top'
           style={{ backgroundColor: navbarColor }}>
           <div className=''>
-            <div className='row'>
-            {/* <div className='col-11 col-sm-3'></div> */}
-              <div className='col-10 col-sm-11 col-md-11 col-lg-11 col-xl-11 '>
-                <Link
-                  // style={{
-                  //   marginLeft: "50px",
-                  // }}
-                  href='/landingPage'
-                  className='nav-mob-lgo-img-link'>
-                  <img className='nav-mob-lgo-img' src={logoUrl.src} alt='' />
-                </Link>
-              </div>
-              <div className='col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1'>
-                <button
-                  style={{
-                    backgroundColor: dropdownColor,
-                    border: "none",
-                  }}
-                  type='button'
-                  data-bs-toggle='collapse'
-                  data-bs-target='#navbarTogglerDemo01'
-                  aria-controls='navbarTogglerDemo01'
-                  aria-expanded='false'
-                  aria-label='Toggle navigation'>
-                  <span className='svg-iconic'>
-                    <svg
-                      style={{ color: buttonColor }}
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='18'
-                      height='18'
-                      viewBox='0 0 18 18'
-                      fill='none'>
-                      <path
-                        d='M1 1H17.4706'
-                        stroke={buttonColor}
-                        stroke-linecap='round'
-                      />
-                      <path
-                        d='M1 9H17.4706'
-                        stroke={buttonColor}
-                        stroke-linecap='round'
-                      />
-                      <path
-                        d='M1 17H17.4706'
-                        stroke={buttonColor}
-                        stroke-linecap='round'
-                      />
-                    </svg>
-                  </span>
-                </button>
+            <div className='dsada'>
+              <div className='nav-mob-lgo-FULL-div'>
+                <div className='nav-mob-lgo-img-link-div'>
+                  <Link
+                    // style={{
+                    //   marginLeft: "50px",
+                    // }}
+                    href='/landingPage'
+                    className=''>
+                    <img className='nav-mob-lgo-img' src={logoUrl.src} alt='' />
+                  </Link>
+                </div>
+                <div className='nav-mob-toggle-div'>
+                  <button
+                    style={{
+                      backgroundColor: dropdownColor,
+                      border: "none",
+                    }}
+                    type='button'
+                    data-bs-toggle='collapse'
+                    data-bs-target='#navbarTogglerDemo01'
+                    aria-controls='navbarTogglerDemo01'
+                    aria-expanded='false'
+                    aria-label='Toggle navigation'>
+                    <span className=''>
+                      <svg
+                        style={{ color: buttonColor }}
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='18'
+                        height='18'
+                        viewBox='0 0 18 18'
+                        fill='none'>
+                        <path
+                          d='M1 1H17.4706'
+                          stroke={buttonColor}
+                          stroke-linecap='round'
+                        />
+                        <path
+                          d='M1 9H17.4706'
+                          stroke={buttonColor}
+                          stroke-linecap='round'
+                        />
+                        <path
+                          d='M1 17H17.4706'
+                          stroke={buttonColor}
+                          stroke-linecap='round'
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
               </div>
             </div>
             <div
