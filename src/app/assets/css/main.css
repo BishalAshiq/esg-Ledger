@@ -82,7 +82,7 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 40px 0 5px 0;
+  padding: 60px 0 3% 0;
   /* margin: 0 0 3% 0; */
 }
 
@@ -114,16 +114,22 @@ body {
   border-top: 1px solid rgb(255, 255, 255);
   margin: -2% 30% 2% 30%;
 }
-
-.login-banner-inputs-div {
+.login-banner-full-inputs-div {
   background-color: white;
+}
+.admin-close-div {
+  display: flex;
+  justify-content: end;
+  padding: 10px;
+}
+.login-banner-inputs-div {
   /* border: 1px solid rgb(255, 255, 255); */
   display: flex;
   flex-direction: column;
   width: 290px;
   /* justify-content: center; */
   /* align-items: start; */
-  padding: 30px 40px;
+  /* padding: 30px 40px; */
 }
 .login-banner-inputss-div {
   background-color: white;
@@ -138,16 +144,31 @@ body {
 .brand-inp {
   width: 100%;
 }
+.hrss {
+  display: block;
+  visibility: visible;
+  border-color: white;
+}
 
 .pioneeringtext {
   /* border: 1px solid gray; */
   width: 15%;
   /* display: grid;
   place-items: center; */
-  color: white;
+  color: rgb(245, 245, 245);
   font-size: 0.8rem;
   line-height: 1.2;
   margin: -1.4% 30%;
+  display: block;
+  visibility: visible;
+  /* z-index: 000; */
+}
+.pioneeringtexts {
+  color: white;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 3% 0;
+  margin: -26px 0 0 -24%;
 }
 
 .fist-slider-text-div {
@@ -510,7 +531,7 @@ body {
 
 .Blockchain-tagotwo-div {
   gap: 10px;
-  padding: 0 50px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -521,9 +542,11 @@ body {
   text-align: center;
   margin: 10px 20px;
   font-size: 1rem;
-  margin: 10px 20px;
+  /* margin: 10px 20px; */
   font-family: "Roboto", sans-serif;
   max-width: 100%;
+  display: inline;
+
   white-space: pre-line;
   overflow-wrap: break-word;
   cursor: pointer;
@@ -609,7 +632,7 @@ body {
 }
 
 .tag-text {
-  padding-left: 10px;
+  padding: 10px 0 0 10px;
 }
 
 .no-file-select-div {
@@ -845,7 +868,7 @@ body {
   }
 
   .hrs {
-    /* margin-top: 0.1%; */
+    margin-top: -2.5%;
   }
 
   .Information-full-div {
@@ -886,22 +909,24 @@ body {
   .slick-dots {
     height: 10px;
   }
-  .pioneeringtext {
-    /* border: 1px solid gray; */
-    width: 15%;
-    /* display: grid;
-    place-items: center; */
-    color: white;
-    font-size: 20px;
-    line-height: 1.2;
-    margin: -1.4% 30%;
+  .hrss {
+    display: block;
+    visibility: visible;
   }
+
   .login-banner-img-input-div {
     display: flex;
     justify-content: center;
-    padding: 60px 0 2% 0;
-    margin-top: 20px;
+    padding: 60px 0 3% 0;
+    /* margin-top: 20px; */
     /* width: 100%; */
+  }
+  .pioneeringtexts {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 3% 0;
+    margin: -30px 0 0 -28%;
   }
   .login-banner-img-input-divs {
     /* border: 1px solid white; */
@@ -947,6 +972,11 @@ body {
     /* justify-content: space-between; */
     align-items: center;
     padding: 0 0 0 168px; /* Add padding for better spacing */
+  }
+  .certificate-image-div {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 10px 0;
   }
 
   .nav-mob-lgo-img-link-div {
@@ -1391,6 +1421,18 @@ body {
     /* justify-content: space-between; */
     align-items: center;
     padding: 0 0 0 140px; /* Add padding for better spacing */
+  }
+  .Blockchain-tagotwo {
+    text-align: center;
+    margin: 10px 10px;
+    font-size: 0.9rem;
+    /* margin: 10px 20px; */
+    font-family: "Roboto", sans-serif;
+    max-width: 100%;
+    display: inline;
+    white-space: pre-line;
+    overflow-wrap: break-word;
+    cursor: pointer;
   }
 
   .nav-mob-lgo-img-link-div {
