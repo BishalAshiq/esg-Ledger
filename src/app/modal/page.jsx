@@ -88,11 +88,11 @@ const page = () => {
         </div>
       </div>
       <div className='Modal-2'>
-        <Button onClick={handleOpenthree}>Buffer</Button>
+        <Button onClick={handleOpent}>Buffer</Button>
         <div>
           <Modal
             open={opent}
-            onClose={handleOpenthree}
+            onClose={handleCloset}
             aria-labelledby='modal-modal-title'
             aria-describedby='modal-modal-description'>
             <Box sx={styletwo}>
