@@ -87,7 +87,13 @@ body {
 }
 
 .login-banner-img-div {
-  /* width: 00px; */
+  /* width: 100%; */
+}
+/* _______ For Mobile Version Responsive ________ */
+@media screen and (max-width: 767px) {
+  .login-banner-img-div {
+    width: 100%;
+  }
 }
 
 .login-banner-img {
@@ -168,7 +174,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 0 0 3% 0;
-  margin: -26px 0 0 -24%;
+  margin: -20px 265px 0px 0px;
 }
 
 .fist-slider-text-div {
@@ -479,7 +485,7 @@ body {
 }
 
 .certificate-tags {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   display: inline;
@@ -490,6 +496,7 @@ body {
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   display: inline;
+  padding: 5px 0px;
 }
 
 .certificate-des-div {
@@ -1037,7 +1044,7 @@ body {
     /* height: 5vh; */
     border: 2px solid #ffffff;
     width: 40%;
-    margin: 0 0 0 20%;
+    margin: 0 0 0 40px;
     border-radius: 5px;
   }
   .login-full-div {
@@ -1071,7 +1078,7 @@ body {
     justify-content: center;
     padding: 0 1% 0 1%;
     /* margin-top: 20px; */
-    /* width: 100%; */
+    width: 100%;
   }
   .login-banner-img {
     visibility: hidden;

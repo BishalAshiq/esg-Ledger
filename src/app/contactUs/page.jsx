@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "../../app/login/login.module.css";
 import Nav from "@/component/Navbar/Nav";
 import pageLogo from "../../../public/pageLogomd.png";
@@ -12,10 +12,11 @@ import pageicon4 from "../../../public/social4.svg";
 // import copy from "../../../../public/copy.svg";
 // import redix from "../../../../public/redix.png";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import {useParams} from "next/navigation";
 // import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
 import pageLogonav from "../../../public/pageLogonav.png";
+import "./contact-us.modules.css";
 
 const page = () => {
   const mapUrl =
@@ -34,8 +35,6 @@ const page = () => {
     });
   };
 
-  console.log(formData);
-
   const sendEmail = async () => {
     try {
       const url = "https://api.brevo.com/v3/smtp/email";
@@ -51,7 +50,7 @@ const page = () => {
           name: formData.name,
           email: formData.email,
         },
-        to: [{ email: "enquiries@esgledger.co" }],
+        to: [{email: "enquiries@esgledger.co"}],
         htmlContent: formData.subject,
         subject: formData.subject,
       });
@@ -69,7 +68,7 @@ const page = () => {
               success: true,
               message: "Successfully sent",
             }),
-            { status: 200 }
+            {status: 200}
           );
         }
       } catch (e) {
@@ -78,7 +77,7 @@ const page = () => {
             success: true,
             message: "Failed to send email",
           }),
-          { status: 400 }
+          {status: 400}
         );
       }
       return new NextResponse(
@@ -86,7 +85,7 @@ const page = () => {
           success: true,
           message: "Failed to send email",
         }),
-        { status: 400 }
+        {status: 400}
       );
     } catch (error) {
       console.error("Error sending email:", error);
@@ -100,17 +99,17 @@ const page = () => {
           <Nav />
         </div>
 
-        <div className='row no-gutters'>
-          <div className='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'></div>
-          <div className='col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8'>
-            <div className='contactUs-full-div'>
-              <div className='contactUs-inputs-div'>
-                <div className='row '>
-                  <div className='col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9'>
-                    <div className='contactUs-inpu-div'>
+        <div className="row no-gutters">
+          <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2"></div>
+          <div className="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <div className="contactUs-full-div">
+              <div className="contactUs-inputs-div">
+                <div className="m_contact__wrapper">
+                  <div className="">
+                    <div className="contactUs-inpu-div">
                       <div>
-                        <h3 className='contactUs-tag'>Contact Us</h3>
-                        <p className='contactUs-des'>
+                        <h3 className="contactUs-tag">Contact Us</h3>
+                        <p className="contactUs-des">
                           Feel free to reach out to us using the contact
                           information provided below. Whether you're an art
                           enthusiast, a collector, an artist, or a potential
@@ -118,90 +117,102 @@ const page = () => {
                           us.
                         </p>
                       </div>
-                      <div className='mt-5'>
-                        <div className='row '>
-                          <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
+                      <div className="mt-5">
+                        <div className="row ">
+                          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                             <div>
-                              <label for='name' className='contact-lebel '>
+                              <label for="name" className="contact-lebel ">
                                 Your Name
                               </label>{" "}
                               <br />
                               <input
-                                className='contact-inp'
-                                type='name'
-                                id='name'
-                                name='name'
+                                className="contact-inp"
+                                type="name"
+                                id="name"
+                                name="name"
                                 onChange={handleFormChange}
                                 value={formData.name}
                               />
                             </div>
                           </div>
-                          <div className='col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6'>
-                            <div className=''>
-                              <label for='Email' className='contact-lebel'>
+                          <div className="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <div className="">
+                              <label for="Email" className="contact-lebel">
                                 {" "}
                                 Your Email
                               </label>{" "}
                               <br />
                               <input
-                                className='contact-inp'
-                                type='email'
-                                id='email'
-                                name='email'
+                                className="contact-inp"
+                                type="email"
+                                id="email"
+                                name="email"
                                 onChange={handleFormChange}
                                 value={formData.email}
                               />
                             </div>
                           </div>
-                          <div className='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 '>
-                            <div className='contact-inp-text-div'>
-                              <input
-                                className='contact-inp-text'
-                                type='text'
-                                id='text'
-                                name='subject'
-                                placeholder='What’s on your mind?'
+                          <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ">
+                            <div className="contact-inp-text-div">
+                              {/* <input
+                                className="contact-inp-text"
+                                type="text"
+                                id="text"
+                                name="subject"
+                                placeholder="What’s on your mind?"
                                 onChange={handleFormChange}
                                 value={formData.subject}
-                              />
+                              /> */}
+
+                              <textarea
+                                className="contact-inp-text"
+                                onChange={handleFormChange}
+                                value={formData.subject}
+                                name="subject"
+                                placeholder="What’s on your mind?"
+                                id="text"
+                                cols={20}
+                                rows={6}
+                              ></textarea>
                             </div>
                           </div>
                         </div>
-                        <button className='send-btn' onClick={sendEmail}>
+                        <button className="send-btn" onClick={sendEmail}>
                           Send It!
                         </button>
                       </div>
                     </div>
                   </div>
-                  <div className='col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3'>
-                    <div className='contact-getIn-touch-div'>
-                      <h5 className='cont-get-tag'>GET IN TOUCH</h5>
-                      <div className=''>
-                        <div className='contact-address'>
-                          <span className='cont-add-icon'>T:</span>
-                          <p className='cont-add-text'>(852) 2186 7799</p>
+                  <div className="">
+                    <div className="contact-getIn-touch-div">
+                      <h5 className="cont-get-tag">GET IN TOUCH</h5>
+                      <div className="">
+                        <div className="contact-address">
+                          <span className="cont-add-icon">T:</span>
+                          <p className="cont-add-text">(852) 2186 7799</p>
                         </div>
-                        <div className='contact-address'>
-                          <span className='cont-add-icon'>E:</span>{" "}
-                          <p className='cont-add-text'>
+                        <div className="contact-address">
+                          <span className="cont-add-icon">E:</span>{" "}
+                          <p className="cont-add-text">
                             enquiries@esgledger.co
                           </p>
                         </div>
 
-                        <div className='contact-address'>
-                          <span className='cont-add-icon'>A:</span>
-                          <p className='cont-add-text'>
+                        <div className="contact-address">
+                          <span className="cont-add-icon">A:</span>
+                          <p className="cont-add-text">
                             Smart-Space 3F, Units 908-915, Level 9, Cyberport 3,
                             Core F, 100 Cyberport Road, Hong Kong
                           </p>
                         </div>
                       </div>
-                      <div className='contact-ifram-div'>
+                      <div className="contact-ifram-div">
                         <iframe
-                          className='iframe-contact'
-                          loading='lazy'
+                          className="iframe-contact"
+                          loading="lazy"
                           allowFullScreen
-                          src={mapUrl}></iframe>
+                          src={mapUrl}
+                        ></iframe>
                       </div>
                     </div>
                   </div>
@@ -300,79 +311,79 @@ const page = () => {
             </div> */}
           </div>
 
-          <div className='col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2'></div>
+          <div className="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2"></div>
         </div>
 
-        <div className='login-footer-banner-full-div '>
-          <div className='row '>
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2'></div>
-            <div className='col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8'>
-              <div className='login-footer-banner-div web-view'>
-                <div className=''>
-                  <img className='footer-img' src={pageLogo.src} alt='' />
-                  <p className='fotter-ptext'>
+        <div className="login-footer-banner-full-div ">
+          <div className="row ">
+            <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+            <div className="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+              <div className="login-footer-banner-div web-view">
+                <div className="">
+                  <img className="footer-img" src={pageLogo.src} alt="" />
+                  <p className="fotter-ptext">
                     For inquiries or more information <br />
                     please contact: enquiries@esgledger.co
                   </p>
                 </div>
 
-                <div className=''>
-                  <p className='footer-textpp'>Join the Community</p>
+                <div className="">
+                  <p className="footer-textpp">Join the Community</p>
 
-                  <div className='footer-text-icon'>
-                    <a href='https://www.facebook.com/onechainhk'>
-                      <img className='social-icon' src={pageicon4.src} alt='' />
+                  <div className="footer-text-icon">
+                    <a href="https://www.facebook.com/onechainhk">
+                      <img className="social-icon" src={pageicon4.src} alt="" />
                     </a>
-                    <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
-                      <img className='social-icon' src={pageicon3.src} alt='' />
+                    <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                      <img className="social-icon" src={pageicon3.src} alt="" />
                     </a>
-                    <a href='https://www.linkedin.com/company/one-chain/'>
-                      <img className='social-icon' src={pageicon2.src} alt='' />
+                    <a href="https://www.linkedin.com/company/one-chain/">
+                      <img className="social-icon" src={pageicon2.src} alt="" />
                     </a>
-                    <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
-                      <img className='social-icon' src={pageicon1.src} alt='' />
+                    <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                      <img className="social-icon" src={pageicon1.src} alt="" />
                     </a>
                   </div>
                 </div>
               </div>
-              <div className='mobile-version-div'>
-                <p className='fotter-ptext-mob'>
+              <div className="mobile-version-div">
+                <p className="fotter-ptext-mob">
                   For inquiries or more information <br />
                   please contact: enquiries@esgledger.co
                 </p>
 
-                <div className='footer-text-icon'>
-                  <a href='https://www.facebook.com/onechainhk'>
-                    <img className='social-icon' src={pageicon4.src} alt='' />
+                <div className="footer-text-icon">
+                  <a href="https://www.facebook.com/onechainhk">
+                    <img className="social-icon" src={pageicon4.src} alt="" />
                   </a>
-                  <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
-                    <img className='social-icon' src={pageicon3.src} alt='' />
+                  <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                    <img className="social-icon" src={pageicon3.src} alt="" />
                   </a>
-                  <a href='https://www.linkedin.com/company/one-chain/'>
-                    <img className='social-icon' src={pageicon2.src} alt='' />
+                  <a href="https://www.linkedin.com/company/one-chain/">
+                    <img className="social-icon" src={pageicon2.src} alt="" />
                   </a>
-                  <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
-                    <img className='social-icon' src={pageicon1.src} alt='' />
+                  <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                    <img className="social-icon" src={pageicon1.src} alt="" />
                   </a>
                   {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
                 </div>
-                <p className='fotter-joitext-mob'>Join the Community</p>
+                <p className="fotter-joitext-mob">Join the Community</p>
               </div>
-              <div className='f-hr-divweb'>
-                <hr className='f-hr' />
-                <p className='f-text'>© 2023 OneChain Ltd.</p>
+              <div className="f-hr-divweb">
+                <hr className="f-hr" />
+                <p className="f-text">© 2023 OneChain Ltd.</p>
               </div>
             </div>
-            <div className='col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3'></div>
+            <div className="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-3"></div>
           </div>
-          <div className='mobile-version-divs'>
+          <div className="mobile-version-divs">
             <div>
-              <hr className='f-hr' />
-              <p className='f-text'>© 2023 OneChain Ltd.</p>
+              <hr className="f-hr" />
+              <p className="f-text">© 2023 OneChain Ltd.</p>
             </div>
-            <div className='pol-mob-div'>
-              <p className='polmob-text'>Privacy Policy</p>
-              <p className='polmob-text'>Terms of Service</p>
+            <div className="pol-mob-div">
+              <p className="polmob-text">Privacy Policy</p>
+              <p className="polmob-text">Terms of Service</p>
             </div>
           </div>
         </div>

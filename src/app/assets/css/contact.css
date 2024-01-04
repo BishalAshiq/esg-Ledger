@@ -6,6 +6,7 @@
 .contactUs-inputs-div {
   background-color: #86c6ca;
   padding: 0 0 30px 0;
+  width: 100%;
 }
 .contactUs-inpu-div {
   background-color: #f8f8f8;
@@ -57,7 +58,7 @@
 .contact-inp-text {
   width: 100%;
   font-size: 0.8rem;
-  height: 20vh;
+  padding: 10px;
   background-color: white;
 }
 
