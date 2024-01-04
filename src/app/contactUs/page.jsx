@@ -21,7 +21,6 @@ const page = () => {
   const mapUrl =
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8782.242126883268!2d114.1288730487565!3d22.259877475587118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3403fff0f159fe51%3A0x9dab2f23bc4e5a06!2sChinese%20Culinary%20Institute!5e0!3m2!1sen!2sbd!4v1701320544257!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade';
 
-
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -43,7 +42,8 @@ const page = () => {
 
       const headers = new Headers({
         "Content-Type": "application/json",
-        "api-key": "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",
+        "api-key":
+          "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",
       });
 
       const body = JSON.stringify({
@@ -88,15 +88,14 @@ const page = () => {
         }),
         { status: 400 }
       );
-
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error sending email:", error);
     }
-  }
+  };
 
   return (
     <div>
-      <div className={styles["background-img"]}>
+      <div className={styles["background-imgContact"]}>
         <div>
           <Nav />
         </div>
@@ -168,7 +167,9 @@ const page = () => {
                             </div>
                           </div>
                         </div>
-                        <button className='send-btn' onClick={sendEmail}>Send It!</button>
+                        <button className='send-btn' onClick={sendEmail}>
+                          Send It!
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -319,17 +320,16 @@ const page = () => {
                   <p className='footer-textpp'>Join the Community</p>
 
                   <div className='footer-text-icon'>
-
-                    <a href="https://www.facebook.com/onechainhk">
+                    <a href='https://www.facebook.com/onechainhk'>
                       <img className='social-icon' src={pageicon4.src} alt='' />
                     </a>
-                    <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                    <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
                       <img className='social-icon' src={pageicon3.src} alt='' />
                     </a>
-                    <a href="https://www.linkedin.com/company/one-chain/">
+                    <a href='https://www.linkedin.com/company/one-chain/'>
                       <img className='social-icon' src={pageicon2.src} alt='' />
                     </a>
-                    <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                    <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
                       <img className='social-icon' src={pageicon1.src} alt='' />
                     </a>
                   </div>
@@ -342,16 +342,16 @@ const page = () => {
                 </p>
 
                 <div className='footer-text-icon'>
-                  <a href="https://www.facebook.com/onechainhk">
+                  <a href='https://www.facebook.com/onechainhk'>
                     <img className='social-icon' src={pageicon4.src} alt='' />
                   </a>
-                  <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                  <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
                     <img className='social-icon' src={pageicon3.src} alt='' />
                   </a>
-                  <a href="https://www.linkedin.com/company/one-chain/">
+                  <a href='https://www.linkedin.com/company/one-chain/'>
                     <img className='social-icon' src={pageicon2.src} alt='' />
                   </a>
-                  <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                  <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
                     <img className='social-icon' src={pageicon1.src} alt='' />
                   </a>
                   {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
