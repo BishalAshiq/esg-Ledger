@@ -183,7 +183,12 @@ const Nav = () => {
           className="navbar navbar-expand-lg mob-nav fixed-top"
           style={{backgroundColor: navbarColor}}
         >
-          <div className="">
+          <div
+            style={{
+              width: "100%",
+              padding: "0px 10px",
+            }}
+          >
             <div className="dsada">
               <div className="nav-mob-lgo-FULL-div">
                 <div className="nav-mob-lgo-img-link-div">
@@ -240,6 +245,7 @@ const Nav = () => {
                 </div>
               </div>
             </div>
+
             <div
               style={{
                 backgroundColor: navbarColor,
