@@ -458,6 +458,90 @@
   padding-bottom: 10px;
 }
 
+.mod-f-img-div {
+  display: grid;
+  place-items: center;
+}
+
+.button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.mod-f-img {
+  margin: 0 0 20px 0;
+}
+
+.mod-f-uplod-text {
+  color: #000;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.mod-f-uplod-textp {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-top: -15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.mod-f-uplod-textp2 {
+  color: #000;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  margin-top: -15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.return-m-btn {
+  width: 250px;
+  height: 35px;
+  border: none;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: #bfbfbf;
+  font-size: 15px;
+  color: white;
+}
+.conferm-m-btn {
+  width: 250px;
+  height: 35px;
+  font-size: 15px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  background: #066f69;
+  border: none;
+  color: white;
+}
+
+.mod-f-buffering-text {
+  color: #000;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  margin: 10px 0 10px 0;
+  line-height: normal;
+}
+.mod-f-succes-text {
+  color: #000;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin: 10px 0 40px 0;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
 @media only screen and (max-width: 3000px) and (min-width: 1370px) {
   .full-table {
     /* width: 100%; */

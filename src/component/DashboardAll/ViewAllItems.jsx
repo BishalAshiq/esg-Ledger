@@ -1,9 +1,9 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import ViewAllItemsData from "./ViewAllItemsData";
 import axiosInstance from "../../../utils/axios";
-import {toast} from "react-toastify";
-import {useRouter} from "next/navigation";
+import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 const ViewAllItems = () => {
   const [showDivs, setShowDivs] = useState(true);
@@ -14,7 +14,7 @@ const ViewAllItems = () => {
 
   const [items, setItems] = useState({
     0: [
-      {id: 1, text: "", isChecked: false},
+      { id: 1, text: "", isChecked: false },
       // Add more initial items as needed
     ],
   });
@@ -22,10 +22,10 @@ const ViewAllItems = () => {
   const handleAddClick = (index) => {
     const newId = (items[index] || []).length + 1;
     setItems((prevItems) => {
-      const updatedItems = {...prevItems};
+      const updatedItems = { ...prevItems };
       updatedItems[index] = [
         ...(updatedItems[index] || []),
-        {id: newId, text: "", isChecked: false},
+        { id: newId, text: "", isChecked: false },
       ];
       return updatedItems;
     });
@@ -33,7 +33,7 @@ const ViewAllItems = () => {
 
   const handleDeleteClick = (id, currindex) => {
     setItems((prevItems) => {
-      const updatedItems = {...prevItems};
+      const updatedItems = { ...prevItems };
       updatedItems[currindex] = updatedItems[currindex].filter(
         (item) => item.id !== id
       );
@@ -43,14 +43,14 @@ const ViewAllItems = () => {
 
   const handleTextChange = (id, newText) => {
     const updatedItems = items.map((item) =>
-      item.id === id ? {...item, text: newText} : item
+      item.id === id ? { ...item, text: newText } : item
     );
     setItems(updatedItems);
   };
 
   const handleCheckboxsChange = (id) => {
     const updatedItems = items.map((item) =>
-      item.id === id ? {...item, isChecked: !item.isChecked} : item
+      item.id === id ? { ...item, isChecked: !item.isChecked } : item
     );
     setItems(updatedItems);
   };
@@ -64,11 +64,11 @@ const ViewAllItems = () => {
   ]);
 
   const [formData, setFormData] = useState([
-    {id: 1, text: "Brand Name", checked: true},
-    {id: 2, text: "Product No", checked: true},
-    {id: 3, text: "Serial", checked: true},
+    { id: 1, text: "Brand Name", checked: true },
+    { id: 2, text: "Product No", checked: true },
+    { id: 3, text: "Serial", checked: true },
   ]);
-  const [category, setCategory] = useState([{id: 1, text: "", checked: false}]);
+  const [category, setCategory] = useState([{ id: 1, text: "", checked: false }]);
 
   const [subCategory, setSubCategory] = useState([
     {
@@ -79,7 +79,7 @@ const ViewAllItems = () => {
   const handleAddClickt = (currindex) => {
     const newId = itemst.length;
     const newIndex = currindex + 1;
-    setItemst([...itemst, {id: newId, text: "", isChecked: false}]);
+    setItemst([...itemst, { id: newId, text: "", isChecked: false }]);
   };
   const handleDeleteClickt = (id) => {
     const updatedItemst = itemst.filter((itemt) => itemt.id !== id);
@@ -88,14 +88,14 @@ const ViewAllItems = () => {
 
   const handleTextChanget = (id, newText) => {
     const updatedItemst = itemst.map((itemt) =>
-      itemt.id === id ? {...itemt, text: newText} : itemt
+      itemt.id === id ? { ...itemt, text: newText } : itemt
     );
     setItemst(updatedItemst);
   };
 
   const handleCheckboxChanget = (id) => {
     const updatedItemst = itemst.map((itemt) =>
-      itemt.id === id ? {...itemt, isChecked: !itemt.isChecked} : itemt
+      itemt.id === id ? { ...itemt, isChecked: !itemt.isChecked } : itemt
     );
     setItemst(updatedItemst);
   };
@@ -121,20 +121,20 @@ const ViewAllItems = () => {
 
   const handleInputChange = (id, value) => {
     const updatedRows = rows.map((row) =>
-      row.id === id ? {...row, text: value} : row
+      row.id === id ? { ...row, text: value } : row
     );
     setRows(updatedRows);
   };
 
   const handleCheckboxChange = (id) => {
     const updatedRows = rows.map((row) =>
-      row.id === id ? {...row, checked: !row.checked} : row
+      row.id === id ? { ...row, checked: !row.checked } : row
     );
     setRows(updatedRows);
   };
 
   const handleAddRow = () => {
-    const newRow = {id: rows.length + 1 + 4, text: "", checked: false};
+    const newRow = { id: rows.length + 1 + 4, text: "", checked: false };
     setRows([...rows, newRow]);
   };
 
@@ -145,11 +145,11 @@ const ViewAllItems = () => {
 
     if (rowExists) {
       const updatedRows = formData.map((row) =>
-        row.id === id ? {...row, text: value} : row
+        row.id === id ? { ...row, text: value } : row
       );
       setFormData(updatedRows);
     } else {
-      const newRow = {id, text: value, checked: false};
+      const newRow = { id, text: value, checked: false };
       setFormData([...formData, newRow]);
     }
 
@@ -167,11 +167,11 @@ const ViewAllItems = () => {
 
     if (rowExists) {
       const updatedRows = formData.map((row) =>
-        row.id === id ? {...row, checked: !row.checked} : row
+        row.id === id ? { ...row, checked: !row.checked } : row
       );
       setFormData(updatedRows);
     } else {
-      const newRow = {id, checked: true, text: ""};
+      const newRow = { id, checked: true, text: "" };
       setFormData([...formData, newRow]);
     }
   };
@@ -181,11 +181,11 @@ const ViewAllItems = () => {
 
     if (rowExists) {
       const updatedRows = category.map((row) =>
-        row.id === id ? {...row, text: value} : row
+        row.id === id ? { ...row, text: value } : row
       );
       setCategory(updatedRows);
     } else {
-      const newRow = {id, text: value, checked: false};
+      const newRow = { id, text: value, checked: false };
       setCategory([...category, newRow]);
     }
   };
@@ -195,11 +195,11 @@ const ViewAllItems = () => {
 
     if (rowExists) {
       const updatedRows = category.map((row) =>
-        row.id == id ? {...row, checked: !row.checked} : row
+        row.id == id ? { ...row, checked: !row.checked } : row
       );
       setCategory(updatedRows);
     } else {
-      const newRow = {id, checked: true, text: ""};
+      const newRow = { id, checked: true, text: "" };
       setCategory([...category, newRow]);
     }
   };
@@ -217,7 +217,7 @@ const ViewAllItems = () => {
       );
       setSubCategory(updatedRows);
     } else {
-      const newRow = {id, text: value, checked: false, index: currIndex};
+      const newRow = { id, text: value, checked: false, index: currIndex };
       setSubCategory([...subCategory, newRow]);
     }
   };
@@ -235,7 +235,7 @@ const ViewAllItems = () => {
       );
       setSubCategory(updatedRows);
     } else {
-      const newRow = {id, checked: true, text: "", index: currIndex};
+      const newRow = { id, checked: true, text: "", index: currIndex };
       setSubCategory([...subCategory, newRow]);
     }
   };
@@ -251,7 +251,7 @@ const ViewAllItems = () => {
 
       if (existingIndex !== -1) {
         // Update existing row
-        merged[existingIndex] = {...merged[existingIndex], ...formItem};
+        merged[existingIndex] = { ...merged[existingIndex], ...formItem };
       } else {
         // Add new row
         merged.push(formItem);
@@ -338,7 +338,7 @@ const ViewAllItems = () => {
                   </defs>
                 </svg>
 
-                <p style={{fontSize: "18px"}}>
+                <p style={{ fontSize: "18px" }}>
                   View all items - customise data field
                 </p>
               </div>
@@ -496,9 +496,24 @@ const ViewAllItems = () => {
                         <div className="d-items-div">
                           <div></div>
                           <h6 className="text-nowrap">Add new sub item</h6>
+
                         </div>
 
                         <div className="d-flex w-100 align-items-center justify-content-end">
+                          <svg
+                            onClick={(e) => {
+                              handleAddClick(index);
+                            }}
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="#86C6CA"
+                            class="bi bi-plus-circle-fill"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+                          </svg>
+
                           <div className="px-2 w-75">
                             <input
                               type="text"
@@ -521,7 +536,7 @@ const ViewAllItems = () => {
                               onChange={() =>
                                 handleSubCategoryCheckboxChange(item.id, index)
                               }
-                              // checked
+                            // checked
                             />
                           </div>
 
