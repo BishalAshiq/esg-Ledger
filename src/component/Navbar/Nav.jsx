@@ -241,7 +241,7 @@ const Nav = () => {
                   //   height: "100%",
                   //   textAlign: "center",
                   // }}
-                  className='nav-items-div-mob text-center'>
+                  className='nav-items-div-mob '>
                   <Link className='contact-nav-a-mov' href='/admin'>
                     <p style={{ color: navbarTextColor }}> Home</p>
                   </Link>

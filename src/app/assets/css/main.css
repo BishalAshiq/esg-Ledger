@@ -191,7 +191,7 @@ body {
   bottom: 0;
   width: 100%;
   padding: 4px 0 0 0;
-  margin-top: 30px;
+  /* margin-top: 30px; */
   background-color: #066f69;
 }
 .redix-footer-banner-full-div {
@@ -969,7 +969,7 @@ body {
   /* Notification */
   .Toastify__toast-container {
     width: 100% !important;
-   
+
     /* margin: 0 0 0 40px; */
   }
 
@@ -977,10 +977,9 @@ body {
     border-radius: 8px;
     font-family: "Arial", sans-serif;
     /* height: 2vh !important; */
-    min-height: 35px!important;
-    
+    min-height: 35px !important;
   }
-  
+
   .Toastify__progress-bar--success {
     background-color: #86c6ca !important;
     /* height: 2vh !important; */
@@ -1540,6 +1539,7 @@ body {
     /* align-items: center !important; */
     /* text-align: center !important; */
     text-decoration: none;
+    margin: 10px 0 0 15px;
   }
   .nav-items-div-mob a {
     text-decoration: none;
@@ -1559,7 +1559,7 @@ body {
   }
 
   .Toastify__toast-container--top-right {
-    margin-top: 8px!important;
+    margin-top: 8px !important;
   }
 }
 @media (max-width: 390px) {
@@ -1601,6 +1601,7 @@ body {
     align-items: center !important;
     text-align: center !important;
     text-decoration: none;
+    margin: 10px 40px 0 0;
   }
   .nav-items-div-mob a {
     text-decoration: none;
