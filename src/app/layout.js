@@ -23,7 +23,8 @@ export default function RootLayout({ children }) {
     <html lang='en'>
       <body className=''>
         {children}
-        <ToastContainer />
+        <ToastContainer
+        />
 
         <script
           src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js'

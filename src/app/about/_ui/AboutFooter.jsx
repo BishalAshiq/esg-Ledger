@@ -3,7 +3,7 @@ import logo from "../_assets/Footer-logo.svg";
 import social from "../_assets/social.svg";
 import Image from "next/image";
 import "../_assets/about-footer.css";
-import {facebook, instagram, linkedin, youtube} from "../_assets";
+import { facebook, instagram, linkedin, youtube } from "../_assets";
 import Link from "next/link";
 import pageLogo from "../../../../public/pageLogomd.png";
 import pageicon1 from "../../../../public/social1.svg";
@@ -36,10 +36,18 @@ export default function AboutFooter() {
               <p className="footer-textpp">Join the Community</p>
 
               <div className="footer-text-icon">
-                <img className="social-icon" src={pageicon1.src} alt="" />
-                <img className="social-icon" src={pageicon2.src} alt="" />
-                <img className="social-icon" src={pageicon3.src} alt="" />
-                <img className="social-icon" src={pageicon4.src} alt="" />
+                <a href="https://www.facebook.com/onechainhk">
+                  <img className='social-icon' src={pageicon4.src} alt='' />
+                </a>
+                <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                  <img className='social-icon' src={pageicon3.src} alt='' />
+                </a>
+                <a href="https://www.linkedin.com/company/one-chain/">
+                  <img className='social-icon' src={pageicon2.src} alt='' />
+                </a>
+                <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                  <img className='social-icon' src={pageicon1.src} alt='' />
+                </a>
               </div>
             </div>
           </div>
@@ -50,10 +58,18 @@ export default function AboutFooter() {
             </p>
 
             <div className="footer-text-icon">
-              <img className="social-icon" src={pageicon4.src} alt="" />
-              <img className="social-icon" src={pageicon3.src} alt="" />
-              <img className="social-icon" src={pageicon2.src} alt="" />
-              <img className="social-icon" src={pageicon1.src} alt="" />
+              <a href="https://www.facebook.com/onechainhk">
+                <img className='social-icon' src={pageicon4.src} alt='' />
+              </a>
+              <a href="https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ==">
+                <img className='social-icon' src={pageicon3.src} alt='' />
+              </a>
+              <a href="https://www.linkedin.com/company/one-chain/">
+                <img className='social-icon' src={pageicon2.src} alt='' />
+              </a>
+              <a href="https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ">
+                <img className='social-icon' src={pageicon1.src} alt='' />
+              </a>
 
               {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
             </div>

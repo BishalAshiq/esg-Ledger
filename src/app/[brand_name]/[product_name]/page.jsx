@@ -17,7 +17,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import axiosInstance from "../../../../utils/axios";
 import Link from "next/link";
-import { base_url } from "../../../../utils/auth"
+import { base_url } from "../../../../utils/auth";
 const page = () => {
   const param = useParams();
   const [item, setItem] = useState({});
@@ -196,10 +196,8 @@ const page = () => {
                     <h2 className='certificate-tags'>
                       THE BLOCKCHAIN CERTIFICATE
                     </h2>
-                    <span className='certificate-ptag mt-2'>
-                      區塊鏈防偽證書
-                    </span>
-                    <span className='certificate-ptag mt-3'>by OneChain®</span>
+                    <span className='certificate-ptag '>區塊鏈防偽證書</span>
+                    <span className='certificate-ptag mt-2'>by OneChain®</span>
                   </div>
 
                   <div className='certificate-des-div'>
@@ -216,15 +214,16 @@ const page = () => {
                   </div>
 
                   <div className='certificate-imageSec-div'>
-                    {
-                      item?.brand_details?.logo != null ?
-                        <img src={`${base_url}/uploads/${item?.brand_details?.logo}`} className="certificate-image-img" />
-                        :
-                        <>
-                          <img src={NoImage.src} alt='' />
-                        </>
-                    }
-
+                    {item?.brand_details?.logo != null ? (
+                      <img
+                        src={`${base_url}/uploads/${item?.brand_details?.logo}`}
+                        className='certificate-image-img'
+                      />
+                    ) : (
+                      <>
+                        <img src={NoImage.src} alt='' />
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
@@ -272,29 +271,27 @@ const page = () => {
                                   id='accordionExample'>
                                   <div className='accordion-item'>
                                     <div className='accor-tag-div'>
-                                      <h6 className='accordion-header'>
-                                        <div
-                                          className={`accordion-button ${
-                                            isAccordionExpanded(
-                                              `collapse${key}`
-                                            )
-                                              ? ""
-                                              : "collapsed"
-                                          }`}
-                                          type='button'
-                                          data-bs-target={`#collapse${key}`}
-                                          aria-expanded={isAccordionExpanded(
+                                      {/* <h6 className='accordion-header'> */}
+                                      <div
+                                        className={`accordion-button ${
+                                          isAccordionExpanded(`collapse${key}`)
+                                            ? ""
+                                            : "collapsed"
+                                        }`}
+                                        type='button'
+                                        data-bs-target={`#collapse${key}`}
+                                        aria-expanded={isAccordionExpanded(
+                                          `collapse${key}`
+                                        )}
+                                        aria-controls={`collapse${key}`}
+                                        onClick={() =>
+                                          handleAccordionClicks(
                                             `collapse${key}`
-                                          )}
-                                          aria-controls={`collapse${key}`}
-                                          onClick={() =>
-                                            handleAccordionClicks(
-                                              `collapse${key}`
-                                            )
-                                          }>
-                                          {key}
-                                        </div>
-                                      </h6>
+                                          )
+                                        }>
+                                        <span className='kwy'> {key}</span>
+                                      </div>
+                                      {/* </h6> */}
 
                                       <div className='chevron-icon'>
                                         {isAccordionExpanded(
@@ -440,10 +437,18 @@ const page = () => {
                   <p className='footer-textpp'>Join the Community</p>
 
                   <div className='footer-text-icon'>
-                    <img className='social-icon' src={pageicon1.src} alt='' />
-                    <img className='social-icon' src={pageicon2.src} alt='' />
-                    <img className='social-icon' src={pageicon3.src} alt='' />
-                    <img className='social-icon' src={pageicon4.src} alt='' />
+                    <a href='https://www.facebook.com/onechainhk'>
+                      <img className='social-icon' src={pageicon4.src} alt='' />
+                    </a>
+                    <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
+                      <img className='social-icon' src={pageicon3.src} alt='' />
+                    </a>
+                    <a href='https://www.linkedin.com/company/one-chain/'>
+                      <img className='social-icon' src={pageicon2.src} alt='' />
+                    </a>
+                    <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
+                      <img className='social-icon' src={pageicon1.src} alt='' />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -454,11 +459,18 @@ const page = () => {
                 </p>
 
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon4.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-
+                  <a href='https://www.facebook.com/onechainhk'>
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </a>
+                  <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                  </a>
+                  <a href='https://www.linkedin.com/company/one-chain/'>
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                  </a>
+                  <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                  </a>
                   {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
                 </div>
                 <p className='fotter-joitext-mob'>Join the Community</p>

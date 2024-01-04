@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 import axiosInstance from "../../../../utils/axios";
 import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 const CustomIcon = () => (
   <svg
@@ -124,6 +125,7 @@ const page = () => {
           );
           router.push("/brands/upload");
         } else if (res.data.status == 401) {
+          
           toast.error("Incorrect password", {
             position: "top-right",
           });
@@ -131,6 +133,8 @@ const page = () => {
           toast.error("Incorrect password", {
             position: "top-right",
           });
+
+          
         }
       });
   };
@@ -155,56 +159,83 @@ const page = () => {
                   />
                 </div>
 
-                <div className='login-banner-inputs-div'>
-                  <h6 className='heading-tag'>Brands Login</h6>
-                  <form
-                    className='content'
-                    onSubmit={handleLogin}
-                    method='post'>
-                    <div>
-                      {" "}
-                      <label for='email'>Email</label> <br />
-                      <input
-                        className='brand-inp'
-                        type='email'
-                        id='email'
-                        name='email'
-                        onChange={handleFormChange}
-                        value={formData.email}
-                        required
-                      />
-                    </div>
-                    <div>
-                      {" "}
-                      <label for='email'>Password</label> <br />
-                      <input
-                        className='brand-inp'
-                        type='password'
-                        id='Password'
-                        name='password'
-                        value={formData.password}
-                        required
-                        onChange={handleFormChange}
-                      />
-                    </div>
+                <div className='login-banner-full-inputs-div'>
+                  <div className='admin-close-div'>
+                    <Link href='/landingPage'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='27'
+                        height='27'
+                        viewBox='0 0 27 27'
+                        fill='none'>
+                        <circle
+                          cx='13.4287'
+                          cy='13.4286'
+                          r='9.5'
+                          transform='rotate(43.2297 13.4287 13.4286)'
+                          fill='#86C6CA'
+                        />
+                        <path
+                          d='M19.1726 16.1445L16.5922 18.8895L7.78257 10.6081L10.363 7.86311L19.1726 16.1445ZM19.5642 9.71384L10.0998 19.782L7.3192 17.1681L16.7836 7.09998L19.5642 9.71384Z'
+                          fill='white'
+                        />
+                      </svg>
+                    </Link>
+                  </div>
+                  <div className='login-banner-inputs-div'>
+                    <h6 className='heading-tag'>Brands Login</h6>
+                    <form
+                      className='content'
+                      onSubmit={handleLogin}
+                      method='post'>
+                      <div>
+                        {" "}
+                        <label for='email' className='bname'>
+                          Email
+                        </label>{" "}
+                        <br />
+                        <input
+                          className='brand-inp'
+                          type='email'
+                          id='email'
+                          name='email'
+                          onChange={handleFormChange}
+                          value={formData.email}
+                          required
+                        />
+                      </div>
+                      <div className='password-inpi'>
+                        {" "}
+                        <label className='bname' for='email'>
+                          Password
+                        </label>{" "}
+                        <br />
+                        <input
+                          className='brand-inp'
+                          type='password'
+                          id='Password'
+                          name='password'
+                          value={formData.password}
+                          required
+                          onChange={handleFormChange}
+                        />
+                      </div>
 
-                    <p className='forget-text'>Forget Password</p>
+                      <p className='forget-text'>Forget Password</p>
 
-                    <div className='submit-btn-div'>
-                      <button type='submit' className='submit-btn'>
-                        Log in
-                      </button>
-                    </div>
-                  </form>
+                      <div className='submit-btn-div'>
+                        <button type='submit' className='submit-btn'>
+                          Log in
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-              </div>
-              <div className='green-mob-div'>
-                <span className='green-mob'>hello</span>
               </div>
             </div>
           </div>
         </div>
-        <div className='hrss' />
+        <div className='hrs' />
 
         <div className='pioneeringtexts'>
           <p>
@@ -231,10 +262,18 @@ const page = () => {
                 <p className='footer-textpp'>Join the Community</p>
 
                 <div className='footer-text-icon'>
-                  <img className='social-icon' src={pageicon1.src} alt='' />
-                  <img className='social-icon' src={pageicon2.src} alt='' />
-                  <img className='social-icon' src={pageicon3.src} alt='' />
-                  <img className='social-icon' src={pageicon4.src} alt='' />
+                  <a href='https://www.facebook.com/onechainhk'>
+                    <img className='social-icon' src={pageicon4.src} alt='' />
+                  </a>
+                  <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
+                    <img className='social-icon' src={pageicon3.src} alt='' />
+                  </a>
+                  <a href='https://www.linkedin.com/company/one-chain/'>
+                    <img className='social-icon' src={pageicon2.src} alt='' />
+                  </a>
+                  <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
+                    <img className='social-icon' src={pageicon1.src} alt='' />
+                  </a>
                 </div>
               </div>
             </div>
@@ -245,11 +284,18 @@ const page = () => {
               </p>
 
               <div className='footer-text-icon'>
-                <img className='social-icon' src={pageicon4.src} alt='' />
-                <img className='social-icon' src={pageicon3.src} alt='' />
-                <img className='social-icon' src={pageicon2.src} alt='' />
-                <img className='social-icon' src={pageicon1.src} alt='' />
-
+                <a href='https://www.facebook.com/onechainhk'>
+                  <img className='social-icon' src={pageicon4.src} alt='' />
+                </a>
+                <a href='https://www.instagram.com/one.chain.io?igsh=MWd6MzM0YmM2YTdjZQ=='>
+                  <img className='social-icon' src={pageicon3.src} alt='' />
+                </a>
+                <a href='https://www.linkedin.com/company/one-chain/'>
+                  <img className='social-icon' src={pageicon2.src} alt='' />
+                </a>
+                <a href='https://youtube.com/@onechainblockchain?si=u5-F2y3A6kSHVCmQ'>
+                  <img className='social-icon' src={pageicon1.src} alt='' />
+                </a>
                 {/* <img className='social-icon' src={pageicon3.src} alt='' /> */}
               </div>
               <p className='fotter-joitext-mob'>Join the Community</p>
